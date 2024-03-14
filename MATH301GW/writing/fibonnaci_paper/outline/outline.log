@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  14 MAR 2024 10:53
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  14 MAR 2024 11:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -129,8 +129,7 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count274
 \g__pdf_backend_annotation_int=\count275
 \g__pdf_backend_link_int=\count276
-)
-No file outline.aux.
+) (./outline.aux)
 \openout1 = `outline.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -143,7 +142,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 10.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 10.
@@ -158,33 +157,30 @@ Overfull \hbox (3.77391pt too wide) in paragraph at lines 20--21
 []\TU/lmr/m/n/10 Thesis: The Fibonacci Multipath Load Balancing (FMLB) protocol demon-
  []
 
-
-/home/fancykat/Documents/SFSU/MATH301GW/writing/fibonnaci_paper/outline/outline.tex:25: Package enumitem Error: A. undefined.
-
-See the enumitem package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \begin{enumerate}[A.]
-                          
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [1
 
-] [2]
-Overfull \hbox (3.2399pt too wide) in paragraph at lines 120--122
+]
+Overfull \hbox (9.73885pt too wide) in paragraph at lines 71--72
+[]\TU/lmr/m/n/10 ”The simulation results show that the FMLB protocol has achieved
+ []
+
+[2]
+Overfull \hbox (3.2399pt too wide) in paragraph at lines 109--110
 \TU/lmr/m/n/10 nificant gains in packet delivery compared to standard single-
  []
 
-[3] [4] [5] (./outline.aux) ) 
+Missing character: There is no ≈ (U+2248) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ≈ (U+2248) in font [lmroman10-regular]:mapping=tex-text;!
+[3]
+Missing character: There is no ≈ (U+2248) in font [lmroman10-regular]:mapping=tex-text;!
+[4] [5] (./outline.aux) ) 
 Here is how much of TeX's memory you used:
- 2104 strings out of 476191
- 34530 string characters out of 5812072
+ 2105 strings out of 476191
+ 34539 string characters out of 5812072
  342597 words of memory out of 5000000
- 22853 multiletter control sequences out of 15000+600000
+ 22852 multiletter control sequences out of 15000+600000
  473179 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,6n,62p,334b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,62p,409b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on outline.pdf (5 pages).

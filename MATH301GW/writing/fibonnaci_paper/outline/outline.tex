@@ -22,7 +22,7 @@
 \end{itemize}
 
 \section{Background}
-\begin{enumerate}[A.]
+\begin{enumerate}
     \item The Fibonacci Sequence
     \begin{enumerate}
         \item Definition and first few terms
@@ -48,22 +48,19 @@
 \begin{itemize}
     \item Problem addressed: Congestion in MANETs
     \item Proposed solution: Fibonacci Multipath Load Balancing (FMLB) protocol
-    \begin{enumerate}
+    \begin{enumerate}[align=left]
         \item Key idea: Distribute load across multiple paths using Fibonacci sequence
         \begin{quote}
             \begin{enumerate}[label=(\arabic*)]
-                \item "To improve the packet delivery ratio, the authors propose a novel load balancing scheme called the 
-                      Fibonacci Multipath Load Balancing (FMLB) protocol.
-                \item The key idea is to discover multiple paths between the source and destination nodes and distribute the 
-                      transmitted packets across these paths using the Fibonacci sequence (Tashtoush et al., 2014, p. 239)."
+                \item "To improve the packet delivery ratio, the authors propose a novel load balancing scheme called the Fibonacci Multipath Load Balancing (FMLB) protocol.
+                \item The key idea is to discover multiple paths between the source and destination nodes and distribute the transmitted packets across these paths using the Fibonacci sequence (Tashtoush et al., 2014, p. 239)."
             \end{enumerate}
         \end{quote}
         \item Protocol operation: Discover paths, assign weights, allocate packets
         \begin{quote}
             \begin{enumerate}[label=(\arabic*)]
                 \item "Specifically, the available paths are sorted in increasing order of length (number of hops).
-                \item Each path is then assigned a Fibonacci number based on its position in this sorted list - the shortest 
-                      path gets the largest Fibonacci number and so on (Tashtoush et al., 2014, p. 240)."
+                \item Each path is then assigned a Fibonacci number based on its position in this sorted list - the shortest path gets the largest Fibonacci number and so on (Tashtoush et al., 2014, p. 240)."
             \end{enumerate}
         \end{quote}
     \end{enumerate}
@@ -71,11 +68,7 @@
     \item Results: Improved packet delivery ratio and reduced delay compared to other protocols
     \textit{[Add an image showing comparative performance graphs]}
     \begin{quote}
-        \begin{enumerate}[label=(\arabic*)]
-            \item "The simulation results show that the FMLB protocol has achieved an enhancement on packet delivery ratio, 
-                  up to 21\%, as compared to the Ad Hoc On-demand Distance Vector routing protocol (AODV) protocol,
-            \item and up to 11\% over the linear Multiple-path routing protocol." (Tashtoush et al., 2014, p. 237)
-        \end{enumerate}
+        "The simulation results show that the FMLB protocol has achieved an enhancement on packet delivery ratio, up to 21\%, as compared to the Ad Hoc On-demand Distance Vector routing protocol (AODV) protocol, and up to 11\% over the linear Multiple-path routing protocol." (Tashtoush et al., 2014, p. 237)
     \end{quote}
 \end{itemize}
 
@@ -88,11 +81,7 @@
     \end{enumerate}
     \textit{[Add an image visualizing the packet distribution according to Fibonacci weights]}
     \begin{quote}
-        \begin{enumerate}[label=(\arabic*)]
-            \item "The FMLB protocol's responsibility is balancing the packets transmission over the selected paths and 
-                  ordering them according to hops count.
-            \item The shortest path is used more frequently than the other ones." (Tashtoush et al., 2014, p. 237)
-        \end{enumerate}
+        "The FMLB protocol's responsibility is balancing the packets transmission over the selected paths and ordering them according to hops count. The shortest path is used more frequently than the other ones." (Tashtoush et al., 2014, p. 237)
     \end{quote}
     \item Mathematical properties of Fibonacci numbers relevant to load balancing
     \begin{enumerate}
@@ -117,17 +106,13 @@
     \end{proposition}
     \begin{quote}
         \begin{enumerate}[label=(\arabic*)]
-            \item "Through analysis and simulations, the authors show that this Fibonacci-based load balancing approach 
-                  achieves significant gains in packet delivery compared to standard single-path routing
-            \item as well as other multi-path schemes (Tashtoush et al., 2014, p. 243-244)."
+            \item "Through analysis and simulations, the authors show that this Fibonacci-based load balancing approach achieves significant gains in packet delivery compared to standard single-path routing as well as other multi-path schemes (Tashtoush et al., 2014, p. 243-244)."
         \end{enumerate}
     \end{quote}
     \begin{quote}
         \begin{enumerate}[label=(\arabic*)]
             \item "Therefore, in an example with 5 paths, the ratios of the packets allocated is roughly:
-            \item F5 : F4 : F3 : F2 : F1 = 5/12 : 3/12 : 2/12 : 1/12 : 1/12
-            \item $\approx$ 0.416 : 0.25 : 0.166 : 0.083 : 0.083
-            \item $\approx$ 1.618 : 1 : 0.618 : 0.382 : 0.382
+            \item F5 : F4 : F3 : F2 : F1 = 5/12 : 3/12 : 2/12 : 1/12 : 1/12 ≈ 0.416 : 0.25 : 0.166 : 0.083 : 0.083 ≈ 1.618 : 1 : 0.618 : 0.382 : 0.382
             \item (Derived from the Fibonacci weights used in Tashtoush et al., 2014, p. 240)."
         \end{enumerate}
     \end{quote}
@@ -145,9 +130,7 @@
         \begin{enumerate}[label=(\arabic*)]
             \item "With more paths, the ratio of packets allocated to successive paths approaches the golden ratio.
             \item For instance, with 10 paths, the load allocation fractions are:
-            \item F10 : F9 : F8 : F7 : F6 : F5 : F4 : F3 : F2 : F1
-            \item = 55/143 : 34/143 : 21/143 : 13/143 : 8/143 : 5/143 : 3/143 : 2/143 : 1/143 : 1/143
-            \item $\approx$ 0.385 : 0.238 : 0.147 : 0.091 : 0.056 : 0.035 : 0.021 : 0.014 : 0.007 : 0.007
+            \item F10 : F9 : F8 : F7 : F6 : F5 : F4 : F3 : F2 : F1 = 55/143 : 34/143 : 21/143 : 13/143 : 8/143 : 5/143 : 3/143 : 2/143 : 1/143 : 1/143 ≈ 0.385 : 0.238 : 0.147 : 0.091 : 0.056 : 0.035 : 0.021 : 0.014 : 0.007 : 0.007
             \item (Derived from the Fibonacci weights used in Tashtoush et al., 2014, p. 240)."
         \end{enumerate}
     \end{quote}
