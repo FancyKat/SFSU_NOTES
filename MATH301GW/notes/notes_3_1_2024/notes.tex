@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\title{Math 301 Notes}
+\date{31/1/24}
+\maketitle
+
+\section*{Sum}
+Let $(x_j)_{j=1}^{\infty}$ be a sequence of integers. For each $k \in \mathbb{N}$, we want to define a number called $\sum_{j=1}^{k} x_j$:
+\begin{enumerate}
+  \item Define $\sum_{j=1}^{1} x_j$ to be $x_1$.
+  \item Assuming $\sum_{j=1}^{k} x_j$ already defined, we define $\sum_{j=1}^{k+1} x_j$ to be $\left(\sum_{j=1}^{k} x_j\right) + x_{k+1}$.
+\end{enumerate}
+
+\section*{Product}
+Similarly, we define an integer called $\prod_{j=1}^{k} x_j$:
+\begin{enumerate}
+  \item Define $\prod_{j=1}^{1} x_j$ to be $x_1$.
+  \item Assuming $\prod_{j=1}^{k} x_j$ already defined, we also find $\prod_{j=1}^{k+1} x_j$ to be $\left(\prod_{j=1}^{k} x_j\right) \cdot x_{k+1}$.
+\end{enumerate}
+
+\section*{Factorial}
+As a third example, we define $k!$ ("$k$ factorial") for all integers $k \geq 0$ by:
+\begin{enumerate}
+  \item Define $0!$ to be $1$.
+  \item Assuming $n!$ defined (where $n \in \mathbb{Z}_{\geq 0}$), define $(n+1)!$ to be $(n!) \cdot (n+1)$.
+\end{enumerate}
+
+\section*{Power}
+Let $b$ be a fixed integer. We define $b^k$ for all integers $k \geq 0$ by:
+\begin{enumerate}
+  \item Define $b^0$ to be $1$.
+  \item Assuming $b^n$ defined, let $b^{n+1}$ be $b^n \cdot b$.
+\end{enumerate}
+
+\section*{Proposition 4.13 for $x \neq 1$ and $k \in \mathbb{Z}_{\geq 0}$}
+\[
+\sum_{j=0}^{k} x^j = \frac{1 - x^{k+1}}{1 - x} \quad \text{if} \quad |x| < 1
+\]
+\[
+\lim_{k \to \infty} \sum_{j=0}^{k} x^j = \frac{1}{1 - x} \quad \text{if} \quad |x| < 1
+\]
+\textit{Geometric series}
+
+\subsection*{Proof}
+\textbf{Assume $x \neq 1$, $k \in \mathbb{Z}_{\geq 0}$}
+
+\subsubsection*{Base Case: $k = 0$}
+\[
+\sum_{j=0}^{0} x^j = x^0 = 1
+\]
+\[
+\text{when} \quad j=0, \quad x^j = 1
+\]
+\[
+\frac{1 - x^{0+1}}{1 - x} = \frac{1 - x}{1 - x} = 1
+\]
+
+\subsubsection*{For Induction Step: (Always If-Then Statement)}
+\textbf{Assume Case $k$}
+\[
+\sum_{j=0}^{k} x^j = \frac{1 - x^{k+1}}{1 - x}
+\]
+\textbf{Show Case $k+1$}
+\[
+\sum_{j=0}^{k+1} x^j = \frac{1 - x^{k+2}}{1 - x}
+\]
+\textbf{Proof:}
+\[
+\begin{aligned}
+\sum_{j=0}^{k+1} x^j &= \left( \sum_{j=0}^{k} x^j \right) + x^{k+1} \\
+&= \frac{1 - x^{k+1}}{1 - x} + x^{k+1} \\
+&= \frac{1 - x^{k+1} + (1 - x) x^{k+1}}{1 - x} \\
+&= \frac{1 - x^{k+1} + x^{k+1} - x^{k+2}}{1 - x} \\
+&= \frac{1 - x^{k+2}}{1 - x}
+\end{aligned}
+\]
+\end{document}

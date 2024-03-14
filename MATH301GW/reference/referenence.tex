@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiom}[section] % Define a new theorem for axioms
+
+% Define a new proposition environment with a custom numbering
+\newenvironment{customprop}[1]{
+  \renewcommand\theproposition{#1}
+  \proposition
+}{\endproposition}
+
+% Similarly, define a new axiom environment with a custom numbering
+\newenvironment{customaxiom}[1]{
+  \renewcommand\theaxiom{#1}
+  \axiom
+}{\endaxiom}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{Reference Sheet}
+\fancyhead[R]{\today}
+\setlength{\headheight}{41.54604pt}
+\addtolength{\topmargin}{-27.04604pt}
+
+
+\begin{customaxiom}{1.1}
+  If \( m, n, \) and \( p \) are integers, then
+  \begin{enumerate}
+    \item[(i)] \( m + n = n + m \). \hfill (commutativity of addition)
+    \item[(ii)] \( (m + n) + p = m + (n + p) \). \hfill (associativity of addition)
+    \item[(iii)] \( m \cdot (n + p) = m \cdot n + m \cdot p \). \hfill (distributivity)
+    \item[(iv)] \( m \cdot n = n \cdot m \). \hfill (commutativity of multiplication)
+    \item[(v)] \( (m \cdot n) \cdot p = m \cdot (n \cdot p) \). \hfill (associativity of multiplication)
+  \end{enumerate}
+\end{customaxiom}
+
+\begin{customaxiom}{1.2}
+  There exists an integer \( 0 \) such that whenever \( m \in \mathbb{Z}, m + 0 = m \). \hfill (identity element for addition)
+\end{customaxiom}
+
+\begin{customaxiom}{1.3}
+  There exists an integer \( 1 \) such that \( 1 \neq 0 \) and whenever \( m \in \mathbb{Z}, 1 \cdot m = m \). \hfill (identity element for multiplication)
+\end{customaxiom}
+
+\begin{customaxiom}{1.4}
+  For each \( m \in \mathbb{Z}, \) there exists an integer, denoted by \( -m \), such that \( m + (-m) = 0 \). \hfill (additive inverse)
+\end{customaxiom}
+
+\begin{customaxiom}{1.5}
+  Let \( m, n, \) and \( p \) be integers. If \( m \cdot n = m \cdot p \) and \( m \neq 0 \), then \( n = p \). \hfill (cancellation)
+\end{customaxiom}
+
+\begin{customaxiom}{2.1}
+  There exists a subset \( \mathbb{N} \subseteq \mathbb{Z} \) with the following properties:
+  \begin{enumerate}
+    \item[(i)] If \( m, n \in \mathbb{N} \) then \( m + n \in \mathbb{N} \).
+    \item[(ii)] If \( m, n \in \mathbb{N} \) then \( m \cdot n \in \mathbb{N} \).
+    \item[(iii)] \( 0 \notin \mathbb{N} \).
+    \item[(iv)] For every \( m \in \mathbb{Z}, \) we have \( m \in \mathbb{N} \) or \( m = 0 \) or \( -m \in \mathbb{N} \).
+  \end{enumerate}
+\end{customaxiom}
+
+\begin{customaxiom}{2.15 (Induction Axiom)}
+  If a subset \( A \subseteq \mathbb{Z} \) satisfies
+  \begin{enumerate}
+    \item[(i)] \( 1 \in A \) and
+    \item[(ii)] if \( n \in A \) then \( n + 1 \in A \),
+  \end{enumerate}
+  then \( \mathbb{N} \subseteq A \).
+\end{customaxiom}
+
+
+\begin{customprop}{1.18}
+  Let $x \in \mathbb{Z}$. If $x$ has the property that for all $m \in \mathbb{Z}$, $mx = m$, then $x = 1$.
+\end{customprop}
+
+\begin{customprop}{1.19}
+  Let $x \in \mathbb{Z}$. If $x$ has the property that for some nonzero $m \in \mathbb{Z}$, $mx = m$, then $x = 1$.
+\end{customprop}
+
+\begin{customprop}{1.20}
+  For all $m, n \in \mathbb{Z}$, $(-m)(-n) = mn$.
+\end{customprop}
+
+\begin{customprop}{1.21}
+  $(-1)(-1) = 1$.
+\end{customprop}
+
+\begin{customprop}{1.22}
+  \item[(i)] For all $m \in \mathbb{Z}$, $-(-m) = m$.
+  \item[(ii)] $-0 = 0$.
+\end{customprop}
+
+\begin{customprop}{1.23}
+  Given $m, n \in \mathbb{Z}$ there exists one and only one $x \in \mathbb{Z}$ such that $m + x = n$.
+\end{customprop}
+
+\begin{customprop}{1.24}
+  Let $x \in \mathbb{Z}$. If $x \cdot x = x$ then $x = 0$ or $1$.
+\end{customprop}
+
+\begin{customprop}{1.25}
+  For all $m, n \in \mathbb{Z}$:
+  \item[(i)] $-(m + n) = (-m) + (-n)$.
+  \item[(ii)] $-m = (-1)m$.
+  \item[(iii)] $(-m)n = m(-n) = -(mn)$.
+\end{customprop}
+
+\begin{customprop}{1.26}
+  Let $m, n \in \mathbb{Z}$. If $mn = 0$, then $m = 0$ or $n = 0$.
+\end{customprop}
+
+\begin{customprop}{1.27}
+  For all $m, n, p, q \in \mathbb{Z}$:
+  \item[(i)] $(m - n) + (p - q) = (m + p) - (n + q)$.
+  \item[(ii)] $(m - n) - (p - q) = (m + q) - (n + p)$.
+  \item[(iii)] $(m - n)(p - q) = (mp + nq) - (mq + np)$.
+  \item[(iv)] $m = n = p = q$ if and only if $m + q = n + p$.
+  \item[(v)] $(m - n)p = mp - np$.
+\end{customprop}
+
+
+\begin{customprop}{2.2}
+  \item For \( m \in \mathbb{Z} \), one and only one of the following is true: \( m \in \mathbb{N} \), \( -m \in \mathbb{N} \), \( m = 0 \).
+\end{customprop}
+
+\begin{customprop}{2.3}
+  \( 1 \in \mathbb{N} \).
+\end{customprop}
+
+\begin{customprop}{2.4}
+  Let \( m, n, p \in \mathbb{Z} \). If \( m < n \) and \( n < p \) then \( m < p \).
+\end{customprop}
+
+\begin{customprop}{2.5}
+  For each \( n \in \mathbb{N} \) there exists \( m \in \mathbb{N} \) such that \( m > n \).
+\end{customprop}
+
+\begin{customprop}{2.6}
+  Let \( m, n \in \mathbb{Z} \). If \( m \leq n \) and \( n \leq m \) then \( m = n \).
+\end{customprop}
+
+\begin{customprop}{2.7}
+  Let \( m, n, p, q \in \mathbb{Z} \).
+  \item[(i)] If \( m < n \) then \( m + p < n + p \).
+  \item[(ii)] If \( m < n \) and \( p < q \) then \( m + p < n + q \).
+  \item[(iii)] If \( 0 < m \) and \( 0 < p \) then \( mp < mq \).
+  \item[(iv)] If \( m < n \) and \( p < 0 \) then \( np < mp \).
+\end{customprop}
+
+\begin{customprop}{2.8}
+  Let \( m, n \in \mathbb{Z} \). Exactly one of the following is true: \( m < n \), \( m = n \), \( m > n \).
+\end{customprop}
+
+\begin{customprop}{2.9}
+  Let \( m \in \mathbb{Z} \). If \( m \neq 0 \) then \( m^2 \in \mathbb{N} \).
+\end{customprop}
+
+\begin{customprop}{2.10}
+  The equation \( x^2 = -1 \) has no solution in \( \mathbb{Z} \).
+\end{customprop}
+
+\begin{customprop}{2.11}
+  Let \( m \in \mathbb{N} \) and \( n \in \mathbb{Z} \). If \( mn \in \mathbb{N} \), then \( n \in \mathbb{N} \).
+\end{customprop}
+
+\begin{customprop}{2.12}
+  For all \( m, n, p \in \mathbb{Z} \):
+  \item[(i)] \( -m < -n \) if and only if \( m > n \).
+  \item[(ii)] If \( p > 0 \) and \( mp < np \) then \( m < n \).
+  \item[(iii)] If \( p < 0 \) and \( mp < np \) then \( m > n \).
+  \item[(iv)] If \( m \leq n \) and \( 0 < p \) then \( mp \leq np \).
+\end{customprop}
+
+\begin{customprop}{2.13}
+  \( \mathbb{N} = \{ n \in \mathbb{Z} : n > 0 \} \).
+\end{customprop}
+
+\begin{customprop}{2.14}
+  \item[(i)] \( 1 \in \mathbb{N} \).
+  \item[(ii)] If \( n \in \mathbb{N} \) then \( n + 1 \in \mathbb{N} \).
+\end{customprop}
+
+\begin{customprop}{2.16}
+  Let \( B \subseteq \mathbb{N} \) be such that:
+  \item[(i)] \( 1 \in B \)
+  \item[(ii)] If \( n \in B \) then \( n + 1 \in B \).
+  Then \( B = \mathbb{N} \).
+\end{customprop}
+
+
+\begin{customprop}{2.18}
+  \item[(i)] For all \( k \in \mathbb{N} \), \( k^3 + 2k \) is divisible by 3.
+  \item[(ii)] For all \( k \in \mathbb{N} \), \( k^4 - 6k^3 + 11k^2 - 6k \) is divisible by 4.
+  \item[(iii)]m For all \( k \in \mathbb{N} \), \( k^3 + 5k \) is divisible by 6.
+\end{customprop}
+
+
+\begin{customprop}{2.20}
+  For all \( k \in \mathbb{N} \), \( k \geq 1 \).
+\end{customprop}
+
+\begin{customprop}{2.21}
+  There exists no integer \( x \) such that \( 0 < x < 1 \).
+\end{customprop}
+
+\begin{customprop}{2.24}
+  For all \( k \in \mathbb{N} \), \( k^2 + 1 > k \).
+\end{customprop}
+
+\begin{customprop}{2.27}
+  For all integers \( k > 2 \), \( 2^k < k^3 \).
+\end{customprop}
+
+\begin{customprop}{2.28}
+  Determine for which natural numbers \( k^2 - 3k \geq 4 \) and prove your answer.
+\end{customprop}
+
+
+\end{document}

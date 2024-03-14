@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{proposition}{Proposition}[section]
+
+% Define a new proposition environment with a custom numbering
+\newenvironment{customprop}[1]{
+  \renewcommand\theproposition{#1}
+  \proposition
+}{\endproposition}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{{MATH 301GW} \\ Professor Matthias Beck}
+\fancyhead[R]{Marty Martin \\ pmartin@sfsu.edu \\ \today}
+\setlength{\headheight}{41.54604pt}
+\addtolength{\topmargin}{-27.04604pt}
+
+
+
+\begin{customprop}{2.18}
+  (ii) For all \( k \in \mathbb{N} \), \( k^4 - 6k^3 + 11k^2 - 6k \) is divisible by 4.
+\end{customprop}
+
+\begin{proof}
+  \textbf{Base Case:} For \(k = 1\), we have:
+  \[1^4 - 6 \cdot 1^3 + 11 \cdot 1^2 - 6 \cdot 1 = 0\]
+  Since 0 is divisible by 4, the base case holds. \\
+  
+  \noindent \textbf{Inductive Step:} We need to show that if the statement holds for \(k = n\), then it must hold for \(k = n + 1\). Consider:
+  \begin{align*}
+    \centering
+     & (n + 1)^4 - 6(n + 1)^3 + 11(n + 1)^2 - 6(n + 1)                                 \\
+     & n^4 + 4n^3 + 6n^2 + 4n + 1 - 6(n^3 + 3n^2 + 3n + 1) + 11(n^2 + 2n + 1) - 6n - 6 \\
+     & (n^4 - 6n^3 + 11n^2 - 6n) + 4(n^3 + 6n^2 + 9n + 1).
+  \end{align*}
+  The equation \(4(n^3 + 6n^2 + 9n + 1)\) is divisible by 4. \\
+
+  \noindent Thus the equation \( k^4 - 6k^3 + 11k^2 - 6k \) is divisible by 4 \
+\end{proof}
+
+
+\begin{customprop}{2.18}
+  (iii) For all \( k \in \mathbb{N} \), \( k^3 + 5k \) is divisible by 6.
+\end{customprop}
+
+\begin{proof}
+  \textbf{Base Case:} For \(k = 1\):
+  \[1^3 + 5 \times 1 = 6\]
+  which is divisible by 6. \\
+  
+  \noindent \textbf{Inductive Step:} Assume the statement holds for \(k = n\), meaning \(n^3 + 5n\) is divisible by 6. For \(k = n + 1\), we have:
+  \begin{align*}
+  (n + 1)^3 + 5(n + 1) &= n^3 + 3n^2 + 3n + 1 + 5n + 5 \\
+  &= (n^3 + 5n) + 3n^2 + 3n + 6. 
+  \end{align*}
+  By the inductive step, \(n^3 + 5n\) is divisible by 6. Since \(3n^2 + 3n + 6\) is also divisible by 6, the statement is true for \(n + 1\).
+\end{proof}
+
+
+\begin{customprop}{2.21}
+  There exists no integer \( x \) such that \( 0 < x < 1 \).
+\end{customprop}
+
+\begin{proof}
+  Assume for contradiction there exists an integer \( x \) such that \[ 0 < x < 1 \] \\
+  From Proposition 2.2, since \( x \) is not 0, \( x \) must be in \( \mathbb{N} \) or \( -x \) is in \( \mathbb{N} \). \\
+  If \( x \in \mathbb{N} \), then by Proposition 2.20, \( x \geq 1 \), which contradicts \( x < 1 \). \\
+  If \( -x \in \mathbb{N} \), then \( x \) must be negative, which contradicts \( x > 0 \). \\
+  Hence, no such \( x \) exists.
+\end{proof}
+
+
+\begin{customprop}{2.24}
+  For all \( k \in \mathbb{N} \), \( k^2 + 1 > k \).
+\end{customprop}
+
+\begin{proof}  
+  \textbf{Base Case (k = 1):}
+  For \( k = 1 \), the inequality becomes:
+  \[
+  1^2 + 1 = 2 > 1,
+  \]
+  which is clearly true. \\
+
+  
+  \textbf{Inductive Step:}
+  We need to show that the inequality holds for \( k = k + 1 \):
+  \[
+  (k + 1)^2 + 1 > k + 1.
+  \]
+  Expanding the left-hand side gives us:
+  \[
+  k^2 + 2k + 1 + 1 > k + 1.
+  \]
+  Simplifying the inequality, we get:
+  \[
+  k^2 + 2k + 2 > k + 1.
+  \]
+  Since by the inductive hypothesis we know \( k^2 + 1 > k \), and clearly \( 2k + 1 > 1 \) for \( n \geq 1 \), it follows that:
+  \[
+  k^2 + 2k + 2 > k + 1.
+  \]
+  Hence, the inequality \( (k + 1)^2 + 1 > k + 1 \) is true, which completes the inductive step. \\
+  Therefore, by induction, the inequality \( k^2 + 1 > k \) holds for all natural numbers \( k \).
+  \end{proof}
+  
+
+\begin{customprop}{2.27}
+  For all integers \( k > 2 \), \( 2^k < k^3 \).
+\end{customprop}
+
+\begin{proof}  
+  \textbf{Base Case (k = 3):}
+  \[
+  2^3 = 8 < 27 = 3^3,
+  \]
+  which holds true.\\
+  
+  \noindent  
+  \textbf{Inductive Step (Prove for k = n + 1):}
+  \[
+  2^{n+1} = 2 \cdot 2^n < 2 \cdot n^3,
+  \]
+  since \( 2^n < n^3 \) by the inductive step and \( n > 2 \) implies \( 2 < n^2 \) \\
+  so \( 2 \cdot n^3 < n^2 \cdot n^3 = n^5 \) \\
+  \( 2 \cdot n^3 < (n+1)^3 \). Since \( n > 2 \), we have:
+  \[
+  (n+1)^3 - 2 \cdot n^3 = n^3 + 3n^2 + 3n + 1 - 2n^3 = n^3 - 3n^2 + 3n + 1,
+  \]
+  and since \( n > 2 \), \( n^2 - 3n = n(n - 3) \geq 0 \), which implies that \( n^3 - 3n^2 + 3n + 1 > 0 \), thus \( 2 \cdot n^3 < (n+1)^3 \). \\
+  Therefore, by induction, \( 2^k < k^3 \) for all integers \( k > 2 \).
+  \end{proof}
+
+
+\begin{customprop}{2.28}
+  Determine for which natural numbers \( k^2 - 3k \geq 4 \) and prove your answer.
+\end{customprop}
+
+\begin{proof}
+  We need to solve the inequality \( k^2 - 3k \geq 4 \) for natural numbers \( k \).
+  
+  First, we rearrange the inequality as follows:
+  \[
+  k^2 - 3k - 4 \geq 0
+  \]
+  
+  Factoring the quadratic expression, we get:
+  \[
+  (k - 4)(k + 1) \geq 0
+  \]
+  
+  This product is non-negative if both factors are non-negative or non-positive. Since \( k \) is a natural number, \( k + 1 > 0 \). Therefore, we only need to consider when \( k - 4 \geq 0 \), which simplifies to \( k \geq 4 \).
+  
+  Thus, for all natural numbers \( k \geq 4 \), the inequality \( k^2 - 3k \geq 4 \) holds true.
+  \end{proof}
+  
+
+\end{document}

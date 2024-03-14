@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{proposition}{Proposition}[section]
+
+% Define a new proposition environment with a custom numbering
+\newenvironment{customprop}[1]{
+  \renewcommand\theproposition{#1}
+  \proposition
+}{\endproposition}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{{MATH 301GW} \\ Professor Matthias Beck}
+\fancyhead[R]{Marty Martin \\ pmartin@sfsu.edu \\ \today}
+\setlength{\headheight}{41.54604pt}
+\addtolength{\topmargin}{-27.04604pt}
+
+\section*{Homework 5}
+
+\subsection*{User
+Project 3.7. Negate the following statements.}
+
+\begin{enumerate}
+  \item[(i)] There exists a cubic polynomial that does not have a real root.
+  \item[(ii)] G is not normal or H is not regular.
+  \item[(iii)] There does not exist exactly one element 0 such that for all \( x \), \( x + 0 = x \).
+  \item[(iv)] The newspaper article was accurate or it was entertaining.
+  \item[(v)] There exist \( m \) and \( n \) such that gcd(\( m \), \( n \)) is odd and both \( m \) and \( n \) are even.
+  \item[(vi)] H/N is a normal subgroup of G/N and H is not a normal subgroup of G, or H/N is not a normal subgroup of G/N and H is a normal subgroup of G.
+  \item[(vii)] There exists some \( \varepsilon > 0 \) for which, for every \( N \in \mathbb{N} \), there is some \( n \geq N \) such that \( |a_n − L| \geq \varepsilon \).
+\end{enumerate}
+
+\subsection*{Negation of Statements}
+
+
+\begin{enumerate}
+  \item[(i)] All cubic polynomials have at least one real root.
+  \item[(ii)] G is normal and H is regular.
+  \item[(iii)] There exists exactly one element 0 such that for all \(x\), \(x + 0 = x\).
+  \item[(iv)] The newspaper article was neither accurate and entertaining.
+  \item[(v)] For all \(m\) and \(n\), if gcd(\(m\), \(n\)) is odd, then \(m\) or \(n\) is odd.
+  \item[(vi)] H/N is a normal subgroup of G/N if and only if H is a normal subgroup of G.
+  \item[(vii)] For each \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\), \(|a_n − L| < \varepsilon\).
+\end{enumerate}
+
+
+\begin{enumerate}
+    \item \textbf{Not} every cubic polynomial has a real root. (There exists at least one cubic polynomial that does \textbf{not} have a real root.)
+    
+    \item \( G \) is \textbf{not} normal \textbf{or} \( H \) is \textbf{not} regular.
+    
+    \item There does \textbf{not} exist exactly one zero such that for all \( x \), \( x + 0 = x \). (Either no such zero exists, \textbf{or} there exists more than one such zero.)
+    
+    \item The newspaper article was accurate \textbf{or} entertaining. (It was either accurate, entertaining, or both.)
+    
+    \item There exist \( m \) and \( n \) such that gcd(\( m, n \)) is odd, and \textbf{neither} \( m \) \textbf{nor} \( n \) is odd.
+    
+    \item \( H/N \) is a normal subgroup of \( G/N \) and \( H \) is \textbf{not} a normal subgroup of \( G \), \textbf{or} \( H/N \) is \textbf{not} a normal subgroup of \( G/N \) and \( H \) is a normal subgroup of \( G \).
+    
+    \item There exists some \( \varepsilon > 0 \) such that for every \( N \in \mathbb{N} \), there exists some \( n \geq N \) such that \( |a_n - L| \geq \varepsilon \).
+\end{enumerate}
+
+
+
+\subsection*{Proposition 4.7}
+\begin{enumerate}
+    \item[(i)] \textbf{\( 5^{2k} - 1 \) is divisible by 24}
+\end{enumerate}
+
+\noindent \textbf{Base Case:}
+
+Let's check the base case where \( k = 1 \):
+
+\[ 5^{2 \cdot 1} - 1 = 25 - 1 = 24 \]
+
+Since 24 is divisible by 24, the base case holds. \\
+
+\noindent \textbf{Inductive Step:}
+
+\noindent Suppose for some \( k \in \mathbb{N} \), the statement is true; that is, \( 5^{2k} - 1 \) is divisible by 24. We need to show that \( 5^{2(k+1)} - 1 \) is also divisible by 24. \\
+
+\noindent Consider \( 5^{2(k+1)} - 1 \):
+
+\begin{align*}
+5^{2(k+1)} - 1 &= 5^{2k+2} - 1 \\
+&= 5^{2k} \cdot 5^2 - 1 \\
+&= 5^{2k} \cdot 25 - 1 \\
+&= (5^{2k} - 1) + 24 \cdot 5^{2k} \\
+\end{align*}
+
+\noindent \textbf{Thus} Since by the inductive hypothesis \( 5^{2k} - 1 \) is divisible by 24, and \( 24 \cdot 5^{2k} \) is divisible by 24, their sum \( 5^{2(k+1)} - 1 \) is also divisible by 24.
+
+\subsection*{Proof of Proposition 4.7(ii)}
+
+We want to prove that for all \( k \in \mathbb{N} \), \( 2^{2k+1} + 1 \) is divisible by 3. We will proceed by induction on \( k \).
+
+\subsection*{Base Case (\(k=1\)):}
+Let's start by checking the base case where \( k = 1 \):
+\[ 2^{2\cdot1+1} + 1 = 2^3 + 1 = 8 + 1 = 9 \]
+Since 9 is divisible by 3, the base case holds.
+
+\subsection*{Inductive Step:}
+Assume that the statement holds for some \( k \in \mathbb{N} \), that is \( 2^{2k+1} + 1 \) is divisible by 3. We need to show that \( 2^{2(k+1)+1} + 1 \) is also divisible by 3.
+
+Consider \( 2^{2(k+1)+1} + 1 \):
+\begin{align*}
+2^{2(k+1)+1} + 1 &= 2^{2k+2+1} + 1 \\
+                 &= 2^{2k+1} \cdot 2^2 + 1 \\
+                 &= 2^{2k+1} \cdot 4 + 1 \\
+                 &= (2^{2k+1} + 1) + 2^{2k+1} \cdot 3
+\end{align*}
+By the inductive hypothesis, \( 2^{2k+1} + 1 \) is divisible by 3, and since \( 2^{2k+1} \cdot 3 \) is clearly divisible by 3, their sum \( 2^{2(k+1)+1} + 1 \) is also divisible by 3.
+
+\subsection*{Conclusion:}
+By the principle of mathematical induction, the statement that \( 2^{2k+1} + 1 \) is divisible by 3 holds for all \( k \in \mathbb{N} \).
+
+\subsection*{Proof of Proposition 4.7(iii)}
+
+We aim to show that for all \( k \in \mathbb{N} \), the expression \( 10^k + 3\cdot4^{k+2} + 5 \) is divisible by 9. We will use the method of mathematical induction.
+
+\subsection*{Base Case (\(k=1\)):}
+First, we verify the base case where \( k = 1 \):
+\[ 10^1 + 3\cdot4^{1+2} + 5 = 10 + 3\cdot4^3 + 5 = 10 + 3\cdot64 + 5 = 10 + 192 + 5 = 207 \]
+Since 207 is divisible by 9 ( \( 207 = 23 \cdot 9 \) ), the base case is satisfied.
+
+\subsection*{Inductive Step:}
+Assume for the sake of induction that the statement is true for some \( k \in \mathbb{N} \), i.e., \( 10^k + 3\cdot4^{k+2} + 5 \) is divisible by 9. We need to show that \( 10^{k+1} + 3\cdot4^{(k+1)+2} + 5 \) is also divisible by 9.
+
+Consider \( 10^{k+1} + 3\cdot4^{(k+1)+2} + 5 \):
+\begin{align*}
+10^{k+1} + 3\cdot4^{(k+1)+2} + 5 &= 10\cdot10^k + 3\cdot16\cdot4^{k+2} + 5 \\
+                                 &= 10\cdot(10^k + 3\cdot4^{k+2} + 5) - 5\cdot(10 - 1) \\
+                                 &= 10\cdot(10^k + 3\cdot4^{k+2} + 5) - 45
+\end{align*}
+By the inductive hypothesis, \( 10^k + 3\cdot4^{k+2} + 5 \) is divisible by 9, and 45 is obviously divisible by 9. Hence, since we are subtracting a multiple of 9 from a number that is a multiple of 9 when multiplied by 10, \( 10^{k+1} + 3\cdot4^{(k+1)+2} + 5 \) must also be divisible by 9.
+
+\subsection*{Conclusion:}
+Therefore, by the principle of mathematical induction, it follows that \( 10^k + 3\cdot4^{k+2} + 5 \) is divisible by 9 for all \( k \in \mathbb{N} \).
+
+
+\subsection*{Project 4.9}
+
+We wish to determine for which natural numbers \( k \) the inequality \( k^2 < 2^k \) holds true. We will analyze the inequality for different values of \( k \) to establish a pattern.
+
+\subsection*{Analysis:}
+\begin{itemize}
+  \item For \( k = 1 \): \( 1^2 = 1 < 2 = 2^1 \), so the inequality holds.
+  \item For \( k = 2 \): \( 2^2 = 4 = 2^2 \), the inequality does not hold as both sides are equal.
+  \item For \( k = 3 \): \( 3^2 = 9 < 8 = 2^3 \), the inequality does not hold.
+  \item For \( k = 4 \): \( 4^2 = 16 < 16 = 2^4 \), the inequality does not hold as both sides are equal.
+\end{itemize}
+
+To find the values of \( k \) for which the inequality \( k^2 < 2^k \) strictly holds, we can use mathematical induction or direct observation for higher values of \( k \). It is well known that exponential functions grow faster than polynomial functions, which implies that after a certain point, \( 2^k \) will always be greater than \( k^2 \).
+
+By testing various values (which we can do by direct calculation or programming), we find that the inequality \( k^2 < 2^k \) holds for \( k = 1 \) and for all \( k \geq 5 \).
+
+\subsection*{Conclusion:}
+The natural numbers \( k \) for which the inequality \( k^2 < 2^k \) holds are \( k = 1 \) and all \( k \geq 5 \).
+
+
+\subsection*{Proof of Proposition 4.11(i)}
+
+We want to prove that for any \( k \in \mathbb{N} \), the following equality holds:
+\[ \sum_{j=1}^{k} j = \frac{k(k+1)}{2} \]
+We will proceed by induction on \( k \).
+
+\subsubsection*{Base Case (\(k=1\)):}
+For \( k = 1 \), the sum on the left is simply 1, and the right-hand side is \(\frac{1(1+1)}{2} = 1\), so the base case holds.
+
+\subsubsection*{Inductive Step:}
+Suppose the statement is true for some \( k \), i.e.,
+\[ \sum_{j=1}^{k} j = \frac{k(k+1)}{2} \]
+We need to show that the statement holds for \( k+1 \), i.e.,
+\[ \sum_{j=1}^{k+1} j = \frac{(k+1)(k+2)}{2} \]
+Starting with the left-hand side,
+\begin{align*}
+\sum_{j=1}^{k+1} j &= \sum_{j=1}^{k} j + (k+1) \\
+                   &= \frac{k(k+1)}{2} + (k+1) \quad \text{(by the inductive hypothesis)}\\
+                   &= \frac{k(k+1) + 2(k+1)}{2} \\
+                   &= \frac{(k+1)(k+2)}{2}
+\end{align*}
+Thus, the statement holds for \( k+1 \).
+
+\subsubsection*{Conclusion:}
+By the principle of mathematical induction, the formula for the sum of the first \( k \) natural numbers is proved for all \( k \in \mathbb{N} \).
+
+\subsection*{Proof of Proposition 4.11(ii)}
+
+We aim to prove that for any \( k \in \mathbb{N} \), the following equality is true:
+\[ \sum_{j=1}^{k} j^2 = \frac{k(k+1)(2k+1)}{6} \]
+Again, we apply the method of induction on \( k \).
+
+\subsubsection*{Base Case (\(k=1\)):}
+For \( k = 1 \), the sum of squares on the left is \( 1^2 = 1 \), and the right-hand side is \( \frac{1(1+1)(2\cdot1+1)}{6} = 1 \), so the base case holds.
+
+\subsubsection*{Inductive Step:}
+Assume the formula holds for some \( k \), i.e.,
+\[ \sum_{j=1}^{k} j^2 = \frac{k(k+1)(2k+1)}{6} \]
+We need to prove it for \( k+1 \), i.e.,
+\[ \sum_{j=1}^{k+1} j^2 = \frac{(k+1)(k+2)(2(k+1)+1)}{6} \]
+Starting with the left-hand side,
+\begin{align*}
+\sum_{j=1}^{k+1} j^2 &= \sum_{j=1}^{k} j^2 + (k+1)^2 \\
+                     &= \frac{k(k+1)(2k+1)}{6} + (k+1)^2 \quad \text{(by the inductive hypothesis)}\\
+                     &= \frac{k(k+1)(2k+1) + 6(k+1)^2}{6} \\
+                     &= \frac{(k+1)(k(2k+1) + 6(k+1))}{6} \\
+                     &= \frac{(k+1)(2k^2 + 7k + 6)}{6} \\
+                     &= \frac{(k+1)(k+2)(2k+3)}{6}
+\end{align*}
+Thus, the statement holds for \( k+1 \).
+
+\subsubsection*{Conclusion:}
+By the principle of mathematical induction, the formula for the sum of the squares of the first \( k \) natural numbers is proved for all \( k \in \mathbb{N} \).
+
+
+\end{document}

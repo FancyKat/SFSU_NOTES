@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{proposition}{Proposition}[section]
+
+% Define a new proposition environment with a custom numbering
+\newenvironment{customprop}[1]{
+  \renewcommand\theproposition{#1}
+  \proposition
+}{\endproposition}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{{MATH 301GW} \\ Professor Matthias Beck}
+\fancyhead[R]{Marty Martin \\ pmartin@sfsu.edu \\ \today}
+\setlength{\headheight}{41.54604pt}
+\addtolength{\topmargin}{-27.04604pt}
+
+\begin{customprop}{2.18}
+    This is Proposition 2.18.
+\end{customprop}
+
+\begin{proof}
+    We assume that $a$ and $b$ are type 2 integers and will prove that $a \cdot b$ is a type 1 integer.  Since $a$ and $b$ are type 2 integers, there exist integers $m$ and $n$ such that
+    \[
+      a = 3m + 2 \text{ ~~~~~~and~~~~~ } b = 3n + 2.
+    \]
+    We can now  use substitution and algebra .........
+    \begin{align*}
+      ab  & = (3m + 2)(3n + 2)      \\
+          & = 9mn + 6m + 6n + 4     \\
+          & = 9mn + 6m + 6n + 3 + 1
+    \end{align*}
+\end{proof}
+  
+
+\begin{customprop}{2.21}
+This is Proposition 2.21.
+\end{customprop}
+
+\end{document}

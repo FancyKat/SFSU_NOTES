@@ -1,0 +1,224 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{xcolor}
+
+% Define new theorem-like environments
+\newtheorem{proposition}{Proposition}
+\newtheorem{project}{Project}
+
+% Define a command to set the number for proposition and project
+\newcommand{\setpropnum}[1]{\renewcommand{\theproposition}{#1}}
+\newcommand{\setprojnum}[1]{\renewcommand{\theproject}{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{{MATH 301GW} \\ Professor Matthias Beck}
+\fancyhead[R]{Marty Martin \\ pmartin@sfsu.edu \\ \today}
+\setlength{\headheight}{41.54604pt}
+\addtolength{\topmargin}{-27.04604pt}
+
+\section*{Homework 6}
+
+\setpropnum{4.30}
+\begin{proposition}
+  For all $k, m \in \mathbb{N}$, where $m \geq 2$,
+  \[
+    f_{m+k} = f_{m-1}f_k + f_m f_{k+1}.
+  \]
+\end{proposition}
+
+\begin{proof}
+  \textbf{Base case:} et $k=1$. We want to show that $f_{m+1} = f_{m-1}f_1 + f_m f_{2}$. \\
+  Using the recursive definition of the sequence, $f_2 = f_1 + f_0$, we have:
+  \begin{align*}
+    f_{m-1}f_1 + f_m f_{2} & = f_{m-1}f_1 + f_m (f_1 + f_0)   \\
+                           & = f_{m-1}f_1 + f_m f_1 + f_m f_0 \\
+                           & = (f_{m-1} + f_m)f_1 + f_m f_0   \\
+                           & = f_{m+1}f_1 + f_m f_0           \\
+                           & = f_{m+1}
+  \end{align*}
+
+  Thus, the base case holds.\\
+
+  \noindent \textbf{Inductive step:} Assume the statement holds for some $k \in \mathbb{N}$
+  \[
+    f_{m+k} = f_{m-1}f_k + f_m f_{k+1}
+  \]
+  We want to show that the statement holds for $k+1$
+  \[
+    f_{m+(k+1)} = f_{m-1}f_{k+1} + f_m f_{k+2}
+  \]
+
+  \noindent Using the recursive definition of the sequence, $f_{n+2} = f_{n+1} + f_n$, we have:
+  \begin{align*}
+    f_{m+(k+1)} & = f_{(m+k)+1}                                                \\
+                & = f_{m+k} + f_{(m+k)-1}                                      \\
+                & = (f_{m-1}f_k + f_m f_{k+1}) + (f_{m-2}f_k + f_{m-1}f_{k+1}) \\
+                & = f_{m-1}(f_k + f_{k+1}) + f_m f_{k+1} + f_{m-2}f_k          \\
+                & = f_{m-1}f_{k+2} + f_m f_{k+1} + f_{m-2}f_k                  \\
+                & = f_{m-1}f_{k+1} + (f_{m-1} + f_{m-2})f_k + f_m f_{k+1}      \\
+                & = f_{m-1}f_{k+1} + f_m f_k + f_m f_{k+1}                     \\
+                & = f_{m-1}f_{k+1} + f_m(f_k + f_{k+1})                        \\
+                & = f_{m-1}f_{k+1} + f_m f_{k+2}
+  \end{align*}
+
+  \noindent \textbf{Thus}, the statement holds for $k+1$. The $(m+k)$-th term of the sequence is equal to the product of the $(m-1)$-th term and the $k$-th term, plus the product of the $m$-th term and the $(k+1)$-th term.
+\end{proof}
+
+
+
+
+\setpropnum{4.31}
+\begin{proposition}
+  For all $k \in \mathbb{N}$, $f_{2k+1} = f_k^2 + f_{k+1}^2$.
+\end{proposition}
+
+
+\begin{proof}
+  Let ${f_n}$ be a sequence defined by $f_{n+2} = f_{n+1} + f_n$ for $n \geq 0$, with initial values $f_0$ and $f_1$ \\
+
+  \noindent \textbf{Base case:} Let $k=1$. We want to show that $f_3 = f_1^2 + f_2^2$. Using the recursive definition of the sequence, $f_2 = f_1 + f_0$ and $f_3 = f_2 + f_1$, we have:
+  \begin{align*}
+    f_1^2 + f_2^2 & = f_1^2 + (f_1 + f_0)^2                                            \\
+                  & = f_1^2 + f_1^2 + 2f_1f_0 + f_0^2 &  & \text{Axiom 1.1 (iii).}     \\
+                  & = 2f_1^2 + 2f_1f_0 + f_0^2        &  & \text{Axiom 1.1 (i), (ii)}  \\
+                  & = (f_1 + f_0)(2f_1 + f_0)         &  & \text{Axiom 1.1 (iii)}      \\
+                  & = f_2(f_2 + f_1)                  &  & \text{Recursive Definition} \\
+                  & = f_2f_3                          &  & \text{Axiom 1.1 (iv)}       \\
+                  & = f_3
+  \end{align*}
+
+  Thus, the base case holds. \\
+
+  \noindent \textbf{Inductive step:} Assume the statement holds for some $k \in \mathbb{N}$,
+  \[
+    f_{2k+1} = f_k^2 + f_{k+1}^2
+  \]
+  We want to show that the statement holds for $k+1$,
+  \[
+    f_{2(k+1)+1} = f_{k+1}^2 + f_{k+2}^2
+  \]
+
+  \noindent Using the recursive definition of the sequence and the inductive hypothesis, we have:
+  \begin{align*}
+    f_{2(k+1)+1} & = f_{2k+3} \\
+                 & = \color{blue}{f_{2k+2}} + \color{blue}{f_{2k+1}}                                                                                                             && \text{Recursive definition} \\
+                 & = \color{blue}{(\mathbf{f_{2k+1}} + \mathbf{f_{2k}})} + (\mathbf{f_k^2} + \mathbf{f_{k+1}^2})                                                                 && \text{Inductive hypothesis} \\
+                 & = \color{blue}{\mathbf{f_{2k+1}}} + \color{blue}{\mathbf{f_{2k}}} + \mathbf{f_k^2} + \mathbf{f_{k+1}^2}                                                       && \text{Axiom 1.1 (ii)} \\
+                 & = \mathbf{f_k^2} + \mathbf{f_{k+1}^2} + \color{blue}{\mathbf{f_{2k+1}}} + \color{blue}{\mathbf{f_{2k}}}                                                       && \text{Axiom 1.1 (i)} \\
+                 & = \mathbf{f_k^2} + \mathbf{f_{k+1}^2} + \color{magenta}{(f_{k+1} + f_k)^2}                                                                                    && \text{Recursive definition} \\
+                 & = \mathbf{f_k^2} + \mathbf{f_{k+1}^2} + \color{magenta}{f_{k+1}^2} + \color{magenta}{2f_{k+1}f_k} + \color{magenta}{f_k^2}                                    && \text{Axiom 1.1 (iii)} \\
+                 & = \color{magenta}{\mathbf{f_k^2}} + \color{magenta}{\mathbf{f_k^2}} + \mathbf{f_{k+1}^2} + \color{magenta}{\mathbf{f_{k+1}^2}} + \color{magenta}{2f_{k+1}f_k} && \text{Rearranging terms} \\
+                 & = \color{blue}{2f_k^2} + \color{blue}{2f_{k+1}^2} + \color{magenta}{2f_{k+1}f_k}                                                                              && \text{Combining like terms} \\
+                 & = \color{blue}{(f_k + f_{k+1})^2} + \color{blue}{\mathbf{f_{k+1}^2}}                                                                                          && \text{Axiom 1.1 (iii)} \\
+                 & = \color{magenta}{f_{k+2}^2} + \color{blue}{\mathbf{f_{k+1}^2}}                                                                                               && \text{Recursive definition} \\
+                 & = \color{blue}{\mathbf{f_{k+1}^2}} + \color{magenta}{f_{k+2}^2}                                                                                               && \text{Axiom 1.1 (i)} \\
+  \end{align*}
+
+  \noindent \textbf{Thus,} the statement holds for $k+1$. By the principle of mathematical induction, the statement holds for all $k \in \mathbb{N}$, $f_{2k+1} = f_k^2 + f_{k+1}^2$.
+\end{proof}
+
+
+
+\setprojnum{5.3}
+\begin{project}
+  Define the following sets:
+  \begin{align*}
+    A & = \{3x : x \in \mathbb{N}\},                    \\
+    B & = \{3x+21 : x \in \mathbb{N}\},                 \\
+    C & = \{x+7 : x \in \mathbb{N}\},                   \\
+    D & = \{3x : x \in \mathbb{N} \text{ and } x > 7\}, \\
+    E & = \{x : x \in \mathbb{N}\},                     \\
+    F & = \{3x - 21 : x \in \mathbb{N}\},               \\
+    G & = \{x : x \in \mathbb{N} \text{ and } x > 7\}.
+  \end{align*}
+
+  \noindent Determine which of the following set equalities are true. If a statement is true, prove it. If it is false, explain why this set equality does not hold.
+  \begin{enumerate}
+    \item[(i)] $D = E$.
+    \item[(ii)] $C = G$.
+    \item[(iii)] $D = B$.
+  \end{enumerate}
+\end{project}
+
+\setprojnum{5.3}
+\begin{project}
+Proof:
+
+\begin{enumerate}
+\item[(i)] $D \neq E$ \\
+$D = {3x : x \in \mathbb{N} \text{ and } x > 7}$ and $E = {x : x \in \mathbb{N}}$ \\
+The sets are not equal because $D$ only contains multiples of 3 greater than 21, while $E$ contains all natural numbers. For example, $1 \in E$ but $1 \notin D$.
+
+\item[(ii)] $C = G$ \\
+To prove $C = G$, we need to show that $C \subseteq G$ and $G \subseteq C$.\\
+Let $x \in C$. Then $x = y + 7$ for some $y \in \mathbb{N}$. \\
+Since $y \in \mathbb{N}$, $y \geq 1$ (by Proposition 2.20). \\
+So $x = y + 7 > 7$, and $x \in \mathbb{N}$ (by closure of addition in $\mathbb{N}$, Axiom 2.1(i)). \\
+Thus, $x \in G$. This proves $C \subseteq G$. \\
+
+Now let $x \in G$. Then $x \in \mathbb{N}$ and $x > 7$. \\
+Let $y = x - 7$. Since $x > 7$, $y > 0$ and $y \in \mathbb{N}$ (by Proposition 2.13). \\
+So $x = y + 7$ for some $y \in \mathbb{N}$. Thus, $x \in C$. This proves $G \subseteq C$.\\
+
+Therefore, $C = G$.
+
+\item[(iii)] $D = B$ \\
+To prove $D = B$, we need to show that $D \subseteq B$ and $B \subseteq D$.
+
+Let $x \in D$. Then $x = 3y$ for some $y \in \mathbb{N}$ with $y > 7$. \\
+Since $y > 7$, $y \geq 8$ and $y - 7 \in \mathbb{N}$ (by Proposition 2.13). \\
+Let $z = y - 7$. Then $z \in \mathbb{N}$ and $x = 3y = 3(z + 7) = 3z + 21$. \\
+Thus, $x \in B$. This proves $D \subseteq B$.
+
+Now let $x \in B$. Then $x = 3y + 21$ for some $y \in \mathbb{N}$. \\
+Let $z = y + 7$. Since $y \in \mathbb{N}$, $z > 7$ and $z \in \mathbb{N}$ (by closure of addition in $\mathbb{N}$, Axiom 2.1(i)). \\
+So $x = 3y + 21 = 3(z - 7) + 21 = 3z - 21 + 21 = 3z$ for some $z \in \mathbb{N}$ with $z > 7$. \\
+Thus, $x \in D$. This proves $B \subseteq D$.\\
+
+Therefore, $D = B$.
+\end{enumerate}
+\end{project}
+
+
+
+\setpropnum{5.4}
+\begin{proposition}
+  Let $A, B, C$ be sets.
+  \begin{enumerate}
+    \item[(i)] $A = A$.
+    \item[(ii)] If $A = B$ then $B = A$.
+    \item[(iii)] If $A = B$ and $B = C$ then $A = C$.
+  \end{enumerate}
+\end{proposition}
+
+\setpropnum{5.4}
+\begin{proposition}
+\begin{proof} ~\
+\begin{enumerate}
+\item[(i)] $A = A$ \\
+Let $x \in A$. Then $x \in A$. This proves $A \subseteq A$. \\
+Let $x \in A$. Then $x \in A$. This proves $A \subseteq A$. \\
+Therefore, $A = A$.\\
+
+\item[(ii)] If $A = B$ then $B = A$ \\
+Assume $A = B$. Let $x \in B$. Then $x \in A$ (since $A = B$). This proves $B \subseteq A$. \\
+Let $x \in A$. Then $x \in B$ (since $A = B$). This proves $A \subseteq B$. \\
+Therefore, $B = A$.
+
+\item[(iii)] If $A = B$ and $B = C$ then $A = C$ \\
+Assume $A = B$ and $B = C$. \\
+Let $x \in A$. Then $x \in B$ (since $A = B$). And $x \in C$ (since $B = C$). \\
+This proves $A \subseteq C$. \\
+Let $x \in C$. Then $x \in B$ (since $B = C$). And $x \in A$ (since $A = B$). \\
+This proves $C \subseteq A$. \\
+Therefore, $A = C$.
+\end{enumerate}
+\end{proof}
+\end{proposition}
+
+
+
+\end{document}

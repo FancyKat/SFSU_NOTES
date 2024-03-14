@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+
+\title{The Fibonacci Sequence and Golden Ratio in Network Load Balancing}
+\author{Your Name}
+\date{}
+\maketitle
+
+\section{Introduction}
+\begin{itemize}
+    \item Hook: The surprising application of Fibonacci sequence and golden ratio in network load balancing
+    \item Thesis: The Fibonacci Multipath Load Balancing (FMLB) protocol demonstrates the power and beauty of applying mathematical concepts to practical problems
+    \item Roadmap: Overview of the essay's structure
+\end{itemize}
+
+\section{Background}
+\begin{enumerate}[A.]
+    \item The Fibonacci Sequence
+    \begin{enumerate}
+        \item Definition and first few terms
+        \item Recursive formula
+        \item Relationship to the golden ratio
+    \end{enumerate}
+    \textit{[Add an image illustrating the Fibonacci sequence and its relation to the golden ratio]}
+    \item The Golden Ratio
+    \begin{enumerate}
+        \item Definition and value
+        \item Appearance in nature and art
+    \end{enumerate}
+    \textit{[Add an image showing examples of the golden ratio in nature or art]}
+    \item Mobile Ad Hoc Networks (MANETs)
+    \begin{enumerate}
+        \item Definition and characteristics
+        \item Routing challenges, especially congestion
+    \end{enumerate}
+    \textit{[Add an image depicting a MANET topology]}
+\end{enumerate}
+
+\section{Summary of the Scientific Paper}
+\begin{itemize}
+    \item Problem addressed: Congestion in MANETs
+    \item Proposed solution: Fibonacci Multipath Load Balancing (FMLB) protocol
+    \begin{enumerate}
+        \item Key idea: Distribute load across multiple paths using Fibonacci sequence
+        \begin{quote}
+            \begin{enumerate}[label=(\arabic*)]
+                \item "To improve the packet delivery ratio, the authors propose a novel load balancing scheme called the 
+                      Fibonacci Multipath Load Balancing (FMLB) protocol.
+                \item The key idea is to discover multiple paths between the source and destination nodes and distribute the 
+                      transmitted packets across these paths using the Fibonacci sequence (Tashtoush et al., 2014, p. 239)."
+            \end{enumerate}
+        \end{quote}
+        \item Protocol operation: Discover paths, assign weights, allocate packets
+        \begin{quote}
+            \begin{enumerate}[label=(\arabic*)]
+                \item "Specifically, the available paths are sorted in increasing order of length (number of hops).
+                \item Each path is then assigned a Fibonacci number based on its position in this sorted list - the shortest 
+                      path gets the largest Fibonacci number and so on (Tashtoush et al., 2014, p. 240)."
+            \end{enumerate}
+        \end{quote}
+    \end{enumerate}
+    \textit{[Add an image illustrating the FMLB protocol's operation]}
+    \item Results: Improved packet delivery ratio and reduced delay compared to other protocols
+    \textit{[Add an image showing comparative performance graphs]}
+    \begin{quote}
+        \begin{enumerate}[label=(\arabic*)]
+            \item "The simulation results show that the FMLB protocol has achieved an enhancement on packet delivery ratio, 
+                  up to 21\%, as compared to the Ad Hoc On-demand Distance Vector routing protocol (AODV) protocol,
+            \item and up to 11\% over the linear Multiple-path routing protocol." (Tashtoush et al., 2014, p. 237)
+        \end{enumerate}
+    \end{quote}
+\end{itemize}
+
+\section{Connection to Fibonacci Numbers}
+\begin{itemize}
+    \item How the FMLB protocol uses Fibonacci sequence
+    \begin{enumerate}
+        \item Paths sorted by length and assigned Fibonacci weights
+        \item Packets allocated proportional to weights
+    \end{enumerate}
+    \textit{[Add an image visualizing the packet distribution according to Fibonacci weights]}
+    \begin{quote}
+        \begin{enumerate}[label=(\arabic*)]
+            \item "The FMLB protocol's responsibility is balancing the packets transmission over the selected paths and 
+                  ordering them according to hops count.
+            \item The shortest path is used more frequently than the other ones." (Tashtoush et al., 2014, p. 237)
+        \end{enumerate}
+    \end{quote}
+    \item Mathematical properties of Fibonacci numbers relevant to load balancing
+    \begin{enumerate}
+        \item Fibonacci sum identity
+        \begin{equation*}
+            F_1 + F_2 + \dots + F_n = F_{n+2} - 1
+        \end{equation*}
+        \textit{Note: This identity shows that the sum of the first $n$ Fibonacci numbers is one less than the $(n+2)$-th Fibonacci number.}
+        \item Fibonacci ratios and the golden ratio
+        \begin{equation*}
+            \lim_{n \to \infty} \frac{F_{n+1}}{F_n} = \varphi \approx 1.618
+        \end{equation*}
+        \textit{Note: This limit shows that the ratio of successive Fibonacci numbers converges to the golden ratio $\varphi$.}
+    \end{enumerate}
+    \item Significance of using Fibonacci numbers in this context
+    \begin{enumerate}
+        \item Efficient and balanced load distribution
+        \item Inherent optimality and self-similarity properties
+    \end{enumerate}
+    \begin{proposition}
+        The FMLB protocol's use of Fibonacci numbers for path weights results in an optimal and balanced distribution of load across available paths.
+    \end{proposition}
+    \begin{quote}
+        \begin{enumerate}[label=(\arabic*)]
+            \item "Through analysis and simulations, the authors show that this Fibonacci-based load balancing approach 
+                  achieves significant gains in packet delivery compared to standard single-path routing
+            \item as well as other multi-path schemes (Tashtoush et al., 2014, p. 243-244)."
+        \end{enumerate}
+    \end{quote}
+    \begin{quote}
+        \begin{enumerate}[label=(\arabic*)]
+            \item "Therefore, in an example with 5 paths, the ratios of the packets allocated is roughly:
+            \item F5 : F4 : F3 : F2 : F1 = 5/12 : 3/12 : 2/12 : 1/12 : 1/12
+            \item $\approx$ 0.416 : 0.25 : 0.166 : 0.083 : 0.083
+            \item $\approx$ 1.618 : 1 : 0.618 : 0.382 : 0.382
+            \item (Derived from the Fibonacci weights used in Tashtoush et al., 2014, p. 240)."
+        \end{enumerate}
+    \end{quote}
+\end{itemize}
+
+\section{Connection to the Golden Ratio}
+\begin{itemize}
+    \item Emergence of the golden ratio in the FMLB protocol
+    \begin{enumerate}
+        \item Ratio of packets allocated to successive paths
+        \item Convergence to the golden ratio as number of paths increases
+    \end{enumerate}
+    \textit{[Add an image showing the convergence of packet allocation ratios to the golden ratio]}
+    \begin{quote}
+        \begin{enumerate}[label=(\arabic*)]
+            \item "With more paths, the ratio of packets allocated to successive paths approaches the golden ratio.
+            \item For instance, with 10 paths, the load allocation fractions are:
+            \item F10 : F9 : F8 : F7 : F6 : F5 : F4 : F3 : F2 : F1
+            \item = 55/143 : 34/143 : 21/143 : 13/143 : 8/143 : 5/143 : 3/143 : 2/143 : 1/143 : 1/143
+            \item $\approx$ 0.385 : 0.238 : 0.147 : 0.091 : 0.056 : 0.035 : 0.021 : 0.014 : 0.007 : 0.007
+            \item (Derived from the Fibonacci weights used in Tashtoush et al., 2014, p. 240)."
+        \end{enumerate}
+    \end{quote}
+    \item Significance of the golden ratio
+    \begin{enumerate}
+        \item Appearance in optimization problems
+        \item Connection to natural patterns and processes
+    \end{enumerate}
+    \begin{proposition}
+        The golden ratio $\varphi$ appears in many optimization problems and natural phenomena, suggesting its significance in efficient and balanced systems.
+    \end{proposition}
+    \item Implications of the FMLB protocol's relation to the golden ratio
+    \begin{enumerate}
+        \item Optimality and efficiency of the load balancing approach
+        \item Link between network optimization and natural optimization
+    \end{enumerate}
+    \textit{Note: The emergence of the golden ratio in the FMLB protocol suggests a deep connection between network optimization and the optimization principles found in nature.}
+\end{itemize}
+
+\section{Conclusion}
+\begin{itemize}
+    \item Recap of the main points
+    \begin{enumerate}
+        \item FMLB protocol's use of Fibonacci numbers and golden ratio
+        \item Improved performance and optimality of this approach
+    \end{enumerate}
+    \item Broader significance
+    \begin{enumerate}
+        \item Power of applying mathematical concepts to practical problems
+        \item Deep connection between mathematics, nature, and technology
+    \end{enumerate}
+    \begin{quote}
+        "Tashtoush et al.'s work demonstrates that mathematical beauty and practical application need not be distant ideas - they can come together in harmony to advance the frontiers of networking research (Tashtoush et al., 2014)."
+    \end{quote}
+    \item Final thoughts and future directions
+    \begin{enumerate}
+        \item Potential for further exploration and application of these ideas
+        \item Importance of interdisciplinary thinking and collaboration
+    \end{enumerate}
+\end{itemize}
+\textit{[Add a concluding image that symbolizes the connection between Fibonacci numbers, the golden ratio, and network optimization]}
+
+\end{document}
