@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  18 MAR 2024 00:43
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  18 MAR 2024 01:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -469,22 +469,22 @@ LaTeX Font Info:    ... okay on input line 16.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: landscape 
-* h-part:(L,W,R)=(8.67204pt, 827.70276pt, 8.67204pt)
-* v-part:(T,H,B)=(8.67204pt, 580.16379pt, 8.67204pt)
+* h-part:(L,W,R)=(10.84006pt, 823.36673pt, 10.84006pt)
+* v-part:(T,H,B)=(10.84006pt, 575.82776pt, 10.84006pt)
 * \paperwidth=845.04684pt
 * \paperheight=597.50787pt
-* \textwidth=827.70276pt
-* \textheight=580.16379pt
-* \oddsidemargin=-63.59795pt
-* \evensidemargin=-63.59795pt
-* \topmargin=-100.59795pt
+* \textwidth=823.36673pt
+* \textheight=575.82776pt
+* \oddsidemargin=-61.42993pt
+* \evensidemargin=-61.42993pt
+* \topmargin=-98.42993pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=9.0pt
 * \footskip=30.0pt
 * \marginparwidth=144.0pt
 * \marginparsep=10.0pt
-* \columnsep=20.0pt
+* \columnsep=8.0pt
 * \skip\footins=7.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -495,6 +495,11 @@ LaTeX Font Info:    ... okay on input line 16.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]\TU/lmr/bx/n/10.95 Definitions and General
+ []
+
 LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -503,20 +508,45 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (99.08618pt too wide) detected at line 256
-\OML/cmm/m/it/8 LDU \OT1/cmr/m/n/8 = [] [] [] = [] \OML/cmm/m/it/8 :
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+[]\TU/lmr/m/n/8 Considering the standard basis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+[]\TU/lmr/m/n/8 Set up the augmented matrix
+ []
+
+
+Underfull \hbox (badness 5175) in paragraph at lines 164--165
+\TU/lmr/m/n/8 for $\OML/cmm/m/it/8 A$ \TU/lmr/m/n/8 and the identity matrix:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\TU/lmr/m/n/8 ond row from the first row:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 A\OT1/cmr/m/n/8 ) [](\OML/cmm/m/it/8 B\OT1/cmr/m/n/8 )$ \TU/lmr/m/n/8 and $[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 A[]\OT1/cmr/m/n/8 ) =
  []
 
 [1
 
-] [2] (./notesheet.aux) ) 
+]
+Overfull \hbox (10.93884pt too wide) detected at line 293
+[][][]
+ []
+
+[2] (./notesheet.aux) ) 
 Here is how much of TeX's memory you used:
- 13590 strings out of 476191
- 275703 string characters out of 5812072
- 616528 words of memory out of 5000000
- 34087 multiletter control sequences out of 15000+600000
- 473052 words of font info for 49 fonts, out of 8000000 for 9000
+ 13596 strings out of 476191
+ 275760 string characters out of 5812072
+ 628531 words of memory out of 5000000
+ 34090 multiletter control sequences out of 15000+600000
+ 473982 words of font info for 52 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,8n,89p,482b,291s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,9n,89p,482b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on notesheet.pdf (2 pages).
