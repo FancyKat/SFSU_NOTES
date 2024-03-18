@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Problems}
+
+% Problem 2.2.27
+\textbf{2.2.27}
+\begin{enumerate}[(a)]
+    \item Show that the set of even functions, \(f(-x) = f(x)\), is a subspace of the vector space of all functions \(F(\mathbb{R})\).
+    \item Show that the set of odd functions, \(g(-x) = -g(x)\), forms a complementary subspace, as defined in Exercise 2.2.24.
+    \item Explain why every function can be uniquely written as the sum of an even function and an odd function.
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.2.15
+\textbf{2.2.15}
+Determine which of the following conditions describe subspaces of the vector space \(C^1\) consisting of all continuously differentiable scalar functions \(f(x)\).
+\begin{enumerate}[(a)]
+    \item \(f(2) = f(3)\),
+    \item \(f'(2) = f'(3)\),
+    \item \(f'(x) + f(x) = 0\),
+    \item \(f(2) = -f(-2)\),
+    \item \(f(x) = f(-x) + 2f(2)\), for all \(x\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.2.9
+\textbf{2.2.9}
+A square matrix is called \textit{strictly lower triangular} if all entries on or above the main diagonal are 0. Prove that the space of strictly lower triangular matrices is a subspace of the vector space of all \(n \times n\) matrices.
+\vspace{10pt}
+
+% Problem 2.2.22
+\textbf{2.2.22}
+Which of the following are subspaces of \(\mathbb{R}^3\)? Justify your answers!
+\begin{enumerate}[(a)]
+    \item The set of all vectors \((x, y, z)^T\) satisfying \(x + y + z + 1 = 0\).
+    \item The set of vectors of the form \((t, -t, 0)^T\) for \(t \in \mathbb{R}\).
+    \item The set of vectors \((x, y, z)^T\) with \(z \geq x \geq y\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.1.6
+\textbf{2.1.6}
+\begin{enumerate}[(a)]
+    \item Let \(x_1 = 0\), \(x_2 = 1\). Find the unique linear function \(f(x) = ax + b\) that has the sample vector \(f = (3, -1)^T\).
+    \item Let \(x_1 = 0\), \(x_2 = 1\), \(x_3 = -1\). Find the unique quadratic function \(f(x) = ax^2 + bx + c\) with sample vector \(f = (1, -2, 0)^T\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.6.26
+\textbf{1.6.26}
+Find the \(LDL^T\) factorization of the matrices \(M_1, M_2, M_3, M_4\).
+\vspace{10pt}
+
+% Problem 1.6.8
+\textbf{1.6.8}
+\begin{enumerate}[(a)]
+    \item Prove that the inverse transpose operation respects matrix multiplication: \((AB)^T = B^T A^T\).
+    \item Verify this identity for \(A = \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}\) and \(B = \begin{pmatrix} 2 & 1 \end{pmatrix}\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.4.21
+\textbf{1.4.21}
+For each of the listed matrices \(A\) and vectors \(b\), find a permuted \(LU\) factorization of the matrix, and use your factorization to solve the system \(Ax = b\).
+\vspace{10pt}
+
+% Problem 2.4.14
+\textbf{2.4.14}
+\begin{enumerate}[(a)]
+    \item Prove that the vector space of all \(2 \times 2\) matrices is a four-dimensional vector space by exhibiting a basis.
+    \item Generalize your result and prove that the vector space \(M_{m \times n}\) has dimension \(mn\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.11
+\textbf{2.4.11}
+\begin{enumerate}[(a)]
+    \item Show that \(1, 1 - t, (1 - t)^2, (1 - t)^3\) is a basis for \(\mathcal{P}_3\).
+    \item Write \(p(t) = 1 + \frac{1}{1 + t^3}\) in terms of the basis elements.
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.8
+\textbf{2.4.8}
+Find a basis for and the dimension of the following subspaces:
+\begin{enumerate}[(a)]
+    \item The space of solutions to the linear system \(Ax = 0\), where \(A = \begin{pmatrix} 1 & 0 & 2 \\ -1 & 2 & -1 \\ 1 & 0 & 2 \end{pmatrix}\).
+    \item The set of all quadratic polynomials \(p(r) = a^2 + b^2 + c\) that satisfy \(p(1) = 0\).
+    \item The space of all solutions to the homogeneous ordinary differential equation \(u'''' - u''' + 4u' - 4u = 0\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.6
+\textbf{2.4.6}
+\begin{enumerate}[(a)]
+    \item Show that \(\begin{pmatrix} 4 \\ 0 \\ 1 \end{pmatrix}\), \(\begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix}\), and \(\begin{pmatrix} -2 \\ 0 \\ 1 \end{pmatrix}\) are two different bases for the plane \(x - 2y - 4z = 0\).
+    \item Show how to write both elements of the second basis as linear combinations of the first.
+    \item Can you find a third basis?
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.9
+\textbf{2.4.9}
+\begin{enumerate}[(a)]
+    \item Prove that \(1 + t^2, t + t^2, 1 + 2t + t^2\) is a basis for the space of quadratic polynomials \(\mathcal{P}_2\).
+    \item Find the coordinates of \(p(t) = 1 + 4t + 7t^2\) in this basis.
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.5
+\textbf{2.4.5}
+Find a basis for:
+\begin{enumerate}[(a)]
+    \item the plane given by the equation \(4x - 2y = 0\) in \(\mathbb{R}^3\);
+    \item the plane given by the equation \(4x + 3y - z = 0\) in \(\mathbb{R}^3\);
+    \item the hyperplane \(x + 2y + z - w = 0\) in \(\mathbb{R}^4\).
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 2.4.3
+\textbf{2.4.3}
+Let \(v_1 = \begin{pmatrix} 1 \\ -3 \\ 2 \end{pmatrix}\), \(v_2 = \begin{pmatrix} 0 \\ -1 \\ 3 \end{pmatrix}\), \(v_3 = \begin{pmatrix} -1 \\ -1 \\ 1 \end{pmatrix}\), \(v_4 = \begin{pmatrix} -4 \\ 4 \\ 1 \end{pmatrix}\). Do \(v_1, v_2, v_3, v_4\) span \(\mathbb{R}^3\)?
+\vspace{10pt}
+
+% Problem 1.3.21
+\textbf{1.3.21} Find the \(LU\) factorization of the following matrices:
+\begin{enumerate}[(a)]
+    \item \(\begin{pmatrix} -1 & 1 \\ -1 & -1 \end{pmatrix}\)
+    \item \(\begin{pmatrix} 1 & 3 \\ 1 & 3 \end{pmatrix}\)
+    % Add the rest of the matrices here as needed
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.5.31
+\textbf{1.5.31} Solve the following systems of linear equations by computing the inverses of their coefficient matrices.
+% Include each system as a separate item
+\vspace{10pt}
+
+% Problem 1.5.25
+\textbf{1.5.25} Find the inverse of each of the following matrices, if possible, by applying the Gauss-Jordan Method.
+\begin{enumerate}[(a)]
+    \item \(\begin{pmatrix} 1 & -2 \\ -3 & 3 \end{pmatrix}\)
+    \item \(\begin{pmatrix} 1 & 3 \\ 3 & 1 \end{pmatrix}\)
+    % Add the rest of the matrices here as needed
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.5.16
+\textbf{1.5.16} Prove that a diagonal matrix \(D = \text{diag}(d_1, \ldots, d_n)\) is invertible if and only if all its diagonal entries are nonzero, in which case \(D^{-1} = \text{diag}(1/d_1, \ldots, 1/d_n)\).
+\vspace{10pt}
+
+% Problem 1.5.7
+\textbf{1.5.7}
+\begin{enumerate}[(a)]
+    \item Find the inverse of the rotation matrix \(R_\theta = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix}\), where \(\theta \in \mathbb{R}\).
+    \item Use your result to solve the system \(x = a \cos \theta - b \sin \theta\), \(y = a \sin \theta + b \cos \theta\), for \(a\) and \(b\) in terms of \(x\) and \(y\).
+    \item Prove that, for all \(a \in \mathbb{R}\) and \(0 < \theta < \pi\), the matrix \(R_\theta - aI\) has an inverse.
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 7.1.7
+\textbf{7.1.7} Find a linear function \(L: \mathbb{R}^2 \to \mathbb{R}^2\) such that \(L\begin{pmatrix} 2 \\ -1 \end{pmatrix} = \begin{pmatrix} -1 \\ 2 \end{pmatrix}\) and \(L\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ -1 \end{pmatrix}\).
+\vspace{10pt}
+
+% Problem 7.1.3
+\textbf{7.1.3} Which of the following functions \(F: \mathbb{R}^2 \to \mathbb{R}^2\) are linear?
+\begin{enumerate}[(a)]
+    \item \(F\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2y \\ x+y \end{pmatrix}\)
+    \item \(F\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x-y \\ 2y \end{pmatrix}\)
+    % Add the rest of the functions here as needed
+\end{enumerate}
+\vspace{10pt}
+
+
+% Problem 1.8.7
+\textbf{1.8.7} Determine the rank of the following matrices:
+\begin{enumerate}[(a)]
+    \item \(\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}\)
+    \item \(\begin{pmatrix} 2 & 1 & 3 \\ -2 & -1 & -3 \end{pmatrix}\)
+    % Add the rest of the matrices here as needed
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.8.4
+\textbf{1.8.4} Let \(A = \begin{pmatrix} a & 0 & b & 2 \\ 0 & a & 2 & b \\ b & 2 & a & 0 \\ 2 & b & 0 & a \end{pmatrix}\) be the augmented matrix for a linear system. For which values of \(a\) and \(b\) does the system have (i) a unique solution? (ii) infinitely many solutions? (iii) no solution?
+\vspace{10pt}
+
+% Problem 1.8.1
+\textbf{1.8.1} Which of the following systems has (i) a unique solution? (ii) infinitely many solutions? (iii) no solution? In each case, find all solutions.
+% Include each system as a separate item
+\vspace{10pt}
+
+% Problem 1.2.14
+\textbf{1.2.14} Find all matrices \(B\) that commute (under matrix multiplication) with \(A = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}\).
+\vspace{10pt}
+
+% Problem 1.2.7
+\textbf{1.2.7} Consider the matrices \(A = \begin{pmatrix} 1 & -1 & 3 \\ -1 & 4 & -2 \\ 3 & 5 & 0 \end{pmatrix}\), \(B = \begin{pmatrix} -6 & 0 & 3 \\ 4 & 2 & -1 \\ 0 & 3 & -4 \end{pmatrix}\), \(C = \begin{pmatrix} -2 & 3 & 2 \\ 4 & -1 & 0 \\ 1 & 5 & 1 \end{pmatrix}\).
+% Include the indicated combinations here
+\vspace{10pt}
+
+% Problem 1.2.8
+\textbf{1.2.8} Which of the following pairs of matrices commute under matrix multiplication?
+% Include each pair of matrices as a separate item
+\vspace{10pt}
+
+% Problem 1.4.3
+\textbf{1.4.3} Find the equation \(z = ax + by + c\) for the plane passing through the three points \(P_1 = (0, 2, -1)\), \(P_2 = (-2, 4, 3)\), \(P_3 = (2, -1, -3)\).
+\vspace{10pt}
+
+% Problem 1.3.7
+\textbf{1.3.7} Find the equation of the parabola \(y = ax^2 + bx + c\) that goes through the points \((1, 6)\), \((2, 4)\), and \((3, 0)\).
+\vspace{10pt}
+
+% Problem 1.3.1
+\textbf{1.3.1} Solve the following linear systems by Gaussian Elimination.
+\begin{enumerate}[(a)]
+    \item \(\begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 7 \\ 3 \end{pmatrix}\)
+    % Continue with other systems as shown in the image
+\end{enumerate}
+\vspace{10pt}
+
+% Add more problems from the second image if necessary
+
+
+
+\end{document}
