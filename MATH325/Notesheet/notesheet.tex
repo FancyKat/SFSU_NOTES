@@ -1,0 +1,129 @@
+\documentclass[8pt, a4paper, landscape]{extarticle}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{longtable}  % Add this line
+
+
+\newcommand{\highlight}[1]{\textbf{\color{blue} #1}}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{20pt}
+
+\begin{document}
+
+\begin{multicols*}{3}
+
+% Definitions and General Principles section
+\section*{Definitions and General Principles}
+
+\textbf{Inverse of a Matrix}
+\begin{itemize}
+    \item $(A^{-1})^{-1} = A$
+    \item $(AB)^{-1} = B^{-1}A^{-1}$
+    \item $AA^{-1} = A^{-1}A = I$
+\end{itemize}
+
+\textbf{LDU Decomposition}
+\begin{itemize}
+    \item For a symmetric matrix $A$: $A = LDL^T$
+    \item $L$: lower triangular with unit diagonal
+    \item $D$: diagonal matrix
+\end{itemize}
+
+\textbf{Vector Space Axioms}
+\begin{itemize}
+    \item Addition: commutativity, associativity, identity, inverses
+    \item Scalar Multiplication: distributivity, compatibility, identity
+\end{itemize}
+
+\textbf{Subspaces}
+\begin{itemize}
+    \item Closed under addition and scalar multiplication
+\end{itemize}
+
+\textbf{Linear Dependence and Independence}
+\begin{itemize}
+    \item Dependent: $\exists$ scalars, not all zero, s.t. $a_1v_1 + \ldots + a_nv_n = 0$
+    \item Independent: only solution is $a_1 = \ldots = a_n = 0$
+\end{itemize}
+
+\textbf{Basis and Dimension}
+\begin{itemize}
+    \item Basis: linearly independent spanning set
+    \item Dimension: number of vectors in a basis
+\end{itemize}
+
+\textbf{General Principles for Subspaces}
+\begin{itemize}
+    \item Closed under vector addition
+    \item Closed under scalar multiplication
+\end{itemize}
+
+\textbf{Linear Transformation}
+\begin{itemize}
+    \item Preserves vector addition and scalar multiplication
+\end{itemize}
+
+\textbf{Image and Kernel}
+\begin{itemize}
+    \item $\text{im}(A)$: span of column vectors of $A$
+    \item $\text{ker}(A)$: $\{x \in \mathbb{R}^n : Ax = 0\}$
+\end{itemize}
+
+\textbf{Basis Transformation}
+\begin{itemize}
+    \item Unique representation of a vector in terms of basis vectors
+\end{itemize}
+
+\columnbreak
+
+
+% === COLUMN 2: Key Theorems and Results ===
+\section*{Key Theorems and Results}
+% - List important theorems and results
+% - Include brief explanations and conditions for application
+\columnbreak
+
+% === COLUMN 3: Problem-Solving Strategies ===
+\section*{Problem-Solving Strategies}
+% - Outline step-by-step approaches for different problem types
+% - Provide examples of how to apply the strategies
+\end{multicols*}
+
+% === COLUMN 4: Summary Tables and Charts ===
+% - Place the longtable environments here
+% - Add tables summarizing key concepts, properties, and results
+% - Use charts or diagrams to illustrate relationships between topics
+
+\begin{multicols*}{3}
+
+% === COLUMN 5: Practice Problems and Solutions ===
+\section*{Practice Problems}
+% - Provide a set of practice problems covering various topics
+% - Include space for students to attempt the problems
+
+\section*{Solutions to Practice Problems}
+% - Give detailed solutions to the practice problems
+% - Explain the problem-solving strategies used
+\columnbreak
+
+% === COLUMN 6: Quick Reference and Common Pitfalls ===
+\section*{Quick Reference Formulas}
+% - Include a list of essential formulas and identities
+% - Organize them by topic for easy reference
+
+\section*{Common Pitfalls and Mistakes}
+% - List common mistakes students make in linear algebra
+% - Provide tips on how to avoid these mistakes
+
+\section*{Glossary of Terms}
+% - Define important linear algebra terms
+% - Include page references to where the terms are used in the notesheet
+
+\end{multicols*}
+
+
+\end{document}

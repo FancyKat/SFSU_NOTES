@@ -6,6 +6,69 @@
 
 \begin{document}
 
+\section*{Matrix Inverse and Properties}
+\begin{itemize}
+    \item $(A^{-1})^{-1} = A$
+    \item $(AB)^{-1} = B^{-1}A^{-1}$
+    \item If $A^{-1}$ exists, it is unique.
+\end{itemize}
+
+\section*{LDU Decomposition}
+\begin{itemize}
+    \item The LDU decomposition is unique for symmetric matrices $A$.
+    \item For a symmetric matrix $A$, $A = LDU$ and $A^T = (LDU)^T = U^T D^T L^T$.
+\end{itemize}
+
+\section*{Vector Space Axioms}
+\subsection*{Addition}
+\begin{itemize}
+    \item $v + w = w + v$
+    \item $(v + w) + u = v + (w + u)$
+    \item $v + 0 = v$
+    \item $v + (-v) = 0$
+\end{itemize}
+
+\subsection*{Scalar Multiplication}
+\begin{itemize}
+    \item $c(v + w) = cv + cw$
+    \item $(c + d)v = cv + dv$
+    \item $1v = v$
+\end{itemize}
+
+\section*{Subspaces}
+\begin{itemize}
+    \item Must be closed under addition and scalar multiplication.
+\end{itemize}
+
+\section*{Linear Dependence and Independence}
+\begin{itemize}
+    \item A set of vectors including the zero vector is linearly dependent.
+    \item Vectors $\{v_1, v_2, \ldots, v_n\}$ are linearly independent if the only solution to $a_1v_1 + a_2v_2 + \ldots + a_nv_n = 0$ is $a_1 = a_2 = \ldots = a_n = 0$.
+\end{itemize}
+
+\section*{Basis and Dimension}
+\begin{itemize}
+    \item A basis is a set of linearly independent vectors that span the vector space $V$.
+    \item The dimension of $V$, denoted $\dim(V)$, is the number of vectors in a basis of $V$.
+\end{itemize}
+
+\section*{Subspaces of $\mathbb{R}^n$}
+\begin{itemize}
+    \item For $A \in \mathbb{R}^{m \times n}$, $\text{im}(A) = \text{span}\{a_1, a_2, \ldots, a_n\} \subseteq \mathbb{R}^m$.
+    \item $\text{ker}(A) = \{x \in \mathbb{R}^n \mid Ax = 0\} \subseteq \mathbb{R}^n$.
+\end{itemize}
+
+\section*{Linear Transformation}
+\begin{itemize}
+    \item If $V$ and $W$ are subspaces, then $V - W \subseteq \text{ker}(A)$.
+\end{itemize}
+
+\section*{Basis Transformation}
+\begin{itemize}
+    \item Given basis $B_1$ of $\mathbb{R}^n$ and $B_2$ of $\mathbb{R}^m$, a vector $v$ in $\mathbb{R}^n$ is transformed by $B_2(A(B_1^{-1}(v)))$.
+\end{itemize}
+
+
 \section*{Problems}
 
 % Problem 2.2.27
@@ -220,13 +283,54 @@ Let \(v_1 = \begin{pmatrix} 1 \\ -3 \\ 2 \end{pmatrix}\), \(v_2 = \begin{pmatrix
 
 % Problem 1.3.1
 \textbf{1.3.1} Solve the following linear systems by Gaussian Elimination.
-\begin{enumerate}[(a)]
+\begin{enumerate}
     \item \(\begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 7 \\ 3 \end{pmatrix}\)
     % Continue with other systems as shown in the image
 \end{enumerate}
 \vspace{10pt}
 
-% Add more problems from the second image if necessary
+% Problem 1.1.1
+\textbf{1.1.1} Solve the following systems of linear equations by reducing to triangular form and then using Back Substitution.
+\begin{enumerate}
+    \item \(\begin{aligned}
+    6x - y + 7u &= 5, \\
+    2x + 2y &= 3, \\
+    x - y + z &= 1;
+    \end{aligned}\)
+    % Continue with other systems as shown in the image
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.1.2
+\textbf{1.1.2} How should the coefficients \(a, b,\) and \(c\) be chosen so that the system \(ax + by + cz = 3\), \(ax - y + cz = 1\), \(a + by - cz = 2\) has the solution \(x = 1, y = 2\) and \(z = -1\)?
+\vspace{10pt}
+
+% Problem 1.3.2
+\textbf{1.3.2} Write out the augmented matrix for the following linear systems. Then solve the system by first applying elementary row operations of type 1 to place the augmented matrix in upper triangular form, followed by Back Substitution.
+\begin{enumerate}
+    \item \(\begin{aligned}
+    x - 2y + z &= 0, \\
+    a - 2z_1 - 9z_2 &= 2;
+    \end{aligned}\)
+    % Continue with other systems as shown in the image
+\end{enumerate}
+\vspace{10pt}
+
+% Problem 1.3.1 
+\textbf{1.3.1 (continued)} Solve the following linear systems by Gaussian Elimination. (continued)
+\begin{enumerate}
+    % Continue from previous 1.3.1 snippet
+    \item \(\begin{pmatrix}
+    6 & 1 & u \\
+    3 & -2 & v
+    \end{pmatrix} = \begin{pmatrix}
+    5 \\
+    2
+    \end{pmatrix}\)
+    % Continue with other systems as shown in the second image
+\end{enumerate}
+\vspace{10pt}
+
 
 
 

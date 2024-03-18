@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry} % To set page margins
+
+\begin{document}
+
+\title{Summary of Linear Algebra Concepts}
+\author{}
+\date{} % To remove the date
+\maketitle
+
+\section*{Inverse of a Matrix}
+If the inverse of a matrix $A$, denoted as $A^{-1}$, exists, then it satisfies the following properties:
+\begin{align*}
+    (A^{-1})^{-1} &= A, \\
+    (AB)^{-1} &= B^{-1}A^{-1}, \\
+    AA^{-1} &= A^{-1}A = I,
+\end{align*}
+where $I$ is the identity matrix, and the inverse is unique.
+
+\section*{LDU Decomposition}
+For a symmetric matrix $A$, the LDU decomposition is unique and satisfies:
+\begin{equation*}
+    A = LDL^T,
+\end{equation*}
+where $L$ is a lower triangular matrix with unit diagonal, $D$ is a diagonal matrix, and $L^T$ is the transpose of $L$.
+
+\section*{Vector Space Axioms}
+The axioms for vector space operations over the real numbers $\mathbb{R}$ include:
+\subsection*{Addition}
+For all vectors $v, w, u \in V$:
+\begin{itemize}
+    \item Commutativity: $v + w = w + v$.
+    \item Associativity: $(v + w) + u = v + (w + u)$.
+    \item Existence of additive identity: There exists a zero vector $0$ such that $v + 0 = v$.
+    \item Existence of additive inverses: For every $v$, there exists $-v$ such that $v + (-v) = 0$.
+\end{itemize}
+
+\subsection*{Scalar Multiplication}
+For all scalars $c, d \in \mathbb{R}$ and vectors $v \in V$:
+\begin{itemize}
+    \item Distributivity over vector addition: $c(v + w) = cv + cw$.
+    \item Distributivity over scalar addition: $(c + d)v = cv + dv$.
+    \item Compatibility with field multiplication: $c(dv) = (cd)v$.
+    \item Identity element of scalar multiplication: $1v = v$.
+\end{itemize}
+
+\section*{Subspaces}
+A subspace $W$ of a vector space $V$ is itself a vector space and must be closed under addition and scalar multiplication.
+
+\section*{Linear Dependence and Independence}
+Vectors $\{v_1, v_2, \ldots, v_n\}$ are said to be linearly dependent if there exist scalars, not all zero, such that:
+\begin{equation*}
+    a_1v_1 + a_2v_2 + \ldots + a_nv_n = 0.
+\end{equation*}
+They are linearly independent if the only solution is $a_1 = a_2 = \ldots = a_n = 0$.
+
+\section*{Basis and Dimension}
+A set of vectors $\{v_1, v_2, \ldots, v_k\}$ forms a basis of vector space $V$ if:
+\begin{itemize}
+    \item They are linearly independent.
+    \item They span $V$, meaning any vector in $V$ can be expressed as a linear combination of the basis vectors.
+\end{itemize}
+The dimension of $V$, denoted $\dim(V)$, is the number of vectors in a basis for $V$.
+
+\section*{General Principles}
+Given a vector space $V$, a subset $W$ is a subspace of $V$ if:
+\begin{itemize}
+    \item For all $v, w \in W$, $v + w \in W$.
+    \item For all $v \in W$ and $c \in \mathbb{R}$, $cv \in W$.
+\end{itemize}
+In other words, $W$ must be closed under vector addition and scalar multiplication.
+
+\section*{Further Definitions}
+\subsection*{Linear Transformation}
+A linear transformation is a mapping between two vector spaces that preserves the operations of vector addition and scalar multiplication.
+
+\subsection*{Image and Kernel}
+For a matrix $A \in \mathbb{R}^{m \times n}$:
+\begin{itemize}
+    \item The image of $A$, denoted $\text{im}(A)$, is the span of the column vectors of $A$.
+    \item The kernel of $A$, denoted $\text{ker}(A)$, is the set of all vectors $x \in \mathbb{R}^n$ such that $Ax = 0$.
+\end{itemize}
+
+\subsection*{Basis Transformation}
+If $\{v_1, v_2, \ldots, v_n\}$ forms a basis for $\mathbb{R}^n$ and a vector $w \in \mathbb{R}^n$, then $w$ can be expressed uniquely as:
+\begin{equation*}
+    w = \lambda_1v_1 + \lambda_2v_2 + \ldots + \lambda_nv_n,
+\end{equation*}
+where $\lambda_1, \lambda_2, \ldots, \lambda_n$ are unique scalars.
+
+\end{document}

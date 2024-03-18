@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAR 2024 22:55
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAR 2024 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/fancykat/Documents/SFSU/MATH325/Notesheet/reference_sheet
-(/home/fancykat/Documents/SFSU/MATH325/Notesheet/reference_sheet.tex
+**/home/fancykat/Documents/SFSU/MATH325/reference/reference_sheet
+(/home/fancykat/Documents/SFSU/MATH325/reference/reference_sheet.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -177,23 +177,23 @@ LaTeX Font Info:    ... okay on input line 7.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] (./reference_sheet.aux) ) 
+] [2] [3] [4] [5] (./reference_sheet.aux) ) 
 Here is how much of TeX's memory you used:
- 1918 strings out of 476191
- 31523 string characters out of 5812072
+ 1930 strings out of 476191
+ 31727 string characters out of 5812072
  350288 words of memory out of 5000000
- 22670 multiletter control sequences out of 15000+600000
- 471014 words of font info for 43 fonts, out of 8000000 for 9000
+ 22678 multiletter control sequences out of 15000+600000
+ 472575 words of font info for 51 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,397b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on reference_sheet.pdf (4 pages).
+Output written on reference_sheet.pdf (5 pages).
