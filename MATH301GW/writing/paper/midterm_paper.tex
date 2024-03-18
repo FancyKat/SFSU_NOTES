@@ -22,19 +22,26 @@
 \doublespacing % Sets 1.5 line spacing
 
 % Introduction Section
-The Fibonacci sequence is one of the most fascinating mathematical concepts, with its simple recursive definition leading to a wealth of intriguing properties and applications across diverse fields. This sequence, in which each number is the sum of the two preceding ones, produces the series 1, 1, 2, 3, 5, 8, 13, 21, and so on into infinity. Closely related to the Fibonacci numbers is the golden ratio, an irrational number approximately equal to 1.618 that possesses many alluring mathematical properties. What may be surprising is that these pure mathematical concepts have found practical application in the realm of computer networking. A recent scientific paper by Tashtoush et al. proposes using the Fibonacci sequence to implement load balancing in mobile ad hoc networks (MANETs). This essay will provide an overview of the key ideas from that paper, explore the fascinating connections to the Fibonacci numbers and golden ratio, and discuss the mathematical significance and beauty of seeing abstract concepts applied to solve real-world challenges.
+The Fibonacci sequence is one of the most fascinating mathematical concepts, with its simple recursive definition leading to a wealth of intriguing properties and applications across diverse fields. This sequence, in which each number is the sum of the two preceding ones, produces the series 1, 1, 2, 3, 5, 8, 13, 21, and so on into infinity. Closely related to the Fibonacci numbers is the golden ratio, an irrational number approximately equal to 1.618 that possesses many alluring mathematical properties. A scientific paper "Fibonacci sequence based multipath load balancing approach for mobile ad hoc networks," Tashtoush et al. address the pressing issues of congestion and packet loss in MANETs. These networks, devoid of centralized infrastructure, consist of mobile nodes that independently self-organize, dynamically adapting to the ever-changing network topology. As nodes move, the routes between them often break, and the limited bandwidth is easily overwhelmed, resulting in significant packet loss. This section will delve into the innovative solutions proposed by Tashtoush et al., illustrating how they harness the Fibonacci sequence to enhance load balancing in MANETs, thereby mitigating these challenges and demonstrating a practical application of mathematical principles in addressing real-world problems.
 
 % Summary of the Scientific Paper Section
 In their paper ``Fibonacci sequence based multipath load balancing approach for mobile ad hoc networks,'' Tashtoush et al. tackle the problem of congestion and dropped packets in MANETs. A MANET is a decentralized network of mobile wireless nodes that can dynamically self-organize and forward traffic without relying on fixed infrastructure. With nodes constantly moving around, the network topology rapidly changes, routes between nodes frequently break, and the limited bandwidth gets congested - leading to many dropped packets.
 
 To improve the packet delivery ratio, the authors propose a novel load balancing scheme called the Fibonacci Multipath Load Balancing (FMLB) protocol. The key idea is to discover multiple paths between the source and destination nodes and distribute the transmitted packets across these paths using the Fibonacci sequence. Specifically, the available paths are sorted in increasing order of length (number of hops). Each path is then assigned a Fibonacci number based on its position in this sorted list - the shortest path gets the largest Fibonacci number and so on. Finally, packets are allocated to the paths proportional to their assigned Fibonacci weights.
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./images/Multiple-paths-between-source-and-destination.png}
+  \caption{Multiple paths between source and destination.}
+  \label{fig:multiple_paths_map}
+  \end{figure}
+
 For example, if there are 5 paths with 2, 3, 4, 5, and 6 hops respectively, they would be assigned the Fibonacci numbers $5, 3, 2, 1, 1$. The fraction of packets allocated to each path would then be $\frac{5}{12}, \frac{3}{12}, \frac{2}{12}, \frac{1}{12}, \frac{1}{12}$. In this way, the shorter paths are utilized more heavily than the longer paths, but the longer paths still serve to alleviate congestion on the shorter ones. Through analysis and simulations, the authors show that this Fibonacci-based load balancing approach achieves significant gains in packet delivery compared to standard single-path routing as well as other multi-path schemes.
 
 % Connection to Fibonacci Numbers Section
 It is quite amazing that the humble Fibonacci sequence, which starts out as $1, 1, 2, 3, 5$, would be useful for routing packets in a wireless network! The authors' choice of using Fibonacci numbers for path weights has some interesting mathematical properties and consequences worth exploring.
 
-Recall that the Fibonacci numbers are defined by the recurrence relation:
+The Fibonacci numbers are defined by the recurrence relation:
 \begin{equation}
 F_0 = 0, \quad F_1 = 1, \quad F_n = F_{n-1} + F_{n-2} \text{ for } n > 1.
 \end{equation}
@@ -45,7 +52,7 @@ In the FMLB protocol, the paths are assigned weights $F_k, F_{k-1}, \ldots, F_2,
 \lim_{n \to \infty} \frac{F_n}{F_{n-1}} = \varphi \approx 1.618.
 \end{equation}
 
-Therefore, in an example with 5 paths, the ratios of the packets allocated is roughly calculated as follows and can be directly compared with the findings in Tashtoush et al.:
+In figure 1 the example with 5 paths, the ratios of the packets allocated is roughly calculated as follows and can be directly compared with the findings in Tashtoush et al.:
 
 \[
 \frac{F_5}{F_{\text{total}}} : \frac{F_4}{F_{\text{total}}} : \frac{F_3}{F_{\text{total}}} : \frac{F_2}{F_{\text{total}}} : \frac{F_1}{F_{\text{total}}} \approx 0.416 : 0.25 : 0.166 : 0.083 : 0.083
@@ -61,28 +68,30 @@ F_1 + F_2 + \ldots + F_n = F_{n+2} - 1.
 
 This means that if we use the first $k$ Fibonacci numbers as path weights, the total number of packets sent is one less than the $(k+2)$-th Fibonacci number. There may be scenarios where this property could be exploited.
 
-Another noteworthy Fibonacci identity is:
-
-\begin{equation}
-F_{n-1} \times F_{n+1} - F_n^2 = (-1)^n.
-\end{equation}
-
-This shows that every two adjacent Fibonacci numbers are almost co-prime (their product is one away from a perfect square). This near co-primality could have consequences when partitioning a load using Fibonacci numbers as in FMLB.
-
 % Connection to the Golden Ratio Section
-As alluded to earlier, the golden ratio $\varphi$, which is the limit of the ratios of successive Fibonacci numbers, has captivating mathematical properties. Expressed algebraically, it is defined as the positive solution to the quadratic equation:
+The golden ratio $\varphi$, which is the limit of the ratios of successive Fibonacci numbers, has captivating mathematical properties. Expressed algebraically, it is defined as the positive solution to the quadratic equation:
 
-\begin{equation}
-\varphi^2 = \varphi + 1,
-\end{equation}
-
-which gives:
 
 \begin{equation}
 \varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618.
 \end{equation}
 
-The golden ratio shows up in the optimal solution to many problems, often unexpectedly. For example, the golden ratio appears in the optimal competitive ratio for the online ski rental problem. It arises in the analysis of the Fibonacci heap data structure which achieves optimal amortized performance for priority queue operations. It's the ratio of edge lengths in the regular pentagon. The golden spiral, which is a logarithmic spiral that grows by a factor of $\varphi$ each quarter turn, approximates the optimal spacing for plant leaves (phyllotaxis). These are just a few of the many places where the golden ratio naturally emerges.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./images/Spiral_Graph.jpg}
+  \caption{Sequence of mappings must converge consider the graphs of $y=x$ and $y=1+1/x.$}
+  \label{fig:spiral_graph}
+  \end{figure}
+
+The golden ratio is a mathematical wonder that transcends the boundaries between the conceptual and the practical. Its influence can be traced in the efficient inner workings of Fibonacci heaps, where it optimizes the data structure's performance and maintains its balance. The golden ratio also in the captivating spiral arrangement of leaves on plants, revealing a deep connection between mathematical order and biological growth. The ratio reveals itself and the power of mathematics to uncover the underlying principles that govern the world around us.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{./images/Cactus.png}
+  \includegraphics[width=0.3\textwidth]{./images/Sunflower.png}
+  \caption{Fibonacci Numbers and Spiral Growth}
+  \label{fig:cactus_spiral}
+  \end{figure}
 
 By virtue of allocating load according to the Fibonacci sequence, the FMLB protocol is in a sense algorithmically converging to the golden ratio as well. With more paths, the ratio of packets allocated to successive paths approaches the golden ratio. For instance, with 10 paths, the load allocation fractions are:
 \[
@@ -114,7 +123,13 @@ Yahya Tashtoush, Omar Darwish, Mohammad Hayajneh.
 "Fibonacci sequence based multipath load balancing approach for mobile ad hoc networks." 
 \textit{Ad Hoc Networks}, Elsevier, 2014.
 
-% Add more bibliography items here
+\bibitem{nrich}
+"The Golden Ratio, Fibonacci Numbers and Continued Fractions." NRICH, 
+\texttt{https://nrich.maths.org/2561}
+
+\bibitem{mathIsFun}
+"Nature, The Golden Ratio, and Fibonacci Numbers." Math Is Fun,
+\texttt{https://www.mathsisfun.com/numbers/nature-golden-ratio-fibonacci.html}
 
 \end{thebibliography}
 

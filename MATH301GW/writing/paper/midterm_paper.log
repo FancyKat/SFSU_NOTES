@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAR 2024 19:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAR 2024 21:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -337,17 +337,41 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] [1
 
-] [2] [3] [4] [5] [6] (./midterm_paper.aux)
+]
+File: ./images/Multiple-paths-between-source-and-destination.png Graphic file (type bmp)
+<./images/Multiple-paths-between-source-and-destination.png>
+ [2]
+File: ./images/Spiral_Graph.jpg Graphic file (type bmp)
+<./images/Spiral_Graph.jpg>
+ [3]
+File: ./images/Cactus.png Graphic file (type bmp)
+<./images/Cactus.png>
+File: ./images/Sunflower.png Graphic file (type bmp)
+<./images/Sunflower.png>
+ [4] [5]
+Underfull \hbox (badness 5607) in paragraph at lines 127--129
+[]\TU/lmr/m/n/12 ”The Golden Ratio, Fibonacci Numbers and Continued Fractions.” NRICH,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
+[]\TU/lmr/m/n/12 ”Nature, The Golden Ratio, and Fibonacci Numbers.” Math Is Fun,
+ []
+
+[6] (./midterm_paper.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `midterm_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9722 strings out of 476191
- 152141 string characters out of 5812072
- 456528 words of memory out of 5000000
- 30334 multiletter control sequences out of 15000+600000
- 476927 words of font info for 66 fonts, out of 8000000 for 9000
+ 9768 strings out of 476191
+ 153408 string characters out of 5812072
+ 455805 words of memory out of 5000000
+ 30370 multiletter control sequences out of 15000+600000
+ 476935 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,8n,64p,1150b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,64p,1417b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on midterm_paper.pdf (7 pages).
