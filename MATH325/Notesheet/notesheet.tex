@@ -1,5 +1,6 @@
+
 \documentclass[8pt, a4paper, landscape]{extarticle}
-\usepackage[margin=0.25in]{geometry}
+\usepackage[margin=0.12in]{geometry}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{multicol}
 \usepackage{graphicx}
@@ -14,116 +15,402 @@
 
 \begin{document}
 
-\begin{multicols*}{3}
+\begin{multicols*}{4}
 
-% Definitions and General Principles section
-\section*{Definitions and General Principles}
+  % Definitions and General Principles section
+  \section*{Definitions and General Principles}
 
-\textbf{Inverse of a Matrix}
-\begin{itemize}
+  \textbf{Inverse of a Matrix}
+  \begin{itemize}
     \item $(A^{-1})^{-1} = A$
     \item $(AB)^{-1} = B^{-1}A^{-1}$
     \item $AA^{-1} = A^{-1}A = I$
-\end{itemize}
+  \end{itemize}
 
-\textbf{LDU Decomposition}
-\begin{itemize}
+  \textbf{LDU Decomposition}
+  \begin{itemize}
     \item For a symmetric matrix $A$: $A = LDL^T$
     \item $L$: lower triangular with unit diagonal
     \item $D$: diagonal matrix
-\end{itemize}
+  \end{itemize}
 
-\textbf{Vector Space Axioms}
-\begin{itemize}
+  \textbf{Vector Space Axioms}
+  \begin{itemize}
     \item Addition: commutativity, associativity, identity, inverses
     \item Scalar Multiplication: distributivity, compatibility, identity
-\end{itemize}
+  \end{itemize}
 
-\textbf{Subspaces}
-\begin{itemize}
+  \textbf{Subspaces}
+  \begin{itemize}
     \item Closed under addition and scalar multiplication
-\end{itemize}
+  \end{itemize}
 
-\textbf{Linear Dependence and Independence}
-\begin{itemize}
+  \textbf{Linear Dependence and Independence}
+  \begin{itemize}
     \item Dependent: $\exists$ scalars, not all zero, s.t. $a_1v_1 + \ldots + a_nv_n = 0$
     \item Independent: only solution is $a_1 = \ldots = a_n = 0$
-\end{itemize}
+  \end{itemize}
 
-\textbf{Basis and Dimension}
-\begin{itemize}
+  \textbf{Basis and Dimension}
+  \begin{itemize}
     \item Basis: linearly independent spanning set
     \item Dimension: number of vectors in a basis
-\end{itemize}
+  \end{itemize}
 
-\textbf{General Principles for Subspaces}
-\begin{itemize}
+  \textbf{General Principles for Subspaces}
+  \begin{itemize}
     \item Closed under vector addition
     \item Closed under scalar multiplication
-\end{itemize}
+  \end{itemize}
 
-\textbf{Linear Transformation}
-\begin{itemize}
+  \textbf{Linear Transformation}
+  \begin{itemize}
     \item Preserves vector addition and scalar multiplication
-\end{itemize}
+  \end{itemize}
 
-\textbf{Image and Kernel}
-\begin{itemize}
+  \textbf{Image and Kernel}
+  \begin{itemize}
     \item $\text{im}(A)$: span of column vectors of $A$
     \item $\text{ker}(A)$: $\{x \in \mathbb{R}^n : Ax = 0\}$
-\end{itemize}
+  \end{itemize}
 
-\textbf{Basis Transformation}
-\begin{itemize}
+  \textbf{Basis Transformation}
+  \begin{itemize}
     \item Unique representation of a vector in terms of basis vectors
-\end{itemize}
+  \end{itemize}
 
-\columnbreak
+  \columnbreak
+
+  % SECTION 1
+  % Determining Linear Independence
+  \textbf{Determining Linear Independence (Standard Case)}
+
+  Given vectors $v_1 = (1, 2, 3)$, $v_2 = (0, 1, 1)$, and $v_3 = (2, 5, 7)$, determine if they are linearly independent.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Arrange the vectors as columns in a matrix $A$:
+          \[
+            A = \begin{bmatrix}
+              1 & 0 & 2 \\
+              2 & 1 & 5 \\
+              3 & 1 & 7
+            \end{bmatrix}
+          \]
+    \item Perform row reduction on $A$:
+          \[
+            \begin{bmatrix}
+              1 & 0 & 2 \\
+              0 & 1 & 1 \\
+              0 & 0 & 1
+            \end{bmatrix}
+          \]
+    \item Since there are no rows of all zeros in the reduced row echelon form, the vectors are linearly independent.
+  \end{enumerate}
+
+  % Problem 2: Linear Dependence
+  \textbf{Determining Linear Independence (Linearly Dependent Case)}
+
+  Given vectors $v_1 = (1, 2, 3)$, $v_2 = (2, 4, 6)$, and $v_3 = (3, 6, 9)$, determine if they are linearly independent.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Arrange the vectors as columns in a matrix $A$:
+          \[
+            A = \begin{bmatrix}
+              1 & 2 & 3 \\
+              2 & 4 & 6 \\
+              3 & 6 & 9
+            \end{bmatrix}
+          \]
+    \item Perform row reduction on $A$:
+          \[
+            \begin{bmatrix}
+              1 & 2 & 3 \\
+              0 & 0 & 0 \\
+              0 & 0 & 0
+            \end{bmatrix}
+          \]
+    \item The presence of rows of all zeros indicates that the vectors are linearly dependent.
+  \end{enumerate}
+
+  % Problem 3: Finding a Basis for a Subspace
+  \textbf{Finding a Basis for a Subspace (Polynomial Space)}
+
+  Find a basis for the subspace of $P_3$ consisting of polynomials $p(x) = ax^3 + bx^2 + cx + d$ such that $p(1) = 0$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item The condition $p(1) = 0$ gives $a + b + c + d = 0$. To find a basis, express this condition in terms of the coefficients and set up a system.
+    \item Considering the standard basis $\{1, x, x^2, x^3\}$ for $P_3$, impose the condition for $p(1) = 0$:
+          \[
+            \begin{bmatrix}
+              1 & 1 & 1 & 1
+            \end{bmatrix}
+            \begin{bmatrix}
+              d \\
+              c \\
+              b \\
+              a
+            \end{bmatrix}
+            = 0
+          \]
+          This implies $a = -b - c - d$.
+    \item A basis satisfying this condition is $\{x^3 - x^2, x^2 - x, x - 1\}$ as these polynomials nullify at $x = 1$ and are linearly independent.
+  \end{enumerate}
+
+  \columnbreak
+
+  % SECTION 2
+  % Problem 4: Matrix Inverse
+  \textbf{Finding the Matrix Inverse}
+
+  Find the inverse of the matrix $A = \begin{bmatrix} 1 & 3 \\ 2 & 7 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Set up the augmented matrix for $A$ and the identity matrix: $\begin{bmatrix} 1 & 3 & | & 1 & 0 \\ 2 & 7 & | & 0 & 1 \end{bmatrix}$.
+    \item Perform row operations to get the identity matrix on the left side of the augmented matrix. Subtract twice the first row from the second row to start: $\begin{bmatrix} 1 & 3 & | & 1 & 0 \\ 0 & 1 & | & -2 & 1 \end{bmatrix}$.
+    \item Then, subtract 3 times the second row from the first row: $\begin{bmatrix} 1 & 0 & | & 7 & -3 \\ 0 & 1 & | & -2 & 1 \end{bmatrix}$.
+    \item The matrix on the right side is now $A^{-1} = \begin{bmatrix} 7 & -3 \\ -2 & 1 \end{bmatrix}$.
+  \end{enumerate}
+
+  % Problem 5: Eigenvalues and Eigenvectors
+  \textbf{Eigenvalues and Eigenvectors}
+
+  Find the eigenvalues and corresponding eigenvectors for the matrix $B = \begin{bmatrix} 4 & 1 \\ 1 & 4 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Find the characteristic polynomial: $\det(B - \lambda I) = \det \begin{bmatrix} 4-\lambda & 1 \\ 1 & 4-\lambda \end{bmatrix} = (4-\lambda)^2 - 1$.
+    \item Solve for $\lambda$: $(4-\lambda)^2 - 1 = 0 \Rightarrow \lambda^2 - 8\lambda + 15 = 0$. The eigenvalues are $\lambda_1 = 3$ and $\lambda_2 = 5$.
+    \item Find eigenvectors for each eigenvalue:
+          - For $\lambda_1 = 3$: Solve $(B - 3I)x = 0$. This gives $x_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$.
+          - For $\lambda_2 = 5$: Solve $(B - 5I)x = 0$. This gives $x_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$.
+  \end{enumerate}
+
+  \textbf{Diagonalization}
+
+  Determine if the matrix $C = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$ is diagonalizable. If it is, find a matrix $P$ that diagonalizes $C$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Find the eigenvalues of $C$: The characteristic polynomial is $(2 - \lambda)^2 = 0$, so the only eigenvalue is $\lambda = 2$.
+    \item Since $C$ is a $2 \times 2$ matrix with only one distinct eigenvalue, we need to check if there are two linearly independent eigenvectors corresponding to $\lambda = 2$.
+    \item Solve $(C - 2I)x = 0$: This leads to the system $x_2 = 0$, indicating that every eigenvector has the form $\begin{bmatrix} t \\ 0 \end{bmatrix}$, which does not provide two independent eigenvectors.
+    \item Since we cannot find two linearly independent eigenvectors, $C$ is not diagonalizable.
+  \end{enumerate}
+
+  \columnbreak
+
+  % SECTION 4
+  \textbf{Perform LDU decomposition}
+
+  Perform LDU decomposition on the matrix $H = \begin{bmatrix} 4 & 12 & -16 \\ 12 & 37 & -43 \\ -16 & -43 & 98 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item First, we find the matrix $L$ such that $H = LDU$ where $L$ is a lower triangular matrix with unit diagonal, $D$ is a diagonal matrix, and $U$ is an upper triangular matrix.
+    \item Decompose $H$ into $LDU$:
+          \[
+            L = \begin{bmatrix}
+              1  & 0 & 0 \\
+              3  & 1 & 0 \\
+              -4 & 5 & 1
+            \end{bmatrix}, \quad
+            D = \begin{bmatrix}
+              4 & 0 & 0 \\
+              0 & 1 & 0 \\
+              0 & 0 & 9
+            \end{bmatrix}, \quad
+          \]
+          \[
+            U = \begin{bmatrix}
+              1 & 3 & -4 \\
+              0 & 1 & 5  \\
+              0 & 0 & 1
+            \end{bmatrix}.
+          \]
+    \item Verify the decomposition by calculating $LDU$ and comparing it with $H$:
+          \[
+            LDU = \begin{bmatrix}
+              1  & 0 & 0 \\
+              3  & 1 & 0 \\
+              -4 & 5 & 1
+            \end{bmatrix}
+            \begin{bmatrix}
+              4 & 0 & 0 \\
+              0 & 1 & 0 \\
+              0 & 0 & 9
+            \end{bmatrix}
+            \begin{bmatrix}
+              1 & 3 & -4 \\
+              0 & 1 & 5  \\
+              0 & 0 & 1
+            \end{bmatrix}
+            = \begin{bmatrix}
+              4   & 12  & -16 \\
+              12  & 37  & -43 \\
+              -16 & -43 & 98
+            \end{bmatrix}.
+          \]
+    \item The result confirms the LDU decomposition of $H$.
+  \end{enumerate}
 
 
-% === COLUMN 2: Key Theorems and Results ===
-\section*{Key Theorems and Results}
-% - List important theorems and results
-% - Include brief explanations and conditions for application
-\columnbreak
 
-% === COLUMN 3: Problem-Solving Strategies ===
-\section*{Problem-Solving Strategies}
-% - Outline step-by-step approaches for different problem types
-% - Provide examples of how to apply the strategies
 \end{multicols*}
 
-% === COLUMN 4: Summary Tables and Charts ===
-% - Place the longtable environments here
-% - Add tables summarizing key concepts, properties, and results
-% - Use charts or diagrams to illustrate relationships between topics
+\pagebreak
 
 \begin{multicols*}{3}
 
-% === COLUMN 5: Practice Problems and Solutions ===
-\section*{Practice Problems}
-% - Provide a set of practice problems covering various topics
-% - Include space for students to attempt the problems
+  % === COLUMN 5: Practice Problems and Solutions ===
+  \section*{Section 3}
 
-\section*{Solutions to Practice Problems}
-% - Give detailed solutions to the practice problems
-% - Explain the problem-solving strategies used
-\columnbreak
+  % Problem 7: Determinant Calculation
+  \textbf{Problem 7: Determinant Calculation}
 
-% === COLUMN 6: Quick Reference and Common Pitfalls ===
-\section*{Quick Reference Formulas}
-% - Include a list of essential formulas and identities
-% - Organize them by topic for easy reference
+  Calculate the determinant of the matrix $D = \begin{bmatrix} 6 & 1 & 2 \\ 1 & 3 & 1 \\ 2 & 0 & 4 \end{bmatrix}$.
 
-\section*{Common Pitfalls and Mistakes}
-% - List common mistakes students make in linear algebra
-% - Provide tips on how to avoid these mistakes
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Apply the Laplace expansion using the first row:
+          \[
+            \det(D) = 6\begin{vmatrix} 3 & 1 \\ 0 & 4 \end{vmatrix} - 1\begin{vmatrix} 1 & 1 \\ 2 & 4 \end{vmatrix} + 2\begin{vmatrix} 1 & 3 \\ 2 & 0 \end{vmatrix}
+          \]
+    \item Calculate each minor:
+          \[
+            6(3 \cdot 4 - 0 \cdot 1) - 1(1 \cdot 4 - 1 \cdot 2) + 2(1 \cdot 0 - 3 \cdot 2) = 72 - 2 - 12 = 58
+          \]
+    \item Thus, $\det(D) = 58$.
+  \end{enumerate}
 
-\section*{Glossary of Terms}
-% - Define important linear algebra terms
-% - Include page references to where the terms are used in the notesheet
+  % Problem 8: Cramer's Rule
+  \textbf{Problem 8: Using Cramer's Rule}
+
+  Solve the following system of equations using Cramer's Rule:
+
+
+  \begin{equation}
+    \begin{aligned}
+      x + 2y - z  & = 4,  \\
+      2x - y + 3z & = -2, \\
+      x + 3y + z  & = 3.\end{aligned}
+  \end{equation}
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Write the coefficient matrix and calculate its determinant:
+          \[
+            A = \begin{bmatrix}
+              1 & 2  & -1 \\
+              2 & -1 & 3  \\
+              1 & 3  & 1
+            \end{bmatrix}, \quad \det(A) = -16.
+          \]
+    \item For $x$, replace the first column of $A$ with the constant terms and calculate its determinant:
+          \[
+            A_x = \begin{bmatrix}
+              4  & 2  & -1 \\
+              -2 & -1 & 3  \\
+              3  & 3  & 1
+            \end{bmatrix}, \quad \det(A_x) = -16.
+          \]
+    \item For $y$, replace the second column of $A$:
+          \[
+            A_y = \begin{bmatrix}
+              1 & 4  & -1 \\
+              2 & -2 & 3  \\
+              1 & 3  & 1
+            \end{bmatrix}, \quad \det(A_y) = -32.
+          \]
+    \item For $z$, replace the third column of $A$:
+          \[
+            A_z = \begin{bmatrix}
+              1 & 2  & 4  \\
+              2 & -1 & -2 \\
+              1 & 3  & 3
+            \end{bmatrix}, \quad \det(A_z) = -16.
+          \]
+    \item Compute the solutions: $x = \frac{\det(A_x)}{\det(A)} = 1, y = \frac{\det(A_y)}{\det(A)} = 2, z = \frac{\det(A_z)}{\det(A)} = 1$.
+  \end{enumerate}
+
+
+  \columnbreak
+
+  \section*{Section 4}
+
+  % Problem 9: Rank of a Matrix
+  \textbf{Problem 9: Finding the Rank of a Matrix}
+
+  Find the rank of the matrix $E = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Perform row reduction on $E$:
+          \[
+            \begin{bmatrix}
+              1 & 2 & 3 \\
+              0 & 0 & 0 \\
+              0 & 0 & 0
+            \end{bmatrix}.
+          \]
+    \item The rank is equal to the number of non-zero rows in the reduced row echelon form. Hence, $\text{rank}(E) = 1$.
+  \end{enumerate}
+
+  % Problem 10: LU Decomposition
+  \textbf{Problem 10: LU Decomposition}
+
+  Perform LU decomposition on the matrix $F = \begin{bmatrix} 4 & 3 \\ 6 & 3 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Express $F$ as the product of a lower triangular matrix $L$ and an upper triangular matrix $U$.
+    \item Choose $L$ with 1s on the diagonal: $L = \begin{bmatrix} 1 & 0 \\ l_{21} & 1 \end{bmatrix}$.
+    \item Let $U = \begin{bmatrix} u_{11} & u_{12} \\ 0 & u_{22} \end{bmatrix}$.
+    \item Since $F_{21} = l_{21} \cdot u_{11}$ and $F_{21} = 6$, $u_{11} = 4$, we get $l_{21} = \frac{6}{4} = \frac{3}{2}$.
+    \item Solve for $U$ using the first row of $F$: $U = \begin{bmatrix} 4 & 3 \\ 0 & u_{22} \end{bmatrix}$. The second element of the second row gives $u_{22} = 3 - \frac{3}{2} \cdot 3 = -\frac{3}{2}$.
+    \item The LU decomposition is $L = \begin{bmatrix} 1 & 0 \\ \frac{3}{2} & 1 \end{bmatrix}$, $U = \begin{bmatrix} 4 & 3 \\ 0 & -\frac{3}{2} \end{bmatrix}$.
+  \end{enumerate}
+
+  \columnbreak
+
+  % === COLUMN 6: Quick Reference and Common Pitfalls ===
+  \section*{Section 5}
+
+  % Problem 11: Orthogonal Diagonalization
+  \textbf{Problem 11: Orthogonal Diagonalization}
+
+  Orthogonally diagonalize the matrix $F = \begin{bmatrix} 3 & -1 \\ -1 & 3 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Find the eigenvalues by solving $\det(F - \lambda I) = 0$: $\lambda^2 - 6\lambda + 8 = 0$ gives $\lambda_1 = 2$ and $\lambda_2 = 4$.
+    \item Find the eigenvectors: For $\lambda_1 = 2$, solve $(F - 2I)x = 0$ to get $x_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ (after normalization). For $\lambda_2 = 4$, solve $(F - 4I)x = 0$ to get $x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$ (after normalization).
+    \item Construct $P = \begin{bmatrix} 1/\sqrt{2} & 1/\sqrt{2} \\ 1/\sqrt{2} & -1/\sqrt{2} \end{bmatrix}$ and verify $P^T F P = \begin{bmatrix} 2 & 0 \\ 0 & 4 \end{bmatrix}$.
+  \end{enumerate}
+
+
+  % Problem 12: Singular Value Decomposition
+  \textbf{Problem 12: Singular Value Decomposition (SVD)}
+
+  Find the singular value decomposition of the matrix $G = \begin{bmatrix} 3 & 0 \\ 0 & -2 \end{bmatrix}$.
+
+  \textbf{Solution:}
+  \begin{enumerate}
+    \item Compute the eigenvalues of $G^TG$: Since $G^TG = \begin{bmatrix} 9 & 0 \\ 0 & 4 \end{bmatrix}$, the eigenvalues are $9$ and $4$.
+    \item The singular values are the square roots of the eigenvalues: $\sigma_1 = 3$ and $\sigma_2 = 2$.
+    \item The right singular vectors are the eigenvectors of $G^TG$, which correspond to $v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $v_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
+    \item The left singular vectors are obtained by normalizing the columns of $GU$, where $U$ is the matrix of right singular vectors. In this case, they remain the same as $v_1$ and $v_2$.
+    \item Assemble the SVD: $G = U\Sigma V^T$ with $U = V = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ and $\Sigma = \begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}$.
+  \end{enumerate}
+
+
+
 
 \end{multicols*}
 
+\pagebreak
 
 \end{document}
