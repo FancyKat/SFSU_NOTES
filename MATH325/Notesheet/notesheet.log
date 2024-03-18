@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  18 MAR 2024 01:38
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  18 MAR 2024 01:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -503,34 +503,34 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 []\TU/lmr/m/n/8 Considering the standard basis
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 []\TU/lmr/m/n/8 Set up the augmented matrix
  []
 
 
-Underfull \hbox (badness 5175) in paragraph at lines 164--165
+Underfull \hbox (badness 5175) in paragraph at lines 167--168
 \TU/lmr/m/n/8 for $\OML/cmm/m/it/8 A$ \TU/lmr/m/n/8 and the identity matrix:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 \TU/lmr/m/n/8 ond row from the first row:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 []\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 A\OT1/cmr/m/n/8 ) [](\OML/cmm/m/it/8 B\OT1/cmr/m/n/8 )$ \TU/lmr/m/n/8 and $[]\OT1/cmr/m/n/8 (\OML/cmm/m/it/8 A[]\OT1/cmr/m/n/8 ) =
  []
 
 [1
 
 ]
-Overfull \hbox (10.93884pt too wide) detected at line 293
+Overfull \hbox (10.93884pt too wide) detected at line 295
 [][][]
  []
 
@@ -538,7 +538,7 @@ Overfull \hbox (10.93884pt too wide) detected at line 293
 Here is how much of TeX's memory you used:
  13596 strings out of 476191
  275760 string characters out of 5812072
- 628531 words of memory out of 5000000
+ 627531 words of memory out of 5000000
  34090 multiletter control sequences out of 15000+600000
  473982 words of font info for 52 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

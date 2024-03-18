@@ -29,7 +29,10 @@
 
   \textbf{LDU Decomposition}
   \begin{itemize}
-    \item For a symmetric matrix $A$: $A = LDL^T$
+    \item For a symmetric matrix 
+    \[
+      A: A = LDL^T
+    \]
     \item $L$: lower triangular with unit diagonal
     \item $D$: diagonal matrix
   \end{itemize}
@@ -242,7 +245,7 @@
     \item This implies the set $\{v_1, v_2\}$ is linearly dependent because $v_2$ can be expressed as a linear combination of $v_1$.
   \end{enumerate}
 
-  \textbf{Problem 16: Identifying Subspaces}
+  \textbf{Identifying Subspaces}
 
   Determine if the set of all vectors in $\mathbb{R}^3$ of the form $(a, a, b)$ is a subspace of $\mathbb{R}^3$.
     
@@ -258,7 +261,6 @@
 
   \textbf{Important Identities and Properties}
   \begin{itemize}
-    \item Trace property: $\text{tr}(AB) = \text{tr}(BA)$
     \item Rank-Nullity Theorem: $\text{rank}(A) + \text{nullity}(A) = n$, where $n$ is the number of columns of $A$.
     \item Determinant properties: $\det(AB) = \det(A)\det(B)$ and $\det(A^{-1}) = \frac{1}{\det(A)}$ for invertible $A$.
   \end{itemize}
@@ -388,7 +390,9 @@
   \textbf{Basis and Dimension of a Vector Space}
 
   Consider the vector space $V$ of all vectors in $\mathbb{R}^4$ that satisfy the equation $x_1 - 2x_2 + x_3 - 2x_4 = 0$. Find a basis for $V$ and state its dimension.
+  
   \textbf{Solution}
+
   \begin{enumerate}
     \item To find a basis, we need to solve for the vectors that satisfy the given equation. Let $x_4 = t$, then $x_3 = 2t$, $x_2 = s$, and $x_1 = 2s - t$.
     \item Thus, any vector in $V$ can be written as $\begin{bmatrix} 2s - t \\ s \\ 2t \\ t \end{bmatrix} = s\begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + t\begin{bmatrix} -1 \\ 0 \\ 2 \\ 1 \end{bmatrix}$.
@@ -396,32 +400,26 @@
     \item The dimension of $V$, denoted as $\text{dim}(V)$, is the number of vectors in the basis, which is 2.
   \end{enumerate}
 
-  \textbf{Image and Kernel of a Linear Transformation}
+  \textbf{Span of Vectors}
 
-  Find the image and kernel of the linear transformation $T: \mathbb{R}^3 \to \mathbb{R}^3$ defined by $T(\mathbf{x}) = A\mathbf{x}$, where $A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{bmatrix}$.
-  \textbf{Solution}
+  Determine if the vector $\mathbf{u} = \begin{bmatrix} 4 \\ -2 \\ 1 \end{bmatrix}$ is in the span of the set of vectors $\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$, $\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}$.
+  
+  \textbf{Solution:}
   \begin{enumerate}
-    \item To find the kernel of $T$, solve the homogeneous system $A\mathbf{x} = \mathbf{0}$.
-    \item Row reduce the matrix $A$ to find the solution to the system:
-          \[
-            \begin{bmatrix}
-              1 & 2 & 3 \\
-              2 & 4 & 6 \\
-              3 & 6 & 9
-            \end{bmatrix}
-            \sim
-            \begin{bmatrix}
-              1 & 2 & 3 \\
-              0 & 0 & 0 \\
-              0 & 0 & 0
-            \end{bmatrix}.
-          \]
-    \item The solutions to the system are of the form $\mathbf{x} = t\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix} + s\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}$.
-    \item The kernel of $T$ is therefore spanned by the vectors $\begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}$ and $\begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix}$.
-    \item To find the image of $T$, we look at the column space of $A$, which is spanned by the pivot columns.
-    \item The only pivot column is the first column of $A$, so $\text{im}(T) = \text{span}\left\{\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\right\}$.
+      \item We need to determine if there exist scalars $c_1$ and $c_2$ such that $\mathbf{u} = c_1\mathbf{v}_1 + c_2\mathbf{v}_2$.
+      \item Setting up the equation, we get:
+      \[
+      \begin{bmatrix} 4 \\ -2 \\ 1 \end{bmatrix} = c_1\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} + c_2\begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}
+      \]
+      \item This leads to the system of equations:
+      \begin{align*}
+          c_1 &= 4, \\
+          c_2 &= -2, \\
+          -c_1 + 2c_2 &= 1.
+      \end{align*}
+      \item Solving this system, we find $c_1 = 4$ and $c_2 = -2$. However, these values do not satisfy the third equation ($-4 - 2 \neq 1$). Therefore, $\mathbf{u}$ is not in the span of $\mathbf{v}_1$ and $\mathbf{v}_2$.
   \end{enumerate}
-
+  
   \textbf{Change of Basis}
 
   Given a vector $v = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$ in the standard basis of $\mathbb{R}^2$, find its coordinates in the new basis $B = \left\{ \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right\}$.
@@ -499,6 +497,5 @@
 
 \end{multicols*}
 
-\pagebreak
 
 \end{document}
