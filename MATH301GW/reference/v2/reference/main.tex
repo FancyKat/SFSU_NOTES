@@ -1,0 +1,36 @@
+\documentclass{report}
+
+% Package for mathematical content
+\usepackage{amsmath}
+\usepackage{amssymb}  % For \mathbb and other symbols
+\usepackage{amsthm}   % For theorem-like environments
+
+% Package for custom enumeration
+\usepackage{enumitem}
+% Package for hyperlinks
+\usepackage{hyperref}
+
+\title{Your Document Title}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle % Generates the title
+
+\tableofcontents % Generates the table of contents
+
+\newpage % Start new page after the table of contents
+
+\chapter{Axioms} % Include the axioms from an external file
+\input{./sections/axioms.tex}
+\newpage % Start definitions on a new page
+
+\chapter{Definitions} % Include the definitions from an external file
+\input{./sections/definitions.tex}
+\newpage % Start propositions on a new page
+
+\chapter{Propositions} % Include the propositions from an external file
+\input{./sections/propositions.tex}
+
+\end{document}

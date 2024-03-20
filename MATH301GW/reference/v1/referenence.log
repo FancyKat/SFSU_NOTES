@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.10)  25 FEB 2024 17:56
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  19 MAR 2024 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/fancykat/Documents/SFSU/MATH301GW/reference/referenence
-(/home/fancykat/Documents/SFSU/MATH301GW/reference/referenence.tex
+**/home/fancykat/Documents/SFSU/MATH301GW/reference/v1/referenence
+(/home/fancykat/Documents/SFSU/MATH301GW/reference/v1/referenence.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -156,11 +156,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [2] [3] [4] (./referenence.aux) ) 
 Here is how much of TeX's memory you used:
  1989 strings out of 476191
- 29427 string characters out of 5812071
- 335656 words of memory out of 5000000
+ 29436 string characters out of 5812072
+ 335654 words of memory out of 5000000
  22749 multiletter control sequences out of 15000+600000
  473928 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,11n,62p,253b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,11n,62p,256b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on referenence.pdf (4 pages).
