@@ -45,8 +45,9 @@
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
 % Document metadata
-\title{Your Document Title}
-\author{Your Name}
+\title{ MATH301GWAR \\
+        REFERENCES AND PROOFS}
+\author{Marty Martin}
 \date{\today}
 
 % Custom command for unnumbered sections that still appear in the Table of Contents
@@ -62,8 +63,7 @@
 \tableofcontents  % Generates the table of contents
 \newpage          % Ensures the content following the table of contents starts on a new page
 
-% Proof Methods section
-\chapter*{Proof Methods}
+\chapter*{Proof Methods}                      % Proof Methods section
 \addcontentsline{toc}{chapter}{Proof Methods} % Adds the chapter to the ToC
 \input{./sections/proof_methods.tex}
 
@@ -87,7 +87,8 @@
 \newpage % Start quizzes on a new page
 
 
-\chapter{Quizzes} % Include the propositions from an external file
+\chapter*{Quizzes} % Include the propositions from an external file
+\addcontentsline{toc}{chapter}{Quizzes} % Adds the chapter to the ToC
 \input{./sections/quizzes.tex}
 
 

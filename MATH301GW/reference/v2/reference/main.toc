@@ -36,15 +36,15 @@
 \contentsline {section}{Chapter 3: Propositions}{15}{Item.87}%
 \contentsline {section}{Chapter 4: Propositions}{16}{Item.87}%
 \contentsline {section}{Chapter 5: Propositions}{18}{Item.100}%
-\contentsline {chapter}{\numberline {1}Quizzes}{19}{chapter.1}%
-\contentsline {section}{Set Definition and Inclusion}{19}{section*.10}%
-\contentsline {section}{Definition of Division (m|n)}{19}{section*.10}%
-\contentsline {section}{Empty Set Definition and Subset Property}{19}{section*.10}%
-\contentsline {section}{Union and Intersection Definitions}{19}{section*.10}%
-\contentsline {section}{Equivalence Relation Definition}{19}{section*.10}%
-\contentsline {section}{Birthday Statement and Subtraction Definition}{19}{Item.110}%
+\contentsline {chapter}{Quizzes}{19}{chapter*.10}%
+\contentsline {section}{Set Definition and Inclusion}{19}{section*.11}%
+\contentsline {section}{Definition of Division (m|n)}{19}{section*.11}%
+\contentsline {section}{Empty Set Definition and Subset Property}{19}{section*.11}%
+\contentsline {section}{Union and Intersection Definitions}{19}{section*.11}%
+\contentsline {section}{Equivalence Relation Definition}{19}{section*.11}%
+\contentsline {section}{Birthday Statement and Subtraction Definition}{20}{Item.110}%
 \contentsline {section}{Further Explanation on the Empty Set}{20}{Item.110}%
 \contentsline {section}{Union and Intersection Definitions}{20}{Item.110}%
 \contentsline {section}{Equivalence Relation Definition}{20}{Item.110}%
 \contentsline {section}{Logical Statements and Subtraction Definition}{20}{Item.113}%
-\contentsline {section}{Further Discussion on the Empty Set}{20}{Item.113}%
+\contentsline {section}{Further Discussion on the Empty Set}{21}{Item.113}%
