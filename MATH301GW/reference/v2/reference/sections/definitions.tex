@@ -1,43 +1,102 @@
+% Equality "="
+\unnumberedsection{Equality $\boldsymbol{=}$}
+The symbol $\boldsymbol{=}$ means \textbf{equals}. To say $m = n$ means that $m$ and $n$ are the same number. Some properties are:
+\begin{enumerate}[label=\roman*.]
+  \item $\mathit{m = m}$ \hfill (\textbf{reflexivity})
+  \item If $m = n$ then $n = m$ \hfill (\textbf{symmetry})
+  \item If $m = n$ and $n = p$ then $m = p$ \hfill (\textbf{transitivity})
+  \item If $m = n$, then $n$ can be substituted for $m$ in \\ any statement without changing the meaning \hfill (\textbf{replacement})
+\end{enumerate}
 
-This chapter contains the definitions of mathematical terms and symbols as used in the context of your studies.
 
-\section*{Equality and Inequality}
-
-\subsection*{Definition: Equality "="}
-The symbol "=" denotes equality. If we write \(m = n\), we assert that \(m\) and \(n\) are the same numerical value.
-
-\subsection*{Definition: Inequality}
-The symbol "\(\neq\)" denotes inequality. The statement \(m \neq n\) asserts that \(m\) and \(n\) are not the same numerical value.
+% Inequality "≠"
+\unnumberedsection{Inequality $\boldsymbol{\neq}$}
+The symbol $\boldsymbol{\neq}$ means \textbf{is not equal to}. To say $m \neq n$ means that $m$ and $n$ are different numbers. Note that $\boldsymbol{\neq}$ satisfies \textbf{symmetry}, but not \textbf{transitivity} and \textbf{reflexivity}.
 
 % Continue with other definitions related to equality and inequality if necessary...
 
-\section*{Set Membership}
+% In the set of "∈"
+\unnumberedsection{In the set of $\boldsymbol{\in}$}
+The symbol $\boldsymbol{\in}$ means \textbf{is an element of}. For example, $0 \in \mathbb{Z}$ means "0 is an element of the set $\mathbb{Z}$."
 
-\subsection*{Definition: In the Set Of}
-The symbol "\(\in\)" denotes membership within a set. For example, the statement \(a \in S\) indicates that the element \(a\) is a member of the set \(S\).
+% Not in the set of "/∈"
+\unnumberedsection{Not in the set of $\boldsymbol{\notin}$}
+The symbol $\boldsymbol{\notin}$ means \textbf{is not an element of}. For example, $0.5 \notin \mathbb{Z}$ means "0.5 is not an element of the set $\mathbb{Z}$."
 
-\subsection*{Definition: Not In the Set Of}
-Conversely, the symbol "\(\notin\)" denotes non-membership in a set. For example, \(b \notin T\) indicates that \(b\) is not a member of the set \(T\).
+% Divisibility
+\unnumberedsection{Divisibility}
+When $m$ and $n$ are integers, we say $m$ is divisible by $n$ (or alternatively, $n$ divides $m$) if there exists $j \in \mathbb{Z}$ such that $m = jn$. We use the notation $n|m$.
 
-% Add more definitions as needed...
+% 2 and other integers
+\unnumberedsection{2 and other integers}
+$\boldsymbol{2}$ is defined as $2 = 1+1$ and $\boldsymbol{3}$ is $2+1$ and so on.
+
+% Even Integers
+\unnumberedsection{Even Integers}
+Even integers are defined to be those integers that are divisible by $2$. That is, $x = 2j$, where $j \in \mathbb{Z}$.
+
+% Subtraction
+\unnumberedsection{Subtraction}
+Subtraction is defined as $m - n$ is defined to be $m + (-n)$.
 
 \section*{Number Theory}
 
-\subsection*{Definition: Divisibility}
-We say that an integer \(m\) is divisible by another integer \(n\) if there exists an integer \(k\) such that \(m = nk\). This is denoted as \(n | m\).
+% Power
+\unnumberedsection{Power}
+Let $b$ be a fixed integer. We define $b^k$ for all integers $k \geq 0$ by:
+\begin{enumerate}
+    \item $\boldsymbol{b^0 := 1}$
+    \item Assuming $b^n$ is defined, let $\boldsymbol{b^{n+1} := b^n \cdot b}$
+\end{enumerate}
 
-\subsection*{Definition: Even Integers}
-An integer \(n\) is defined as even if it is divisible by \(2\). In other words, there exists an integer \(k\) such that \(n = 2k\).
+% Sum
+\unnumberedsection{Sum}
+Let $(x_j)_{j=1}^{\infty}$ be a sequence of integers. $(x_j)_{j=1}^3 = \{1,2,3\}$. For each $k \in \mathbb{N}$, we want to define an integer called $\Sigma_{j=1}^k x_j$:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Define $\mathbf{\Sigma_{j=1}^1 x_j}$ to be $x_1$
+    \item Assuming $\Sigma_{j=1}^n x_j$ is already defined, we define $\mathbf{\Sigma_{j=1}^{n+1} x_j}$ to be $\Sigma_{j=1}^n x_j + x_{n+1}$
+\end{enumerate}
 
-% Include additional definitions from number theory...
+% Product
+\unnumberedsection{Product}
+Let $(x_j)_{j=1}^{\infty}$ be a sequence of integers. $(x_j)_{j=1}^3 = \{1,2,3\}$. For each $k \in \mathbb{N}$, we want to define an integer called $\Pi_{j=1}^k x_j$:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Define $\mathbf{\Pi_{j=1}^1 x_j}$ to be $x_1$
+    \item Assuming $\Pi_{j=1}^n x_j$ is already defined, we define $\mathbf{\Pi_{j=1}^{n+1} x_j}$ to be $\Pi_{j=1}^n x_j \cdot x_{n+1}$
+\end{enumerate}
 
-\section*{Functions}
+% Non-negative integer (N with 0 included)
+\unnumberedsection{Non-negative integer ($\mathbb{Z}_{\geq 0}$)}
+$\mathbb{Z}_{\geq 0} := \{m \in \mathbb{Z} : m \geq 0\}$
 
-\subsection*{Definition: Function (Informal)}
-A function from a set \(A\) to a set \(B\) is a rule that assigns each element of \(A\) exactly one element of \(B\). The set \(A\) is called the domain, and the set \(B\) is called the codomain.
+% Factorial
+\unnumberedsection{Factorial}
+We define $k!$ ("$k$ factorial") for all integers $k \geq 0$ by:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Define $\mathbf{0! := 1}$
+    \item Assuming $n!$ is defined (where $n \in \mathbb{Z}_{\geq 0}$), define $\mathbf{(n+1)! := (n!) \cdot (n+1)}$
+\end{enumerate}
 
-\subsection*{Definition: Function (Formal)}
-Formally, a function \(f\) from set \(A\) to set \(B\) is defined as a set of ordered pairs \((a, b)\) with the property that each \(a\) in \(A\) is associated with exactly one \(b\) in \(B\). We write this as \(f: A \to B\).
+% Subset
+\unnumberedsection{Subset ($\subseteq$)}
+$A \subseteq B$ means that if $x \in A$, then $x \in B$
 
-% Continue defining other mathematical terms and structures as they appear in your reference sheet...
+% The Empty Set
+\unnumberedsection{The Empty Set ($\emptyset$)}
+The empty set is defined as a set that contains no elements.
 
+% Equal Sets
+\unnumberedsection{Equal Sets ($=$)}
+The set $A$ is equal to $B$ means that $A \subseteq B$ and $B \subseteq A$. In order to prove two sets are equal, you have to complete two proofs.
+
+% Functions
+\unnumberedsection{Functions}
+\subsection*{\textbf{Informal Definition}}
+A function consists of:
+\begin{itemize}
+    \item a set $A$ called the \textbf{domain} of the function
+    \item a set $B$ called the \textbf{codomain} of the function
+    \item a rule $f$ that assigns to each $a \in A$ an element $f(a) \in B$. Shorthand for this is $f : A \rightarrow B$
+\end{itemize}
+\subsection*{\textbf{Abstract Definition}}
+A function with domain $A$ and codomain $B$ is a subset of $\Gamma$ of $A \times B$ such that for each $a \in A$, there is one and only one element of $\Gamma$ whose first entry is $a$. If $(a,b) \in \Gamma$, we write $b = f(a)$.

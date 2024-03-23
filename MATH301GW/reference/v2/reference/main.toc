@@ -3,3 +3,22 @@
 \contentsline {section}{If then types}{2}{Item.6}%
 \contentsline {section}{Induction Proof}{2}{Item.6}%
 \contentsline {section}{Proof by contradiction}{3}{Item.12}%
+\contentsline {chapter}{Definitions}{4}{chapter*.3}%
+\contentsline {section}{Equality $\boldsymbol {=}$}{4}{section*.4}%
+\contentsline {section}{Inequality $\boldsymbol {\neq }$}{4}{Item.27}%
+\contentsline {section}{In the set of $\boldsymbol {\in }$}{4}{Item.27}%
+\contentsline {section}{Not in the set of $\boldsymbol {\notin }$}{4}{Item.27}%
+\contentsline {section}{Divisibility}{4}{Item.27}%
+\contentsline {section}{2 and other integers}{4}{Item.27}%
+\contentsline {section}{Even Integers}{4}{Item.27}%
+\contentsline {section}{Subtraction}{4}{Item.27}%
+\contentsline {section}{Power}{4}{Item.27}%
+\contentsline {section}{Sum}{5}{Item.29}%
+\contentsline {section}{Product}{5}{Item.31}%
+\contentsline {section}{Non-negative integer ($\mathbb {Z}_{\geq 0}$)}{5}{Item.33}%
+\contentsline {section}{Factorial}{5}{Item.33}%
+\contentsline {section}{Subset ($\subseteq $)}{5}{Item.35}%
+\contentsline {section}{The Empty Set ($\emptyset $)}{5}{Item.35}%
+\contentsline {section}{Equal Sets ($=$)}{5}{Item.35}%
+\contentsline {section}{Functions}{5}{Item.35}%
+\contentsline {chapter}{\numberline {1}Axioms}{6}{chapter.1}%
