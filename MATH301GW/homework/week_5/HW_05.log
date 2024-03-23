@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.10)  3 MAR 2024 22:27
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  19 MAR 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -168,8 +168,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--84
 [2] [3] [4] [5] [6] [7] (./HW_05.aux) ) 
 Here is how much of TeX's memory you used:
  2004 strings out of 476191
- 29791 string characters out of 5812071
- 335597 words of memory out of 5000000
+ 29791 string characters out of 5812072
+ 335595 words of memory out of 5000000
  22757 multiletter control sequences out of 15000+600000
  476567 words of font info for 65 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

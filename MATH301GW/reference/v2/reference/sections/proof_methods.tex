@@ -1,0 +1,65 @@
+\section*{If then statements}
+\textbf{Format:} Proof. If A, then B.
+\begin{enumerate}
+    \item Assume A.
+    \item Show that assuming A leads to B.
+    \item Therefore, B is concluded from A.
+\end{enumerate}
+\textbf{Example:} 
+\begin{proof}
+Proof. If \(m = 1\), then \(m + 0 = 1\).
+\begin{enumerate}
+    \item Assume \(m = 1\).
+    \item Considering \(m = 1\), we have \(1 + 0 = 1\).
+    \item This simplifies to \(1 = 1\), which is true.
+\end{enumerate}
+\end{proof}
+
+\section*{If then types}
+Various types of implications and their representations:
+\begin{itemize}
+    \item \(A \Rightarrow B\): "If it is Wednesday, Dr. Beck will get a cup of coffee from the student union."
+    \item \(B \Rightarrow A\) (Converse of the first): "If Dr. Beck got a cup of coffee from the student union, it is Wednesday."
+    \item \(A \Leftrightarrow B\) (Bi-conditional, if and only if): "It is Wednesday if and only if Dr. Beck got a cup of coffee from the student union."
+    \item \((\text{not } B) \Rightarrow (\text{not } A)\) (Contrapositive): "If Dr. Beck did not get a cup of coffee from the student union, then it is not Wednesday."
+\end{itemize}
+
+\section*{Induction Proof}
+\textbf{Format:} 
+\begin{proof}
+Proof that \(F(x)\) is true for all \(x \in A\):
+\begin{enumerate}
+    \item \textbf{Base case:} Show \(F(a)\) is true, where \(a\) is the smallest element in \(A\).
+    \item \textbf{Induction step:} Assume \(F(k)\) is true for an arbitrary \(k \in A\). Show that \(F(k) \Rightarrow F(k+1)\).
+    \item Therefore, \(F(x)\) is true for all \(x \in A\).
+\end{enumerate}
+\end{proof}
+\textbf{Example:} 
+\begin{proof}
+For all \(n \in \mathbb{N}\), \(n = n\).
+\begin{enumerate}
+    \item Base case (\(n = 1\)): \(1 = 1\) is true.
+    \item Induction step: Assume \(n = n\) is true for an arbitrary natural number \(n\). Show that this implies \(n + 1 = n + 1\).
+    \item By the induction hypothesis, \(n = n\). Adding 1 to both sides, \(n + 1 = n + 1\), which holds true.
+\end{enumerate}
+\end{proof}
+
+\section*{Proof by contradiction}
+\textbf{Format:}
+\begin{proof}
+Prove \(A\) is true by Contradiction:
+\begin{enumerate}
+    \item Assume \(A\) is false.
+    \item Show that this assumption leads to a contradiction.
+    \item Therefore, \(A\) must be true.
+\end{enumerate}
+\end{proof}
+\textbf{Example:}
+\begin{proof}
+Prove there is no smallest negative integer.
+\begin{enumerate}
+    \item Assume, by way of contradiction, that there is a smallest negative integer, call it \(n\).
+    \item Consider \(n - 1\). \(n - 1\) is also an integer and is smaller than \(n\), contradicting the assumption that \(n\) is the smallest negative integer.
+    \item Therefore, there cannot be a smallest negative integer.
+\end{enumerate}
+\end{proof}

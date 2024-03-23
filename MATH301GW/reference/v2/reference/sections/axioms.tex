@@ -1,19 +1,36 @@
-% Axiom concerning the closure property of integers
-\subsection{Axiom 1.1}
-\textit{Closure under addition: For all \(X, Y \in \mathbb{Z}\), the sum \(X + Y\) is also in \(\mathbb{Z}\).}
+\section*{Axioms of Integers}
 
-% Axiom concerning the existence of an additive identity
-\subsection{Axiom 1.2}
-\textit{Existence of an additive identity: There exists an element \(0 \in \mathbb{Z}\), such that for every \(X \in \mathbb{Z}\), \(X + 0 = X\).}
+The axioms of integers describe the basic properties that define the structure of the set of integers (\(\mathbb{Z}\)).
 
-% Axiom concerning the existence of additive inverses
-\subsection{Axiom 1.3}
-\textit{Existence of additive inverses: For every \(X \in \mathbb{Z}\), there exists an element \(-X \in \mathbb{Z}\) such that \(X + (-X) = 0\).}
+\subsection*{Axiom 1.1 (Commutativity and Associativity)}
+\begin{itemize}
+  \item For any integers \(m, n\), the operation of addition is commutative: \(m + n = n + m\).
+  \item For any integers \(m, n, p\), the operation of addition is associative: \((m + n) + p = m + (n + p)\).
+  \item For any integers \(m, n, p\), the distributive property connects the operations of multiplication and addition: \(m \cdot (n + p) = m \cdot n + m \cdot p\).
+  \item For any integers \(m, n\), the operation of multiplication is commutative: \(m \cdot n = n \cdot m\).
+  \item For any integers \(m, n, p\), the operation of multiplication is associative: \((m \cdot n) \cdot p = m \cdot (n \cdot p)\).
+\end{itemize}
 
-% Axiom concerning the commutative property of addition
-\subsection{Axiom 1.4}
-\textit{Commutativity of addition: For all \(X, Y \in \mathbb{Z}\), \(X + Y = Y + X\).}
+\subsection*{Axiom 1.2 (Identity Elements)}
+\begin{itemize}
+  \item There exists an integer \(0\) such that for any integer \(m\), adding \(0\) to \(m\) leaves it unchanged: \(m + 0 = m\).
+  \item There exists an integer \(1\) (\(1 \neq 0\)) such that for any integer \(m\), multiplying \(m\) by \(1\) leaves it unchanged: \(m \cdot 1 = m\).
+\end{itemize}
 
-% Axiom concerning the associative property of addition
-\subsection{Axiom 1.5}
-\textit{Associativity of addition: For all \(X, Y, Z \in \mathbb{Z}\), \((X + Y) + Z = X + (Y + Z)\).}
+\subsection*{Axiom 1.3 (Additive Inverse)}
+For each integer \(m\), there exists an integer denoted by \(-m\) such that their sum is \(0\): \(m + (-m) = 0\).
+
+\subsection*{Axiom 1.4 (Cancellation Law)}
+For any integers \(m, n, p\), if \(m \neq 0\) and \(m \cdot n = m \cdot p\), then \(n = p\).
+
+
+\section*{Proof Example}
+\begin{proof}
+  If \(m\) is an integer and \(m \cdot 0 = 0\), then \(m = m\).
+  \begin{itemize}
+    \item Consider an integer \(m\).
+    \item Multiplying by \(0\) gives \(m \cdot 0 = 0\).
+    \item Since \(m \cdot 0 = 0\), by the property of zero in multiplication, we have \(m = m\).
+    \item Thus, the statement is proven.\qedhere
+  \end{itemize}
+\end{proof}

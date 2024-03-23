@@ -1,35 +1,35 @@
-\subsection{Proposition 1.1}
-Let \(X\), \(Y\), and \(Z\) be elements of the set of integers \(\mathbb{Z}\). This proposition demonstrates several foundational algebraic properties of integers:
+This chapter outlines various propositions derived from the axioms of integers and their proofs.
 
-% Enumeration for parts of the proposition
-\begin{enumerate}[label=\thesubsection\ part \roman*]
-    \item \label{prop:1.1-i} Commutativity of addition: \(X + Y = Y + X\).
-    \item \label{prop:1.1-ii} Associativity of addition: \((X + Y) + Z = X + (Y + Z)\).
-    \item \label{prop:1.1-iii} Existence of additive identity: \(X + 0 = X\).
-    \item \label{prop:1.1-iv} Existence of additive inverse: For every \(X\), there exists an integer \(-X\) such that \(X + (-X) = 0\).
-\end{enumerate}
+\section*{Properties of Integers}
 
-\subsection{Proof of Proposition 1.1}
-\textit{We now prove each part of Proposition 1.1:}
+\subsection*{Proposition 1.6 (Distributive Property)}
+For any integers \(m, n,\) and \(p\), the distributive property holds: \((m + n) \cdot p = m \cdot p + n \cdot p\).
 
-\begin{proof}[Proof of part (\ref{prop:1.1-i})]
-We prove the commutativity of addition. Let \(X, Y \in \mathbb{Z}\). Consider:
-
-% Aligned proof steps with step numbers on the left and equations centered
-\begin{flalign*}
-    &\text{(1)} & X + Y &= Y + X &\quad& \text{by the definition of commutative property in } \mathbb{Z}
-\end{flalign*}
-This concludes the proof of commutativity of addition.
+\begin{proof}
+Consider integers \(m, n,\) and \(p\). By the distributive axiom of integers, we have:
+\begin{align*}
+    (m + n) \cdot p &= m \cdot p + n \cdot p \\
+    \text{Thus, the proposition is proven.} \qedhere
+\end{align*}
 \end{proof}
 
-\begin{proof}[Proof of part (\ref{prop:1.1-ii})]
-We prove the associativity of addition. Let \(X, Y, Z \in \mathbb{Z}\). Consider:
+% More propositions follow...
 
-% Aligned proof steps with step numbers on the left and equations centered
-\begin{flalign*}
-    &\text{(1)} & (X + Y) + Z &= X + (Y + Z) &\quad& \text{by the definition of associative property in } \mathbb{Z}
-\end{flalign*}
-This concludes the proof of associativity of addition.
+\subsection*{Proposition 1.7 (Identity Property)}
+For any integer \(m\), the identity property of addition and multiplication holds: 
+\begin{itemize}
+    \item Adding zero to \(m\) does not change it: \(0 + m = m\).
+    \item Multiplying \(m\) by one does not change it: \(1 \cdot m = m\).
+\end{itemize}
+
+\subsection*{Proposition 1.8 (Additive Inverse)}
+For any integer \(m\), the additive inverse property holds: \((-m) + m = 0\).
+
+\subsection*{Proposition 1.9 (Cancellation Law)}
+Let \(m, n,\) and \(p\) be integers. If \(m + n = m + p\), then \(n = p\).
+
+\begin{proof}
+Suppose \(m, n,\) and \(p\) are integers such that \(m + n = m + p\). By subtracting \(m\) from both sides of the equation, we cancel \(m\) and conclude that \(n = p\). Thus, the cancellation law is validated.
 \end{proof}
 
-% Continue similarly for parts (iii) and (iv)...
+% Additional propositions and their proofs can be added following the same format.
