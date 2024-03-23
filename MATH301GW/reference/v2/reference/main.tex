@@ -72,12 +72,19 @@
 \input{./sections/definitions.tex}
 \newpage % Start propositions on a new page
 
-\chapter{Axioms} % Include the axioms from an external file
+\chapter*{Theorems} % Include the propositions from an external file
+\addcontentsline{toc}{chapter}{Theorems} % Adds the chapter to the ToC
+\input{./sections/theorems.tex}
+
+\chapter*{Axioms} % Include the axioms from an external file
+\addcontentsline{toc}{chapter}{Axioms} % Adds the chapter to the ToC
 \input{./sections/axioms.tex}
 \newpage % Start definitions on a new page
 
-% \chapter{Propositions} % Include the propositions from an external file
-% \input{./sections/propositions.tex}
+\chapter*{Propositions} % Include the propositions from an external file
+\addcontentsline{toc}{chapter}{Propositions} % Adds the chapter to the ToC
+\input{./sections/propositions/propositions.tex}
+
 
 % \chapter{Quizzes} % Include the propositions from an external file
 % \input{./sections/quizzes.tex}

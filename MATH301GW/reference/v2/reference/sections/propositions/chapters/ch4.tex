@@ -1,0 +1,123 @@
+% Theorem 4.4
+\section*{Theorem 4.4:}
+A legitimate method of describing a sequence $(y_j)_{j=m}^{\infty}$ is:
+\begin{enumerate}
+    \item to name $y_m$, and
+    \item to state a formula describing $y_{n+1}$ in terms of $y_n$, for each $n \geq m$.
+\end{enumerate}
+
+% Proposition 4.5
+\section*{Proposition 4.5:}
+For all $k \in \mathbb{Z}_{\geq 0}$, $k! \in \mathbb{N}$.
+
+% Proposition 4.6
+\section*{Proposition 4.6:}
+Let $b \in \mathbb{Z}$ and $k,m \in \mathbb{Z}_{\geq 0}$.
+\begin{enumerate}
+    \item if $b \in \mathbb{N}$ then $b^k \in \mathbb{N}$
+    \item $b^mb^k = b^{m+k}$
+    \item $(b^m)^k = b^{mk}$
+\end{enumerate}
+
+% Proposition 4.7
+\section*{Proposition 4.7:}
+For all $k \in \mathbb{N}$:
+\begin{enumerate}
+    \item $5^{2k-1}$ is divisible by $24$
+    \item $2^{2k+1} + 1$ is divisible by $3$
+    \item $10^{k+3} \cdot 4^{k+2} + 5$ is divisible by $9$
+\end{enumerate}
+
+% Proposition 4.8
+\section*{Proposition 4.8:}
+For all $k \in \mathbb{N}$, $4k > k$.
+
+% Proposition 4.11
+\section*{Proposition 4.11:}
+Let $k \in \mathbb{N}$:
+\begin{enumerate}
+    \item $\sum_{j=1}^k j = \frac{k(k+1)}{2}$
+    \item $\sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}$
+\end{enumerate}
+
+% Proposition 4.13
+\section*{Proposition 4.13:}
+For $x \neq 1$ and $k \in \mathbb{Z}_{\geq 0}$,
+\[ \sum_{j=0}^k x^j = \frac{1 - x^{k+1}}{1 - x} \]
+
+% Proposition 4.15
+\section*{Proposition 4.15:}
+\begin{enumerate}
+    \item Let $m \in \mathbb{Z}$ and let $(x_j)_{j=1}^{\infty}$ be a sequence in $\mathbb{Z}$. Then for all $k \in \mathbb{N}$:
+    \[ m \cdot \sum_{j=1}^k x_j! = \sum_{j=1}^k (mx_j) \]
+    \item If $x_j = 1$ for all $j \in \mathbb{N}$, then for all $k \in \mathbb{N}$:
+    \[ \sum_{j=1}^k x_j = k \]
+    \item If $x_j = n \in \mathbb{Z}$ for all $j \in \mathbb{N}$, then for all $k \in \mathbb{N}$:
+    \[ \sum_{j=1}^k x_j = kn \]
+\end{enumerate}
+
+
+% Proposition 4.16
+\section*{Proposition 4.16:}
+Let $(x_j)_{j=1}^{\infty}$ and $(y_j)_{j=1}^{\infty}$ be sequences in $\mathbb{Z}$, and let $a,b,c \in \mathbb{Z}$ be such that $a \leq b < c$.
+\begin{enumerate}
+    \item $\displaystyle\sum_{j=a}^{c} x_j = \displaystyle\sum_{j=a}^{b} x_j + \displaystyle\sum_{j=b+1}^{c} x_j$
+    \item $\displaystyle\sum_{j=a}^{b} (x_j + y_j) = \displaystyle\sum_{j=a}^{b} x_j! + \displaystyle\sum_{j=a}^{b} y_j!$
+\end{enumerate}
+
+% Proposition 4.17
+\section*{Proposition 4.17:}
+Let $(x_j)_{j=1}^{\infty}$ be a sequence in $\mathbb{Z}$, and let $a,b, r \in \mathbb{Z}$ be such that $a \leq b$. Then
+$\displaystyle\sum_{j=a}^{b} x_j = \displaystyle\sum_{j=a}^{b+r} x_j - r$
+
+% Proposition 4.18
+\section*{Proposition 4.18:}
+Let $(x_j)_{j=1}^{\infty}$ and $(y_j)_{j=1}^{\infty}$ be sequences in $\mathbb{Z}$ such that $x_j \leq y_j$ for all $j \in \mathbb{N}$. Then for all $k \in \mathbb{N}$,
+$\displaystyle\sum_{j=1}^{k} x_j \leq \displaystyle\sum_{j=1}^{k} y_j$
+
+% Theorem 4.19
+\section*{Theorem 4.19:}
+Let $k,m \in \mathbb{Z}_{\geq 0}$, where $m \leq k$. Then $m!(k-m)!$ divides $k!$.
+
+% Corollary 4.20
+\section*{Corollary 4.20:}
+For $1 \leq m \leq k$,
+$\binom{k+1}{m} = \binom{k}{m-1} + \binom{k}{m}$
+
+% Theorem 4.21
+\section*{Theorem 4.21 (Binomial theorem for integers):}
+If $a,b \in \mathbb{Z}$ and $k \in \mathbb{Z}_{\geq 0}$ then
+$(a+b)^k = \displaystyle\sum_{m=0}^{k} \binom{k}{m} a^{k-m} b^m$
+
+% Corollary 4.22
+\section*{Corollary 4.22:}
+For $k \in \mathbb{Z}_{\geq 0}$,
+$\displaystyle\sum_{m=0}^{k} \binom{k}{m} = 2^k$
+
+% Theorem 4.24
+\section*{Theorem 4.24 (Principle of mathematical induction —second form):}
+Let $P(k)$ be a statement depending on a variable $k \in \mathbb{N}$. In order to prove the statement ”$P(k)$ is true for all $k \in \mathbb{N}$” it is sufficient to prove:
+\begin{enumerate}
+    \item $P(1)$ is true and
+    \item if $P(j)$ is true for all integers $j$ such that $1 \leq j \leq n$, then $P(n+1)$ is true
+\end{enumerate}
+
+% Proposition 4.29
+\section*{Proposition 4.29:}
+The $k$th Fibonacci number is given directly by the formula
+$f_k = \frac{1}{\sqrt{5}} \left(\left(\frac{1 + \sqrt{5}}{2}\right)^k - \left(\frac{1 - \sqrt{5}}{2}\right)^k\right)$
+
+
+% Proposition 4.30
+\section*{Proposition 4.30:}
+For all $k,m \in \mathbb{N}$, where $m \geq 2$,
+\[ f_{m+k} = f_{m-1} f_k + f_m f_{k+1} \]
+
+% Proposition 4.31
+\section*{Proposition 4.31:}
+For all $k \in \mathbb{N}$,
+\[ f_{2k+1} = f_k^2 + f_{k+1}^2 \]
+
+% Proposition 4.32
+\section*{Proposition 4.32:}
+For all $k,m \in \mathbb{N}$, $f_{mk}$ is divisible by $f_m$.
