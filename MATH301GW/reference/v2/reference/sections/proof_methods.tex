@@ -1,65 +1,101 @@
-\section*{If then statements}
-\textbf{Format:} Proof. If A, then B.
-\begin{enumerate}
-    \item Assume A.
-    \item Show that assuming A leads to B.
-    \item Therefore, B is concluded from A.
-\end{enumerate}
-\textbf{Example:} 
+\unnumberedsection{If then statements}
+
+% The format for "if-then" proofs is bolded for emphasis.
+\textbf{Format:}
 \begin{proof}
-Proof. If \(m = 1\), then \(m + 0 = 1\).
+\textbf{If \(A\), then \(B\):}
 \begin{enumerate}
-    \item Assume \(m = 1\).
-    \item Considering \(m = 1\), we have \(1 + 0 = 1\).
-    \item This simplifies to \(1 = 1\), which is true.
+    \item \textbf{Assume \(A\).}
+    \item \textbf{Show that assuming \(A\) leads to \(B\).}
+    \item \textbf{Therefore, \(B\) is concluded from \(A\).}
 \end{enumerate}
 \end{proof}
 
-\section*{If then types}
-Various types of implications and their representations:
+% An example of an "if-then" proof is provided with clear steps.
+\textbf{Example:}
+\begin{proof}
+\textbf{If \(m = 1\), then \(m + 0 = 1\).}
+\begin{enumerate}
+    \item \textbf{Assume \(m = 1\).}
+    \item \textbf{Considering \(m = 1\), we have \(1 + 0 = 1\).}
+    \item \textbf{This simplifies to \(1 = 1\), which is true.}
+\end{enumerate}
+\end{proof}
+
+\unnumberedsection{If then types}
+
+% Describing various types of implications with bold statements
+\textbf{Different types of implications and their meaning:}
 \begin{itemize}
-    \item \(A \Rightarrow B\): "If it is Wednesday, Dr. Beck will get a cup of coffee from the student union."
-    \item \(B \Rightarrow A\) (Converse of the first): "If Dr. Beck got a cup of coffee from the student union, it is Wednesday."
-    \item \(A \Leftrightarrow B\) (Bi-conditional, if and only if): "It is Wednesday if and only if Dr. Beck got a cup of coffee from the student union."
-    \item \((\text{not } B) \Rightarrow (\text{not } A)\) (Contrapositive): "If Dr. Beck did not get a cup of coffee from the student union, then it is not Wednesday."
+    \item \textbf{\(A \Rightarrow B\)}: "If it is Wednesday, Dr. Beck will get a cup of coffee from the student union."
+    \item \textbf{\(B \Rightarrow A\)} (Converse): "If Dr. Beck got a cup of coffee from the student union, then it is Wednesday."
+    \item \textbf{\(A \Leftrightarrow B\)} (Bi-conditional): "It is Wednesday if and only if Dr. Beck got a cup of coffee from the student union."
+    \item \textbf{\(\neg B \Rightarrow \neg A\)} (Contrapositive): "If Dr. Beck did not get a cup of coffee from the student union, then it is not Wednesday."
 \end{itemize}
 
-\section*{Induction Proof}
-\textbf{Format:} 
+\unnumberedsection{Induction Proof}
+
+% Induction proof format with bolded key points
+\textbf{Format:}
 \begin{proof}
-Proof that \(F(x)\) is true for all \(x \in A\):
+\textbf{Prove that \(F(x)\) is true for all \(x \in A\):}
 \begin{enumerate}
-    \item \textbf{Base case:} Show \(F(a)\) is true, where \(a\) is the smallest element in \(A\).
+    \item \textbf{Base case:} Show \(F(a)\) is true, where \(a\) is the smallest element in set \(A\).
     \item \textbf{Induction step:} Assume \(F(k)\) is true for an arbitrary \(k \in A\). Show that \(F(k) \Rightarrow F(k+1)\).
-    \item Therefore, \(F(x)\) is true for all \(x \in A\).
+    \item \textbf{Therefore, \(F(x+1)\) is true for all \(x \in A\).}
 \end{enumerate}
 \end{proof}
-\textbf{Example:} 
+
+% Induction proof example with bolded key points
+\textbf{Example:}
 \begin{proof}
-For all \(n \in \mathbb{N}\), \(n = n\).
+\textbf{For all \(n \in \mathbb{N}\), \(n = n\):}
 \begin{enumerate}
-    \item Base case (\(n = 1\)): \(1 = 1\) is true.
-    \item Induction step: Assume \(n = n\) is true for an arbitrary natural number \(n\). Show that this implies \(n + 1 = n + 1\).
+    \item \textbf{Base case (\(n = 1\)):} \(1 = 1\) is true.
+    \item \textbf{Induction step:} Assume \(n = n\) is true for an arbitrary natural number \(n\). Show that this implies \(n + 1 = n + 1\).
     \item By the induction hypothesis, \(n = n\). Adding 1 to both sides, \(n + 1 = n + 1\), which holds true.
 \end{enumerate}
 \end{proof}
+\unnumberedsection{Proof by contradiction}
 
-\section*{Proof by contradiction}
+% Proof by contradiction format description with bolded key points
 \textbf{Format:}
 \begin{proof}
-Prove \(A\) is true by Contradiction:
+\textbf{Prove that \(A\) is true by contradiction:}
 \begin{enumerate}
-    \item Assume \(A\) is false.
-    \item Show that this assumption leads to a contradiction.
+    \item Assume \textbf{not} \(A\).
+    \item Show that this assumption leads to a contradiction (something that we know is false).
     \item Therefore, \(A\) must be true.
 \end{enumerate}
 \end{proof}
+
+% Different negations section with bold text and examples
+\textbf{Different Negations}
+\begin{enumerate}
+    \item \textbf{AND \( \Rightarrow \) OR:} If \( A \) and \( B \), then \textbf{not} \( A \) or \textbf{not} \( B \).
+    \item[] \textit{Example:} Dr. Beck is 5 ft tall and single \( \Rightarrow \) Dr. Beck is \textbf{not} 5 ft tall or is \textbf{not} single.
+    
+    \item \textbf{OR \( \Rightarrow \) AND:} If \( A \) or \( B \), then \textbf{not} \( A \) and \textbf{not} \( B \).
+    \item[] \textit{Example:} Dr. Beck will drink a coffee or it is Wednesday \( \Rightarrow \) Dr. Beck will \textbf{not} drink a coffee and it is \textbf{not} Wednesday.
+    
+    \item \textbf{If, then \( \Rightarrow \) AND:} If \( A \), then \( B \) implies \textbf{not} \( A \) and \textbf{not} \( B \).
+    \item[] \textit{If it is Monday, then Dr. Beck is on campus \( \Rightarrow \) It is \textbf{not} Monday and Dr. Beck is \textbf{not} on campus.}
+    
+    \item \textbf{For all \( \Rightarrow \) There exists:} For all \( m \), \( A \) is true implies there exists an \( m \), \( A \) is \textbf{not} true.
+    \item[] \textit{For all \( m \in \mathbb{Z} \), \( m \) is even \( \Rightarrow \) There exists \( m \in \mathbb{Z} \), \( m \) is \textbf{not} even.}
+    
+    \item \textbf{There exists \( \Rightarrow \) For all:} There exists an \( m \), \( A \) is true implies for all \( m \), \( A \) is \textbf{not} true.
+    \item[] \textit{There exists an \( m \in \mathbb{Z} \), \( m + 1 = 0.5 \) \( \Rightarrow \) For all \( m \in \mathbb{Z} \), \( m + 1 \neq 0 \).}
+\end{enumerate}
+
+% Example of proof by contradiction with bolded statement
 \textbf{Example:}
 \begin{proof}
-Prove there is no smallest negative integer.
+\textbf{There is no \( x \in \mathbb{N} \) that satisfies the equation \( 1 - x = 0 \cdot x \).}
 \begin{enumerate}
-    \item Assume, by way of contradiction, that there is a smallest negative integer, call it \(n\).
-    \item Consider \(n - 1\). \(n - 1\) is also an integer and is smaller than \(n\), contradicting the assumption that \(n\) is the smallest negative integer.
-    \item Therefore, there cannot be a smallest negative integer.
+    \item Assume by way of contradiction that such an \( x \) exists in \( \mathbb{N} \).
+    \item Since \( x \neq 0 \) for any \( x \in \mathbb{N} \), cancelling \( x \) from both sides of the equation \( 1 - x = 0 \cdot x \) leads to \( 0 = 1 \).
+    \item Since \( 0 \neq 1 \) is a true mathematical contradiction, the initial statement is proven to be true by contradiction. \qedhere
 \end{enumerate}
 \end{proof}
+

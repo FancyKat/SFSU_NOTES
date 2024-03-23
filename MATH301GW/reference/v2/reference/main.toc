@@ -1,2 +1,5 @@
-\contentsline {chapter}{\numberline {1}Proof Methods}{2}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Axioms}{4}{chapter.2}%
+\contentsline {chapter}{Proof Methods}{2}{chapter*.1}%
+\contentsline {section}{If then statements}{2}{section*.2}%
+\contentsline {section}{If then types}{2}{Item.6}%
+\contentsline {section}{Induction Proof}{2}{Item.6}%
+\contentsline {section}{Proof by contradiction}{3}{Item.12}%

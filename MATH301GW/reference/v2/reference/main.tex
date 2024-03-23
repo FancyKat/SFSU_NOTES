@@ -1,37 +1,79 @@
-\documentclass{report}
+\documentclass{report}    % Main document class setup
 
-% Package for mathematical content
-\usepackage{amsmath}
-\usepackage{amssymb}  % For \mathbb and other symbols
-\usepackage{amsthm}   % For theorem-like environments
+% Geometry package for setting up page dimensions
+\usepackage{geometry}
+\geometry{
+  a4paper,                % Sets the paper size to A4
+  total={170mm,257mm},    % Specifies the dimensions of the total printable area
+  left=20mm,              % Left margin
+  top=20mm,               % Top margin
+}
 
-% Package for custom enumeration
-\usepackage{enumitem}
-% Package for hyperlinks
+% Mathematical content packages
+\usepackage{amsmath}      % Provides advanced math extensions
+\usepackage{amssymb}      % Adds new symbols to be used in math mode
+\usepackage{amsthm}       % Aids in formatting theorem-like environments
+
+% Other useful packages
+\usepackage{enumitem}     % Allows for customization of list (enumerate/itemize) environments
+\usepackage{hyperref}     % Enables cross-linking within the document
+\usepackage{parskip}      % Adjusts paragraph spacing to remove indentation and add space between paragraphs
+\usepackage{titlesec}     % Allows customization of titles
+
+% Hyperref setup for links within the document
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,    % Enables colored links
+    linkcolor = black,    % Internal link colors
+    citecolor = black,    % Citation link colors
+    urlcolor = blue,      % URL link colors (external links)
+}
 
+% TOCLOFT package setup for customizing Table of Contents appearance
+\usepackage{tocloft}
+% Adjustments to the spacing in the Table of Contents
+\setlength{\cftbeforesecskip}{6pt}        % Space before section entries
+\setlength{\cftbeforesubsecskip}{3pt}     % Space before subsection entries
+\setlength{\cftbeforesubsubsecskip}{2pt}  % Space before subsubsection entries
+% Font adjustments for the Table of Contents
+\renewcommand{\cftsecfont}{\normalsize\bfseries}  % Section titles
+\renewcommand{\cftsubsecfont}{\normalsize}        % Subsection titles
+\renewcommand{\cftsubsubsecfont}{\small}          % Subsubsection titles
+
+% Title format customization using titlesec package
+\titleformat{\chapter}[block]{\normalfont\Large\bfseries\filcenter}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+% Document metadata
 \title{Your Document Title}
 \author{Your Name}
 \date{\today}
 
+% Custom command for unnumbered sections that still appear in the Table of Contents
+\newcommand{\unnumberedsection}[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
+
+% Beginning of the document
 \begin{document}
 
-\maketitle % Generates the title
+\maketitle        % Generates the title page
+\tableofcontents  % Generates the table of contents
+\newpage          % Ensures the content following the table of contents starts on a new page
 
-\tableofcontents % Generates the table of contents
-
-\newpage % Start new page after the table of contents
-
-\chapter{Proof Methods}
+% Proof Methods section
+\chapter*{Proof Methods}
+\addcontentsline{toc}{chapter}{Proof Methods} % Adds the chapter to the ToC
 \input{./sections/proof_methods.tex}
-
-\chapter{Axioms} % Include the axioms from an external file
-\input{./sections/axioms.tex}
-\newpage % Start definitions on a new page
 
 % \chapter{Definitions} % Include the definitions from an external file
 % \input{./sections/definitions.tex}
 % \newpage % Start propositions on a new page
+
+% \chapter{Axioms} % Include the axioms from an external file
+% \input{./sections/axioms.tex}
+% \newpage % Start definitions on a new page
 
 % \chapter{Propositions} % Include the propositions from an external file
 % \input{./sections/propositions.tex}
