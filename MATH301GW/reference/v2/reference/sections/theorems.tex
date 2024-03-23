@@ -1,3 +1,11 @@
+% Theorem 2.17 (Principle of mathematical induction-first form)
+\section*{Theorem 2.17 (Principle of Mathematical Induction - First Form):}
+Let $P(k)$ be a statement depending on a variable $k \in \mathbb{N}$. In order to prove the statement "P(k) is true for all $k \in \mathbb{N}$," it is sufficient to prove:
+\begin{enumerate}
+    \item $P(1)$ is true, and
+    \item For any given $n \in \mathbb{N}$, if $P(n)$ is true, then $P(n+1)$ is true.
+\end{enumerate}
+
 % Theorem 2.25
 \unnumberedsection{Theorem 2.25 (Principle of Mathematical Induction — First Form Revisited):}
 Let $P(k)$ be a statement, depending on a variable $k \in \mathbb{Z}$, that makes sense for all $k \geq m$, where $m$ is a fixed integer. In order to prove the statement "P(k) is true for all $k \geq m$," it is sufficient to prove:
@@ -5,3 +13,38 @@ Let $P(k)$ be a statement, depending on a variable $k \in \mathbb{Z}$, that make
     \item $P(m)$ is true, and
     \item For any given $n \geq m$, if $P(n)$ is true then $P(n+1)$ is true.
 \end{enumerate}
+
+% Theorem 2.32
+\section*{Theorem 2.32 (Well-Ordering Principle):}
+Every nonempty subset of $\mathbb{N}$ has a smallest element.
+
+% Theorem 4.4
+\section*{Theorem 4.4:}
+A legitimate method of describing a sequence $(y_j)_{j=m}^{\infty}$ is:
+\begin{enumerate}
+    \item to name $y_m$, and
+    \item to state a formula describing $y_{n+1}$ in terms of $y_n$, for each $n \geq m$.
+\end{enumerate}
+
+% Theorem 4.19
+\section*{Theorem 4.19:}
+Let $k,m \in \mathbb{Z}_{\geq 0}$, where $m \leq k$. Then $m!(k-m)!$ divides $k!$.
+
+
+% Theorem 4.21
+\section*{Theorem 4.21 (Binomial theorem for integers):}
+If $a,b \in \mathbb{Z}$ and $k \in \mathbb{Z}_{\geq 0}$ then
+$(a+b)^k = \displaystyle\sum_{m=0}^{k} \binom{k}{m} a^{k-m} b^m$
+
+% Theorem 4.24
+\section*{Theorem 4.24 (Principle of mathematical induction —second form):}
+Let $P(k)$ be a statement depending on a variable $k \in \mathbb{N}$. In order to prove the statement ”$P(k)$ is true for all $k \in \mathbb{N}$” it is sufficient to prove:
+\begin{enumerate}
+    \item $P(1)$ is true and
+    \item if $P(j)$ is true for all integers $j$ such that $1 \leq j \leq n$, then $P(n+1)$ is true
+\end{enumerate}
+
+% Theorem 5.15 (De Morgan’s laws)
+\section*{Theorem 5.15 (De Morgan’s laws):}
+Given two subsets $A,B \subseteq X$,
+\[ (A \cap B)^c = A^c \cup B^c \quad \text{and} \quad (A \cup B)^c = A^c \cap B^c \]

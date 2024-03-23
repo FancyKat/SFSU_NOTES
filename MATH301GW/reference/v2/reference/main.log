@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  23 MAR 2024 14:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  23 MAR 2024 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2611,12 +2611,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 89.
 
-) [6] (./sections/theorems.tex
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 2.
-
-) [7
+) [6] (./sections/theorems.tex) [7
 
 ] (./sections/axioms.tex
 
@@ -2634,17 +2629,32 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 ]
 Missing character: There is no − ("2212) in font cmr10!
-[10]) [11] (./sections/propositions/chapters/ch2.tex [12] [13] [14] [15] [16]) [17] (./sections/propositions/chapters/ch3.tex) [18] (./sections/propositions/chapters/ch4.tex [19] [20]) [21] (./sections/propositions/chapters/ch5.tex) [22]) (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6B3D4C89C5D42235C40E73ADA61090AA;6711.
+[10]) [11] (./sections/propositions/chapters/ch2.tex [12] [13]) [14] (./sections/propositions/chapters/ch3.tex) [15] (./sections/propositions/chapters/ch4.tex [16]) [17] (./sections/propositions/chapters/ch5.tex) [18])
+Chapter 1.
+(./sections/quizzes.tex
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1.
+
+[19
+
+]) [20] (./main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 3BD3607155F2F0A38340E31553AEAAED;6784
+(rerunfilecheck)             After:  AA66B9061D48AB2ADD9E0BEA4C2DDE6D;9429.
  ) 
 Here is how much of TeX's memory you used:
- 10909 strings out of 476191
- 170086 string characters out of 5812072
- 491718 words of memory out of 5000000
- 31452 multiletter control sequences out of 15000+600000
+ 10914 strings out of 476191
+ 170193 string characters out of 5812072
+ 492811 words of memory out of 5000000
+ 31454 multiletter control sequences out of 15000+600000
  482680 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,64p,1252b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (23 pages).
+Output written on main.pdf (21 pages).
