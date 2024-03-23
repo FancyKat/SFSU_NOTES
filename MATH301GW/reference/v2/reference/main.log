@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  23 MAR 2024 13:53
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  23 MAR 2024 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2613,23 +2613,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ) [5]
 Chapter 1.
-(./sections/axioms.tex) [6
+(./sections/axioms.tex
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 2.
+
+) [6
 
 ] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 760710C0275F0715320CCF1418078F36;3843
-(rerunfilecheck)             After:  84DA01EF556D48B507470197AE3FAB3C;3917.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F1CD12F05BAA28B4A32659299F4E270F;5077.
  ) 
 Here is how much of TeX's memory you used:
- 10863 strings out of 476191
- 168654 string characters out of 5812072
- 488659 words of memory out of 5000000
- 31433 multiletter control sequences out of 15000+600000
+ 10864 strings out of 476191
+ 168665 string characters out of 5812072
+ 489971 words of memory out of 5000000
+ 31434 multiletter control sequences out of 15000+600000
  482664 words of font info for 88 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,64p,1252b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
