@@ -1,24 +1,94 @@
 % Proposition 1.6
 \section*{Proposition 1.6}
 If $m$, $n$, and $p$ are integers, then $(m+n) \cdot p = mp+np$.
+\begin{proof}
+    Let $m, n, \text{ and } p$ be arbitrary integers. The proof follows directly from the distributive property of multiplication over addition for integers (Axiom 1.1 - distributivity).
+
+    \begin{align*}
+        (m + n) \cdot p & = m \cdot p + n \cdot p &  & \text{(Axiom 1.1 - distributivity)} \\
+                        & = mp + np
+    \end{align*}
+
+    \textbf{Thus} $(m + n) \cdot p = mp + np$ for all integers $m, n, \text{ and } p$.
+\end{proof}
+
 
 % Proposition 1.7
 \section*{Proposition 1.7}
 If $m$ is an integer, then $0+m = m$ and $1 \cdot m = m$.
+\begin{proof}
+    Let $m$ be an arbitrary integer.
+
+    \textbf{Part 1: }$0 + m = m$
+    \begin{align*}
+        0 + m & = m &  & \text{(Axiom 1.2 - identity element for addition)}
+    \end{align*}
+
+    \textbf{Part 2: }$1 \cdot m = m$
+    \begin{align*}
+        1 \cdot m & = m &  & \text{(Axiom 1.3 - identity element for multiplication)}
+    \end{align*}
+
+    Thus, for any integer $m$, $0 + m = m$ and $1 \cdot m = m$.
+\end{proof}
+
 
 % Proposition 1.8
 \section*{Proposition 1.8}
 If $m$ is an integer, then $(-m)+m = 0$.
+\begin{proof}
+    Let $m$ be an arbitrary integer.
+    \begin{align*}
+        (-m) + m & = 0 &  & \text{(Axiom 1.4 - additive inverse)}
+    \end{align*}
+
+    Therefore, for any integer $m$, $(-m) + m = 0$.
+\end{proof}
 
 % Proposition 1.9
+% REVIEW
 \section*{Proposition 1.9}
 Let $m$, $n$, and $p$ be integers. If $m+n = m+ p$, then $n = p$.
+\begin{proof}
+    Let $m$, $n$, and $p$ be arbitrary integers, and suppose $m + n = m + p$.
+    \begin{align*}
+        m + n          & = m + p          &  & \text{(given)}                                     \\
+        (-m) + (m + n) & = (-m) + (m + p) &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
+        ((-m) + m) + n & = ((-m) + m) + p &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
+        0 + n          & = 0 + p          &  & \text{(Axiom 1.4 - additive inverse)}              \\
+        n              & = p              &  & \text{(Axiom 1.2 - identity element for addition)}
+    \end{align*}
+
+    Hence, if $m + n = m + p$ for integers $m$, $n$, and $p$, then $n = p$.
+\end{proof}
+
 
 % Proposition 1.10
+% REVIEW
 \section*{Proposition 1.10}
 Let $m$, $x_1$, $x_2 \in \mathbb{Z}$. If $m$, $x_1$, $x_2$ satisfy the equation $m+x_1 = 0$ and $m+x_2 = 0$, then $x_1 = x_2$.
+\begin{proof}
+    Let $m, x_1, x_2 \in \mathbb{Z}$. Suppose $m + x_1 = 0$ and $m + x_2 = 0$.
+    \begin{align*}
+        m + x_1          & = 0        &  & \text{(given)}                                     \\
+        (-m) + (m + x_1) & = (-m) + 0 &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
+        ((-m) + m) + x_1 & = (-m) + 0 &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
+        0 + x_1          & = -m       &  & \text{(Axiom 1.4 - additive inverse)}              \\
+        x_1              & = -m       &  & \text{(Axiom 1.2 - identity element for addition)}
+    \end{align*}
+    Similarly, from $m + x_2 = 0$, we can derive $x_2 = -m$.
+    \begin{align*}
+        x_1 & = -m  &  & \text{(derived)}                         \\
+        x_2 & = -m  &  & \text{(derived)}                         \\
+        x_1 & = x_2 &  & \text{(transitive property of equality)}
+    \end{align*}
+
+    Therefore, if $m, x_1, x_2 \in \mathbb{Z}$ such that $m + x_1 = 0$ and $m + x_2 = 0$, then $x_1 = x_2$.
+\end{proof}
+
 
 % Proposition 1.11
+% REVIEW
 \section*{Proposition 1.11}
 If $m$, $n$, $p$, and $q$ are integers, then:
 \begin{enumerate}[label=(\roman*)]
@@ -30,21 +100,123 @@ If $m$, $n$, $p$, and $q$ are integers, then:
     \item $(m(n+ p))q = (mn)q+m(pq)$.
 \end{enumerate}
 
+\begin{proof}
+    Let $m$, $n$, $p$, and $q$ be arbitrary integers.
+
+    (i) $(m+n)(p+q) = (mp+np)+(mq+nq)$
+    \begin{align*}
+        (m+n)(p+q) & = (m+n)p + (m+n)q   &  & \text{(Axiom 1.1(iii) - distributivity)} \\
+                   & = (mp+np) + (mq+nq) &  & \text{(Axiom 1.1(iii) - distributivity)}
+    \end{align*}
+
+    (ii) $m+(n+(p+q)) = (m+n)+(p+q) = ((m+n)+p)+q$
+    \begin{align*}
+        m+(n+(p+q)) & = (m+n)+(p+q) &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
+                    & = ((m+n)+p)+q &  & \text{(Axiom 1.1(ii) - associativity of addition)}
+    \end{align*}
+
+    (iii) $m+(n+p) = (p+m)+n$
+    \begin{align*}
+        m+(n+p) & = (m+n)+p &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
+                & = (n+m)+p &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
+                & = (p+m)+n &  & \text{(Axiom 1.1(i) - commutativity of addition)}
+    \end{align*}
+
+    (iv) $m(np) = p(mn)$
+    \begin{align*}
+        m(np) & = (mn)p &  & \text{(Axiom 1.1(v) - associativity of multiplication)}  \\
+              & = p(mn) &  & \text{(Axiom 1.1(iv) - commutativity of multiplication)}
+    \end{align*}
+
+    (v) $m(n+(p+q)) = (mn+mp)+mq$
+    \begin{align*}
+        m(n+(p+q)) & = m(n+p)+mq  &  & \text{(Axiom 1.1(iii) - distributivity)} \\
+                   & = (mn+mp)+mq &  & \text{(Axiom 1.1(iii) - distributivity)}
+    \end{align*}
+
+    (vi) $(m(n+p))q = (mn)q+m(pq)$
+    \begin{align*}
+        (m(n+p))q & = m((n+p)q)   &  & \text{(Axiom 1.1(v) - associativity of multiplication)} \\
+                  & = m(nq+pq)    &  & \text{(Axiom 1.1(iii) - distributivity)}                \\
+                  & = (mnq)+(mpq) &  & \text{(Axiom 1.1(iii) - distributivity)}                \\
+                  & = (mn)q+m(pq) &  & \text{(Axiom 1.1(v) - associativity of multiplication)}
+    \end{align*}
+\end{proof}
+
 % Proposition 1.12
+% REVIEW
 \section*{Proposition 1.12}
 Let $x \in \mathbb{Z}$. If $x$ has the property that for each integer $m$, $m+x = m$, then $x = 0$.
+\begin{proof}
+    Let $x \in \mathbb{Z}$. Suppose for each integer $m$, $m + x = m$.
+    \begin{align*}
+        0 + x & = 0 &  & \text{(substituting $m = 0$)}                      \\
+        x     & = 0 &  & \text{(Axiom 1.2 - identity element for addition)}
+    \end{align*}
+
+    Thus, if $x \in \mathbb{Z}$ has the property that for each integer $m$, $m + x = m$, then $x = 0$.
+\end{proof}
+
 
 % Proposition 1.13
+% REVIEW
 \section*{Proposition 1.13}
 Let $x \in \mathbb{Z}$. If $x$ has the property that there exists an integer $m$ such that $m+x = m$, then $x = 0$.
+\begin{proof}
+    Let $x \in \mathbb{Z}$. Suppose there exists an integer $m$ such that $m + x = m$.
+    \begin{align*}
+        m + x          & = m        &  & \text{(given)}                                     \\
+        (-m) + (m + x) & = (-m) + m &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
+        ((-m) + m) + x & = (-m) + m &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
+        0 + x          & = 0        &  & \text{(Axiom 1.4 - additive inverse)}              \\
+        x              & = 0        &  & \text{(Axiom 1.2 - identity element for addition)}
+    \end{align*}
+
+    Therefore, if $x \in \mathbb{Z}$ has the property that there exists an integer $m$ such that $m + x = m$, then $x = 0$.
+\end{proof}
 
 % Proposition 1.14
 \section*{Proposition 1.14}
 For all $m \in \mathbb{Z}$, $m \cdot 0 = 0 = 0 \cdot m$.
+\begin{proof}
+    Let $m \in \mathbb{Z}$.
+    \begin{align*}
+        m \cdot 0 & = (m + m + \cdots + m) \cdot 0                     &  & \text{(definition of multiplication)}              \\
+                  & = (m \cdot 0) + (m \cdot 0) + \cdots + (m \cdot 0) &  & \text{(Axiom 1.1(iii) - distributivity)}           \\
+                  & = 0 + 0 + \cdots + 0                               &  & \text{(Axiom 1.2 - identity element for addition)} \\
+                  & = 0
+    \end{align*}
+    Similarly,
+    \begin{align*}
+        0 \cdot m & = 0 + 0 + \cdots + 0 &  & \text{(definition of multiplication)} \\
+                  & = 0
+    \end{align*}
+
+    Therefore, for all $m \in \mathbb{Z}$, $m \cdot 0 = 0 = 0 \cdot m$.
+\end{proof}
 
 % Proposition 1.16
 \section*{Proposition 1.16}
 If $m$ and $n$ are even integers, then so are $m+n$ and $mn$.
+\begin{proof}
+    Let $m$ and $n$ be even integers. Then, there exist integers $j$ and $k$ such that $m = 2j$ and $n = 2k$.
+
+    Part 1: $m + n$ is even.
+    \begin{align*}
+        m + n & = 2j + 2k  &  & \text{(given)}                           \\
+              & = 2(j + k) &  & \text{(Axiom 1.1(iii) - distributivity)}
+    \end{align*}
+    Since $j + k$ is an integer, $m + n$ is even.
+
+    Part 2: $mn$ is even.
+    \begin{align*}
+        mn & = (2j)(2k) &  & \text{(given)}                                           \\
+           & = 2(2jk)   &  & \text{(Axiom 1.1(iv) - commutativity of multiplication)}
+    \end{align*}
+    Since $2jk$ is an integer, $mn$ is even.
+
+    Therefore, if $m$ and $n$ are even integers, then $m + n$ and $mn$ are also even.
+\end{proof}
 
 % Proposition 1.17
 \section*{Proposition 1.17}
