@@ -2,14 +2,16 @@
 \section*{Proposition 1.6}
 If $m$, $n$, and $p$ are integers, then $(m+n) \cdot p = mp+np$.
 \begin{proof}
-    Let $m, n, \text{ and } p$ be arbitrary integers. The proof follows directly from the distributive property of multiplication over addition for integers (Axiom 1.1 - distributivity).
-
+    Let $m$, $n$, and $p$ be arbitrary integers.
+    %We start by applying the distributive property of multiplication over addition for integers (Axiom 1.1(iii)).
+    %This allows us to distribute the multiplication of $(m+n)$ and $p$ to the individual terms $m$ and $n$.
     \begin{align*}
-        (m + n) \cdot p & = m \cdot p + n \cdot p &  & \text{(Axiom 1.1 - distributivity)} \\
+        (m + n) \cdot p & = m \cdot p + n \cdot p &  & \text{(Axiom 1.1(iii))} \\
+        %We then simplify the notation by removing the multiplication dots, as they are not necessary when variables are being multiplied.
                         & = mp + np
     \end{align*}
-
-    \textbf{Thus} $(m + n) \cdot p = mp + np$ for all integers $m, n, \text{ and } p$.
+    %The final line concludes the proof by stating that the equality holds for all integers $m$, $n$, and $p$.
+    Therefore, $(m + n) \cdot p = mp + np$ for all integers $m$, $n$, and $p$.
 \end{proof}
 
 
@@ -18,30 +20,31 @@ If $m$, $n$, and $p$ are integers, then $(m+n) \cdot p = mp+np$.
 If $m$ is an integer, then $0+m = m$ and $1 \cdot m = m$.
 \begin{proof}
     Let $m$ be an arbitrary integer.
-
-    \textbf{Part 1: }$0 + m = m$
+    %For the first part, we apply Axiom 1.2, which states that 0 is the identity element for addition.
+    %This means that when 0 is added to any integer $m$, the result is $m$ itself.
     \begin{align*}
-        0 + m & = m &  & \text{(Axiom 1.2 - identity element for addition)}
+        0 + m & = m &  & \text{(Axiom 1.2)}
     \end{align*}
-
-    \textbf{Part 2: }$1 \cdot m = m$
+    %For the second part, we apply Axiom 1.3, which states that 1 is the identity element for multiplication.
+    %This means that when any integer $m$ is multiplied by 1, the result is $m$ itself.
     \begin{align*}
-        1 \cdot m & = m &  & \text{(Axiom 1.3 - identity element for multiplication)}
+        1 \cdot m & = m &  & \text{(Axiom 1.3)}
     \end{align*}
-
-    Thus, for any integer $m$, $0 + m = m$ and $1 \cdot m = m$.
+    %The final line concludes the proof by stating that both equalities hold for any integer $m$.
+    Therefore, for any integer $m$, $0 + m = m$ and $1 \cdot m = m$.
 \end{proof}
-
 
 % Proposition 1.8
 \section*{Proposition 1.8}
 If $m$ is an integer, then $(-m)+m = 0$.
 \begin{proof}
     Let $m$ be an arbitrary integer.
+    %We apply Axiom 1.4, which states that for each integer $m$, there exists an additive inverse $-m$ such that $m + (-m) = 0$.
+    %By commutativity of addition (Axiom 1.1(i)), we can also write this as $(-m) + m = 0$.
     \begin{align*}
-        (-m) + m & = 0 &  & \text{(Axiom 1.4 - additive inverse)}
+        (-m) + m & = 0 &  & \text{(Axiom 1.4)}
     \end{align*}
-
+    %The final line concludes the proof by stating that the equality holds for any integer $m$.
     Therefore, for any integer $m$, $(-m) + m = 0$.
 \end{proof}
 
@@ -51,17 +54,20 @@ If $m$ is an integer, then $(-m)+m = 0$.
 Let $m$, $n$, and $p$ be integers. If $m+n = m+ p$, then $n = p$.
 \begin{proof}
     Let $m$, $n$, and $p$ be arbitrary integers, and suppose $m + n = m + p$.
+    %We start by adding $-m$ to both sides of the equation, using the commutativity of addition (Axiom 1.1(i)) to rearrange the terms.
     \begin{align*}
-        m + n          & = m + p          &  & \text{(given)}                                     \\
-        (-m) + (m + n) & = (-m) + (m + p) &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
-        ((-m) + m) + n & = ((-m) + m) + p &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
-        0 + n          & = 0 + p          &  & \text{(Axiom 1.4 - additive inverse)}              \\
-        n              & = p              &  & \text{(Axiom 1.2 - identity element for addition)}
+        m + n          & = m + p          &  & \text{(given)}         \\
+        (-m) + (m + n) & = (-m) + (m + p) &  & \text{(Axiom 1.1(i))}  \\
+        %We then apply the associativity of addition (Axiom 1.1(ii)) to regroup the terms.
+        ((-m) + m) + n & = ((-m) + m) + p &  & \text{(Axiom 1.1(ii))} \\
+        %By Axiom 1.4 (additive inverse), $(-m) + m = 0$, so we can simplify the left-hand side.
+        0 + n          & = 0 + p          &  & \text{(Axiom 1.4)}     \\
+        %Finally, by Axiom 1.2 (identity element for addition), $0 + n = n$ and $0 + p = p$, so we can conclude that $n = p$.
+        n              & = p              &  & \text{(Axiom 1.2)}
     \end{align*}
-
-    Hence, if $m + n = m + p$ for integers $m$, $n$, and $p$, then $n = p$.
+    %The final line states the conclusion of the proof.
+    Therefore, if $m + n = m + p$ for integers $m$, $n$, and $p$, then $n = p$.
 \end{proof}
-
 
 % Proposition 1.10
 % REVIEW
@@ -69,23 +75,28 @@ Let $m$, $n$, and $p$ be integers. If $m+n = m+ p$, then $n = p$.
 Let $m$, $x_1$, $x_2 \in \mathbb{Z}$. If $m$, $x_1$, $x_2$ satisfy the equation $m+x_1 = 0$ and $m+x_2 = 0$, then $x_1 = x_2$.
 \begin{proof}
     Let $m, x_1, x_2 \in \mathbb{Z}$. Suppose $m + x_1 = 0$ and $m + x_2 = 0$.
+    %We start by adding $-m$ to both sides of the first equation, using the commutativity of addition (Axiom 1.1(i)) to rearrange the terms.
     \begin{align*}
-        m + x_1          & = 0        &  & \text{(given)}                                     \\
-        (-m) + (m + x_1) & = (-m) + 0 &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
-        ((-m) + m) + x_1 & = (-m) + 0 &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
-        0 + x_1          & = -m       &  & \text{(Axiom 1.4 - additive inverse)}              \\
-        x_1              & = -m       &  & \text{(Axiom 1.2 - identity element for addition)}
+        m + x_1          & = 0        &  & \text{(given)}         \\
+        (-m) + (m + x_1) & = (-m) + 0 &  & \text{(Axiom 1.1(i))}  \\
+        %We then apply the associativity of addition (Axiom 1.1(ii)) to regroup the terms.
+        ((-m) + m) + x_1 & = (-m) + 0 &  & \text{(Axiom 1.1(ii))} \\
+        %By Axiom 1.4 (additive inverse), $(-m) + m = 0$, so we can simplify the left-hand side.
+        0 + x_1          & = -m       &  & \text{(Axiom 1.4)}     \\
+        %By Axiom 1.2 (identity element for addition), $0 + x_1 = x_1$, so we can conclude that $x_1 = -m$.
+        x_1              & = -m       &  & \text{(Axiom 1.2)}
     \end{align*}
+    %We follow the same steps for the second equation to show that $x_2 = -m$.
     Similarly, from $m + x_2 = 0$, we can derive $x_2 = -m$.
+    %Since both $x_1$ and $x_2$ are equal to $-m$, we can conclude that $x_1 = x_2$.
     \begin{align*}
         x_1 & = -m  &  & \text{(derived)}                         \\
         x_2 & = -m  &  & \text{(derived)}                         \\
         x_1 & = x_2 &  & \text{(transitive property of equality)}
     \end{align*}
-
+    %The final line states the conclusion of the proof.
     Therefore, if $m, x_1, x_2 \in \mathbb{Z}$ such that $m + x_1 = 0$ and $m + x_2 = 0$, then $x_1 = x_2$.
 \end{proof}
-
 
 % Proposition 1.11
 % REVIEW
@@ -103,43 +114,64 @@ If $m$, $n$, $p$, and $q$ are integers, then:
 \begin{proof}
     Let $m$, $n$, $p$, and $q$ be arbitrary integers.
 
-    (i) $(m+n)(p+q) = (mp+np)+(mq+nq)$
+    (i) $(m + n)(p + q) = (mp + np) + (mq + nq)$
+    %We start by applying the distributive property of multiplication over addition (Axiom 1.1(iii)) to the left-hand side of the equation.
+    %This allows us to multiply each term in the first parentheses by each term in the second parentheses.
     \begin{align*}
-        (m+n)(p+q) & = (m+n)p + (m+n)q   &  & \text{(Axiom 1.1(iii) - distributivity)} \\
-                   & = (mp+np) + (mq+nq) &  & \text{(Axiom 1.1(iii) - distributivity)}
+        (m + n)(p + q) & = mp + mq + np + nq     &  & \text{(Axiom 1.1(iii))} \\
+        %We then group the like terms using the associative property of addition (Axiom 1.1(ii)).
+                       & = (mp + np) + (mq + nq) &  & \text{(Axiom 1.1(ii))}
     \end{align*}
 
-    (ii) $m+(n+(p+q)) = (m+n)+(p+q) = ((m+n)+p)+q$
+    (ii) $m + (n + (p + q)) = (m + n) + (p + q) = ((m + n) + p) + q$
+    %We start with the left-hand side of the equation and apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
     \begin{align*}
-        m+(n+(p+q)) & = (m+n)+(p+q) &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
-                    & = ((m+n)+p)+q &  & \text{(Axiom 1.1(ii) - associativity of addition)}
+        m + (n + (p + q)) & = (m + n) + (p + q) &  & \text{(Axiom 1.1(ii))} \\
+        %We then apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms on the right-hand side.
+                          & = ((m + n) + p) + q &  & \text{(Axiom 1.1(ii))}
     \end{align*}
 
-    (iii) $m+(n+p) = (p+m)+n$
+    (iii) $m + (n + p) = (p + m) + n$
+    %We start with the left-hand side of the equation and apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
     \begin{align*}
-        m+(n+p) & = (m+n)+p &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
-                & = (n+m)+p &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
-                & = (p+m)+n &  & \text{(Axiom 1.1(i) - commutativity of addition)}
+        m + (n + p) & = (m + n) + p &  & \text{(Axiom 1.1(ii))} \\
+        %We then apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $m$ and $n$.
+                    & = (n + m) + p &  & \text{(Axiom 1.1(i))}  \\
+        %Finally, we apply the commutative property of addition (Axiom 1.1(i)) again to swap the order of $p$ and $n + m$.
+                    & = (p + m) + n &  & \text{(Axiom 1.1(i))}
     \end{align*}
 
     (iv) $m(np) = p(mn)$
+    %We start with the left-hand side of the equation and apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
     \begin{align*}
-        m(np) & = (mn)p &  & \text{(Axiom 1.1(v) - associativity of multiplication)}  \\
-              & = p(mn) &  & \text{(Axiom 1.1(iv) - commutativity of multiplication)}
+        m(np) & = (mn)p &  & \text{(Axiom 1.1(v))}  \\
+        %We then apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $m$ and $n$.
+              & = (nm)p &  & \text{(Axiom 1.1(iv))} \\
+        %Finally, we apply the associative property of multiplication (Axiom 1.1(v)) again to regroup the factors.
+              & = p(mn) &  & \text{(Axiom 1.1(v))}
     \end{align*}
 
-    (v) $m(n+(p+q)) = (mn+mp)+mq$
+    (v) $m(n + (p + q)) = (mn + mp) + mq$
+    %We start by applying the distributive property of multiplication over addition (Axiom 1.1(iii)) to the left-hand side of the equation.
+    %This allows us to multiply $m$ by each term inside the parentheses.
     \begin{align*}
-        m(n+(p+q)) & = m(n+p)+mq  &  & \text{(Axiom 1.1(iii) - distributivity)} \\
-                   & = (mn+mp)+mq &  & \text{(Axiom 1.1(iii) - distributivity)}
+        m(n + (p + q)) & = mn + m(p + q)  &  & \text{(Axiom 1.1(iii))} \\
+        %We then apply the distributive property of multiplication over addition (Axiom 1.1(iii)) again to the remaining term.
+                       & = mn + (mp + mq) &  & \text{(Axiom 1.1(iii))} \\
+        %Finally, we apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+                       & = (mn + mp) + mq &  & \text{(Axiom 1.1(ii))}
     \end{align*}
 
-    (vi) $(m(n+p))q = (mn)q+m(pq)$
+    (vi) $(m(n + p))q = (mn)q + m(pq)$
+    %We start with the left-hand side of the equation and apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
     \begin{align*}
-        (m(n+p))q & = m((n+p)q)   &  & \text{(Axiom 1.1(v) - associativity of multiplication)} \\
-                  & = m(nq+pq)    &  & \text{(Axiom 1.1(iii) - distributivity)}                \\
-                  & = (mnq)+(mpq) &  & \text{(Axiom 1.1(iii) - distributivity)}                \\
-                  & = (mn)q+m(pq) &  & \text{(Axiom 1.1(v) - associativity of multiplication)}
+        (m(n + p))q & = m((n + p)q)   &  & \text{(Axiom 1.1(v))}   \\
+        %We then apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to multiply $q$ by each term inside the parentheses.
+                    & = m(nq + pq)    &  & \text{(Axiom 1.1(iii))} \\
+        %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) again to multiply $m$ by each term inside the parentheses.
+                    & = (mnq) + (mpq) &  & \text{(Axiom 1.1(iii))} \\
+        %Finally, we apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+                    & = (mn)q + m(pq) &  & \text{(Axiom 1.1(v))}
     \end{align*}
 \end{proof}
 
@@ -149,12 +181,14 @@ If $m$, $n$, $p$, and $q$ are integers, then:
 Let $x \in \mathbb{Z}$. If $x$ has the property that for each integer $m$, $m+x = m$, then $x = 0$.
 \begin{proof}
     Let $x \in \mathbb{Z}$. Suppose for each integer $m$, $m + x = m$.
+    %We start by substituting $m = 0$ into the given equation.
     \begin{align*}
-        0 + x & = 0 &  & \text{(substituting $m = 0$)}                      \\
-        x     & = 0 &  & \text{(Axiom 1.2 - identity element for addition)}
+        0 + x & = 0 &  & \text{(substituting $m = 0$)} \\
+        %By the identity element for addition (Axiom 1.2), $0 + x = x$, so we can conclude that $x = 0$.
+        x     & = 0 &  & \text{(Axiom 1.2)}
     \end{align*}
 
-    Thus, if $x \in \mathbb{Z}$ has the property that for each integer $m$, $m + x = m$, then $x = 0$.
+    Therefore, if $x \in \mathbb{Z}$ has the property that for each integer $m$, $m + x = m$, then $x = 0$.
 \end{proof}
 
 
@@ -164,12 +198,16 @@ Let $x \in \mathbb{Z}$. If $x$ has the property that for each integer $m$, $m+x 
 Let $x \in \mathbb{Z}$. If $x$ has the property that there exists an integer $m$ such that $m+x = m$, then $x = 0$.
 \begin{proof}
     Let $x \in \mathbb{Z}$. Suppose there exists an integer $m$ such that $m + x = m$.
+    %We start by adding $-m$ to both sides of the equation, using the commutativity of addition (Axiom 1.1(i)) to rearrange the terms.
     \begin{align*}
-        m + x          & = m        &  & \text{(given)}                                     \\
-        (-m) + (m + x) & = (-m) + m &  & \text{(Axiom 1.1(i) - commutativity of addition)}  \\
-        ((-m) + m) + x & = (-m) + m &  & \text{(Axiom 1.1(ii) - associativity of addition)} \\
-        0 + x          & = 0        &  & \text{(Axiom 1.4 - additive inverse)}              \\
-        x              & = 0        &  & \text{(Axiom 1.2 - identity element for addition)}
+        m + x          & = m        &  & \text{(given)}         \\
+        (-m) + (m + x) & = (-m) + m &  & \text{(Axiom 1.1(i))}  \\
+        %We then apply the associativity of addition (Axiom 1.1(ii)) to regroup the terms.
+        ((-m) + m) + x & = (-m) + m &  & \text{(Axiom 1.1(ii))} \\
+        %By the additive inverse (Axiom 1.4), $(-m) + m = 0$, so we can simplify the equation.
+        0 + x          & = 0        &  & \text{(Axiom 1.4)}     \\
+        %By the identity element for addition (Axiom 1.2), $0 + x = x$, so we can conclude that $x = 0$.
+        x              & = 0        &  & \text{(Axiom 1.2)}
     \end{align*}
 
     Therefore, if $x \in \mathbb{Z}$ has the property that there exists an integer $m$ such that $m + x = m$, then $x = 0$.
@@ -180,16 +218,17 @@ Let $x \in \mathbb{Z}$. If $x$ has the property that there exists an integer $m$
 For all $m \in \mathbb{Z}$, $m \cdot 0 = 0 = 0 \cdot m$.
 \begin{proof}
     Let $m \in \mathbb{Z}$.
+    %We start by expressing $m$ as the sum of $m$ with itself zero times, using the definition of multiplication.
     \begin{align*}
-        m \cdot 0 & = (m + m + \cdots + m) \cdot 0                     &  & \text{(definition of multiplication)}              \\
-                  & = (m \cdot 0) + (m \cdot 0) + \cdots + (m \cdot 0) &  & \text{(Axiom 1.1(iii) - distributivity)}           \\
-                  & = 0 + 0 + \cdots + 0                               &  & \text{(Axiom 1.2 - identity element for addition)} \\
-                  & = 0
+        m \cdot 0 & = \underbrace{m + m + \cdots + m}_{0 \text{ times}} &  & \text{(definition of multiplication)} \\
+        %Since there are no terms in the sum, the result is the additive identity, which is 0.
+                  & = 0                                                 &  & \text{(additive identity)}
     \end{align*}
+    %We follow the same steps to prove that $0 \cdot m = 0$.
     Similarly,
     \begin{align*}
-        0 \cdot m & = 0 + 0 + \cdots + 0 &  & \text{(definition of multiplication)} \\
-                  & = 0
+        0 \cdot m & = \underbrace{0 + 0 + \cdots + 0}_{m \text{ times}} &  & \text{(definition of multiplication)} \\
+                  & = 0                                                 &  & \text{(additive identity)}
     \end{align*}
 
     Therefore, for all $m \in \mathbb{Z}$, $m \cdot 0 = 0 = 0 \cdot m$.
@@ -199,21 +238,32 @@ For all $m \in \mathbb{Z}$, $m \cdot 0 = 0 = 0 \cdot m$.
 \section*{Proposition 1.16}
 If $m$ and $n$ are even integers, then so are $m+n$ and $mn$.
 \begin{proof}
-    Let $m$ and $n$ be even integers. Then, there exist integers $j$ and $k$ such that $m = 2j$ and $n = 2k$.
+    Let $m$ and $n$ be even integers. Then, by the definition of even integers, $2 \mid m$ and $2 \mid n$.
+    %We start by expressing $m$ and $n$ using the definition of divisibility.
+    \begin{align*}
+        m & = 2j &  & \text{(definition of divisibility, for some $j \in \mathbb{Z}$)} \\
+        n & = 2k &  & \text{(definition of divisibility, for some $k \in \mathbb{Z}$)}
+    \end{align*}
 
     Part 1: $m + n$ is even.
+    %We substitute the expressions for $m$ and $n$ into $m + n$.
     \begin{align*}
-        m + n & = 2j + 2k  &  & \text{(given)}                           \\
-              & = 2(j + k) &  & \text{(Axiom 1.1(iii) - distributivity)}
+        m + n & = 2j + 2k  &  & \text{(substitution)}   \\
+        %We then apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to factor out the common factor of 2.
+              & = 2(j + k) &  & \text{(Axiom 1.1(iii))}
     \end{align*}
-    Since $j + k$ is an integer, $m + n$ is even.
+    %Since $j + k \in \mathbb{Z}$, we have $2 \mid (m + n)$, so $m + n$ is even by the definition of even integers.
+    Since $j + k \in \mathbb{Z}$, we have $2 \mid (m + n)$, so $m + n$ is even.
 
     Part 2: $mn$ is even.
+    %We substitute the expressions for $m$ and $n$ into $mn$.
     \begin{align*}
-        mn & = (2j)(2k) &  & \text{(given)}                                           \\
-           & = 2(2jk)   &  & \text{(Axiom 1.1(iv) - commutativity of multiplication)}
+        mn & = (2j)(2k) &  & \text{(substitution)} \\
+        %We then apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+           & = 2(2jk)   &  & \text{(Axiom 1.1(v))}
     \end{align*}
-    Since $2jk$ is an integer, $mn$ is even.
+    %Since $2jk \in \mathbb{Z}$, we have $2 \mid mn$, so $mn$ is even by the definition of even integers.
+    Since $2jk \in \mathbb{Z}$, we have $2 \mid mn$, so $mn$ is even.
 
     Therefore, if $m$ and $n$ are even integers, then $m + n$ and $mn$ are also even.
 \end{proof}
@@ -224,22 +274,85 @@ If $m$ and $n$ are even integers, then so are $m+n$ and $mn$.
     \item $0$ is divisible by every integer.
     \item If $m$ is an integer not equal to $0$, then $m$ is not divisible by $0$.
 \end{enumerate}
+\begin{proof}
+    (i) Let $m$ be an arbitrary integer.
+    %We apply Proposition 1.14, which states that for all $m \in \mathbb{Z}$, $m \cdot 0 = 0$.
+    \begin{align*}
+        m \cdot 0 & = 0 &  & \text{(Proposition 1.14)}
+    \end{align*}
+    %By the definition of divisibility, $m \mid 0$ means there exists an integer $k$ such that $0 = mk$. We can choose $k = 0$ to satisfy this condition.
+    Thus, by the definition of divisibility, $m \mid 0$ for all $m \in \mathbb{Z}$.
+
+    (ii) Let $m$ be a non-zero integer.
+    %We apply Proposition 1.14 again, which states that for all $m \in \mathbb{Z}$, $m \cdot 0 = 0$.
+    \begin{align*}
+        m \cdot 0 & = 0    &  & \text{(Proposition 1.14)} \\
+        %Since $m$ is non-zero, $m \cdot 0 \neq m$, so there does not exist an integer $k$ such that $m = 0k$.
+        m \cdot 0 & \neq m &  & \text{(since $m \neq 0$)}
+    \end{align*}
+    %Therefore, by the definition of divisibility, $0 \nmid m$ for all non-zero integers $m$.
+    Therefore, by the definition of divisibility, $0 \nmid m$ for all non-zero integers $m$.
+\end{proof}
 
 % Proposition 1.18
 \section*{Proposition 1.18}
 Let $x \in \mathbb{Z}$. If $x$ has the property that for all $m \in \mathbb{Z}$, $mx = m$, then $x=1$.
+\begin{proof}
+    Let $x \in \mathbb{Z}$. Suppose for all $m \in \mathbb{Z}$, $mx = m$.
+    %We start by substituting $m = 1$ into the given equation.
+    \begin{align*}
+        1 \cdot x & = 1 &  & \text{(substituting $m = 1$)} \\
+        %By the multiplicative identity (Axiom 1.3), $1 \cdot x = x$, so we can conclude that $x = 1$.
+        x         & = 1 &  & \text{(Axiom 1.3)}
+    \end{align*}
+
+    Thus, if $x \in \mathbb{Z}$ has the property that for all $m \in \mathbb{Z}$, $mx = m$, then $x = 1$.
+\end{proof}
 
 % Proposition 1.19
 \section*{Proposition 1.19}
 Let $x \in \mathbb{Z}$. If $x$ has the property that for some nonzero $m \in \mathbb{Z}$, $mx = m$, then $x = 1$.
+\begin{proof}
+    Let $x \in \mathbb{Z}$. Suppose there exists a nonzero $m \in \mathbb{Z}$ such that $mx = m$.
+    %We start by multiplying both sides of the equation by $m^{-1}$, which exists since $m$ is nonzero.
+    \begin{align*}
+        mx         & = m       &  & \text{(given)}                              \\
+        m^{-1}(mx) & = m^{-1}m &  & \text{(multiplying both sides by $m^{-1}$)} \\
+        %We then apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+        (m^{-1}m)x & = m^{-1}m &  & \text{(Axiom 1.1(v))}                       \\
+        %By the multiplicative inverse, $m^{-1}m = 1$, so we can simplify the equation.
+        1 \cdot x  & = 1       &  & \text{(multiplicative inverse)}             \\
+        %By the multiplicative identity (Axiom 1.3), $1 \cdot x = x$, so we can conclude that $x = 1$.
+        x          & = 1       &  & \text{(Axiom 1.3)}
+    \end{align*}
+
+    Therefore, if $x \in \mathbb{Z}$ has the property that there exists a nonzero $m \in \mathbb{Z}$ such that $mx = m$, then $x = 1$.
+\end{proof}
+
 
 % Proposition 1.20
 \section*{Proposition 1.20}
 For all $m, n \in \mathbb{Z}$, $(-m)(-n) = mn$.
+\begin{proof}
+    Let $m, n \in \mathbb{Z}$.
+    %We start by expressing $-m$ and $-n$ using the definition of negation, which states that $-a = (-1) \cdot a$ for all integers $a$.
+    \begin{align*}
+        (-m)(-n) & = ((-1) \cdot m)((-1) \cdot n)        &  & \text{(definition of negation)}     \\
+        %We then apply the commutative property of multiplication (Axiom 1.1(iv)) to rearrange the factors.
+                 & = ((-1) \cdot (-1))(m \cdot n)        &  & \text{(Axiom 1.1(iv))}              \\
+        %We apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+                 & = (-1) \cdot ((-1) \cdot (m \cdot n)) &  & \text{(Axiom 1.1(v))}               \\
+        %We apply the associative property of multiplication (Axiom 1.1(v)) again to regroup the factors.
+                 & = (-1) \cdot ((-1) \cdot m) \cdot n   &  & \text{(Axiom 1.1(v))}               \\
+        %By the definition of negation, $(-1) \cdot m = -m$, so we can simplify the expression.
+                 & = (-1) \cdot (-m) \cdot n             &  & \text{(definition of negation)}     \\
+        %By the definition of negation, $(-1) \cdot (-m) = -(-m) = m$ (since the negation of a negation is the original integer), so we can simplify the expression further.
+                 & = m \cdot n                           &  & \text{(definition of negation)}     \\
+                 & = mn                                  &  & \text{(simplification of notation)}
+    \end{align*}
 
-% Corollary 1.21
-\section*{Corollary 1.21}
-$(-1)(-1) = 1$.
+    Thus, for all $m, n \in \mathbb{Z}$, $(-m)(-n) = mn$.
+\end{proof}
 
 % Proposition 1.22
 \section*{Proposition 1.22}
@@ -247,14 +360,85 @@ $(-1)(-1) = 1$.
     \item For all $m \in \mathbb{Z}$, $-(−m) = m$.
     \item $-0 = 0$.
 \end{enumerate}
+\begin{proof}
+    (i) Let $m \in \mathbb{Z}$.
+    %We start by expressing $-(−m)$ using the definition of negation (Proposition 1.25(ii)).
+    \begin{align*}
+        -(−m) & = (-1)(-m)  &  & \text{(Proposition 1.25(ii))}  \\
+        %We then apply Proposition 1.25(iii) to rewrite $(-1)(-m)$ as $(-1)(-1)m$.
+              & = (-1)(-1)m &  & \text{(Proposition 1.25(iii))} \\
+        %By Corollary 1.21, $(-1)(-1) = 1$, so we can simplify the expression.
+              & = 1 \cdot m &  & \text{(Corollary 1.21)}        \\
+        %By the multiplicative identity (Axiom 1.3), $1 \cdot m = m$, so we can simplify the expression further.
+              & = m         &  & \text{(Axiom 1.3)}
+    \end{align*}
+
+    (ii) $-0 = 0$.
+    %We apply Proposition 1.25(ii) to express $-0$ as $(-1) \cdot 0$.
+    \begin{align*}
+        -0 & = (-1) \cdot 0 &  & \text{(Proposition 1.25(ii))} \\
+        %By Proposition 1.14, $m \cdot 0 = 0$ for all $m \in \mathbb{Z}$, so we can simplify the expression.
+           & = 0            &  & \text{(Proposition 1.14)}
+    \end{align*}
+\end{proof}
+
+\newpage
 
 % Proposition 1.23
 \section*{Proposition 1.23}
 Given $m, n \in \mathbb{Z}$, there exists one and only one $x \in \mathbb{Z}$ such that $m+x = n$.
+\begin{proof}
+    Let $m, n \in \mathbb{Z}$. Consider the integer $x = n + (-m)$.
+    %We start by substituting $x = n + (-m)$ into the equation $m + x = n$.
+    \begin{align*}
+        m + x & = m + (n + (-m)) &  & \text{(substitution)}  \\
+        %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+              & = (m + n) + (-m) &  & \text{(Axiom 1.1(ii))} \\
+        %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $m$ and $n$.
+              & = (n + m) + (-m) &  & \text{(Axiom 1.1(i))}  \\
+        %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+              & = n + (m + (-m)) &  & \text{(Axiom 1.1(ii))} \\
+        %By the additive inverse (Axiom 1.4), $m + (-m) = 0$, so we can simplify the expression.
+              & = n + 0          &  & \text{(Axiom 1.4)}     \\
+        %By the additive identity (Axiom 1.2), $n + 0 = n$, so we can simplify the expression further.
+              & = n              &  & \text{(Axiom 1.2)}
+    \end{align*}
+    Thus, there exists an integer $x$ such that $m + x = n$.
+
+    To prove uniqueness, suppose there exist $x_1, x_2 \in \mathbb{Z}$ such that $m + x_1 = n$ and $m + x_2 = n$.
+    %We start by noting that both $m + x_1$ and $m + x_2$ are equal to $n$.
+    \begin{align*}
+        m + x_1 & = n       &  & \text{(given)}                           \\
+        m + x_2 & = n       &  & \text{(given)}                           \\
+        %By the transitive property of equality, we can conclude that $m + x_1 = m + x_2$.
+        m + x_1 & = m + x_2 &  & \text{(transitive property of equality)} \\
+        %We apply Proposition 1.9, which states that if $m + x_1 = m + x_2$, then $x_1 = x_2$.
+        x_1     & = x_2     &  & \text{(Proposition 1.9)}
+    \end{align*}
+    Therefore, the integer $x$ such that $m + x = n$ is unique.
+\end{proof}
 
 % Proposition 1.24
 \section*{Proposition 1.24}
 Let $x \in \mathbb{Z}$. If $x \cdot x = x$ then $x = 0$ or $1$.
+\begin{proof}
+    Let $x \in \mathbb{Z}$ and suppose $x \cdot x = x$.
+    %We start by subtracting $x$ from both sides of the equation.
+    \begin{align*}
+        x \cdot x             & = x     &  & \text{(given)}                           \\
+        x \cdot x - x         & = x - x &  & \text{(subtracting $x$ from both sides)} \\
+        %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to simplify the left-hand side.
+        x(x - 1)              & = 0     &  & \text{(Axiom 1.1(iii))}                  \\
+        %We consider two cases: either $x = 0$ or $x - 1 = 0$.
+        \text{Case 1: } x     & = 0                                                   \\
+        \text{Case 2: } x - 1 & = 0                                                   \\
+        %In Case 2, we add 1 to both sides of the equation to solve for $x$.
+        x                     & = 1     &  & \text{(adding $1$ to both sides)}
+    \end{align*}
+
+    Therefore, if $x \in \mathbb{Z}$ satisfies $x \cdot x = x$, then $x = 0$ or $1$.
+\end{proof}
+
 
 % Proposition 1.25
 \section*{Proposition 1.25}
@@ -263,10 +447,74 @@ Let $x \in \mathbb{Z}$. If $x \cdot x = x$ then $x = 0$ or $1$.
     \item $-m = (-1)m$.
     \item $(-m)n = m(-n) = -(mn)$.
 \end{enumerate}
+\begin{proof}
+    Let $m, n \in \mathbb{Z}$.
+
+    (i)
+    %We start by expressing $-(m+n)$ using the definition of negation, which states that $-a = (-1) \cdot a$ for all integers $a$.
+    \begin{align*}
+        -(m+n) & = (-1) \cdot (m+n)            &  & \text{(definition of negation)} \\
+        %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to simplify the right-hand side.
+               & = (-1) \cdot m + (-1) \cdot n &  & \text{(Axiom 1.1(iii))}         \\
+        %We apply the definition of negation again to rewrite $(-1) \cdot m$ as $-m$ and $(-1) \cdot n$ as $-n$.
+               & = (-m) + (-n)                 &  & \text{(definition of negation)}
+    \end{align*}
+
+    (ii)
+    %We apply the definition of negation.
+    \begin{align*}
+        -m & = (-1) \cdot m &  & \text{(definition of negation)}
+    \end{align*}
+
+    (iii)
+    %We start by expressing $(-m)n$ using the definition of negation.
+    \begin{align*}
+        (-m)n & = ((-1) \cdot m)n &  & \text{(definition of negation)} \\
+        %We apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+              & = (-1) \cdot (mn) &  & \text{(Axiom 1.1(v))}           \\
+        %We apply the definition of negation again to rewrite $(-1) \cdot (mn)$ as $-(mn)$.
+              & = -(mn)           &  & \text{(definition of negation)}
+    \end{align*}
+    Similarly,
+    %We start by expressing $m(-n)$ using the definition of negation.
+    \begin{align*}
+        m(-n) & = m((-1) \cdot n) &  & \text{(definition of negation)} \\
+        %We apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $m$ and $(-1)$.
+              & = (m \cdot (-1))n &  & \text{(Axiom 1.1(iv))}          \\
+        %We apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+              & = (-1) \cdot (mn) &  & \text{(Axiom 1.1(v))}           \\
+        %We apply the definition of negation again to rewrite $(-1) \cdot (mn)$ as $-(mn)$.
+              & = -(mn)           &  & \text{(definition of negation)}
+    \end{align*}
+\end{proof}
+
 
 % Proposition 1.26
 \section*{Proposition 1.26}
 Let $m, n \in \mathbb{Z}$. If $mn = 0$, then $m = 0$ or $n = 0$.
+\begin{proof}
+    Let $m, n \in \mathbb{Z}$ and suppose $mn = 0$.
+    %We consider two cases: either $m = 0$ or $m \neq 0$.
+    \textbf{Case 1:} $m = 0$
+    %If $m = 0$, then by Proposition 1.14, $m \cdot n = 0$ for any integer $n$, so the statement holds trivially.
+    If $m = 0$, then $m \cdot n = 0$ for any integer $n$ by Proposition 1.14, so the statement holds.
+
+    \textbf{Case 2:} $m \neq 0$
+    %We start by multiplying both sides of the equation by $m^{-1}$, which exists since $m \neq 0$.
+    \begin{align*}
+        mn         & = 0              &  & \text{(given)}                              \\
+        m^{-1}(mn) & = m^{-1} \cdot 0 &  & \text{(multiplying both sides by $m^{-1}$)} \\
+        %We apply the associative property of multiplication (Axiom 1.1(v)) to regroup the factors.
+        (m^{-1}m)n & = 0              &  & \text{(Axiom 1.1(v))}                       \\
+        %By the multiplicative inverse, $m^{-1}m = 1$ for all non-zero integers $m$.
+        1 \cdot n  & = 0              &  & \text{(multiplicative inverse)}             \\
+        %By the multiplicative identity (Axiom 1.3), $1 \cdot n = n$, so we can simplify the equation.
+        n          & = 0              &  & \text{(Axiom 1.3)}
+    \end{align*}
+    Thus, if $m \neq 0$, then $n = 0$.
+
+    Therefore, if $mn = 0$, then $m = 0$ or $n = 0$.
+\end{proof}
 
 % Proposition 1.27
 \section*{Proposition 1.27}
@@ -277,4 +525,156 @@ Let $m, n \in \mathbb{Z}$. If $mn = 0$, then $m = 0$ or $n = 0$.
     \item $m-n = p-q$ if and only if $m+q = n+p$.
     \item $(m-n)p = mp - np$.
 \end{enumerate}
+% \begin{proof}
+%     Let $m, n, p, q \in \mathbb{Z}$.
 
+%     (i)
+%     %We start by applying the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$.
+%     \begin{align*}
+%         (m-n) + (p-q) & = (m+(-n)) + (p+(-q))     &  & \text{(definition of subtraction)} \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%                       & = ((m+(-n)) + p) + (-q)   &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (m + ((-n) + p)) + (-q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $p$.
+%                       & = (m + (p + (-n))) + (-q) &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = ((m + p) + (-n)) + (-q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (m + p) + ((-n) + (-q)) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-n) + (-q)$ as $-(n + q)$.
+%                       & = (m + p) + (-(n + q))    &  & \text{(definition of subtraction)} \\
+%         %We apply the definition of subtraction again to rewrite $(m + p) + (-(n + q))$ as $(m + p) - (n + q)$.
+%                       & = (m + p) - (n + q)       &  & \text{(definition of subtraction)}
+%     \end{align*}
+
+%     (ii)
+%     %We start by applying the definition of subtraction twice to rewrite $(m-n) - (p-q)$ as $(m+(-n)) + (-(p+(-q)))$.
+%     \begin{align*}
+%         (m-n) - (p-q) & = (m+(-n)) + (-(p+(-q)))  &  & \text{(definition of subtraction)} \\
+%         %We apply the definition of subtraction again to rewrite $-(p+(-q))$ as $-p+q$.
+%                       & = (m+(-n)) + (-p+q)       &  & \text{(definition of subtraction)} \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%                       & = ((m+(-n)) + (-p)) + q   &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (m + ((-n) + (-p))) + q &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $(-p)$.
+%                       & = (m + ((-p) + (-n))) + q &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = ((m + (-p)) + (-n)) + q &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (m + (-p)) + ((-n) + q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $m$ and $(-p)$.
+%                       & = ((-p) + m) + ((-n) + q) &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = ((-p) + (m + (-n))) + q &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (-p) + ((m + (-n)) + q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (-p) + (m + ((-n) + q)) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $q$.
+%                       & = (-p) + (m + (q + (-n))) &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (-p) + ((m + q) + (-n)) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-p)$ and $((m + q) + (-n))$.
+%                       & = ((m + q) + (-n)) + (-p) &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%                       & = (m + q) + ((-n) + (-p)) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-n) + (-p)$ as $-(n + p)$.
+%                       & = (m + q) + (-(n + p))    &  & \text{(definition of subtraction)} \\
+%         %We apply the definition of subtraction again to rewrite $(m + q) + (-(n + p))$ as $(m + q) - (n + p)$.
+%                       & = (m + q) - (n + p)       &  & \text{(definition of subtraction)}
+%     \end{align*}
+
+%     (iii)
+%     %We start by applying the definition of subtraction twice to rewrite $(m-n)(p-q)$ as $(m+(-n))(p+(-q))$.
+%     \begin{align*}
+%         (m-n)(p-q) & = (m+(-n))(p+(-q))                     &  & \text{(definition of subtraction)}      \\
+%         %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to expand the product.
+%                    & = (m+(-n))p + (m+(-n))(-q)             &  & \text{(Axiom 1.1(iii))}                 \\
+%         %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) again to expand the products.
+%                    & = mp + (-n)p + m(-q) + (-n)(-q)        &  & \text{(Axiom 1.1(iii))}                 \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $(-n)$ and $p$.
+%                    & = mp + p(-n) + m(-q) + (-n)(-q)        &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $m$ and $(-q)$.
+%                    & = mp + p(-n) + (-q)m + (-n)(-q)        &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $(-n)$ and $(-q)$.
+%                    & = mp + p(-n) + (-q)m + (-q)(-n)        &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply Proposition 1.20, which states that $(-a)(-b) = ab$ for all integers $a$ and $b$.
+%                    & = mp + p(-n) + (-q)m + (-q)n           &  & \text{(Proposition 1.20)}               \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $(-q)$ and $n$.
+%                    & = mp + p(-n) + (-q)m + n(-q)           &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $n$ and $(-q)$.
+%                    & = mp + p(-n) + (-q)m + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $(-q)$ and $m$.
+%                    & = mp + p(-n) + m(-q) + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $p$ and $(-n)$.
+%                    & = mp + (-n)p + m(-q) + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
+%         %We rearrange the terms using the commutative property of addition (Axiom 1.1(i)) and the associative property of addition (Axiom 1.1(ii)).
+%                    & = (mp + (-q)n) + ((-n)p + m(-q))       &  & \text{(Axiom 1.1(i) and Axiom 1.1(ii))} \\
+%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-q)n$ as $-(qn)$ and $m(-q)$ as $-(mq)$.
+%                    & = (mp + (-(qn))) + ((-(np)) + (-(mq))) &  & \text{(definition of subtraction)}      \\
+%         %We apply the definition of subtraction again to rewrite $(mp + (-(qn)))$ as $(mp - qn)$ and $((-(np)) + (-(mq)))$ as $(-(np + mq))$.
+%                    & = (mp - qn) + (-(np + mq))             &  & \text{(definition of subtraction)}      \\
+%         %We apply the definition of subtraction again to rewrite $(mp - qn) + (-(np + mq))$ as $(mp - qn) - (np + mq)$.
+%                    & = (mp - qn) - (np + mq)                &  & \text{(definition of subtraction)}
+%     \end{align*}
+
+%     (iv)
+%     %We prove the biconditional statement by proving both implications separately.
+%     ($\Rightarrow$) Assume $m - n = p - q$.
+%     \begin{align*}
+%         m - n                & = p - q          &  & \text{(given)}                     \\
+%         %We apply the definition of subtraction to rewrite $m - n$ as $m + (-n)$ and $p - q$ as $p + (-q)$.
+%         m + (-n)             & = p + (-q)       &  & \text{(definition of subtraction)} \\
+%         %We add $q$ to both sides of the equation.
+%         (m + (-n)) + q       & = (p + (-q)) + q &  & \text{(adding $q$ to both sides)}  \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%         m + ((-n) + q)       & = p + ((-q) + q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $q$.
+%         m + (q + (-n))       & = p + ((-q) + q) &  & \text{(Axiom 1.1(i))}              \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
+%         (m + q) + (-n)       & = p + ((-q) + q) &  & \text{(Axiom 1.1(ii))}             \\
+%         %By the additive inverse (Axiom 1.4), $(-q) + q = 0$, so we can simplify the right-hand side.
+%         (m + q) + (-n)       & = p + 0          &  & \text{(Axiom 1.4)}                 \\
+%         %By the additive identity (Axiom 1.2), $p + 0 = p$, so we can simplify the right-hand side further.
+%         (m + q) + (-n)       & = p              &  & \text{(Axiom 1.2)}                 \\
+%         %We add $n$ to both sides of the equation.
+%         ((m + q) + (-n)) + n & = p + n          &  & \text{(adding $n$ to both sides)}  \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%         (m + q) + ((-n) + n) & = p + n          &  & \text{(Axiom 1.1(ii))}             \\
+%         %By the additive inverse (Axiom 1.4), $(-n) + n = 0$, so we can simplify the left-hand side.
+%         (m + q) + 0          & = p + n          &  & \text{(Axiom 1.4)}                 \\
+%         %By the additive identity (Axiom 1.2), $(m + q) + 0 = m + q$, so we can simplify the left-hand side further.
+%         m + q                & = p + n          &  & \text{(Axiom 1.2)}                 \\
+%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $p$ and $n$.
+%         m + q                & = n + p          &  & \text{(Axiom 1.1(i))}
+%     \end{align*}
+%     Therefore, if $m - n = p - q$, then $m + q = n + p$.
+
+%     ($\Leftarrow$) Assume $m + q = n + p$.
+%     \begin{align*}
+%         m + q          & = n + p                     &  & \text{(given)}                       \\
+%         %We add $(-q)$ to both sides of the equation.
+%         (m + q) + (-q) & = (n + p) + (-q)            &  & \text{(adding $(-q)$ to both sides)} \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%         m + (q + (-q)) & = n + (p + (-q))            &  & \text{(Axiom 1.1(ii))}               \\
+%         %By the additive inverse (Axiom 1.4), $q + (-q) = 0$, so we can simplify the left-hand side.
+%         m + 0          & = n + (p + (-q))            &  & \text{(Axiom 1.4)}                   \\
+%         %By the additive identity (Axiom 1.2), $m + 0 = m$, so we can simplify the left-hand side further.
+%         m              & = n + (p + (-q))            &  & \text{(Axiom 1.2)}                   \\
+%         %We add $(-n)$ to both sides of the equation.
+%         m + (-n)       & = (n + (p + (-q))) + (-n)   &  & \text{(adding $(-n)$ to both sides)} \\
+%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
+%         m + (-n)       & = ((n + (-n)) + (p + (-q))) &  & \text{(Axiom 1.1(ii))}               \\
+%         %By the additive inverse (Axiom 1.4), $n + (-n) = 0$, so we can simplify the right-hand side.
+%         m + (-n)       & = (0 + (p + (-q)))          &  & \text{(Axiom 1.4)}                   \\
+%         %By the additive identity (Axiom 1.2), $0 + (p + (-q)) = p + (-q)$, so we can simplify the right-hand side further.
+%         m + (-n)       & = p + (-q)                  &  & \text{(Axiom 1.2)}                   \\
+%         %We apply the definition of subtraction to rewrite $m + (-n)$ as $m - n$ and $p + (-q)$ as $p - q$.
+%         m - n          & = p - q                     &  & \text{(definition of subtraction)}
+%     \end{align*}
+%     Therefore, if $m + q = n + p$, then $m - n = p - q$.
+
+%     Combining the two implications, we conclude that $m - n = p - q$ if and only if $m + q = n + p$.
+% \end{proof}
