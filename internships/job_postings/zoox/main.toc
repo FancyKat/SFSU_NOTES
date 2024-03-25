@@ -1,2 +1,7 @@
 \contentsline {section}{Full Stack Software Engineering Internship - Summer 2024}{3}{Doc-Start}%
-\contentsline {section}{Safety Strategy Internship}{16}{Doc-Start}%
+\contentsline {section}{Analysis and Planning}{4}{Doc-Start}%
+\contentsline {section}{Design and Mockup}{5}{Doc-Start}%
+\contentsline {section}{Development for Fleet Management Dashboard}{8}{Doc-Start}%
+\contentsline {section}{Mock Data and Testing}{11}{Doc-Start}%
+\contentsline {section}{Deployment and Continuous Integration}{13}{Doc-Start}%
+\contentsline {section}{Safety Strategy Internship}{15}{Doc-Start}%

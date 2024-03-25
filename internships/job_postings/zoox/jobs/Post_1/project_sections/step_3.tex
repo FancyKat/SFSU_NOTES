@@ -1,4 +1,5 @@
 \section*{Development for Fleet Management Dashboard}
+\addcontentsline{toc}{section}{Development for Fleet Management Dashboard}
 
 \subsection*{Setting Up the Development Environment}
 Before starting the coding process, ensure that the development environment is fully prepared. This includes having Next.js and all necessary dependencies installed, as well as configuring any additional tools like linters or formatters.
@@ -45,3 +46,71 @@ Establish a connection to the chosen database to store and retrieve the dashboar
     \item Implement unit and integration tests to ensure individual components and their interactions function as expected.
     \item Use end-to-end testing frameworks to simulate user scenarios and validate the complete workflow of the application.
 \end{itemize}
+
+
+\section*{Terminal Command Guide for Basic Next.js and TypeScript Setup}
+
+This guide will walk you through the terminal commands necessary to create a basic Next.js project configured with TypeScript. By following these steps, you'll establish a foundational file structure for your Fleet Management Dashboard.
+
+\subsection*{Creating Your Next.js Project}
+Start by creating a new Next.js project. Open your terminal and execute the following command:
+
+\begin{verbatim}
+npx create-next-app@latest my-fleet-dashboard --typescript
+\end{verbatim}
+
+This command creates a new Next.js project with TypeScript support enabled by default.
+
+\subsection*{Exploring the Initial Project Structure}
+Navigate to your project directory to see the initial setup:
+
+\begin{verbatim}
+cd my-fleet-dashboard
+\end{verbatim}
+
+You should see a basic file structure created for you. Here's an overview of the primary files and directories:
+
+\begin{itemize}
+    \item \texttt{pages/} - Contains your application's pages. Next.js uses the files in this directory to create the routes automatically.
+    \item \texttt{public/} - Used for static files like images, fonts, etc.
+    \item \texttt{styles/} - Holds the CSS/SCSS files for styling your application.
+    \item \texttt{node\_modules/} - Contains all the project's npm dependencies.
+    \item \texttt{package.json} - Manages the project's metadata and dependencies.
+    \item \texttt{tsconfig.json} - Configures TypeScript options for your project.
+\end{itemize}
+
+\subsection*{Running Your Development Server}
+To start the development server and see your new project in action, run:
+
+\begin{verbatim}
+npm run dev
+\end{verbatim}
+
+Or if you prefer Yarn:
+
+\begin{verbatim}
+yarn dev
+\end{verbatim}
+
+This command starts the Next.js development server on \texttt{http://localhost:3000}. You can open this URL in a browser to view your project.
+
+\subsection*{Final Project File Tree}
+Once you're familiar with the basic structure, your project directory might look like this:
+
+\begin{verbatim}
+my-fleet-dashboard/
+├── node_modules/
+├── pages/
+│   ├── _app.tsx
+│   └── index.tsx
+├── public/
+├── styles/
+│   ├── globals.css
+│   └── Home.module.css
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── yarn.lock (or package-lock.json for npm)
+\end{verbatim}
+
+This file tree provides a visual representation of the basic project structure, helping you understand where to add or modify files as your project develops.
