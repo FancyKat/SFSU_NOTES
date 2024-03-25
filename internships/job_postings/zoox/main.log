@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  25 MAR 2024 12:02
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  25 MAR 2024 12:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -283,17 +283,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] (./jobs/Post_1/post_1.tex [3] (./jobs/Post_1/project.tex)) [4] (./jobs/post_2.tex) [5] [6] (./main.aux)
+ [2] (./jobs/Post_1/post_1.tex [3] (./jobs/Post_1/project.tex (./jobs/Post_1/project_sections/step_1.tex [4]) [5] (./jobs/Post_1/project_sections/step_2.tex [6]) [7] (./jobs/Post_1/project_sections/step_3.tex
+Overfull \hbox (8.31453pt too wide) in paragraph at lines 37--38
+[]\TU/lmr/m/n/10.95 Choose the appropriate database drivers or ORMs for interacting with your database. 
+ []
+
+[8]) [9] (./jobs/Post_1/project_sections/step_4.tex
+Overfull \hbox (0.87286pt too wide) in paragraph at lines 9--10
+[]\TU/lmr/m/n/10.95 Develop scripts that create mock data sets for vehicles, routes, maintenance records,
+ []
+
+[10]) [11] (./jobs/Post_1/project_sections/step_5.tex))) [12] (./jobs/post_2.tex) [13] [14] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FE95738458C3D7C1F17343BD7AA19821;520.
+(rerunfilecheck)             Checksum: D820FB80AF7F916E448AAD5848BA5571;523.
  ) 
 Here is how much of TeX's memory you used:
- 9459 strings out of 476191
- 154350 string characters out of 5812072
- 552877 words of memory out of 5000000
- 30089 multiletter control sequences out of 15000+600000
- 472411 words of font info for 45 fonts, out of 8000000 for 9000
+ 9490 strings out of 476191
+ 155366 string characters out of 5812072
+ 554885 words of memory out of 5000000
+ 30100 multiletter control sequences out of 15000+600000
+ 472427 words of font info for 47 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 73i,5n,77p,1249b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,6n,77p,1249b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (14 pages).
