@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 2" centered on the page
+\begin{center}
+\Large \textbf{Homework 2}
+\end{center}
+
+% Question 1 content
+\section*{Question 1}
+\textbf{Write your major takeaways in bullet points:}
+\begin{itemize}
+  \item It's essential to challenge and test beliefs, especially in the face of conflicting evidence.
+  \item Adapting to new information and changing one's mind when presented with new facts is a sign of intellectual honesty.
+  \item Confirmation bias is a significant obstacle in both science and politics.
+  \item The internet offers both an echo chamber and a platform for challenging one's beliefs.
+  \item A scientific approach to public discourse can lead to more informed and constructive debates.
+\end{itemize}
+
+% Question 2 content
+\section*{Question 2}
+\textbf{Find an example of today's U.S. politics relevant to the speaker's (Tom Chatfield) arguments and articulate the problem of your chosen example in a short paragraph (5-ish sentences).}
+
+Today's U.S. political landscape often mirrors the challenges highlighted by Tom Chatfield. The polarized nature of political discourse makes it difficult for individuals to entertain opposing views, leading to a confirmation bias where people only consume information that aligns with their beliefs. This behavior is evident in how different media outlets cater to specific political ideologies, often presenting one-sided perspectives that reinforce viewers' preconceived notions. The challenge lies in encouraging a more scientific mindset in politics, where claims are rigorously tested, and beliefs are adaptable based on new, reliable evidence. Such an approach could enhance public discourse, reduce polarization, and promote a more informed and engaged citizenry.
+
+\end{document}
