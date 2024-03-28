@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx} % Add this line in the preamble if it's missing
+\usepackage{hyperref} % For hyperlinking URLs
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 5" centered on the page
+\begin{center}
+  \Large \textbf{Homework 5}
+\end{center}
+
+% Library Skills Tutorial content
+\section*{Question}
+\textbf{Complete the \href{URL_HERE}{Library Skills Tutorial} online and submit a screenshot or any form to prove the course completion.}
+
+\textbf{Please attach the screenshot or document that verifies the completion of the Library Skills Tutorial. The necessary proof of completion is attached below.}
+
+% Here's how you can include an image (e.g., a screenshot)
+% Replace 'image-file.png' with the actual file name and path
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Library_Tutorial.png}
+  \caption{Proof of completion of the Library Skills Tutorial.}
+\end{figure}
+
+\end{document}
