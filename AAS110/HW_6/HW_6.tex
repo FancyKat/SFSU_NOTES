@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 5" centered on the page
+\begin{center}
+  \Large \textbf{Homework 6}
+\end{center}
+
+% Task description content
+\section*{Question}
+\textbf{Go to the Amazon's page of \textit{Battle Hymn of the Tiger Mother} \textit{\href{https://www.amazon.com/gp/customer-reviews/R287G01Z74I9Q5/ref=cm_cr_arp_d_rvw_ttl?ie=UTF8&ASIN=0143120581}{here}} and check customers' reviews at the bottom of the page. Pick a positive review that is detailed and write a response to it.}
+
+% Your response to the review
+\section*{Response to Amazon Review}
+I appreciate your positive feedback on "Battle Hymn of the Tiger Mother" and your insights on adopting Amy Chua's strict parenting approach. Your commitment to instilling values like discipline and responsibility in your children aligns with Chua's advocacy for parental involvement and high expectations.
+
+However, considering Amy Chua's narrative alongside Lee's and Zhou's analysis in "What Is Cultural About Asian American Achievement?", it's important to weigh the intense parenting style's benefits against its potential pitfalls. Chua's strategy, while successful, prompts reflection on children's emotional health and autonomy. Lee and Zhou's work suggests that while high expectations can drive academic and professional achievements, they may also neglect children's personal interests and mental well-being.
+
+Your stance of prioritizing motherhood over friendship in your relationship with your children demonstrates a strong commitment to their future. Still, it's vital to balance strictness with support for their individual interests and passions. Encouraging their independence and self-discovery can contribute to their success and happiness, ensuring they grow into well-rounded and fulfilled individuals.
+
+\end{document}
