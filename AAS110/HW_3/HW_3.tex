@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 3" centered on the page
+\begin{center}
+\Large \textbf{Homework 3}
+\end{center}
+
+% Question 1 content
+\section*{Question 1}
+\textbf{On "Satirical News and Political Party Propaganda Apparatuses" (originally Tuesday reading and switched to Thursday). Describe the chapter, including the main arguments in a short paragraph (at least five sentences):}
+
+The chapter "Satirical News and Political Party Propaganda Apparatuses" discusses the evolution of the relationship between the press and political parties, highlighting how they have influenced each other to blur the lines between journalism and political advocacy. Initially, there was an interdependent relationship, but it has become more ideological, particularly in the American context. The text delves into the strategic use of media by political propaganda apparatuses, using examples like the Gulf War and the transformation of news outlets into political tools. It sheds light on the exploitation of the press by political entities and PR firms, illustrating the manufacture and dissemination of news to serve political and economic agendas. The chapter emphasizes the importance of discerning real journalism from fake news to prevent being manipulated by political narratives.
+
+% Question 2 content
+\section*{Question 2}
+\textbf{On "The Fake News Detection Kit" (reading for the Thursday class). Five–seven bullet points from the chapter that you found useful for your critical thinking. Each point should be in sentences, not keywords.:}
+
+From the chapter "The Fake News Detection Kit," the following points are instrumental in enhancing critical thinking:
+\begin{itemize}
+  \item Reflect on why certain content captures your attention and how your biases might make you susceptible to fake news. Analyze and adjust your news consumption habits to guard against misinformation.
+  \item Evaluate the publisher's credibility and potential conflicts of interest. Investigate their background to discern if they regularly disseminate false information.
+  \item Check the author's credibility, considering their background and affiliations, to gauge the content's reliability.
+  \item Understand the content fully before forming an opinion, avoiding misconceptions that could impair judgment.
+  \item Note what might be omitted in the content and compare with other sources to get a comprehensive view of the issue.
+  \item Analyze who benefits or is harmed by the content, considering the potential impact and target audience to understand the content's purpose.
+  \item Assess if the content follows journalistic ethics, scrutinizing it for truth, accuracy, fairness, impartiality, humanity, and accountability.
+\end{itemize}
+
+\end{document}
