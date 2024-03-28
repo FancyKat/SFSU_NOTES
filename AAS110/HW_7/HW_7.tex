@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 7" centered on the page
+\begin{center}
+  \Large \textbf{Homework 7}
+\end{center}
+
+% Question description content
+\section*{Question}
+\textbf{You read NYTimes' "Supreme Court Rejects Affirmative Action Programs at Harvard and U.N.C." for the March 13 (Thu) class. Please describe how Supreme Court Justices reached the conclusion, pointing out which justices rejected the affirmative action and which justices agreed with it, including the reasons behind their decisions. Describe the overall arguments, imagining you are explaining to someone unfamiliar with the Supreme Court's decision.}
+
+% Your response to the question
+\section*{Response}
+The Supreme Court's decision to reject affirmative action programs at Harvard and UNC signifies a pivotal change in the Court's approach to race-conscious admissions policies. The majority, comprising Chief Justice Roberts and Justices Thomas, Alito, Gorsuch, Kavanaugh, and Barrett, who were all appointed by Republican presidents, adopted the view that the Constitution mandates colorblindness in admissions, advocating for individual merit as the primary consideration.
+
+Chief Justice Roberts, leading the majority opinion, asserted that although diversity is an admirable objective, it cannot serve as a ground for racial classification. He clarified that the decision does not preclude the consideration of an applicant's race-related experiences, as long as these insights pertain to the individual's unique story, not their race in itself.
+
+On the other side, Justice Sotomayor, with Justices Kagan and Jackson concurring, stood in dissent, arguing that the ruling negates long-standing precedents that bolster affirmative action. She contended that the majority's stance overlooks enduring racial disparities in the United States, potentially stalling progress toward inclusivity. Sotomayor highlighted the necessity of race-conscious policies to combat systemic imbalances and promote authentic educational diversity.
+
+This ruling underscores a stark ideological split within the Court, especially concerning the equal protection clause's interpretation and the acknowledgment of America's racial discrimination history and present. The majority perceives the verdict as a stride toward impartiality, while the dissent views it as a regression from the commitment to rectifying the nation's racial injustices, signaling a conservative shift that could redefine future educational policies regarding race and equality.
+\end{document}
