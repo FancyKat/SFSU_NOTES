@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 3" centered on the page
+\begin{center}
+  \Large \textbf{Homework 4}
+\end{center}
+
+\vspace{1em} % Provide some space after the title
+
+% Scenario and question introduction
+\textbf{Scenario:} We discussed in class today (Feb 21) how you would answer the 27th and 28th questions (aka the loyalty questions) that Japanese and Japanese Americans were forced to answer during their incarceration in 1943.
+
+\textbf{Imagine you were a 22-year-old Japanese American male born in the United States, and your parents migrated from Japan.}
+
+The first you would state how you would answer: Yes/Yes, Yes/No, No/Yes, No/No
+
+Then, compare all the options and present reasons for reaching the conclusion. Your answer would be one paragraph in 100–200 words.  
+% Response to Questions 27 and 28
+\section*{Questions 27}
+\textbf{Are you willing to serve in the armed forces of the United States on
+combat duty, wherever ordered?}
+
+\section*{Questions 28}
+\textbf{Will you swear unqualified allegiance to the United States of America
+and faithfully defend the United States from any or all attack by foreign or
+domestic forces, and forswear any form of allegiance or obedience to the
+Japanese emperor, or any other foreign government, power, or organization?}
+
+
+\section*{Answer and Justification:}
+
+Given the context as a 22-year-old Japanese American male born in the United States to Japanese immigrant parents, my response to both questions is "Yes/Yes."
+
+My decision is shaped by a parallel reflection on my identity and experiences, akin to those faced by a Japanese American during a pivotal historical moment. As a U.S. Army veteran originally from the Philippines, I deeply understand the complexities and dualities of holding allegiance to the United States while honoring one's cultural heritage. My affirmative response is grounded in a profound respect for the United States, much like a Japanese American who, despite potentially facing prejudice or questioning of loyalty, chooses to stand with the country of their birth and upbringing. The benefits and opportunities provided by serving in the U.S. military, such as creating a stable foundation for my family and accessing resources that foster generational wealth, underscore the tangible rewards of this commitment. By swearing allegiance to the U.S. and committing to its defense, I not only secure these benefits for my family but also align with the principles of democracy and freedom that the nation espouses. This choice mirrors the possible reconciliation a Japanese American might seek between their American identity and their cultural roots, affirming a dedication to the U.S. while navigating the nuances of their ancestry and the broader historical context.
+
+\end{document}
