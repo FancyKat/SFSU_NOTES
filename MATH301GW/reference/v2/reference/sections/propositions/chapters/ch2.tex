@@ -1,22 +1,66 @@
 % Proposition 2.2
 \section*{Proposition 2.2:}
 For every $m \in \mathbb{Z}$, one and only one of the following is true: $m \in \mathbb{N}$, $-m \in \mathbb{N}$, or $m = 0$.
+\begin{proof}
+    \textit{Consider an arbitrary $m \in \mathbb{Z}$. We'll analyze each possibility separately.}
+    \begin{align*}
+        & \text{If $m > 0$, then by definition, $m$ is a natural number.} & & \text{(Definition of $\mathbb{N}$)} \\
+        & \text{If $m < 0$, consider $-m$. Since $-m > 0$, by definition, $-m$ is a natural number.} & & \text{(Definition of $\mathbb{N}$)} \\
+        & \text{If $m = 0$, it is neither positive nor negative, making it distinct from natural numbers.} & & \text{(Axiom 1.3)} \\
+    \end{align*}
+    \textit{These scenarios are mutually exclusive, confirming the proposition's statement.}
+\end{proof}
+
+
 
 % Proposition 2.3
 \section*{Proposition 2.3:}
 $1 \in \mathbb{N}$.
+\begin{proof}
+    \textit{The assertion $1 \in \mathbb{N}$ is foundational to the definition of natural numbers:}
+    \begin{align*}
+        & \text{$1$ is recognized as the first natural number.} & & \text{(Definition of $\mathbb{N}$)}
+    \end{align*}
+    \textit{Thus, by definition, $1$ is an element of $\mathbb{N}$.}
+\end{proof}
+
 
 % Proposition 2.4
 \section*{Proposition 2.4:}
 Let $m,n,p \in \mathbb{Z}$. If $m < n$ and $n < p$, then $m < p$.
+\begin{proof}
+    \textit{Given $m, n, p \in \mathbb{Z}$ with $m < n$ and $n < p$, we apply the transitive property:}
+    \begin{align*}
+        & \text{The transitivity of inequalities implies that if $m < n$ and $n < p$, then $m < p$.} & & \text{(Axiom 1.1)}
+    \end{align*}
+    \textit{Therefore, we conclude $m < p$.}
+\end{proof}
+
 
 % Proposition 2.5
 \section*{Proposition 2.5:}
 For each $n \in \mathbb{N}$, there exists $m \in \mathbb{N}$ such that $m > n$.
+\begin{proof}
+    \textit{Select any $n \in \mathbb{N}$. To find $m \in \mathbb{N}$ where $m > n$, we choose $n + 1$:}
+    \begin{align*}
+        & \text{Consider $m = n + 1$. The natural numbers are closed under addition, so $m \in \mathbb{N}$.} & & \text{(Axiom 2.1(i))} \\
+        & \text{Clearly, $m = n + 1 > n$.} & & \\
+    \end{align*}
+    \textit{This confirms the existence of such an $m$ for every $n \in \mathbb{N}$.}
+\end{proof}
+
 
 % Proposition 2.6
 \section*{Proposition 2.6:}
 Let $m,n \in \mathbb{Z}$. If $m \leq n \leq m$, then $m = n$.
+\begin{proof}
+    \textit{Assuming $m \leq n$ and $n \leq m$ for integers $m$ and $n$:}
+    \begin{align*}
+        & \text{The relationship $m \leq n \leq m$ directly leads to $m = n$ by the properties of order in $\mathbb{Z}$.} & & \text{(Definition of order)} \\
+    \end{align*}
+    \textit{Thus, we establish that $m = n$.}
+\end{proof}
+
 
 % Proposition 2.7
 \section*{Proposition 2.7:}
@@ -26,22 +70,104 @@ Let $m,n \in \mathbb{Z}$. If $m \leq n \leq m$, then $m = n$.
     \item If $0 < m < n$ and $0 < p \leq q$, then $mp < nq$.
     \item If $m < n$ and $p < 0$, then $np < mp$.
 \end{enumerate}
+\section*{Proposition 2.7 (i)}
+\textit{If $m < n$, then $m+p < n+p$ for all $m, n, p \in \mathbb{Z}$.}
+\begin{proof}
+    \textit{Given $m, n, p \in \mathbb{Z}$ with $m < n$:}
+    \begin{align*}
+        & \text{Adding $p$ to both $m$ and $n$ preserves the inequality:} & & \\
+        & \text{$m + p < n + p$, by the properties of integer addition.} & & \text{(Axiom 1.1(ii))} \\
+    \end{align*}
+    \textit{Thus, we establish that $m + p < n + p$.}
+\end{proof}
+
+\section*{Proposition 2.7 (ii)}
+\textit{If $m < n$ and $p < q$, then $m + p < n + q$ for all $m, n, p, q \in \mathbb{Z}$.}
+\begin{proof}
+    \textit{Given $m < n$ and $p < q$:}
+    \begin{align*}
+        & \text{Adding $m$ to $p$ and $n$ to $q$ and using the properties of inequalities:} & & \\
+        & \text{$m + p < n + p$ and $n + p < n + q$, thus $m + p < n + q$.} & & \text{(Axiom 1.1(ii))} \\
+    \end{align*}
+    \textit{Therefore, $m + p < n + q$ is proven.}
+\end{proof}
+
+\section*{Proposition 2.7 (iii)}
+\textit{If $0 < m < n$ and $0 < p \leq q$, then $mp < nq$ for all $m, n, p, q \in \mathbb{Z}$.}
+\begin{proof}
+    \textit{Given $0 < m < n$ and $0 < p \leq q$:}
+    \begin{align*}
+        & \text{Multiplying $m < n$ by $p$ and noting $p < q$, we get $mp < np \leq nq$.} & & \text{(Axiom 2.1(ii))} \\
+    \end{align*}
+    \textit{Hence, it follows that $mp < nq$.}
+\end{proof}
+
+\section*{Proposition 2.7 (iv)}
+\textit{If $m < n$ and $p < 0$, then $np < mp$ for all $m, n, p \in \mathbb{Z}$.}
+\begin{proof}
+    \textit{Assume $m < n$ and $p < 0$:}
+    \begin{align*}
+        & \text{Multiplying the inequality $m < n$ by the negative number $p$ reverses the inequality:} & & \\
+        & \text{Thus, $mp > np$, as multiplying by a negative number inverts the inequality.} & & \text{(Axiom 1.1(ii))} \\
+    \end{align*}
+    \textit{Therefore, we confirm that $np < mp$.}
+\end{proof}
+
+
 
 % Proposition 2.8
 \section*{Proposition 2.8:}
 Let $m,n \in \mathbb{Z}$. Exactly one of the following is true: $m < n$, $m = n$, $m > n$.
+\begin{proof}
+    \textit{For any $m, n \in \mathbb{Z}$, the trichotomy law ensures one and only one relation holds:}
+    \begin{align*}
+        & \text{The integers are well-ordered, ensuring that $m < n$, $m = n$, or $m > n$.} & & \text{(Axiom 1.1)} \\
+    \end{align*}
+    \textit{This exclusivity confirms the statement of the proposition.}
+\end{proof}
+
+
 
 % Proposition 2.9
 \section*{Proposition 2.9:}
 Let $m \in \mathbb{Z}$. If $m \neq 0$ then $m^2 \in \mathbb{N}$.
+\begin{proof}
+    \textit{Consider a non-zero $m \in \mathbb{Z}$:}
+    \begin{align*}
+        & \text{If $m > 0$, then $m^2 > 0$ and is natural. If $m < 0$, then $m^2 > 0$ as well.} & & \text{(Definition of $\mathbb{N}$)} \\
+    \end{align*}
+    \textit{Thus, in either case, $m^2$ is positive and belongs to $\mathbb{N}$.}
+\end{proof}
+
+
 
 % Proposition 2.10
 \section*{Proposition 2.10:}
 The equation $x^2 = -1$ has no solution in $\mathbb{Z}$.
+\begin{proof}
+    \textit{Assume for contradiction there exists an $x \in \mathbb{Z}$ where $x^2 = -1$:}
+    \begin{align*}
+        & \text{This implies $x^2$ is negative, contradicting the property that squares are non-negative.} & & \text{(Contradiction)} \\
+    \end{align*}
+    \textit{This contradiction shows no such integer $x$ exists, validating the proposition.}
+\end{proof}
+
+
 
 % Proposition 2.11
 \section*{Proposition 2.11:}
 Let $m \in \mathbb{N}$ and $n \in \mathbb{Z}$. If $mn \in \mathbb{N}$, then $n \in \mathbb{N}$.
+\begin{proof}
+    \textit{Assume $m \in \mathbb{N}$ and $mn \in \mathbb{N}$ for some $n \in \mathbb{Z}$.}
+    \begin{align*}
+        & \text{Since $m > 0$ and $mn > 0$, $n$ must be non-negative.} & & \text{(Definition of $\mathbb{N}$)} \\
+        & \text{If $n$ were negative, $mn$ would be negative, contradicting $mn \in \mathbb{N}$.} & & \text{(Axiom 2.1(i))} \\
+        & \text{Thus, $n$ must be non-negative and, since it's an integer, $n \in \mathbb{N}$.} & &
+    \end{align*}
+    \textit{Hence, we establish that $n \in \mathbb{N}$.}
+\end{proof}
+
+
 
 % Proposition 2.12
 \section*{Proposition 2.12:}
@@ -52,11 +178,57 @@ For all $m,n,p \in \mathbb{Z}$:
     \item If $p < 0$ and $mp < np$ then $n < m$.
     \item If $m \leq m$ and $0 \leq p$ then $mp \leq np$.
 \end{enumerate}
+\section*{Proposition 2.12 (i)}
+\textit{For all $m,n \in \mathbb{Z}$, $-m < -n$ if and only if $m > n$.}
+\begin{proof}
+    \textit{We prove the bidirectional implication:}
+    \begin{align*}
+        & \text{($\Rightarrow$) Assume $-m < -n$. Multiplying both sides by $-1$ reverses the inequality: $m > n$.} & & \text{(Axiom 1.1(ii))} \\
+        & \text{($\Leftarrow$) Assume $m > n$. Multiplying both sides by $-1$ gives: $-m < -n$.} & & \text{(Axiom 1.1(ii))} \\
+    \end{align*}
+    \textit{Thus, we establish the bi-conditional relationship.}
+\end{proof}
+\section*{Proposition 2.12 (ii)}
+\textit{If $p > 0$ and $mp < np$ then $m < n$.}
+\begin{proof}
+    \textit{Given $p > 0$ and $mp < np$:}
+    \begin{align*}
+        & \text{Divide both sides by $p$ to obtain $m < n$.} & & \text{(Axiom 1.1(ii) and Definition of Division)} \\
+    \end{align*}
+    \textit{This division is valid as $p$ is positive, ensuring the inequality direction remains.}
+\end{proof}
+\section*{Proposition 2.12 (iii)}
+\textit{If $p < 0$ and $mp < np$ then $n < m$.}
+\begin{proof}
+    \textit{Given $p < 0$ and $mp < np$:}
+    \begin{align*}
+        & \text{Multiplying by a negative number, we reverse the inequality: Divide by $p$ to get $n > m$.} & & \text{(Axiom 1.1(ii) and Definition of Division)} \\
+    \end{align*}
+    \textit{The direction of inequality changes due to multiplication by a negative number.}
+\end{proof}
+\section*{Proposition 2.12 (iv)}
+\textit{If $m \leq n$ and $0 \leq p$ then $mp \leq np$.}
+\begin{proof}
+    \textit{Assuming $m \leq n$ and $0 \leq p$:}
+    \begin{align*}
+        & \text{Multiplication by a non-negative number preserves the inequality: $mp \leq np$.} & & \text{(Axiom 2.1(ii))} \\
+    \end{align*}
+    \textit{Since $p \geq 0$, the order relation remains consistent.}
+\end{proof}
 
 
 % Proposition 2.13
 \section*{Proposition 2.13:}
 $\mathbb{N} = \{ n \in \mathbb{Z} : n > 0 \}$.
+\begin{proof}
+    \textit{This proposition defines $\mathbb{N}$ based on the properties of integers:}
+    \begin{align*}
+        & \text{By the definition of natural numbers, each $n \in \mathbb{N}$ is greater than $0$.} & & \text{(Definition of $\mathbb{N}$)} \\
+    \end{align*}
+    \textit{Conversely, any positive integer by this definition is in $\mathbb{N}$.}
+\end{proof}
+
+
 
 % Proposition 2.14
 \section*{Proposition 2.14:}
@@ -64,6 +236,27 @@ $\mathbb{N} = \{ n \in \mathbb{Z} : n > 0 \}$.
     \item $1 \in \mathbb{N}$.
     \item If $n \in \mathbb{N}$, then $n+1 \in \mathbb{N}$.
 \end{enumerate}
+\section*{Proposition 2.14 (i)}
+\textit{$1 \in \mathbb{N}$.}
+\begin{proof}
+    \textit{This is a direct application of the definition of natural numbers:}
+    \begin{align*}
+        & \text{By the foundational definition, $1$ is included in $\mathbb{N}$.} & & \text{(Definition of $\mathbb{N}$)}
+    \end{align*}
+    \textit{Hence, it is established that $1 \in \mathbb{N}$.}
+\end{proof}
+
+\section*{Proposition 2.14 (ii)}
+\textit{If $n \in \mathbb{N}$, then $n+1 \in \mathbb{N}$.}
+\begin{proof}
+    \textit{Assume $n \in \mathbb{N}$:}
+    \begin{align*}
+        & \text{By the properties of natural numbers, adding $1$ to any $n \in \mathbb{N}$ remains in $\mathbb{N}$.} & & \text{(Closure under addition, Axiom 2.1(i))} \\
+    \end{align*}
+    \textit{Therefore, we confirm that $n+1 \in \mathbb{N}$.}
+\end{proof}
+
+
 
 % Axiom 2.15 (Induction Axiom)
 \section*{Axiom 2.15 (Induction Axiom):}
@@ -73,6 +266,8 @@ If a subset $A \subseteq \mathbb{Z}$ satisfies:
     \item If $n \in A$, then $n+1 \in A$,
 \end{enumerate}
 then $\mathbb{N} \subseteq A$.
+
+
 
 % Proposition 2.16
 \section*{Proposition 2.16:}

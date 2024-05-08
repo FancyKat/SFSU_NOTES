@@ -1,0 +1,781 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH325 \\ 2:00 PM - 3:40 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+
+\section*{5.4.1 Find the least squares solution to the linear system $Ax = b$}
+
+\begin{enumerate}
+  \item[(a)]
+    Given:
+    \[
+      A = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
+    \]
+
+    % The matrix A is a 3x1 column vector, and b is also a 3x1 column vector.
+
+    We need to find the least squares solution to the equation \( Ax = b \). The normal equation for this problem is:
+    \[
+      A^T A x = A^T b
+    \]
+    % The normal equation is derived by multiplying both sides of Ax = b by A^T.
+
+    First, calculate \( A^T A \):
+    \[
+      A^T = \begin{bmatrix} 1 & 2 & 1 \end{bmatrix}
+    \]
+    % A^T is the transpose of A, converting A from a 3x1 matrix to a 1x3 matrix.
+
+    \[
+      A^T A = \begin{bmatrix} 1 & 2 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \end{bmatrix}
+    \]
+    % A^T A is the product of A^T and A, resulting in a 1x1 matrix, which is a scalar value here.
+
+    Then, calculate \( A^T b \):
+    \[
+      A^T b = \begin{bmatrix} 1 & 2 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 3 \end{bmatrix}
+    \]
+    % A^T b is the product of A^T and b, resulting in a 1x1 matrix (scalar).
+
+    Now, solve the normal equation:
+    \[
+      6x = 3
+    \]
+    % The normal equation simplifies to a scalar equation because A^T A and A^T b are scalars.
+
+    \[
+      x = \frac{3}{6} = 0.5
+    \]
+    % Solving the scalar equation for x.
+
+    Thus, the least squares solution \( x \) is:
+    \[
+      x = 0.5
+    \]
+    % The solution to the normal equation provides the value of x that minimizes the sum of the squares of the residuals in the equation Ax = b.
+
+    \pagebreak
+
+  \item[(b)]
+    Given:
+    \[
+      A = \begin{bmatrix} 1 & 0 \\ 2 & -1 \\ 3 & 5 \end{bmatrix}, \quad b = \begin{bmatrix} 3 \\ 7 \\ 7 \end{bmatrix}
+    \]
+
+    We need to find the least squares solution to the equation \( Ax = b \). The normal equation for this problem is:
+    \[
+      A^T A x = A^T b
+    \]
+    % The normal equation is derived by multiplying both sides of Ax = b by A^T.
+
+    First, calculate \( A^T A \):
+    \[
+      A^T = \begin{bmatrix} 1 & 2 & 3 \\ 0 & -1 & 5 \end{bmatrix}
+    \]
+    % A^T is the transpose of A, converting A from a 3x2 matrix to a 2x3 matrix.
+
+    \[
+      A^T A = \begin{bmatrix} 1 & 2 & 3 \\ 0 & -1 & 5 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 2 & -1 \\ 3 & 5 \end{bmatrix} = \begin{bmatrix} 14 & 13 \\ 13 & 26 \end{bmatrix}
+    \]
+    % A^T A is the product of A^T and A, resulting in a 2x2 matrix.
+
+    Then, calculate \( A^T b \):
+    \[
+      A^T b = \begin{bmatrix} 1 & 2 & 3 \\ 0 & -1 & 5 \end{bmatrix} \begin{bmatrix} 3 \\ 7 \\ 7 \end{bmatrix} = \begin{bmatrix} 38 \\ 28 \end{bmatrix}
+    \]
+    % A^T b is the product of A^T and b, resulting in a 2x1 matrix.
+
+    Now, solve the normal equation:
+    \[
+      \begin{bmatrix} 14 & 13 \\ 13 & 26 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 38 \\ 28 \end{bmatrix}
+    \]
+    % Solving this system of linear equations to find x_1 and x_2.
+
+    Thus, the least squares solution \( x \) is:
+    \[
+      x = \begin{bmatrix} 3.2 \\ -0.52307692 \end{bmatrix}
+    \]
+    % The solution provides the values for x_1 and x_2 that minimize the sum of the squares of the residuals in the equation Ax = b.
+
+    \pagebreak
+
+  \item[(c)]
+    Given:
+    \[
+      A = \begin{bmatrix} 2 & 1 & -1 \\ 1 & -2 & 0 \\ 3 & -1 & 1 \end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+    \]
+    % The matrix A is a 3x3 matrix, and b is a 3x1 column vector.
+
+    We need to find the least squares solution to the equation \( Ax = b \). The normal equation for this problem is:
+    \[
+      A^T A x = A^T b
+    \]
+    % The normal equation is derived by multiplying both sides of Ax = b by A^T.
+
+    First, calculate \( A^T A \):
+    \[
+      A^T = \begin{bmatrix} 2 & 1 & 3 \\ 1 & -2 & -1 \\ -1 & 0 & 1 \end{bmatrix}
+    \]
+    % A^T is the transpose of A, converting A from a 3x3 matrix to another 3x3 matrix.
+
+    \[
+      A^T A = \begin{bmatrix} 14 & -3 & 1 \\ -3 & 6 & -2 \\ 1 & -2 & 2 \end{bmatrix}
+    \]
+    % A^T A is the product of A^T and A, resulting in a 3x3 matrix.
+
+    Then, calculate \( A^T b \):
+    \[
+      A^T b = \begin{bmatrix} 2 & 1 & 3 \\ 1 & -2 & -1 \\ -1 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \\ 0 \end{bmatrix}
+    \]
+    % A^T b is the product of A^T and b, resulting in a 3x1 matrix.
+
+    Now, solve the normal equation:
+    \[
+      \begin{bmatrix} 14 & -3 & 1 \\ -3 & 6 & -2 \\ 1 & -2 & 2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \\ 0 \end{bmatrix}
+    \]
+    % Solving this system of linear equations to find x_1, x_2, and x_3.
+
+    Thus, the least squares solution \( x \) is:
+    \[
+      x = \begin{bmatrix} 0.4 \\ 0.2 \\ 0.0 \end{bmatrix}
+    \]
+    % The solution provides the values for x_1, x_2, and x_3 that minimize the sum of the squares of the residuals in the equation Ax = b.
+    \pagebreak
+
+\end{enumerate}
+
+\section*{Exercise 5.4.6}
+Find the least squares solution to the linear systems in Exercise 5.4.1 under the weighted norm
+\[
+  \|x\|^2 = x_1^2 + 2x_2^2 + 3x_3^2
+\]
+% This norm gives different weights to the components of the vector x, influencing the least squares solution by emphasizing the minimization of the terms associated with higher weights.
+
+We use the same systems as in 5.4.1 for each part (a), (b), and (c), and solve them considering the weighted norm.
+
+\subsection*{Part (a)}
+Given the same \( A \) and \( b \) as in 5.4.1(a):
+\[
+  A = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
+\]
+% The solution process changes here because of the weighted norm.
+
+First, we adjust the normal equation considering the weighted norm:
+\[
+  W = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \sqrt{2} & 0 \\ 0 & 0 & \sqrt{3} \end{bmatrix}
+\]
+% W is the matrix representing the square roots of the weights in the norm.
+
+\[
+  \tilde{A} = WA, \quad \tilde{b} = Wb
+\]
+% We modify A and b by the weights to reflect their influence in the least squares solution.
+
+Calculate \( \tilde{A}^T \tilde{A} \) and \( \tilde{A}^T \tilde{b} \):
+\[
+  \tilde{A} = \begin{bmatrix} 1 \\ 2\sqrt{2} \\ \sqrt{3} \end{bmatrix}, \quad \tilde{b} = \begin{bmatrix} 1 \\ \sqrt{2} \\ 0 \end{bmatrix}
+\]
+% Adjusting the vectors A and b according to the weights in the norm.
+
+\[
+  \tilde{A}^T \tilde{A} = \begin{bmatrix} 1 & 2\sqrt{2} & \sqrt{3} \end{bmatrix} \begin{bmatrix} 1 \\ 2\sqrt{2} \\ \sqrt{3} \end{bmatrix}, \quad \tilde{A}^T \tilde{b} = \begin{bmatrix} 1 & 2\sqrt{2} & \sqrt{3} \end{bmatrix} \begin{bmatrix} 1 \\ \sqrt{2} \\ 0 \end{bmatrix}
+\]
+% Calculating the products necessary for the weighted normal equation.
+
+Now, solve the weighted normal equation for \( x \):
+\[
+  \tilde{A}^T \tilde{A} x = \tilde{A}^T \tilde{b}
+\]
+% Solving the adjusted normal equation which now takes the weights into account.
+
+\pagebreak
+
+\subsection*{Part (b)}
+Given the same \( A \) and \( b \) as in 5.4.1(b):
+\[
+  A = \begin{bmatrix} 1 & 0 \\ 2 & -1 \\ 3 & 5 \end{bmatrix}, \quad b = \begin{bmatrix} 3 \\ 7 \\ 7 \end{bmatrix}
+\]
+% We need to find the weighted least squares solution, considering the specified norm.
+
+As in part (a), first define the weight matrix \( W \) and adjust \( A \) and \( b \):
+\[
+  W = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \sqrt{2} & 0 \\ 0 & 0 & \sqrt{3} \end{bmatrix}
+\]
+% W represents the square roots of the weights in the norm.
+
+Adjust \( A \) and \( b \) to reflect the weights:
+\[
+  \tilde{A} = W A = \begin{bmatrix} 1 & 0 \\ 2\sqrt{2} & -\sqrt{2} \\ 3\sqrt{3} & 5\sqrt{3} \end{bmatrix}, \quad \tilde{b} = W b = \begin{bmatrix} 3 \\ 7\sqrt{2} \\ 7\sqrt{3} \end{bmatrix}
+\]
+% The adjustment factors in the weights for each row of A and b, reflecting the influence of the weighted norm.
+
+Calculate \( \tilde{A}^T \tilde{A} \) and \( \tilde{A}^T \tilde{b} \):
+\[
+  \tilde{A}^T = \begin{bmatrix} 1 & 2\sqrt{2} & 3\sqrt{3} \\ 0 & -\sqrt{2} & 5\sqrt{3} \end{bmatrix}
+\]
+\[
+  \tilde{A}^T \tilde{A} = \tilde{A}^T \tilde{A} = \begin{bmatrix} 1+8+27 & 0-2\sqrt{2}+15\sqrt{6} \\ 0-2\sqrt{2}+15\sqrt{6} & 2+75 \end{bmatrix}
+\]
+\[
+  \tilde{A}^T \tilde{b} = \tilde{A}^T \tilde{b} = \begin{bmatrix} 1\cdot3 + 2\sqrt{2}\cdot7\sqrt{2} + 3\sqrt{3}\cdot7\sqrt{3} \\ 0\cdot3 - \sqrt{2}\cdot7\sqrt{2} + 5\sqrt{3}\cdot7\sqrt{3} \end{bmatrix}
+\]
+% We compute these matrix products to form the weighted normal equation.
+
+Now solve the weighted normal equation:
+\[
+  \tilde{A}^T \tilde{A} x = \tilde{A}^T \tilde{b}
+\]
+
+\pagebreak
+
+% Solving this equation will yield the vector x that minimizes the weighted sum of squares of the residuals.
+\subsection*{Part (c)}
+Given the same \( A \) and \( b \) as in 5.4.1(c):
+\[
+  A = \begin{bmatrix} 2 & 1 & -1 \\ 1 & -2 & 0 \\ 3 & -1 & 1 \end{bmatrix}, \quad b = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}
+\]
+% Again, the task is to find the weighted least squares solution with the specified norm.
+
+As in previous parts, define the weight matrix \( W \) and adjust \( A \) and \( b \):
+\[
+  W = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \sqrt{2} & 0 \\ 0 & 0 & \sqrt{3} \end{bmatrix}
+\]
+% W encodes the weights specified for the norm.
+
+Adjust \( A \) and \( b \) accordingly:
+\[
+  \tilde{A} = W A = \begin{bmatrix} 2 & 1 & -1 \\ \sqrt{2} & -2\sqrt{2} & 0 \\ 3\sqrt{3} & -\sqrt{3} & \sqrt{3} \end{bmatrix}, \quad \tilde{b} = W b = \begin{bmatrix} 1 \\ 0 \\ \sqrt{3} \end{bmatrix}
+\]
+% Adjusting A and b reflects the influence of the weighted norm in the least squares solution.
+
+Calculate \( \tilde{A}^T \tilde{A} \) and \( \tilde{A}^T \tilde{b} \):
+\[
+  \tilde{A}^T = \begin{bmatrix} 2 & \sqrt{2} & 3\sqrt{3} \\ 1 & -2\sqrt{2} & -\sqrt{3} \\ -1 & 0 & \sqrt{3} \end{bmatrix}
+\]
+\[
+  \tilde{A}^T \tilde{A} = \begin{bmatrix} 4 + 2 + 27 & 2 - 2\sqrt{2} - 3\sqrt{3} & -2 + 0 + 3\sqrt{3} \\ 2 - 2\sqrt{2} - 3\sqrt{3} & 1 + 8 + 1 & -1 + 0 - 1 \\ -2 + 0 + 3\sqrt{3} & -1 + 0 - 1 & 1 + 0 + 3 \end{bmatrix}
+\]
+\[
+  \tilde{A}^T \tilde{b} = \begin{bmatrix} 2\cdot1 + \sqrt{2}\cdot0 + 3\sqrt{3}\cdot\sqrt{3} \\ 1\cdot1 - 2\sqrt{2}\cdot0 - \sqrt{3}\cdot\sqrt{3} \\ -1\cdot1 + 0\cdot0 + \sqrt{3}\cdot\sqrt{3} \end{bmatrix}
+\]
+% Calculating these products to form the weighted normal equation.
+
+Now solve the weighted normal equation:
+\[
+  \tilde{A}^T \tilde{A} x = \tilde{A}^T \tilde{b}
+\]
+% Solving this equation will find the vector x that minimizes the weighted sum of squares of the residuals.
+
+\pagebreak
+
+\section*{Exercise 5.5.4}
+A 20-pound turkey that is at the room temperature of 72\(^{\circ}\)F is placed in the oven at 1:00 PM. The temperature of the turkey is observed in 20-minute intervals to be 79\(^{\circ}\)F, 88\(^{\circ}\)F, and 96\(^{\circ}\)F. A turkey is cooked when its temperature reaches 165\(^{\circ}\)F. How much longer do you need to wait until the turkey is done?
+
+% We are provided with a sequence of temperatures at given times. We can use Newton's Law of Cooling to model the temperature change of the turkey.
+
+\textbf{Solution:}
+% First, we need to determine the rate of heating, which can be approximated using the exponential model of Newton's Law of Cooling: T(t) = T_{\text{env}} + (T_0 - T_{\text{env}}) e^{-kt}.
+
+Given temperatures:
+\[
+  T_0 = 72, \quad T_{20} = 79, \quad T_{40} = 88, \quad T_{60} = 96 \quad \text{(all in degrees Fahrenheit)}
+\]
+% T_0 is the initial temperature, and T_20, T_40, and T_60 are the temperatures at 20, 40, and 60 minutes after placing the turkey in the oven.
+
+% The environment temperature, T_{\text{env}}, is typically the oven temperature, which we'll assume remains constant and much higher than the turkey's temperature.
+
+We need to find the constant \( k \) in the cooling equation. We can use the temperatures at different times to set up equations based on the model, and then solve for \( k \) using regression or a system of equations.
+
+% Once k is determined, we predict the time \( t \) at which \( T(t) = 165 \).
+
+To find \( k \), consider the equations:
+\[
+  \begin{aligned}
+    79 & = T_{\text{env}} + (72 - T_{\text{env}}) e^{-20k}, \\
+    88 & = T_{\text{env}} + (72 - T_{\text{env}}) e^{-40k}, \\
+    96 & = T_{\text{env}} + (72 - T_{\text{env}}) e^{-60k}.
+  \end{aligned}
+\]
+% These equations correspond to the temperature model at 20, 40, and 60 minutes.
+
+Once \( k \) and \( T_{\text{env}} \) are determined, solve for \( t \) such that:
+\[
+  165 = T_{\text{env}} + (72 - T_{\text{env}}) e^{-kt}.
+\]
+% This equation will give us the time \( t \) when the turkey reaches the cooked temperature of 165 degrees Fahrenheit.
+
+% Finally, the answer will tell us how much longer after the last observation time (60 minutes) it will take for the turkey to be done.
+\pagebreak
+
+\section*{Exercise 1.9.2}
+Verify the determinant product formula when matrices \(A\) and \(B\) are given as:
+\[
+  A = \begin{bmatrix} 1 & -1 & 3 \\ 2 & -1 & 1 \\ 4 & -2 & 0 \end{bmatrix}, \quad B = \begin{bmatrix} 0 & 1 & -1 \\ 1 & -3 & -2 \\ 2 & 0 & 1 \end{bmatrix}
+\]
+% We are tasked with verifying that the determinant of the product of two matrices equals the product of their determinants, i.e., \det(AB) = \det(A) \det(B).
+
+\textbf{Solution:}
+% First, we calculate the determinants of A and B separately.
+
+To find \( \det(A) \) and \( \det(B) \):
+\[
+  \det(A) = 1 \left((-1)(0) - (1)(-2)\right) - (-1) \left(2(0) - (1)(4)\right) + 3 \left(2(-2) - (-1)(4)\right)
+\]
+% This expression is derived using the cofactor expansion for determinant.
+
+\[
+  \det(B) = 0 \left((-3)(1) - (-2)(0)\right) + 1 \left((1)(1) - (-1)(2)\right) + (-1) \left(1(-2) - (-3)(2)\right)
+\]
+% Similarly, we use cofactor expansion for B.
+
+% Next, we need to compute the determinant of the product AB, which involves matrix multiplication followed by determinant calculation.
+
+First, compute the product \( AB \):
+\[
+  AB = A \times B = \begin{bmatrix}
+    1\cdot0 + (-1)\cdot1 + 3\cdot2 & 1\cdot1 + (-1)(-3) + 3\cdot0 & 1\cdot(-1) + (-1)(-2) + 3\cdot1 \\
+    2\cdot0 + (-1)\cdot1 + 1\cdot2 & 2\cdot1 + (-1)(-3) + 1\cdot0 & 2\cdot(-1) + (-1)(-2) + 1\cdot1 \\
+    4\cdot0 + (-2)\cdot1 + 0\cdot2 & 4\cdot1 + (-2)(-3) + 0\cdot0 & 4\cdot(-1) + (-2)(-2) + 0\cdot1 \\
+  \end{bmatrix}
+\]
+% The product AB is calculated by performing matrix multiplication between A and B.
+
+Calculate \( \det(AB) \):
+% We will use the cofactor expansion method similar to how we calculated \det(A) and \det(B).
+
+\[
+  \det(AB) = \text{[Cofactor expansion of the resultant matrix AB]}
+\]
+% This is left as an exercise for now.
+
+Finally, verify if:
+\[
+  \det(AB) = \det(A) \times \det(B)
+\]
+% If the computed values match, the determinant product formula is verified.
+
+\pagebreak
+
+\section*{Exercise 8.2.1}
+Find the eigenvalues and eigenvectors of the following matrices:
+
+\subsection*{Part (a)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  A = \begin{bmatrix} 1 & -2 \\ -2 & 1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(A - \lambda I) = \text{det}\left(\begin{bmatrix} 1-\lambda & -2 \\ -2 & 1-\lambda \end{bmatrix}\right) = (1-\lambda)^2 - 4 = \lambda^2 - 2\lambda - 3
+\]
+
+% Solve for eigenvalues
+\[
+  \lambda^2 - 2\lambda - 3 = 0 \Rightarrow (\lambda - 3)(\lambda + 1) = 0 \Rightarrow \lambda_1 = 3, \lambda_2 = -1
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda_1 = 3
+\[
+  (A - 3I)x = \begin{bmatrix} -2 & -2 \\ -2 & -2 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda_2 = -1
+\[
+  (A + I)x = \begin{bmatrix} 2 & -2 \\ -2 & 2 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (b)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+B = \begin{bmatrix} 1 & -\frac{2}{3} \\ \frac{1}{2} & -\frac{1}{6} \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+\text{det}(B - \lambda I) = \text{det}\left(\begin{bmatrix} 1-\lambda & -\frac{2}{3} \\ \frac{1}{2} & -\frac{1}{6}-\lambda \end{bmatrix}\right) = (1-\lambda)\left(-\frac{1}{6}-\lambda\right) + \frac{1}{3}
+\]
+
+% Expand and simplify to find the characteristic polynomial
+\[
+\lambda^2 - \frac{5}{6}\lambda - \frac{1}{6} = 0
+\]
+
+% Solve for eigenvalues using the quadratic formula
+\[
+\lambda = \frac{\frac{5}{6} \pm \sqrt{\left(\frac{5}{6}\right)^2 + \frac{4}{6}}}{2}
+\]
+\[
+= \frac{\frac{5}{6} \pm \sqrt{\frac{49}{36}}}{2}
+\]
+\[
+= \frac{\frac{5}{6} \pm \frac{7}{6}}{2}
+\]
+\[
+\Rightarrow \lambda_1 = 1, \quad \lambda_2 = -\frac{1}{6}
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda_1 = 1
+\[
+(B - I)x = \begin{bmatrix} 0 & -\frac{2}{3} \\ \frac{1}{2} & -\frac{7}{6} \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 2 \\ 3 \end{bmatrix} \text{ (normalized)}
+\]
+
+% For \lambda_2 = -\frac{1}{6}
+\[
+(B + \frac{1}{6}I)x = \begin{bmatrix} \frac{7}{6} & -\frac{2}{3} \\ \frac{1}{2} & 0 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 2 \\ 3 \end{bmatrix} \text{ (normalized)}
+\]
+
+\pagebreak
+
+\subsection*{Part (c)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  C = \begin{bmatrix} 3 & 1 \\ -1 & 1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(C - \lambda I) = \text{det}\left(\begin{bmatrix} 3-\lambda & 1 \\ -1 & 1-\lambda \end{bmatrix}\right) = (3-\lambda)(1-\lambda) + 1 = \lambda^2 - 4\lambda + 4
+\]
+
+% Solve for eigenvalues
+\[
+  \lambda^2 - 4\lambda + 4 = 0 \Rightarrow (\lambda - 2)^2 = 0 \Rightarrow \lambda = 2 \text{ (doubly repeated eigenvalue)}
+\]
+
+% Find eigenvectors for \lambda = 2
+\[
+  (C - 2I)x = \begin{bmatrix} 1 & 1 \\ -1 & -1 \end{bmatrix}x = 0 \Rightarrow x = t\begin{bmatrix} -1 \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (d)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+D = \begin{bmatrix} 1 & 2 \\ -1 & 1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+\text{det}(D - \lambda I) = \text{det}\left(\begin{bmatrix} 1-\lambda & 2 \\ -1 & 1-\lambda \end{bmatrix}\right) = (1-\lambda)^2 + 2
+\]
+
+% Expand and simplify to find the characteristic polynomial
+\[
+\lambda^2 - 2\lambda + 3 = 0
+\]
+
+% Solve for eigenvalues using the quadratic formula
+\[
+\lambda = \frac{2 \pm \sqrt{4 - 12}}{2}
+\]
+\[
+= \frac{2 \pm \sqrt{-8}}{2}
+\]
+\[
+= \frac{2 \pm 2i\sqrt{2}}{2}
+\]
+\[
+\Rightarrow \lambda_1 = 1 + i\sqrt{2}, \quad \lambda_2 = 1 - i\sqrt{2}
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda_1 = 1 + i\sqrt{2}
+\[
+(D - (1 + i\sqrt{2})I)x = \begin{bmatrix} -i\sqrt{2} & 2 \\ -1 & -i\sqrt{2} \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} i\sqrt{2} \\ 1 \end{bmatrix}
+\]
+
+% For \lambda_2 = 1 - i\sqrt{2}
+\[
+(D - (1 - i\sqrt{2})I)x = \begin{bmatrix} i\sqrt{2} & 2 \\ -1 & i\sqrt{2} \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} -i\sqrt{2} \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (e)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  E = \begin{bmatrix} 3 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 3 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(E - \lambda I) = \text{det}\left(\begin{bmatrix} 3-\lambda & -1 & 0 \\ -1 & 2-\lambda & -1 \\ 0 & -1 & 3-\lambda \end{bmatrix}\right) = (3-\lambda)[(2-\lambda)(3-\lambda) - 1] + 1 = \lambda^3 - 8\lambda^2 + 21\lambda - 18
+\]
+
+% Solve for eigenvalues
+\[
+  \lambda^3 - 8\lambda^2 + 21\lambda - 18 = 0 \Rightarrow \lambda = 1, 2, 4
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = 1
+\[
+  (E - I)x = \begin{bmatrix} 2 & -1 & 0 \\ -1 & 1 & -1 \\ 0 & -1 & 2 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 2
+\[
+  (E - 2I)x = \begin{bmatrix} 1 & -1 & 0 \\ -1 & 0 & -1 \\ 0 & -1 & 1 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 4
+\[
+  (E - 4I)x = \begin{bmatrix} -1 & -1 & 0 \\ -1 & -2 & -1 \\ 0 & -1 & -1 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (f)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  F = \begin{bmatrix} -1 & -1 & 4 \\ 1 & 3 & -2 \\ 1 & 1 & -1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(F - \lambda I) = \text{det}\left(\begin{bmatrix} -1-\lambda & -1 & 4 \\ 1 & 3-\lambda & -2 \\ 1 & 1 & -1-\lambda \end{bmatrix}\right) = -\lambda^3 + \lambda^2 + 5\lambda - 3
+\]
+
+% Solve for eigenvalues
+\[
+  -\lambda^3 + \lambda^2 + 5\lambda - 3 = 0 \Rightarrow \lambda = 3, -1, 1
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = 3
+\[
+  (F - 3I)x = \begin{bmatrix} -4 & -1 & 4 \\ 1 & 0 & -2 \\ 1 & 1 & -4 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = -1
+\[
+  (F + I)x = \begin{bmatrix} 0 & -1 & 4 \\ 1 & 4 & -2 \\ 1 & 1 & 0 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 4 \\ 0 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 1
+\[
+  (F - I)x = \begin{bmatrix} -2 & -1 & 4 \\ 1 & 2 & -2 \\ 1 & 1 & -2 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} 2 \\ 0 \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (g)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  G = \begin{bmatrix} 1 & -3 & 11 \\ 2 & -6 & 16 \\ 1 & -3 & 7 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(G - \lambda I) = \text{det}\left(\begin{bmatrix} 1-\lambda & -3 & 11 \\ 2 & -6-\lambda & 16 \\ 1 & -3 & 7-\lambda \end{bmatrix}\right) = -\lambda^3 + 2\lambda^2 - \lambda + 2
+\]
+
+% Solve for eigenvalues
+\[
+  -\lambda^3 + 2\lambda^2 - \lambda + 2 = 0 \Rightarrow \lambda = -1, 1, 2
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = -1
+\[
+  (G + I)x = \begin{bmatrix} 2 & -3 & 11 \\ 2 & -5 & 16 \\ 1 & -3 & 8 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = 1
+\[
+  (G - I)x = \begin{bmatrix} 0 & -3 & 11 \\ 2 & -7 & 16 \\ 1 & -3 & 6 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 3 \\ -2 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 2
+\[
+  (G - 2I)x = \begin{bmatrix} -1 & -3 & 11 \\ 2 & -8 & 16 \\ 1 & -3 & 5 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (h)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  H = \begin{bmatrix} 2 & -1 & -1 \\ -2 & 1 & 1 \\ 1 & 0 & 1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(H - \lambda I) = \text{det}\left(\begin{bmatrix} 2-\lambda & -1 & -1 \\ -2 & 1-\lambda & 1 \\ 1 & 0 & 1-\lambda \end{bmatrix}\right) = -\lambda^3 + 4\lambda^2 - 5\lambda + 2
+\]
+
+% Solve for eigenvalues
+\[
+  -\lambda^3 + 4\lambda^2 - 5\lambda + 2 = 0 \Rightarrow \lambda = 1, 1, 2
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = 1 (repeated eigenvalue)
+\[
+  (H - I)x = \begin{bmatrix} 1 & -1 & -1 \\ -2 & 0 & 1 \\ 1 & 0 & 0 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 2
+\[
+  (H - 2I)x = \begin{bmatrix} 0 & -1 & -1 \\ -2 & -1 & 1 \\ 1 & 0 & -1 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (i)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+  I = \begin{bmatrix} -4 & -4 & 2 \\ 3 & 4 & -1 \\ -3 & -2 & 3 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+  \text{det}(I - \lambda I) = \text{det}\left(\begin{bmatrix} -4-\lambda & -4 & 2 \\ 3 & 4-\lambda & -1 \\ -3 & -2 & 3-\lambda \end{bmatrix}\right) = -\lambda^3 + 3\lambda^2 + 11\lambda - 27
+\]
+
+% Solve for eigenvalues
+\[
+  -\lambda^3 + 3\lambda^2 + 11\lambda - 27 = 0 \Rightarrow \lambda = -3, 1, 9
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = -3
+\[
+  (I + 3I)x = \begin{bmatrix} -1 & -4 & 2 \\ 3 & 7 & -1 \\ -3 & -2 & 6 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 2 \\ 1 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 1
+\[
+  (I - I)x = \begin{bmatrix} -5 & -4 & 2 \\ 3 & 3 & -1 \\ -3 & -2 & 2 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 4 \\ -2 \\ -3 \end{bmatrix}
+\]
+
+% For \lambda = 9
+\[
+  (I - 9I)x = \begin{bmatrix} -13 & -4 & 2 \\ 3 & -5 & -1 \\ -3 & -2 & -6 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} 1 \\ -3 \\ 2 \end{bmatrix}
+\]
+
+\pagebreak
+
+\subsection*{Part (j)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+J = \begin{bmatrix} 3 & 4 & 0 & 0 \\ 4 & 3 & 0 & 0 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 4 & 5 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+\text{det}(J - \lambda I) = \text{det}\left(\begin{bmatrix} 3-\lambda & 4 & 0 & 0 \\ 4 & 3-\lambda & 0 & 0 \\ 0 & 0 & 1-\lambda & 3 \\ 0 & 0 & 4 & 5-\lambda \end{bmatrix}\right)
+\]
+\[
+= ((3-\lambda)^2 - 16) \times ((1-\lambda)(5-\lambda) - 12)
+\]
+
+% Solve for eigenvalues
+\[
+= (\lambda^2 - 6\lambda + 25) \times (\lambda^2 - 6\lambda - 11)
+\]
+\[
+= (\lambda - 7)(\lambda + 1)(\lambda - 1)(\lambda - 5)
+\]
+\[
+\Rightarrow \lambda = 7, -1, 1, 5
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = 7
+\[
+(J - 7I)x = \begin{bmatrix} -4 & 4 & 0 & 0 \\ 4 & -4 & 0 & 0 \\ 0 & 0 & -6 & 3 \\ 0 & 0 & 4 & -2 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = -1
+\[
+(J + I)x = \begin{bmatrix} 4 & 4 & 0 & 0 \\ 4 & 4 & 0 & 0 \\ 0 & 0 & 2 & 3 \\ 0 & 0 & 4 & 6 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = 1
+\[
+(J - I)x = \begin{bmatrix} 2 & 4 & 0 & 0 \\ 4 & 2 & 0 & 0 \\ 0 & 0 & 0 & 3 \\ 0 & 0 & 4 & 4 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} -2 \\ 2 \\ -1 \\ 1 \end{bmatrix}
+\]
+
+% For \lambda = 5
+\[
+(J - 5I)x = \begin{bmatrix} -2 & 4 & 0 & 0 \\ 4 & -2 & 0 & 0 \\ 0 & 0 & -4 & 3 \\ 0 & 0 & 4 & 0 \end{bmatrix}x = 0 \Rightarrow x_4 = v\begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}
+\]
+
+\pagebreak
+
+
+\subsection*{Part (k)}
+Find the eigenvalues and eigenvectors for the matrix:
+\[
+K = \begin{bmatrix} 4 & 0 & 0 & 0 \\ 1 & 3 & 0 & 0 \\ -1 & 1 & 2 & 0 \\ 1 & -1 & 1 & 1 \end{bmatrix}
+\]
+
+% Calculate the characteristic polynomial
+\[
+\text{det}(K - \lambda I) = \text{det}\left(\begin{bmatrix} 4-\lambda & 0 & 0 & 0 \\ 1 & 3-\lambda & 0 & 0 \\ -1 & 1 & 2-\lambda & 0 \\ 1 & -1 & 1 & 1-\lambda \end{bmatrix}\right)
+\]
+\[
+= (4-\lambda) \times (3-\lambda) \times (2-\lambda) \times (1-\lambda)
+\]
+
+% Solve for eigenvalues
+\[
+\Rightarrow \lambda = 4, 3, 2, 1
+\]
+
+% Find eigenvectors for each eigenvalue
+% For \lambda = 4
+\[
+(K - 4I)x = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 1 & -1 & 0 & 0 \\ -1 & 1 & -2 & 0 \\ 1 & -1 & 1 & -3 \end{bmatrix}x = 0 \Rightarrow x_1 = t\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = 3
+\[
+(K - 3I)x = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ -1 & 1 & -1 & 0 \\ 1 & -1 & 1 & -2 \end{bmatrix}x = 0 \Rightarrow x_2 = s\begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = 2
+\[
+(K - 2I)x = \begin{bmatrix} 2 & 0 & 0 & 0 \\ 1 & 1 & 0 & 0 \\ -1 & 1 & 0 & 0 \\ 1 & -1 & 1 & -1 \end{bmatrix}x = 0 \Rightarrow x_3 = u\begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}
+\]
+
+% For \lambda = 1
+\[
+(K - 1I)x = \begin{bmatrix} 3 & 0 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ -1 & 1 & 1 & 0 \\ 1 & -1 & 1 & 0 \end{bmatrix}x = 0 \Rightarrow x_4 = v\begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+\]
+
+
+\end{document}

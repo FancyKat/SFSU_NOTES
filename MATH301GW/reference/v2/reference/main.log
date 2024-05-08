@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  25 MAR 2024 13:49
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  28 MAR 2024 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2633,26 +2633,36 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Missing character: There is no − ("2212) in font cmr10!
 Missing character: There is no − ("2212) in font cmr10!
 Missing character: There is no − ("2212) in font cmr10!
-[14] [15]) [16] (./sections/propositions/chapters/ch2.tex [17] [18]) [19]) (./sections/quizzes.tex
+[14] [15] [16] [17]) [18] (./sections/propositions/chapters/ch2.tex [19] [20] [21]
+Overfull \hbox (93.71016pt too wide) detected at line 206
+[]
+ []
+
+[22]
+Overfull \hbox (25.96213pt too wide) detected at line 255
+[]
+ []
+
+[23]) [24]) (./sections/quizzes.tex
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 1.
 
-[20
+[25
 
-] [21
+] [26
 
-]) [22] (./main.aux)
+]) [27] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7AB5670C9F26DF9683FA21EA168E838B;9008.
+(rerunfilecheck)             Checksum: 3D81E12106F15CE00D58B2200D8C3F54;9008.
  ) 
 Here is how much of TeX's memory you used:
  10905 strings out of 476191
  169788 string characters out of 5812072
- 503148 words of memory out of 5000000
+ 512148 words of memory out of 5000000
  31451 multiletter control sequences out of 15000+600000
  482680 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,15n,64p,1252b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,64p,1252b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (23 pages).
+Output written on main.pdf (28 pages).

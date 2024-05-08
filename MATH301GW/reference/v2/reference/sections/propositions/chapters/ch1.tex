@@ -525,156 +525,134 @@ Let $m, n \in \mathbb{Z}$. If $mn = 0$, then $m = 0$ or $n = 0$.
     \item $m-n = p-q$ if and only if $m+q = n+p$.
     \item $(m-n)p = mp - np$.
 \end{enumerate}
-% \begin{proof}
-%     Let $m, n, p, q \in \mathbb{Z}$.
+\begin{enumerate}[label=(\roman*)]
 
-%     (i)
-%     %We start by applying the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$.
-%     \begin{align*}
-%         (m-n) + (p-q) & = (m+(-n)) + (p+(-q))     &  & \text{(definition of subtraction)} \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%                       & = ((m+(-n)) + p) + (-q)   &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (m + ((-n) + p)) + (-q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $p$.
-%                       & = (m + (p + (-n))) + (-q) &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = ((m + p) + (-n)) + (-q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (m + p) + ((-n) + (-q)) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-n) + (-q)$ as $-(n + q)$.
-%                       & = (m + p) + (-(n + q))    &  & \text{(definition of subtraction)} \\
-%         %We apply the definition of subtraction again to rewrite $(m + p) + (-(n + q))$ as $(m + p) - (n + q)$.
-%                       & = (m + p) - (n + q)       &  & \text{(definition of subtraction)}
-%     \end{align*}
+    \item $(m-n)+(p-q)=(m+p)-(n+q)$
+          \begin{proof}
+              Let $m,n,p,q \in \mathbb{Z}$.
+              \begin{align*}
+                  (m-n)+(p-q) & = (m+(-n))+(p+(-q)) &  & \text{(definition of subtraction)} \\
+                  %By the definition of subtraction, $m-n=m+(-n)$ and $p-q=p+(-q)$.
+                              & = (m+(p+(-q)))+(-n) &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the associativity of addition to rearrange the terms.
+                              & = ((m+p)+(-q))+(-n) &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the associativity of addition again to rearrange the terms.
+                              & = (m+p)+((-q)+(-n)) &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the commutativity of addition to swap $(-q)$ and $(-n)$.
+                              & = (m+p)+((-n)+(-q)) &  & \text{(Axiom 1.1(i))}              \\
+                  %Since $-n$ and $-q$ are the additive inverses of $n$ and $q$ respectively, $(-n)+(-q)=-(n+q)$.
+                              & = (m+p)-(n+q)       &  & \text{(definition of subtraction)}
+              \end{align*}
+              Therefore, $(m-n)+(p-q)=(m+p)-(n+q)$ for all $m,n,p,q \in \mathbb{Z}$.
+          \end{proof}
 
-%     (ii)
-%     %We start by applying the definition of subtraction twice to rewrite $(m-n) - (p-q)$ as $(m+(-n)) + (-(p+(-q)))$.
-%     \begin{align*}
-%         (m-n) - (p-q) & = (m+(-n)) + (-(p+(-q)))  &  & \text{(definition of subtraction)} \\
-%         %We apply the definition of subtraction again to rewrite $-(p+(-q))$ as $-p+q$.
-%                       & = (m+(-n)) + (-p+q)       &  & \text{(definition of subtraction)} \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%                       & = ((m+(-n)) + (-p)) + q   &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (m + ((-n) + (-p))) + q &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $(-p)$.
-%                       & = (m + ((-p) + (-n))) + q &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = ((m + (-p)) + (-n)) + q &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (m + (-p)) + ((-n) + q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $m$ and $(-p)$.
-%                       & = ((-p) + m) + ((-n) + q) &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = ((-p) + (m + (-n))) + q &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (-p) + ((m + (-n)) + q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (-p) + (m + ((-n) + q)) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $q$.
-%                       & = (-p) + (m + (q + (-n))) &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (-p) + ((m + q) + (-n)) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-p)$ and $((m + q) + (-n))$.
-%                       & = ((m + q) + (-n)) + (-p) &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%                       & = (m + q) + ((-n) + (-p)) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-n) + (-p)$ as $-(n + p)$.
-%                       & = (m + q) + (-(n + p))    &  & \text{(definition of subtraction)} \\
-%         %We apply the definition of subtraction again to rewrite $(m + q) + (-(n + p))$ as $(m + q) - (n + p)$.
-%                       & = (m + q) - (n + p)       &  & \text{(definition of subtraction)}
-%     \end{align*}
+    \item $(m-n)-(p-q)=(m+q)-(n+p)$
+          \begin{proof}
+              Let $m,n,p,q \in \mathbb{Z}$.
+              \begin{align*}
+                  (m-n)-(p-q) & = (m+(-n))-(p+(-q))     &  & \text{(definition of subtraction)} \\
+                  %By the definition of subtraction, $m-n=m+(-n)$ and $p-q=p+(-q)$.
+                              & = (m+(-n))+(-1)(p+(-q)) &  & \text{(definition of subtraction)} \\
+                  %We distribute $-1$ to both $p$ and $(-q)$.
+                              & = (m+(-n))+(-p+q)       &  & \text{(Axiom 1.1(iii))}            \\
+                  %We use the associativity of addition to rearrange the terms.
+                              & = (m+(-p+q))+(-n)       &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the associativity of addition again to rearrange the terms.
+                              & = ((m+q)+(-p))+(-n)     &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the commutativity of addition to swap $(-p)$ and $(-n)$.
+                              & = ((m+q)+(-n))+(-p)     &  & \text{(Axiom 1.1(i))}              \\
+                  %We use the associativity of addition to rearrange the terms.
+                              & = (m+q)+((-n)+(-p))     &  & \text{(Axiom 1.1(ii))}             \\
+                  %Since $-n$ and $-p$ are the additive inverses of $n$ and $p$ respectively, $(-n)+(-p)=-(n+p)$.
+                              & = (m+q)-(n+p)           &  & \text{(definition of subtraction)}
+              \end{align*}
+              Therefore, $(m-n)-(p-q)=(m+q)-(n+p)$ for all $m,n,p,q \in \mathbb{Z}$.
+          \end{proof}
+    \item $(m-n)(p-q)=(mp+nq)-(mq+np)$
+          \begin{proof}
+              Let $m,n,p,q \in \mathbb{Z}$.
+              \begin{align*}
+                  (m-n)(p-q) & = (m+(-n))(p+(-q))        &  & \text{(definition of subtraction)} \\
+                  %By the definition of subtraction, $m-n=m+(-n)$ and $p-q=p+(-q)$.
+                             & = mp+m(-q)+(-n)p+(-n)(-q) &  & \text{(Axiom 1.1(iii))}            \\
+                  %We distribute $m$ and $(-n)$ to both terms in the second parentheses.
+                             & = mp+(-mq)+(-np)+nq       &  & \text{(Axiom 1.1(iii))}            \\
+                  %We distribute $-1$ to both $mq$ and $np$.
+                             & = (mp+nq)+((-mq)+(-np))   &  & \text{(Axiom 1.1(ii))}             \\
+                  %We use the associativity of addition to rearrange the terms.
+                             & = (mp+nq)-(mq+np)         &  & \text{(definition of subtraction)}
+              \end{align*}
+              Therefore, $(m-n)(p-q)=(mp+nq)-(mq+np)$ for all $m,n,p,q \in \mathbb{Z}$.
+          \end{proof}
+    \item $m-n=p-q$ if and only if $m+q=n+p$
+          \begin{proof}
+              Let $m,n,p,q \in \mathbb{Z}$.
 
-%     (iii)
-%     %We start by applying the definition of subtraction twice to rewrite $(m-n)(p-q)$ as $(m+(-n))(p+(-q))$.
-%     \begin{align*}
-%         (m-n)(p-q) & = (m+(-n))(p+(-q))                     &  & \text{(definition of subtraction)}      \\
-%         %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) to expand the product.
-%                    & = (m+(-n))p + (m+(-n))(-q)             &  & \text{(Axiom 1.1(iii))}                 \\
-%         %We apply the distributive property of multiplication over addition (Axiom 1.1(iii)) again to expand the products.
-%                    & = mp + (-n)p + m(-q) + (-n)(-q)        &  & \text{(Axiom 1.1(iii))}                 \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $(-n)$ and $p$.
-%                    & = mp + p(-n) + m(-q) + (-n)(-q)        &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $m$ and $(-q)$.
-%                    & = mp + p(-n) + (-q)m + (-n)(-q)        &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $(-n)$ and $(-q)$.
-%                    & = mp + p(-n) + (-q)m + (-q)(-n)        &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply Proposition 1.20, which states that $(-a)(-b) = ab$ for all integers $a$ and $b$.
-%                    & = mp + p(-n) + (-q)m + (-q)n           &  & \text{(Proposition 1.20)}               \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) to swap the order of $(-q)$ and $n$.
-%                    & = mp + p(-n) + (-q)m + n(-q)           &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $n$ and $(-q)$.
-%                    & = mp + p(-n) + (-q)m + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $(-q)$ and $m$.
-%                    & = mp + p(-n) + m(-q) + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We apply the commutative property of multiplication (Axiom 1.1(iv)) again to swap the order of $p$ and $(-n)$.
-%                    & = mp + (-n)p + m(-q) + (-q)n           &  & \text{(Axiom 1.1(iv))}                  \\
-%         %We rearrange the terms using the commutative property of addition (Axiom 1.1(i)) and the associative property of addition (Axiom 1.1(ii)).
-%                    & = (mp + (-q)n) + ((-n)p + m(-q))       &  & \text{(Axiom 1.1(i) and Axiom 1.1(ii))} \\
-%         %We apply the definition of subtraction, which states that $a - b = a + (-b)$ for all integers $a$ and $b$, to rewrite $(-q)n$ as $-(qn)$ and $m(-q)$ as $-(mq)$.
-%                    & = (mp + (-(qn))) + ((-(np)) + (-(mq))) &  & \text{(definition of subtraction)}      \\
-%         %We apply the definition of subtraction again to rewrite $(mp + (-(qn)))$ as $(mp - qn)$ and $((-(np)) + (-(mq)))$ as $(-(np + mq))$.
-%                    & = (mp - qn) + (-(np + mq))             &  & \text{(definition of subtraction)}      \\
-%         %We apply the definition of subtraction again to rewrite $(mp - qn) + (-(np + mq))$ as $(mp - qn) - (np + mq)$.
-%                    & = (mp - qn) - (np + mq)                &  & \text{(definition of subtraction)}
-%     \end{align*}
+              $(\Rightarrow)$ Assume $m-n=p-q$. Then:
+              \begin{align*}
+                  m-n            & = p-q        &  & \tag{assumption}                   \\
+                  %By the definition of subtraction, $m-n=m+(-n)$ and $p-q=p+(-q)$.
+                  m+(-n)         & = p+(-q)     &  & \text{(definition of subtraction)} \\
+                  %We add $q$ to both sides of the equation.
+                  (m+(-n))+q     & = (p+(-q))+q &  & \text{(Axiom 1.1(i))}              \\
+                  %We use the associativity of addition to rearrange the terms.
+                  m+((-n)+q)     & = p+((-q)+q) &  & \text{(Axiom 1.1(ii))}             \\
+                  %By the additive inverse property, $(-q)+q=0$.
+                  m+((-n)+q)     & = p+0        &  & \text{(Axiom 1.4)}                 \\
+                  %By the additive identity property, $p+0=p$.
+                  m+((-n)+q)     & = p          &  & \text{(Axiom 1.2)}                 \\
+                  %We use the associativity of addition to rearrange the terms.
+                  (m+q)+(-n)     & = p          &  & \text{(Axiom 1.1(ii))}             \\
+                  %We add $n$ to both sides of the equation.
+                  ((m+q)+(-n))+n & = p+n        &  & \text{(Axiom 1.1(i))}              \\
+                  %We use the associativity of addition to rearrange the terms.
+                  (m+q)+((-n)+n) & = p+n        &  & \text{(Axiom 1.1(ii))}             \\
+                  %By the additive inverse property, $(-n)+n=0$.
+                  (m+q)+0        & = p+n        &  & \text{(Axiom 1.4)}                 \\
+                  %By the additive identity property, $(m+q)+0=m+q$.
+                  m+q            & = p+n        &  & \text{(Axiom 1.2)}                 \\
+                  %We use the commutativity of addition to swap $p$ and $n$.
+                  m+q            & = n+p        &  & \text{(Axiom 1.1(i))}
+              \end{align*}
 
-%     (iv)
-%     %We prove the biconditional statement by proving both implications separately.
-%     ($\Rightarrow$) Assume $m - n = p - q$.
-%     \begin{align*}
-%         m - n                & = p - q          &  & \text{(given)}                     \\
-%         %We apply the definition of subtraction to rewrite $m - n$ as $m + (-n)$ and $p - q$ as $p + (-q)$.
-%         m + (-n)             & = p + (-q)       &  & \text{(definition of subtraction)} \\
-%         %We add $q$ to both sides of the equation.
-%         (m + (-n)) + q       & = (p + (-q)) + q &  & \text{(adding $q$ to both sides)}  \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%         m + ((-n) + q)       & = p + ((-q) + q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $(-n)$ and $q$.
-%         m + (q + (-n))       & = p + ((-q) + q) &  & \text{(Axiom 1.1(i))}              \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) again to regroup the terms.
-%         (m + q) + (-n)       & = p + ((-q) + q) &  & \text{(Axiom 1.1(ii))}             \\
-%         %By the additive inverse (Axiom 1.4), $(-q) + q = 0$, so we can simplify the right-hand side.
-%         (m + q) + (-n)       & = p + 0          &  & \text{(Axiom 1.4)}                 \\
-%         %By the additive identity (Axiom 1.2), $p + 0 = p$, so we can simplify the right-hand side further.
-%         (m + q) + (-n)       & = p              &  & \text{(Axiom 1.2)}                 \\
-%         %We add $n$ to both sides of the equation.
-%         ((m + q) + (-n)) + n & = p + n          &  & \text{(adding $n$ to both sides)}  \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%         (m + q) + ((-n) + n) & = p + n          &  & \text{(Axiom 1.1(ii))}             \\
-%         %By the additive inverse (Axiom 1.4), $(-n) + n = 0$, so we can simplify the left-hand side.
-%         (m + q) + 0          & = p + n          &  & \text{(Axiom 1.4)}                 \\
-%         %By the additive identity (Axiom 1.2), $(m + q) + 0 = m + q$, so we can simplify the left-hand side further.
-%         m + q                & = p + n          &  & \text{(Axiom 1.2)}                 \\
-%         %We apply the commutative property of addition (Axiom 1.1(i)) to swap the order of $p$ and $n$.
-%         m + q                & = n + p          &  & \text{(Axiom 1.1(i))}
-%     \end{align*}
-%     Therefore, if $m - n = p - q$, then $m + q = n + p$.
+              $(\Leftarrow)$ Assume $m+q=n+p$. Then:
+              \begin{align*}
+                  m+q        & = n+p               &  & \tag{assumption}                   \\
+                  %We add $-q$ to both sides of the equation.
+                  (m+q)+(-q) & = (n+p)+(-q)        &  & \text{(Axiom 1.1(i))}              \\
+                  %We use the associativity of addition to rearrange the terms.
+                  m+(q+(-q)) & = n+(p+(-q))        &  & \text{(Axiom 1.1(ii))}             \\
+                  %By the additive inverse property, $q+(-q)=0$.
+                  m+0        & = n+(p+(-q))        &  & \text{(Axiom 1.4)}                 \\
+                  %By the additive identity property, $m+0=m$.
+                  m          & = n+(p+(-q))        &  & \text{(Axiom 1.2)}                 \\
+                  %We add $-n$ to both sides of the equation.
+                  m+(-n)     & = (n+(p+(-q)))+(-n) &  & \text{(Axiom 1.1(i))}              \\
+                  %We use the associativity of addition to rearrange the terms.
+                  m+(-n)     & = (n+(-n))+(p+(-q)) &  & \text{(Axiom 1.1(ii))}             \\
+                  %By the additive inverse property, $n+(-n)=0$.
+                  m+(-n)     & = 0+(p+(-q))        &  & \text{(Axiom 1.4)}                 \\
+                  %By the additive identity property, $0+(p+(-q))=p+(-q)$.
+                  m+(-n)     & = p+(-q)            &  & \text{(Axiom 1.2)}                 \\
+                  %By the definition of subtraction, $m+(-n)=m-n$ and $p+(-q)=p-q$.
+                  m-n        & = p-q               &  & \text{(definition of subtraction)}
+              \end{align*}
+              Therefore, $m-n=p-q$ if and only if $m+q=n+p$ for all $m,n,p,q \in \mathbb{Z}$.
+          \end{proof}
+    \item $(m-n)p=mp-np$
+          \begin{proof}
+              Let $m,n,p \in \mathbb{Z}$.
+              \begin{align*}
+                  (m-n)p & = (m+(-n))p &  & \text{(definition of subtraction)} \\
+                  %By the definition of subtraction, $m-n=m+(-n)$.
+                         & = mp+(-n)p  &  & \text{(Axiom 1.1(iii))}            \\
+                  %We distribute $p$ to both $m$ and $(-n)$.
+                         & = mp+(-np)  &  & \text{(Axiom 1.1(iii))}            \\
+                  %We distribute $-1$ to $np$.
+                         & = mp-np     &  & \text{(definition of subtraction)}
+              \end{align*}
+              Therefore, $(m-n)p=mp-np$ for all $m,n,p \in \mathbb{Z}$.
+          \end{proof}
 
-%     ($\Leftarrow$) Assume $m + q = n + p$.
-%     \begin{align*}
-%         m + q          & = n + p                     &  & \text{(given)}                       \\
-%         %We add $(-q)$ to both sides of the equation.
-%         (m + q) + (-q) & = (n + p) + (-q)            &  & \text{(adding $(-q)$ to both sides)} \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%         m + (q + (-q)) & = n + (p + (-q))            &  & \text{(Axiom 1.1(ii))}               \\
-%         %By the additive inverse (Axiom 1.4), $q + (-q) = 0$, so we can simplify the left-hand side.
-%         m + 0          & = n + (p + (-q))            &  & \text{(Axiom 1.4)}                   \\
-%         %By the additive identity (Axiom 1.2), $m + 0 = m$, so we can simplify the left-hand side further.
-%         m              & = n + (p + (-q))            &  & \text{(Axiom 1.2)}                   \\
-%         %We add $(-n)$ to both sides of the equation.
-%         m + (-n)       & = (n + (p + (-q))) + (-n)   &  & \text{(adding $(-n)$ to both sides)} \\
-%         %We apply the associative property of addition (Axiom 1.1(ii)) to regroup the terms.
-%         m + (-n)       & = ((n + (-n)) + (p + (-q))) &  & \text{(Axiom 1.1(ii))}               \\
-%         %By the additive inverse (Axiom 1.4), $n + (-n) = 0$, so we can simplify the right-hand side.
-%         m + (-n)       & = (0 + (p + (-q)))          &  & \text{(Axiom 1.4)}                   \\
-%         %By the additive identity (Axiom 1.2), $0 + (p + (-q)) = p + (-q)$, so we can simplify the right-hand side further.
-%         m + (-n)       & = p + (-q)                  &  & \text{(Axiom 1.2)}                   \\
-%         %We apply the definition of subtraction to rewrite $m + (-n)$ as $m - n$ and $p + (-q)$ as $p - q$.
-%         m - n          & = p - q                     &  & \text{(definition of subtraction)}
-%     \end{align*}
-%     Therefore, if $m + q = n + p$, then $m - n = p - q$.
 
-%     Combining the two implications, we conclude that $m - n = p - q$ if and only if $m + q = n + p$.
-% \end{proof}
+\end{enumerate}
