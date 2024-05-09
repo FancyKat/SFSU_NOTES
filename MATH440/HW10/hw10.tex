@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Homework 10}
+\end{center}
+
+% Problem 3.10.4
+\section*{Problem 3.10.4}
+\subsection*{Question}
+A random sample of size 5 is drawn from the pdf \( f_Y(y) = 2y \), \( 0 \leq y \leq 1 \). Calculate \( P(Y_1' < 0.6 < Y_2') \).
+
+\subsection*{Solution}
+% Calculate the cumulative distribution function (CDF) for Y
+% The CDF is the integral of the PDF from 0 to y
+\[
+F_Y(y) = \int_0^y 2t \, dt = y^2
+\]
+% Evaluate the CDF at y = 0.6 to find the probability that a single observation is less than 0.6
+\[
+F_Y(0.6) = 0.6^2 = 0.36
+\]
+% Calculate the probability that exactly one of the observations is less than 0.6
+% Use the binomial formula, where n=5 (sample size) and p=0.36 (probability for one observation being less than 0.6)
+\[
+P(\text{exactly one } Y_i < 0.6) = \binom{5}{1} \times 0.36 \times (1-0.36)^4
+\]
+% Calculate the probability that none of the observations is less than 0.6
+% Since the events are independent, raise the probability of one observation not being less than 0.6 to the power of 5
+\[
+P(\text{no } Y_i < 0.6) = (1-0.36)^5
+\]
+% Find the probability that Y1' (the smallest value) is less than 0.6 and Y2' (the second smallest value) is greater than 0.6
+% This is the complement of the probability of having zero or one observation less than 0.6
+\[
+P(Y_1' < 0.6 < Y_2') = 1 - \left[ \binom{5}{1} \times 0.36 \times (1-0.36)^4 + (1-0.36)^5 \right]
+\]
+\pagebreak
+
+% Problem 3.10.10
+\section*{Problem 3.10.10}
+\subsection*{Question}
+Suppose that \( n \) observations are chosen at random from a continuous pdf \( f_Y(y) \). What is the probability that the last observation recorded will be the smallest number in the entire sample?
+
+\subsection*{Solution}
+% Since each observation is equally likely to be the smallest (symmetry in continuous distributions), calculate the probability for one specific observation.
+\[
+\text{Probability that the last observation is the smallest} = \frac{1}{n}
+\]
+\pagebreak
+
+% Problem 3.10.12
+\section*{Problem 3.10.12}
+\subsection*{Question}
+Consider a system containing \( n \) components, where the lifetimes of the components are independent random variables and each has pdf \( f_Y(y) = \lambda e^{-\lambda y} \), \( y > 0 \). Show that the average time elapsing before the first component failure occurs is \( \frac{1}{n\lambda} \).
+
+\subsection*{Solution}
+% The lifetime of each component follows an exponential distribution with parameter lambda.
+% The time to the first failure, T, among n such components can be modeled as the minimum of these exponential distributions.
+% The CDF for the minimum of n exponential random variables (each with rate lambda) is given by the following.
+\[
+\text{CDF of } T = 1 - e^{-n\lambda t}
+\]
+% The expected value of an exponential distribution with rate parameter n*lambda is simply the inverse of the rate parameter.
+\[
+\mathbb{E}[T] = \frac{1}{n\lambda}
+\]
+\pagebreak
+
+\section*{Problem 3.11.4}
+\subsection*{Question}
+% The question asks to calculate the conditional probability of getting exactly two aces given that two kings have already been dealt.
+Five cards are dealt from a standard poker deck. Let \( X \) be the number of aces received, and \( Y \) the number of kings. Compute \( P(X = 2 | Y = 2) \).
+
+\subsection*{Solution}
+% First, identify the total number of ways to choose any 5 cards from a 52-card deck.
+\[
+\text{Total ways to choose 5 cards from a 52-card deck} = \binom{52}{5}
+\]
+% Given Y = 2, calculate the number of ways to choose 2 kings from the 4 available kings.
+\[
+\text{Ways to choose 2 kings out of 4} = \binom{4}{2}
+\]
+% Then calculate the number of ways to choose 2 aces from the 4 available aces, given that 2 kings are already chosen.
+\[
+\text{Ways to choose 2 aces out of 4} = \binom{4}{2}
+\]
+% Calculate the number of ways to choose the remaining 1 card from the remaining 46 cards (52 cards - 4 kings - 2 aces).
+\[
+\text{Ways to choose 1 remaining card from the remaining 46 cards} = \binom{46}{1}
+\]
+% Compute the conditional probability P(X = 2 | Y = 2) using the rule of conditional probability.
+\[
+P(X = 2 | Y = 2) = \frac{\binom{4}{2} \binom{4}{2} \binom{46}{1}}{\binom{52}{5}}
+\]
+% Display the resulting probability.
+\[
+P(X = 2 | Y = 2) = \frac{6 \times 6 \times 46}{2598960}
+\]
+\pagebreak
+
+\section*{Problem 3.11.8}
+\subsection*{Question}
+% The question involves determining the PDF of W given X, where W is the majority function of x, y, and z.
+Define the random variable \( W \) to be the ``majority'' of \( x \), \( y \), and \( z \). For example, \( W(2, 2, 1) = 2 \) and \( W(1, 1, 1) = 1 \). Given the joint PDF \( p_{X,Y,Z}(x, y, z) = \frac{xy + xz + yz}{54} \), find the PDF of \( W \) given \( X \).
+
+\subsection*{Majority Calculations for \( W \) given \( X = 1 \)}
+\subsubsection*{Probability \( W = 1 \) given \( X = 1 \)}
+% Calculating the probability that the majority is 1 when X = 1
+\[
+P(W = 1 | X = 1) = P(1, 1, 1) + P(1, 1, 2) + P(1, 2, 1) + P(2, 1, 1)
+\]
+% Using the joint PDF for each specific case
+\[
+P(1, 1, 1) = \frac{1 \times 1 + 1 \times 1 + 1 \times 1}{54} = \frac{3}{54}, \quad
+P(1, 1, 2) = \frac{1 \times 1 + 1 \times 2 + 1 \times 2}{54} = \frac{5}{54}
+\]
+\[
+P(1, 2, 1) = \frac{1 \times 2 + 1 \times 1 + 2 \times 1}{54} = \frac{5}{54}, \quad
+P(2, 1, 1) = \frac{2 \times 1 + 1 \times 1 + 1 \times 2}{54} = \frac{5}{54}
+\]
+\[
+P(W = 1 | X = 1) = \frac{3}{54} + 3 \times \frac{5}{54} = \frac{18}{54}
+\]
+
+\subsubsection*{Probability \( W = 2 \) given \( X = 1 \)}
+% Calculating the probability that the majority is 2 when X = 1
+\[
+P(W = 2 | X = 1) = P(1, 2, 2) + P(2, 1, 2) + P(2, 2, 1) + P(2, 2, 2)
+\]
+% Using the joint PDF for each specific case
+\[
+P(1, 2, 2) = \frac{1 \times 2 + 1 \times 2 + 2 \times 2}{54} = \frac{9}{54}, \quad
+P(2, 1, 2) = \frac{2 \times 1 + 1 \times 2 + 2 \times 2}{54} = \frac{9}{54}
+\]
+\[
+P(2, 2, 1) = \frac{2 \times 2 + 1 \times 2 + 2 \times 1}{54} = \frac{9}{54}, \quad
+P(2, 2, 2) = \frac{2 \times 2 + 2 \times 2 + 2 \times 2}{54} = \frac{12}{54}
+\]
+\[
+P(W = 2 | X = 1) = 3 \times \frac{9}{54} + \frac{12}{54} = \frac{39}{54}
+\]
+
+\subsection*{Majority Calculations for \( W \) given \( X = 2 \)}
+% Repeating the structure for when X = 2
+\subsubsection*{Similar Calculations as Above}
+% Use comments to guide the structure for calculating probabilities when X = 2
+
+
+
+\end{document}
