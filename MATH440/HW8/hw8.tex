@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Homework 8}
+\end{center}
+
+% Problem 3.7.12 - Concise Calculation of PDF for Points Inside a Circle
+\section*{Problem 3.7.12}
+\subsection*{Question}
+A point is chosen at random from the interior of a circle whose equation is \(x^2 + y^2 \leq 4\). Let the random variables \(X\) and \(Y\) denote the \(x\)- and \(y\)-coordinates of the sampled point. Find the joint pdf \(f_{X,Y}(x, y)\).
+
+\subsection*{Solution}
+% Calculation of the area of the circle
+The area \(A\) of the circle is calculated as:
+\[
+A = \pi r^2 = \pi \times 2^2 = 4\pi
+\]
+
+% Definition of the joint PDF
+The joint pdf \(f_{X,Y}(x, y)\) is given by:
+\[
+f_{X,Y}(x, y) = \begin{cases} 
+\frac{1}{4\pi} & \text{if } x^2 + y^2 \leq 4, \\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+% Verification of the normalization of the PDF
+The integral of the pdf over the circle should equal 1:
+\[
+\int \int_{x^2 + y^2 \leq 4} \frac{1}{4\pi} \, dx \, dy = \frac{1}{4\pi} \times 4\pi = 1
+\]
+
+% Problem 3.7.14 - Probability Calculation with Continuous PDF
+\section*{Problem 3.7.14}
+\subsection*{Question}
+Suppose that five independent observations are drawn from the continuous pdf \(f_T(t) = 2t\), \(0 \leq t \leq 1\). Let \(X\) denote the number of \(t\)'s that fall in the interval \(0 \leq t \leq \frac{1}{3}\) and let \(Y\) denote the number of \(t\)'s that fall in the interval \(\frac{1}{3} \leq t \leq \frac{2}{3}\). Find \(P_{XY}(1, 2)\).
+
+\subsection*{Solution}
+% Calculating probabilities for given intervals using the given pdf
+\[
+P(0 \leq T \leq \frac{1}{3}) = \int_0^{\frac{1}{3}} 2t \, dt = \left[ t^2 \right]_0^{\frac{1}{3}} = \left(\frac{1}{3}\right)^2 = \frac{1}{9},
+\]
+\[
+P(\frac{1}{3} \leq T \leq \frac{2}{3}) = \int_{\frac{1}{3}}^{\frac{2}{3}} 2t \, dt = \left[ t^2 \right]_{\frac{1}{3}}^{\frac{2}{3}} = \left(\frac{4}{9}\right) - \left(\frac{1}{9}\right) = \frac{3}{9} = \frac{1}{3}.
+\]
+% Using the binomial distribution since observations are independent
+\[
+P_{XY}(1, 2) = \binom{5}{1} \left(\frac{1}{9}\right) \binom{4}{2} \left(\frac{1}{3}\right)^2 \left(\frac{5}{9}\right)^2,
+\]
+\[
+= 5 \cdot \frac{1}{9} \cdot 6 \cdot \frac{1}{9} \cdot \left(\frac{25}{81}\right) = \frac{750}{6561}.
+\]
+
+
+\end{document}
