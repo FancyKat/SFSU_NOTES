@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Homework 9}
+\end{center}
+
+% Problem 3.8.2 - Transformation of Random Variables
+\section*{Problem 3.8.2}
+\subsection*{Question}
+Let \(f_Y(y) = \frac{3(1+y^2)}{14}\), \(0 \leq y \leq 2\). Define the random variable \(W\) by \(W = 3Y + 2\). Find \(f_W(w)\). Be sure to specify the values of \(w\) for which \(f_W(w) \neq 0\).
+
+\subsection*{Solution}
+% Applying transformation of variables technique to find f_W(w).
+\[
+  Y = \frac{W - 2}{3}, \quad f_W(w) = f_Y\left(\frac{w-2}{3}\right) \left| \frac{d}{dw}\left(\frac{w-2}{3}\right) \right|
+\]
+\[
+  f_W(w) = \frac{3\left(1 + \left(\frac{w-2}{3}\right)^2\right)}{14} \cdot \frac{1}{3}
+\]
+% Simplifying the expression.
+\[
+  f_W(w) = \frac{1 + \left(\frac{w-2}{3}\right)^2}{14}
+\]
+% Valid for the transformed range of Y.
+\[
+  w: 2 \leq w \leq 8.
+\]
+\pagebreak
+
+
+% Problem 3.8.6 - Independence of V from X + Y
+\section*{Problem 3.8.6}
+\subsection*{Question}
+If a random variable \(V\) is independent of two dependent random variables \(X\) and \(Y\), prove that \(V\) is independent of \(X + Y\).
+
+\subsection*{Proof}
+% Simplified proof with only necessary mathematical steps and equations aligned for clarity.
+Given \( V \) is independent of \( X \) and \( Y \),
+\[
+P(V \leq v, X + Y \leq x) = P(V \leq v) P(X + Y \leq x).
+\]
+By the definition of independence and the law of total probability,
+\begin{align*}
+P(V \leq v, X + Y \leq x) &= \int P(V \leq v, X + Y \leq x \mid X = t) f_X(t) \, dt \\
+                          &= \int P(V \leq v) P(X + Y \leq x \mid X = t) f_X(t) \, dt \\
+                          &= P(V \leq v) \int P(X + Y \leq x \mid X = t) f_X(t) \, dt.
+\end{align*}
+Since \( P(X + Y \leq x \mid X = t) \) simplifies to \( P(Y \leq x - t) \) by the definition of conditional probability,
+\begin{align*}
+\int P(X + Y \leq x \mid X = t) f_X(t) \, dt &= \int P(Y \leq x - t) f_X(t) \, dt \\
+                                              &= P(X + Y \leq x).
+\end{align*}
+Thus,
+\[
+P(V \leq v, X + Y \leq x) = P(V \leq v) P(X + Y \leq x).
+\]
+This confirms \( V \) is independent of \( X + Y \).
+\pagebreak
+
+
+% Problem 3.8.8 - PDF of Transformed Uniform Variable
+\section*{Problem 3.8.8}
+\subsection*{Question}
+Let \(Y\) be a uniform random variable over the interval \([0,1]\). Find the pdf of \(W = Y^2\).
+
+\subsection*{Solution}
+% Since Y is uniformly distributed, transforming Y to W = Y^2 requires the change of variables formula.
+\[
+  f_Y(y) = 1 \text{ for } 0 \leq y \leq 1, \quad W = Y^2 \Rightarrow Y = \sqrt{W}
+\]
+% Calculating the derivative of the transformation.
+\[
+  f_W(w) = f_Y(\sqrt{w}) \left| \frac{d}{dw}(\sqrt{w}) \right| = 1 \cdot \frac{1}{2\sqrt{w}}
+\]
+% The final form of the pdf.
+\[
+  f_W(w) = \frac{1}{2\sqrt{w}} \text{ for } 0 \leq w \leq 1.
+\]
+\pagebreak
+
+% Problem 3.9.4 - Expected Score in a Marksmanship Competition
+\section*{Problem 3.9.4}
+\subsection*{Question}
+Marksmanship competition at a certain level requires each contestant to take ten shots with each of two different handguns. Final scores are computed by taking a weighted average of four times the number of bull's-eyes made with the first gun plus six times the number gotten with the second. If Cathie has a 30\% chance of hitting the bull's-eye with each shot from the first gun and a 40\% chance with each shot from the second gun, what is her expected score?
+
+\subsection*{Solution}
+% Introducing the problem and the variables
+We denote the number of bull's-eyes made with the first gun as \(X_1\) and with the second gun as \(X_2\). The variable \(X_1\) follows a binomial distribution with parameters \(n = 10\) (shots) and \(p = 0.3\) (probability of success), and similarly for \(X_2\) with \(p = 0.4\).
+
+% Calculation of the expected number of bull's-eyes for each gun.
+\[
+  E(X_1) = n \times p_1 = 10 \times 0.3 = 3, \quad E(X_2) = 10 \times 0.4 = 4
+\]
+% These expectations come from the definition of the expected value for a binomial distribution.
+
+% Calculating the final expected score based on the weights given.
+The competition score is calculated using the formula:
+\[
+  \text{Score} = 4 \times X_1 + 6 \times X_2
+\]
+% Taking the expectation of the score.
+\[
+  E(\text{Score}) = E(4 \times X_1 + 6 \times X_2)
+\]
+% By the linearity of expectation, this becomes:
+\[
+  E(\text{Score}) = 4 \times E(X_1) + 6 \times E(X_2) = 4 \times 3 + 6 \times 4
+\]
+\[
+  = 12 + 24 = 36
+\]
+% Conclusion of the expected score calculation.
+Thus, Cathie's expected score in the competition is 36 points.
+
+\pagebreak
+
+% Problem 3.9.10 - Expected Value of Distance Squared
+\section*{Problem 3.9.10}
+\subsection*{Question}
+Suppose that \(X\) and \(Y\) are both uniformly distributed over the interval \([0, 1]\). Calculate the expected value of the square of the distance of the random point \((X, Y)\) from the origin; that is, find \(E(X^2 + Y^2)\).
+
+\subsection*{Solution}
+% We use the properties of expectation and independence of X and Y.
+\[
+  E(X^2 + Y^2) = E(X^2) + E(Y^2)
+\]
+% For uniformly distributed variables on [0, 1], the expected value of the square is calculated.
+\[
+  E(X^2) = \int_0^1 x^2 \, dx = \frac{1}{3}, \quad E(Y^2) = \int_0^1 y^2 \, dy = \frac{1}{3}
+\]
+% The expected value of the sum of the squares.
+\[
+  E(X^2 + Y^2) = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}
+\]
+\pagebreak
+
+\end{document}
