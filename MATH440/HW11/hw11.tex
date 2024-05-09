@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Homework 11}
+\end{center}
+
+% Problem 3.12.4 - Moment-Generating Function for Discrete Random Variable
+\section*{Problem 3.12.4}
+\subsection*{Question}
+% The question requires finding the moment-generating function for a discrete random variable with a geometric distribution.
+Find the moment-generating function for the discrete random variable \(X\) whose probability function is given by:
+\[
+  p_X(k) = \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right), \quad k=0,1,2,\dots
+\]
+
+\subsection*{Solution}
+% We compute the MGF by taking the sum of e^(t*k) times the probability function for each k.
+\[
+  M_X(t) = \sum_{k=0}^\infty e^{tk} \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right)
+\]
+% This sum is a geometric series, and we can use the formula for the sum of a geometric series to find the MGF.
+\[
+  M_X(t) = \frac{1}{4} \sum_{k=0}^\infty \left(e^t \frac{3}{4}\right)^k
+\]
+% The sum of a geometric series is 1 / (1 - r) where r is the common ratio.
+\[
+  M_X(t) = \frac{1}{4} \cdot \frac{1}{1 - \left(e^t \frac{3}{4}\right)} = \frac{1}{4 - 3e^t}
+\]
+\pagebreak
+
+% Problem 3.12.8 - MGF for Continuous Random Variable
+\section*{Problem 3.12.8}
+\subsection*{Question}
+% The question involves showing the MGF for a continuous random variable with an exponential distribution.
+Let \(Y\) be a continuous random variable with \(f_Y(y) = ye^{-y}\) for \(0 \leq y \leq \infty\). Show that \(M_Y(t) = \frac{1}{(1-t)^2}\) for \(t < 1\).
+
+\subsection*{Solution}
+% Compute the MGF by integrating e^(t*y) times the PDF from 0 to infinity.
+\[
+  M_Y(t) = \int_0^\infty e^{ty} y e^{-y} \, dy
+\]
+% This integral can be simplified using integration by parts.
+\[
+  M_Y(t) = \int_0^\infty y e^{(t-1)y} \, dy
+\]
+% Applying integration by parts: let u = y and dv = e^{(t-1)y} dy.
+\[
+  u = y, \quad dv = e^{(t-1)y} dy
+\]
+\[
+  du = dy, \quad v = \frac{e^{(t-1)y}}{t-1}
+\]
+\[
+  M_Y(t) = y \frac{e^{(t-1)y}}{t-1} \bigg|_0^\infty - \int_0^\infty \frac{e^{(t-1)y}}{t-1} dy
+\]
+% Evaluate the boundary terms and the integral, ensuring t < 1 for convergence.
+\[
+  M_Y(t) = 0 - \left(-\frac{1}{(t-1)^2}\right) = \frac{1}{(1-t)^2}
+\]
+\pagebreak
+
+% Problem 4.2.4 - Mutation Probability Calculation
+\section*{Problem 4.2.4}
+\subsection*{Question}
+A chromosome mutation linked with colorblindness is known to occur, on average, once in every ten thousand births.
+\begin{itemize}
+    \item[(a)] Approximate the probability that exactly three of the next twenty thousand babies born will have the mutation.
+    \item[(b)] How many babies out of the next twenty thousand would have to be born with the mutation to convince you that the "one in ten thousand" estimate is too low?
+\end{itemize}
+
+\subsection*{Solution}
+% Detailed mathematical steps with factorial calculations and Poisson distribution applications.
+% Part (a): Using the Poisson distribution to calculate the exact probability for three mutations.
+\[
+\text{(a)} \quad \lambda = \frac{20,000}{10,000} = 2  % The average number of mutations expected.
+\]
+\[
+P(X = 3) = e^{-\lambda} \frac{\lambda^3}{3!} = e^{-2} \frac{2^3}{3!} = e^{-2} \frac{8}{6} = \frac{4}{3} e^{-2}
+\]
+% This expression uses the Poisson formula where lambda is the mean number of events (mutations).
+
+% Part (b): Calculating a threshold to indicate an underestimate.
+% We use the cumulative Poisson distribution to find when the observed number significantly exceeds expectation.
+\[
+\text{(b)} \quad \text{Let } k \text{ be the number where } P(X > k) \text{ indicates an underestimation.}
+\]
+% Calculation for P(X > 5) using the sum of probabilities for X = 0 to 5.
+\[
+P(X > 5) = 1 - (P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5))
+\]
+\[
+P(X = 0) = e^{-2} \frac{2^0}{0!}, \quad P(X = 1) = e^{-2} \frac{2^1}{1!}, \quad P(X = 2) = e^{-2} \frac{2^2}{2!}
+\]
+\[
+P(X = 3) = \frac{4}{3} e^{-2}, \quad P(X = 4) = e^{-2} \frac{2^4}{4!}, \quad P(X = 5) = e^{-2} \frac{2^5}{5!}
+\]
+\[
+P(X > 5) = 1 - \left( e^{-2} (1 + 2 + 2 + \frac{4}{3} + \frac{8}{3} + \frac{16}{15}) \right)
+\]
+\pagebreak
+
+
+% Problem 4.2.6 - Probability of Large Insurance Claims
+\section*{Problem 4.2.6}
+\subsection*{Question}
+A newly formed life insurance company has underwritten term policies on 120 women between the ages of forty and forty-four. Suppose that each woman has a 1/150 probability of dying during the next calendar year, and that each death requires the company to pay out \$50,000 in benefits. Approximate the probability that the company will have to pay at least \$150,000 in benefits next year.
+
+\subsection*{Solution}
+% Explanation of using the Poisson approximation
+\[
+\lambda = \frac{120}{150} = 0.8 \quad \text{(expected number of deaths)}
+\]
+% Calculate the minimum number of deaths to exceed $150,000 in benefits
+\[
+\text{Minimum number of deaths} = \frac{150,000}{50,000} = 3
+\]
+% Poisson probability calculation for at least 3 deaths
+\[
+P(X \geq 3) = 1 - P(X < 3) = 1 - (P(X=0) + P(X=1) + P(X=2))
+\]
+\[
+P(X = 0) = e^{-0.8} \frac{0.8^0}{0!}, \quad P(X = 1) = e^{-0.8} \frac{0.8^1}{1!}, \quad P(X = 2) = e^{-0.8} \frac{0.8^2}{2!}
+\]
+\[
+P(X \geq 3) = 1 - (e^{-0.8} + 0.8 e^{-0.8} + 0.32 e^{-0.8}) = 1 - 2.12 e^{-0.8}
+\]
+
+
+\end{document}

@@ -129,51 +129,68 @@ P(X = 2 | Y = 2) = \frac{6 \times 6 \times 46}{2598960}
 
 \section*{Problem 3.11.8}
 \subsection*{Question}
-% The question involves determining the PDF of W given X, where W is the majority function of x, y, and z.
-Define the random variable \( W \) to be the ``majority'' of \( x \), \( y \), and \( z \). For example, \( W(2, 2, 1) = 2 \) and \( W(1, 1, 1) = 1 \). Given the joint PDF \( p_{X,Y,Z}(x, y, z) = \frac{xy + xz + yz}{54} \), find the PDF of \( W \) given \( X \).
+Define the random variable \( W \) to be the "majority" of \( x \), \( y \), and \( z \). For example, \( W(2, 2, 1) = 2 \) and \( W(1, 1, 1) = 1 \). Given the joint PDF \( p_{X,Y,Z}(x, y, z) = \frac{xy + xz + yz}{54} \), find the PDF of \( W \) given \( X \).
 
 \subsection*{Majority Calculations for \( W \) given \( X = 1 \)}
 \subsubsection*{Probability \( W = 1 \) given \( X = 1 \)}
-% Calculating the probability that the majority is 1 when X = 1
 \[
 P(W = 1 | X = 1) = P(1, 1, 1) + P(1, 1, 2) + P(1, 2, 1) + P(2, 1, 1)
 \]
-% Using the joint PDF for each specific case
 \[
-P(1, 1, 1) = \frac{1 \times 1 + 1 \times 1 + 1 \times 1}{54} = \frac{3}{54}, \quad
-P(1, 1, 2) = \frac{1 \times 1 + 1 \times 2 + 1 \times 2}{54} = \frac{5}{54}
+P(1, 1, 1) = \frac{1*1 + 1*1 + 1*1}{54} = \frac{3}{54}, \quad
+P(1, 1, 2) = \frac{1*1 + 1*2 + 1*2}{54} = \frac{5}{54}
 \]
 \[
-P(1, 2, 1) = \frac{1 \times 2 + 1 \times 1 + 2 \times 1}{54} = \frac{5}{54}, \quad
-P(2, 1, 1) = \frac{2 \times 1 + 1 \times 1 + 1 \times 2}{54} = \frac{5}{54}
+P(1, 2, 1) = \frac{1*2 + 1*1 + 2*1}{54} = \frac{5}{54}, \quad
+P(2, 1, 1) = \frac{2*1 + 1*1 + 1*2}{54} = \frac{5}{54}
 \]
 \[
-P(W = 1 | X = 1) = \frac{3}{54} + 3 \times \frac{5}{54} = \frac{18}{54}
+P(W = 1 | X = 1) = \frac{3}{54} + 3 \times \frac{5}{54} = \frac{18}{54} = \frac{1}{3}
 \]
 
 \subsubsection*{Probability \( W = 2 \) given \( X = 1 \)}
-% Calculating the probability that the majority is 2 when X = 1
 \[
 P(W = 2 | X = 1) = P(1, 2, 2) + P(2, 1, 2) + P(2, 2, 1) + P(2, 2, 2)
 \]
-% Using the joint PDF for each specific case
 \[
-P(1, 2, 2) = \frac{1 \times 2 + 1 \times 2 + 2 \times 2}{54} = \frac{9}{54}, \quad
-P(2, 1, 2) = \frac{2 \times 1 + 1 \times 2 + 2 \times 2}{54} = \frac{9}{54}
+P(1, 2, 2) = \frac{1*2 + 1*2 + 2*2}{54} = \frac{9}{54}, \quad
+P(2, 1, 2) = \frac{2*1 + 1*2 + 2*2}{54} = \frac{9}{54}
 \]
 \[
-P(2, 2, 1) = \frac{2 \times 2 + 1 \times 2 + 2 \times 1}{54} = \frac{9}{54}, \quad
-P(2, 2, 2) = \frac{2 \times 2 + 2 \times 2 + 2 \times 2}{54} = \frac{12}{54}
+P(2, 2, 1) = \frac{2*2 + 1*2 + 2*1}{54} = \frac{9}{54}, \quad
+P(2, 2, 2) = \frac{2*2 + 2*2 + 2*2}{54} = \frac{12}{54}
 \]
 \[
-P(W = 2 | X = 1) = 3 \times \frac{9}{54} + \frac{12}{54} = \frac{39}{54}
+P(W = 2 | X = 1) = 3 \times \frac{9}{54} + \frac{12}{54} = \frac{39}{54} = \frac{13}{18}
 \]
 
 \subsection*{Majority Calculations for \( W \) given \( X = 2 \)}
-% Repeating the structure for when X = 2
-\subsubsection*{Similar Calculations as Above}
-% Use comments to guide the structure for calculating probabilities when X = 2
+\subsubsection*{Probability \( W = 1 \) given \( X = 2 \)}
+\[
+P(W = 1 | X = 2) = P(2, 1, 1)
+\]
+\[
+P(2, 1, 1) = \frac{2*1 + 1*1 + 1*2}{54} = \frac{5}{54}
+\]
+\[
+P(W = 1 | X = 2) = \frac{5}{54}
+\]
 
+\subsubsection*{Probability \( W = 2 \) given \( X = 2 \)}
+\[
+P(W = 2 | X = 2) = P(2, 2, 2) + P(2, 2, 1) + P(2, 1, 2) + P(1, 2, 2)
+\]
+\[
+P(2, 2, 2) = \frac{2*2 + 2*2 + 2*2}{54} = \frac{12}{54}, \quad
+P(2, 2, 1) = \frac{2*2 + 1*2 + 2*1}{54} = \frac{9}{54}
+\]
+\[
+P(2, 1, 2) = \frac{2*1 + 1*2 + 2*2}{54} = \frac{9}{54}, \quad
+P(1, 2, 2) = \frac{1*2 + 2*2 + 2*2}{54} = \frac{9}{54}
+\]
+\[
+P(W = 2 | X = 2) = \frac{12}{54} + 3 \times \frac{9}{54} = \frac{39}{54} = \frac{13}{18}
+\]
 
 
 \end{document}
