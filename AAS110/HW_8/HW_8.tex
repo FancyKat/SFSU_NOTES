@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{AAS 110 \\ 11:00 AM - 12:15 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+% Add the title "Homework 8" centered on the page
+\begin{center}
+  \Large \textbf{Homework 8}
+\end{center}
+
+% Question description content
+\section*{Question}
+\textbf{After we had discussed affirmative actions for weeks, you should have your own opinion on the controversial topic. Provide your arguments in 150–200 words. You need to cite at least two materials on affirmative action we discussed in class in order to have convincing arguments. You don't need works cited at the end of your writing. However, you should mention the titles and authors in your writing.}
+
+\section*{Response}
+In our discussion about affirmative action, the profound insights from Nancy Abelmann and John Lie's \textit{The Los Angeles Riots, the Korean American Story} are instrumental. This article highlights the intense socio-economic and racial dynamics during the L.A. riots, providing a compelling backdrop for understanding affirmative action's necessity. Notably, the portrayal of Korean Americans amidst the riots—caught between racial tensions and economic survival—underscores the need for policies that promote equity and acknowledge the unique challenges faced by various minority groups.
+
+The article also illuminates the broader implications of such tensions in urban settings, where socio-economic disparities often result in conflict. This context enriches our understanding of affirmative action as not merely a remedy for past injustices but a crucial strategy for preventing societal breakdowns experienced during the riots. Affirmative action, therefore, emerges as essential in fostering an inclusive society that actively works towards equitability and cohesion among diverse communities.
+
+By integrating these insights from Abelmann and Lie's detailed examination of the L.A. riots, affirmative action serves a dual purpose: correcting historical inequities and preventing future disparities that could lead to social unrest.
+
+% Your response to the question
+\end{document}
