@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Homework 8}
+\end{center}
+
+\section*{Problem 3.4.6}
+\subsection*{Question}
+Let \( n \) be a positive integer. Show that 
+\[ f(y) = (n+2)(n+1)y^n(1-y), \quad 0 \leq y \leq 1, \]
+is pdf.
+
+\subsection*{Solution}
+% To show that f(y) is a pdf, we need to verify two conditions:
+% 1. f(y) \geq 0 for all y in the range [0, 1].
+% 2. The integral of f(y) from 0 to 1 equals 1.
+
+\subsubsection*{Non-negativity}
+% Since y^n \geq 0 and (1-y) \geq 0 for 0 \leq y \leq 1, and the constants (n+2) and (n+1) are positive,
+% f(y) is non-negative for all y in [0, 1].
+\[
+f(y) = (n+2)(n+1)y^n(1-y) \geq 0 \text{ for } 0 \leq y \leq 1
+\]
+
+\subsubsection*{Total Integral Equals One}
+% We need to calculate the integral of f(y) over [0, 1] and show that it equals 1.
+% The integral of y^n(1-y) over [0, 1] is a standard result from calculus related to the beta function.
+% Specifically, the integral of y^a(1-y)^b over [0,1] is given by the beta function B(a+1, b+1),
+% which simplifies using the gamma function to \frac{\Gamma(a+1)\Gamma(b+1)}{\Gamma(a+b+2)}.
+\[
+\int_{0}^{1} y^n(1-y) \, dy = \frac{\Gamma(n+1)\Gamma(2)}{\Gamma(n+3)} = \frac{n! \cdot 1}{(n+2)!} = \frac{1}{(n+2)(n+1)}
+\]
+% Multiplying by the constant (n+2)(n+1) to find the integral of f(y):
+\[
+\int_{0}^{1} f(y) \, dy = (n+2)(n+1) \int_{0}^{1} y^n(1-y) \, dy = (n+2)(n+1) \cdot \frac{1}{(n+2)(n+1)} = 1
+\]
+% Therefore, the integral of f(y) over its range is 1, confirming that f(y) is a pdf.
+
+\newpage
+\section*{Problem 3.4.9}
+\subsection*{Question}
+If the PDF for \( Y \) is given by
+\[ 
+f_Y(y) = 
+\begin{cases} 
+1 - |y| & \text{if } |y| \leq 1 \\
+0 & \text{if } |y| > 1 
+\end{cases}
+\]
+find and graph \( F_Y(y) \).
+
+\subsection*{Solution}
+% Calculating F_Y(y) based on the defined regions:
+\subsubsection*{For \( y < -1 \)}
+\[
+F_Y(y) = 0
+\]
+\subsubsection*{For \( -1 \leq y \leq 1 \)}
+\[
+F_Y(y) = \int_{-1}^y (1 - |t|) \, dt
+\]
+% Breaking down the integral based on the value of y:
+\[
+F_Y(y) = 
+\begin{cases} 
+\int_{-1}^y (1 + t) \, dt & \text{if } -1 \leq y < 0 \\
+\int_{-1}^0 (1 + t) \, dt + \int_0^y (1 - t) \, dt & \text{if } 0 \leq y \leq 1 
+\end{cases}
+\]
+\subsubsection*{For \( y > 1 \)}
+\[
+F_Y(y) = 1
+\]
+
+\newpage
+\section*{Problem 3.4.14}
+\subsection*{Question}
+In a certain country, the distribution of a family's disposable income, \( y \), is described by the pdf \( f_Y(y) = ye^{-y} \) for \( y \geq 0 \). Find \( F_Y(y) \).
+
+\subsection*{Solution}
+% Checking if the given function is a valid PDF
+\subsubsection*{Verification of PDF}
+\[
+\text{Non-negativity: } f_Y(y) = ye^{-y} \geq 0 \text{ for } y \geq 0
+\]
+\[
+\text{Integral equals 1: } \int_{0}^{\infty} ye^{-y} \, dy = 1
+\]
+\subsubsection*{Calculation of CDF}
+\[
+F_Y(y) = \int_{0}^{y} te^{-t} \, dt
+\]
+% Using integration by parts
+\[
+F_Y(y) = [-(t+1)e^{-t}]_{0}^{y} = -(y+1)e^{-y} + 1
+\]
+\[
+F_Y(y) = 1 - (y+1)e^{-y}, \quad y \geq 0
+\]
+
+
+\end{document}
