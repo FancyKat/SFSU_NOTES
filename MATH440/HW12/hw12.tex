@@ -8,6 +8,8 @@
 \usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
+
 
 % Hyperlink settings
 \hypersetup{
@@ -33,126 +35,192 @@
   \Large \textbf{Homework 12}
 \end{center}
 
-% Problem 3.12.4 - Moment-Generating Function for Discrete Random Variable
-\section*{Problem 3.12.4}
+\section*{Problem 4.3.10}
 \subsection*{Question}
-% The question requires finding the moment-generating function for a discrete random variable with a geometric distribution.
-Find the moment-generating function for the discrete random variable \(X\) whose probability function is given by:
-\[
-  p_X(k) = \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right), \quad k=0,1,2,\dots
-\]
-
-\subsection*{Solution}
-% We compute the MGF by taking the sum of e^(t*k) times the probability function for each k.
-\[
-  M_X(t) = \sum_{k=0}^\infty e^{tk} \left(\frac{3}{4}\right)^k \left(\frac{1}{4}\right)
-\]
-% This sum is a geometric series, and we can use the formula for the sum of a geometric series to find the MGF.
-\[
-  M_X(t) = \frac{1}{4} \sum_{k=0}^\infty \left(e^t \frac{3}{4}\right)^k
-\]
-% The sum of a geometric series is 1 / (1 - r) where r is the common ratio.
-\[
-  M_X(t) = \frac{1}{4} \cdot \frac{1}{1 - \left(e^t \frac{3}{4}\right)} = \frac{1}{4 - 3e^t}
-\]
-\pagebreak
-
-% Problem 3.12.8 - MGF for Continuous Random Variable
-\section*{Problem 3.12.8}
-\subsection*{Question}
-% The question involves showing the MGF for a continuous random variable with an exponential distribution.
-Let \(Y\) be a continuous random variable with \(f_Y(y) = ye^{-y}\) for \(0 \leq y \leq \infty\). Show that \(M_Y(t) = \frac{1}{(1-t)^2}\) for \(t < 1\).
-
-\subsection*{Solution}
-% Compute the MGF by integrating e^(t*y) times the PDF from 0 to infinity.
-\[
-  M_Y(t) = \int_0^\infty e^{ty} y e^{-y} \, dy
-\]
-% This integral can be simplified using integration by parts.
-\[
-  M_Y(t) = \int_0^\infty y e^{(t-1)y} \, dy
-\]
-% Applying integration by parts: let u = y and dv = e^{(t-1)y} dy.
-\[
-  u = y, \quad dv = e^{(t-1)y} dy
-\]
-\[
-  du = dy, \quad v = \frac{e^{(t-1)y}}{t-1}
-\]
-\[
-  M_Y(t) = y \frac{e^{(t-1)y}}{t-1} \bigg|_0^\infty - \int_0^\infty \frac{e^{(t-1)y}}{t-1} dy
-\]
-% Evaluate the boundary terms and the integral, ensuring t < 1 for convergence.
-\[
-  M_Y(t) = 0 - \left(-\frac{1}{(t-1)^2}\right) = \frac{1}{(1-t)^2}
-\]
-\pagebreak
-
-% Problem 4.2.4 - Mutation Probability Calculation
-\section*{Problem 4.2.4}
-\subsection*{Question}
-A chromosome mutation linked with colorblindness is known to occur, on average, once in every ten thousand births.
+The basketball team at State Tech, named the Fighting Logarithms, has a 70\%  foul-shooting percentage.
 \begin{itemize}
-    \item[(a)] Approximate the probability that exactly three of the next twenty thousand babies born will have the mutation.
-    \item[(b)] How many babies out of the next twenty thousand would have to be born with the mutation to convince you that the "one in ten thousand" estimate is too low?
+    \item (a) Write a formula for the exact probability that out of their next one hundred free throws, they will make between seventy-five and eighty, inclusive.
+    \item (b) Approximate the probability asked for in part (a).
 \end{itemize}
 
 \subsection*{Solution}
-% Detailed mathematical steps with factorial calculations and Poisson distribution applications.
-% Part (a): Using the Poisson distribution to calculate the exact probability for three mutations.
+\subsubsection*{Part (a): Exact Probability}
+% Considering a binomial distribution where each free throw is an independent trial
+% n = number of trials, p = probability of success on each trial
 \[
-\text{(a)} \quad \lambda = \frac{20,000}{10,000} = 2  % The average number of mutations expected.
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 \]
 \[
-P(X = 3) = e^{-\lambda} \frac{\lambda^3}{3!} = e^{-2} \frac{2^3}{3!} = e^{-2} \frac{8}{6} = \frac{4}{3} e^{-2}
+P(75 \leq X \leq 80) = \sum_{k=75}^{80} \binom{100}{k} (0.7)^k (0.3)^{100-k}
 \]
-% This expression uses the Poisson formula where lambda is the mean number of events (mutations).
+% This calculates the probability of exactly k successes in n trials, summed from 75 to 80
 
-% Part (b): Calculating a threshold to indicate an underestimate.
-% We use the cumulative Poisson distribution to find when the observed number significantly exceeds expectation.
+\subsubsection*{Part (b): Approximation using the Normal Distribution and Z-table}
+% Calculate the Z-scores for the lower and upper bounds
 \[
-\text{(b)} \quad \text{Let } k \text{ be the number where } P(X > k) \text{ indicates an underestimation.}
-\]
-% Calculation for P(X > 5) using the sum of probabilities for X = 0 to 5.
-\[
-P(X > 5) = 1 - (P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5))
+Z_{lower} = \frac{75 - 70}{4.5826} \approx 1.091
 \]
 \[
-P(X = 0) = e^{-2} \frac{2^0}{0!}, \quad P(X = 1) = e^{-2} \frac{2^1}{1!}, \quad P(X = 2) = e^{-2} \frac{2^2}{2!}
+Z_{upper} = \frac{80 - 70}{4.5826} \approx 2.182
 \]
-\[
-P(X = 3) = \frac{4}{3} e^{-2}, \quad P(X = 4) = e^{-2} \frac{2^4}{4!}, \quad P(X = 5) = e^{-2} \frac{2^5}{5!}
-\]
-\[
-P(X > 5) = 1 - \left( e^{-2} (1 + 2 + 2 + \frac{4}{3} + \frac{8}{3} + \frac{16}{15}) \right)
-\]
-\pagebreak
+% Using the Z-table to find probabilities for Z_{lower} and Z_{upper}
 
+For Z = 1.09, the table gives a probability of 0.8621
 
-% Problem 4.2.6 - Probability of Large Insurance Claims
-\section*{Problem 4.2.6}
+For Z = 2.18, the table gives a probability of 0.9854
+% The probability P(75 \leq X \leq 80) is then
+\[
+P(75 \leq X \leq 80) \approx 0.9854 - 0.8621 = 0.1233
+\]
+% This value is obtained by subtracting the cumulative probability of Z_{lower} from Z_{upper}
+
+\newpage
+
+\section*{Problem 4.3.18}
 \subsection*{Question}
-A newly formed life insurance company has underwritten term policies on 120 women between the ages of forty and forty-four. Suppose that each woman has a 1/150 probability of dying during the next calendar year, and that each death requires the company to pay out \$50,000 in benefits. Approximate the probability that the company will have to pay at least \$150,000 in benefits next year.
+Suppose \(X_1, X_2, X_3,\) and \(X_4\) are independent Poisson random variables, each with parameter \(\lambda = 3\). Define \(S = X_1 + X_2 + X_3 + X_4\).
+\begin{itemize}
+    \item (a) Use the properties of Poisson processes to find the distribution of \(S\).
+    \item (b) Calculate the probability \(P(13 \leq S \leq 14)\) exactly and approximate it using the Central Limit Theorem.
+\end{itemize}
 
 \subsection*{Solution}
-% Explanation of using the Poisson approximation
+\subsubsection*{Part (a): Finding the Distribution of \(S\)}
+% Since S is the sum of four independent Poisson random variables each with parameter 3,
+% the sum will also be a Poisson random variable whose parameter is the sum of the individual parameters.
 \[
-\lambda = \frac{120}{150} = 0.8 \quad \text{(expected number of deaths)}
+\lambda_S = 3 + 3 + 3 + 3 = 12
 \]
-% Calculate the minimum number of deaths to exceed $150,000 in benefits
+% Therefore, S ~ Poisson(12).
+
+\subsubsection*{Part (b): Approximation using the Central Limit Theorem}
+% Standardizing the scores for S = 13 and S = 14
 \[
-\text{Minimum number of deaths} = \frac{150,000}{50,000} = 3
-\]
-% Poisson probability calculation for at least 3 deaths
-\[
-P(X \geq 3) = 1 - P(X < 3) = 1 - (P(X=0) + P(X=1) + P(X=2))
-\]
-\[
-P(X = 0) = e^{-0.8} \frac{0.8^0}{0!}, \quad P(X = 1) = e^{-0.8} \frac{0.8^1}{1!}, \quad P(X = 2) = e^{-0.8} \frac{0.8^2}{2!}
+Z_{13} = \frac{13 - 12}{\sqrt{12}} \approx 0.2887
 \]
 \[
-P(X \geq 3) = 1 - (e^{-0.8} + 0.8 e^{-0.8} + 0.32 e^{-0.8}) = 1 - 2.12 e^{-0.8}
+Z_{14} = \frac{14 - 12}{\sqrt{12}} \approx 0.5774
 \]
+% Using the Z-table to find the cumulative probabilities for these Z-scores
+% Assuming the closest values from the Z-table are:
+\[
+P(Z \leq 0.29) \approx 0.6141 \quad \text{(for } Z_{13}\text{)}
+\]
+\[
+P(Z \leq 0.58) \approx 0.7186 \quad \text{(for } Z_{14}\text{)}
+\]
+% Calculating the probability that S is between 13 and 14 using the approximated values from the Z-table
+\[
+P(13 \leq S \leq 14) \approx P(Z \leq 0.5774) - P(Z \leq 0.2887) = 0.7186 - 0.6141 = 0.1045
+\]
+% This value represents the probability that S, the sum of four independent Poisson random variables,
+% falls between 13 and 14, using the normal approximation.
+
+
+\newpage
+
+\section*{Problem 4.3.26}
+\subsection*{Question}
+The cross-sectional area of plastic tubing for use in pulmonary resuscitators is normally distributed with mean \( \mu = 12.5 \) mm\(^2\) and standard deviation \( \sigma = 0.2 \) mm\(^2\). When the area is less than 12.0 mm\(^2\) or greater than 13.0 mm\(^2\), the tube does not fit properly. If the tubes are shipped in boxes of one thousand, how many wrong-sized tubes per box can doctors expect to find?
+
+\subsection*{Solution}
+% Standardizing the cutoff values to Z-scores
+\[
+Z_{low} = \frac{12.0 - 12.5}{0.2} = -2.5, \quad Z_{high} = \frac{13.0 - 12.5}{0.2} = 2.5
+\]
+% Calculating the probabilities for being below 12.0 mm^2 and above 13.0 mm^2 using the Z-table
+\[
+P(X < 12.0) = \Phi(-2.5), \quad \text{For } Z = -2.5, \text{ the table gives a probability of } 0.0062
+\]
+\[
+P(X > 13.0) = 1 - \Phi(2.5), \quad \text{For } Z = 2.5, \text{ the table gives a probability of } 0.9938
+\]
+% Total probability of a tube not fitting
+\[
+P(\text{wrong size}) = P(X < 12.0) + P(X > 13.0) = 0.0062 + 0.0062 = 0.0124
+\]
+% Calculating the expected number of wrong-sized tubes per box of 1000
+\[
+E(\text{wrong-sized tubes}) = 1000 \times 0.0124 = 12.4
+\]
+% Doctors can expect to find approximately 12 wrong-sized tubes per box, using values from the Z-table for calculation.
+
+
+\newpage
+\section*{Problem 4.3.34}
+\subsection*{Question}
+Let \( Y_1, Y_2, \ldots, Y_n \) be a random sample from a normal distribution where the mean is 2 and the variance is 4. How large must \( n \) be in order that 
+\[ P(1.9 \leq \overline{Y} \leq 2.1) \geq 0.99 \]
+
+\subsection*{Solution}
+% The sample mean \overline{Y} of a sample of size n from a normal distribution N(\mu, \sigma^2)
+% follows a normal distribution N(\mu, \sigma^2/n).
+% Given \mu = 2 and \sigma^2 = 4, the distribution of the sample mean is N(2, 4/n).
+% We need to standardize this to use the standard normal distribution Z.
+\[
+\text{Let } \overline{Y} \sim N\left(2, \frac{4}{n}\right)
+\]
+% Standardizing \overline{Y}:
+\[
+Z = \frac{\overline{Y} - 2}{\sqrt{\frac{4}{n}}} = \frac{\overline{Y} - 2}{\frac{2}{\sqrt{n}}}
+\]
+% We transform the interval for \overline{Y} to an interval for Z:
+\[
+P\left(1.9 \leq \overline{Y} \leq 2.1\right) = P\left(\frac{1.9 - 2}{\frac{2}{\sqrt{n}}} \leq Z \leq \frac{2.1 - 2}{\frac{2}{\sqrt{n}}}\right)
+\]
+\[
+= P\left(-\frac{0.1 \sqrt{n}}{2} \leq Z \leq \frac{0.1 \sqrt{n}}{2}\right)
+\]
+% For P(-a \leq Z \leq a) \geq 0.99, we need to find a such that the middle 99% of the standard normal distribution is covered.
+% From standard normal distribution tables, we know:
+\[
+P(-a \leq Z \leq a) = 0.99 \implies a \approx 2.576
+\]
+\[
+\frac{0.1 \sqrt{n}}{2} = 2.576 \implies \sqrt{n} = 51.52 \implies n = 2656.67
+\]
+% Therefore, rounding up, we need at least n = 2657 observations.
+
+\newpage
+
+
+\section*{Problem 4.3.36}
+\subsection*{Question}
+The cylinders and pistons for a certain internal combustion engine are manufactured by a process that gives a normal distribution of cylinder diameters with a mean of 41.5 cm and a standard deviation of 0.4 cm. Similarly, the distribution of piston diameters is normal with a mean of 40.5 cm and a standard deviation of 0.3 cm. If the piston diameter is greater than the cylinder diameter, the former can be reworked until the two "fit." What proportion of cylinder-piston pairs will need to be reworked?
+
+\subsection*{Solution}
+% Define the variables for cylinder diameter X and piston diameter Y
+% X ~ N(41.5, 0.16) and Y ~ N(40.5, 0.09)
+% Define Z = Y - X, calculate mean and standard deviation for Z
+\[
+Z = Y - X \quad \text{where} \quad Y \sim N(40.5, 0.09) \quad \text{and} \quad X \sim N(41.5, 0.16)
+\]
+\[
+\mu_Z = 40.5 - 41.5 = -1.0, \quad \sigma_Z^2 = 0.09 + 0.16 = 0.25, \quad \sigma_Z = 0.5
+\]
+% Z ~ N(-1.0, 0.5^2)
+% Standardize Z to find P(Z > 0)
+\[
+P(Z > 0) = 1 - P(Z \leq 0) = 1 - \Phi\left(\frac{0 - (-1.0)}{0.5}\right) = 1 - \Phi(2.0)
+\]
+% From the Z-table, \Phi(2.0) = 0.9772
+\[
+P(Z > 0) = 1 - 0.9772 = 0.0228
+\]
+% Approximately 2.28\% of the cylinder-piston pairs will need to be reworked.
+\newpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{images/z-table_1.png}
+    \caption{Cumulative Areas under the Standard Normal Distribution (Part 1)}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{images/z-table_2.png}
+    \caption{Cumulative Areas under the Standard Normal Distribution (Part 2)}
+\end{figure}
 
 
 \end{document}

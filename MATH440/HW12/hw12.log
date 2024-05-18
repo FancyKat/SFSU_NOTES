@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAY 2024 16:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  17 MAY 2024 17:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,8 +284,23 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 16.
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
  (|extractbb --version)
@@ -297,34 +312,33 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count313
 \g__pdf_backend_annotation_int=\count314
 \g__pdf_backend_link_int=\count315
-)
-No file hw12.aux.
+) (./hw12.aux)
 \openout1 = `hw12.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 32.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -366,10 +380,8 @@ Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 149.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
-))
-Package hyperref Info: Link coloring ON on input line 30.
+)
+Package hyperref Info: Link coloring ON on input line 32.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -379,47 +391,43 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count316
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
+ (./hw12.out) (./hw12.out)
 \@outlinefile=\write3
 \openout3 = `hw12.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
+ (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
 Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
 File: fc-english.def 2016/01/12
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] (./hw12.aux)
-
-Package rerunfilecheck Warning: File `hw12.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `hw12.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+] [2] [3] [4] [5]
+File: images/z-table_1.png Graphic file (type bmp)
+<images/z-table_1.png>
+File: images/z-table_2.png Graphic file (type bmp)
+<images/z-table_2.png>
+ [6] [7] (./hw12.aux)
+Package rerunfilecheck Info: File `hw12.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10936 strings out of 476191
- 170811 string characters out of 5812072
- 486342 words of memory out of 5000000
- 31526 multiletter control sequences out of 15000+600000
- 474320 words of font info for 54 fonts, out of 8000000 for 9000
+ 11229 strings out of 476191
+ 175625 string characters out of 5812072
+ 492450 words of memory out of 5000000
+ 31796 multiletter control sequences out of 15000+600000
+ 474328 words of font info for 55 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 70i,11n,76p,1107b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,11n,76p,1107b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw12.pdf (4 pages).
+Output written on hw12.pdf (7 pages).
