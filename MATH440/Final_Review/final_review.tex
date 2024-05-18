@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{datetime} % For formatting the current date
+\usepackage{parskip} % Adds space between paragraphs and removes paragraph indents
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\lhead{MATH 440 \\ 2:00 PM - 3:20 PM} % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today} % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt} % Header underlining
+\setlength{\headheight}{54pt} % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Practice for the exam}
+\end{center}
+
+\subsection*{Question 1}
+Suppose the random variables \(X\) and \(Y\) are jointly distributed according to the pdf:
+\[ f_{XY}(x,y) = 8xy, \quad 0 < y < x < 1 \]
+\begin{itemize}
+    \item[(a)] Find \( P(X < 2Y) \)
+    \item[(b)] Find \( P(Y < \frac{1}{4} |  x = \frac{1}{2}) \)
+\end{itemize}
+
+% Part (a) explanation and calculation
+\subsubsection*{Part (a) Find \( P(X < 2Y) \)}
+% General formula for probability calculation using a joint PDF
+\textbf{General Formula:}
+% Introduce the general integral formula for calculating probability
+For any joint PDF \( f_{XY}(x, y) \), the probability \( P(g(X, Y)) \) for some condition \( g \) is given by:
+\[ P(g(X, Y)) = \int \int_{g(x, y)} f_{XY}(x, y) \, dx \, dy \]
+
+% Specific Calculation:
+This probability calculation involves integrating the joint PDF over the region defined by \( X < 2Y \) and within the given bounds of \( 0 < y < x < 1 \).
+\[ 
+P(X < 2Y) = \int_0^1 \int_0^{X/2} 8xy \, dy \, dx 
+\]
+This integral setup reflects the condition \( X < 2Y \) within the area bounded by \( 0 < y < x < 1 \).
+
+% Integration Steps:
+Calculate the inner integral over \( y \):
+\[
+\int_0^{X/2} 8xy \, dy = 8x \left[ \frac{y^2}{2} \right]_0^{X/2} = 8x \left[ \frac{(X/2)^2}{2} \right] = X^3
+\]
+Now integrate with respect to \( x \):
+\[
+\int_0^1 X^3 \, dx = \left[ \frac{X^4}{4} \right]_0^1 = \frac{1}{4}
+\]
+
+Thus, \( P(X < 2Y) = \frac{1}{4} \).
+
+
+\newpage
+% Part (b) explanation and calculation
+\subsubsection*{Part (b) Find \( P(Y < \frac{1}{4} |  x = \frac{1}{2}) \)}
+% General formula for conditional probability:
+For any joint PDF \( f_{XY}(x, y) \), the conditional probability \( P(A | B) \) is given by:
+\[ P(A | B) = \frac{\int \int_{A \cap B} f_{XY}(x, y) \, dx \, dy}{\int \int_B f_{XY}(x, y) \, dx \, dy} \]
+
+% Specific Calculation:
+Given \( X = \frac{1}{2} \), we need to find the conditional probability \( P(Y < \frac{1}{4} | X = \frac{1}{2}) \). This involves determining the conditional PDF \( f_{Y|X}(y|x) \) and integrating it over the desired range of \( Y \).
+
+% Determine the marginal density of X, f_X(x):
+The marginal density \( f_X(x) \) is found by integrating out \( Y \) from the joint PDF:
+\[ f_X(x) = \int_0^x 8xy \, dy = 8x \left[ \frac{y^2}{2} \right]_0^x = 4x^3 \]
+At \( x = \frac{1}{2} \), the marginal density \( f_X\left(\frac{1}{2}\right) \) is:
+\[ f_X\left(\frac{1}{2}\right) = 4 \left(\frac{1}{2}\right)^3 = \frac{1}{2} \]
+
+% Calculate the conditional PDF f_{Y|X}(y|x):
+The conditional PDF \( f_{Y|X}(y|\frac{1}{2}) \) is:
+\[ f_{Y|X}(y|\frac{1}{2}) = \frac{8 \cdot \frac{1}{2} \cdot y}{\frac{1}{2}} = 8y \]
+
+% Compute the conditional probability P(Y < 1/4 | X = 1/2):
+\[ P(Y < \frac{1}{4} | X = \frac{1}{2}) = \int_0^{1/4} 8y \, dy \]
+Calculate the integral:
+\[ \int_0^{1/4} 8y \, dy = \left[ 4y^2 \right]_0^{1/4} = 4 \left(\frac{1}{16}\right) = \frac{1}{4} \]
+
+% Conclusion:
+Therefore, \( P(Y < \frac{1}{4} | X = \frac{1}{2}) = \frac{1}{4} \).
+
+\newpage
+\subsection*{Question 2}
+A random variable has moment generating function \( M_X(t) = \left(\frac{2+e^t}{3}\right)^9 \). Find \( \text{Var}(X) \).
+
+\newpage
+\subsection*{Question 3}
+The driver of a truck loaded with 900 boxes of books will be fined if the total weight of the boxes exceeds 36450 pounds. If the distribution of the weight of a box has a mean of 40 pounds and a variance of 36, find the approximate probability that the driver will be fined.
+
+\newpage
+\subsection*{Question 4}
+Suppose that the number of calls per hour to an answering service follows a Poisson distribution with rate \( \lambda = 4 \).
+\begin{itemize}
+  \item[(a)] What is the probability that fewer than 2 calls came in the first hour?
+  \item[(b)] What is the probability that there will be no calls in the next two hours?
+\end{itemize}
+
+\newpage
+\subsection*{Question 5}
+Using moment generating functions (MGFs), show that if:
+\[ X \sim N(\mu_1, \sigma_1^2) \quad \text{and} \quad Y \sim N(\mu_2, \sigma_2^2), \]
+then the expectation and variance of \( X+Y \) are given by:
+\[ E(X+Y) = \mu_1 + \mu_2 \quad \text{and} \quad \text{Var}(X+Y) = \sigma_1^2 + \sigma_2^2, \]
+and that:
+\[ X + Y \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2). \]
+\textit{Note:} The moment generating function of \( X \), if \( X \) is normally distributed, is given by:
+\[ M_X(t) = e^{t\mu + \frac{t^2\sigma^2}{2}}. \]
+
+
+\end{document}
