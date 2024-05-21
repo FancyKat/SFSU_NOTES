@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  21 MAY 2024 11:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  20 MAY 2024 00:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/fancykat/Documents/SFSU/MATH440/Final_Review/final_review
-(/home/fancykat/Documents/SFSU/MATH440/Final_Review/final_review.tex
+**/home/fancykat/Documents/SFSU/MATH325/Final_Review/final_review
+(/home/fancykat/Documents/SFSU/MATH325/Final_Review/final_review.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -284,7 +284,18 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
+\dth@everypar=\toks32
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \c@tracingmulticols=\count309
 \mult@box=\box53
@@ -298,8 +309,8 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \page@free=\dimen162
 \premulticols=\dimen163
 \postmulticols=\dimen164
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
+\multicolsep=\skip65
+\multicolbaselineskip=\skip66
 \partial@page=\box54
 \last@line=\box55
 \maxbalancingoverflow=\dimen165
@@ -368,7 +379,7 @@ File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 \Gin@req@height=\dimen169
 \Gin@req@width=\dimen170
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+Package hyperref Info: Option `colorlinks' set `true' on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
  (|extractbb --version)
@@ -383,30 +394,30 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 ) (./final_review.aux)
 \openout1 = `final_review.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -449,7 +460,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 149.
 )
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -459,9 +470,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
  (./final_review.out) (./final_review.out)
 \@outlinefile=\write3
 \openout3 = `final_review.out'.
@@ -471,31 +482,26 @@ Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
 File: fc-english.def 2016/01/12
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3] [4] [5] [6] [7] [8] [9]
-File: images/z-table_1.png Graphic file (type bmp)
-<images/z-table_1.png>
-File: images/z-table_2.png Graphic file (type bmp)
-<images/z-table_2.png>
- [10] [11] [12] (./final_review.aux)
+] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] (./final_review.aux)
 Package rerunfilecheck Info: File `final_review.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 11383 strings out of 476191
- 178430 string characters out of 5812072
- 503455 words of memory out of 5000000
- 31944 multiletter control sequences out of 15000+600000
- 476935 words of font info for 67 fonts, out of 8000000 for 9000
+ 11439 strings out of 476191
+ 179147 string characters out of 5812072
+ 512672 words of memory out of 5000000
+ 31996 multiletter control sequences out of 15000+600000
+ 479425 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 70i,12n,76p,1149b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,12n,76p,1149b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on final_review.pdf (12 pages).
+Output written on final_review.pdf (30 pages).

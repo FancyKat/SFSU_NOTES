@@ -1,0 +1,400 @@
+\documentclass[8pt, a4paper, landscape]{extarticle} % Define the document class and options (8pt font, A4 paper, landscape orientation)
+
+\usepackage[margin=0.15in]{geometry} % Set page margins to 0.15 inches
+\usepackage{amsmath, amssymb, amsthm} % For advanced math typesetting
+\usepackage{multicol} % Allows text to be split into multiple columns
+\usepackage{graphicx} % For including images
+\usepackage{enumerate} % For more configurable enumeration options
+\usepackage{tikz} % For creating graphics programmatically within LaTeX
+\usepackage{longtable} % For tables that may span multiple pages (not used in this template but might be useful)
+\usepackage{parskip} % Adjusts paragraph spacing, sets no indentation
+
+\newcommand{\highlight}[1]{\textbf{\color{blue} #1}} % Custom command to highlight text in blue and bold
+\setlength{\parindent}{0pt} % Sets paragraph indentation to zero
+\setlength{\columnsep}{3mm} % Sets the column separation width to 1mm
+
+
+\begin{document}
+
+\begin{multicols*}{4} % Begin a multicol environment with 5 columns
+
+  \textbf{LU Decomposition}:
+  \underline{Concept}: Factor \( A \) into \( LU \), where \( L \) is lower triangular and \( U \) is upper triangular. Useful for solving linear systems.
+
+  \underline{Process for LU Decomposition}:
+  \begin{enumerate}
+    \item \textbf{Matrix Setup:} Start with \( A \).
+    \item \textbf{Gaussian Elimination:} Transform \( A \) into \( U \).
+    \item \textbf{Construct \( L \):} Use multipliers from elimination.
+  \end{enumerate}
+
+  \underline{Practice Problem}:
+  For \( A = \begin{bmatrix} 4 & 3 \\ 6 & 3 \end{bmatrix} \):
+  \[
+    \begin{aligned}
+       & \text{First Pivot: Eliminate 6 below 4 using } R_2 = R_2 - \frac{3}{2} R_1.                                                      \\
+       & \text{Result: } U = \begin{bmatrix} 4 & 3 \\ 0 & -1.5 \end{bmatrix}, L = \begin{bmatrix} 1 & 0 \\ \frac{3}{2} & 1 \end{bmatrix}.
+    \end{aligned}
+  \]
+
+
+  \textbf{Least Squares Method}
+  \underline{Concept}: The Least Squares method is used to determine the best-fit line or curve by minimizing the sum of the squares of the residuals. These residuals are the differences between the observed values and the values predicted by the model. This method is fundamental in regression analysis.
+
+  \underline{Formula:}
+  \[ A^T A x = A^T b \]
+  Where:
+  - \( A \) is the design matrix.
+  - \( x \) is the parameter vector.
+  - \( b \) is the observation vector.
+
+  \underline{Process:}
+  \begin{enumerate}
+    \item \textbf{Setup:} Construct \( A \) and \( b \).
+    \item \textbf{Calculate:} \( A^T A \) and \( A^T b \).
+    \item \textbf{Solve:} \( x = (A^T A)^{-1} A^T b \).
+  \end{enumerate}
+
+  \underline{Example:}\\
+  Fit \( y = mx + c \) to points \( (1,2), (2,3), (3,5) \):
+  \[
+    \begin{aligned}
+       & A = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}, b = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} \\
+       & A^T A = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix}, A^T b = \begin{bmatrix} 26 \\ 10 \end{bmatrix}    \\
+       & \text{Solve: } \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} x = \begin{bmatrix} 26 \\ 10 \end{bmatrix}
+    \end{aligned}
+  \]
+
+  \underline{Example Problem 2: Polynomial Fit}:
+  Fit a quadratic polynomial \( y = ax^2 + bx + c \) to the points \((1, 4)\), \((2, 8)\), \((3, 14)\).
+  - Construct \( A \) for a quadratic model:
+  \[
+    A = \begin{bmatrix} 1^2 & 1 & 1 \\ 2^2 & 2 & 1 \\ 3^2 & 3 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix}
+  \]
+  - Vector \( b \):
+  \[
+    b = \begin{bmatrix} 4 \\ 8 \\ 14 \end{bmatrix}
+  \]
+  - Compute \( A^TA \) and \( A^Tb \):
+  \[
+    A^TA = \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix}^T \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix} = \begin{bmatrix} 98 & 36 & 14 \\ 36 & 14 & 6 \\ 14 & 6 & 3 \end{bmatrix}
+  \]
+  \[
+    A^Tb = \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix}^T \begin{bmatrix} 4 \\ 8 \\ 14 \end{bmatrix} = \begin{bmatrix} 154 \\ 60 \\ 26 \end{bmatrix}
+  \]
+  - Solve the resulting system for \( x = \begin{bmatrix} a \\ b \\ c \end{bmatrix} \).
+
+
+  \textbf{Weighted Least Squares Method}:
+  \underline{Concept}: This method refines the basic least squares approach by using weights to accommodate variances in data reliability. It's ideal for data points with differing uncertainties.
+
+  \underline{Formula:}
+  \[ A^T W A x = A^T W b \]
+  Where:
+  - \( W \) is a diagonal matrix of weights.
+
+  \underline{Process}:
+  \begin{enumerate}
+    \item \textbf{Assign Weights}: Set weights in \( W \) based on observation variances.
+    \item \textbf{Compute \( A^TWA \) and \( A^TWb \)}: Form the weighted normal equations to find the best-fit parameters.
+    \item \textbf{Solve for \( x \)}: Determine the parameters that minimize the residuals' weighted sum of squares.
+  \end{enumerate}
+
+  \underline{Example Problem 1: Weighted Linear Fit}:
+  Fit \( y = mx + c \) to points \( (1,2), (2,3), (3,5) \) with weights \( 1, 2, 3 \):
+  \[
+    \begin{aligned}
+       & A = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}, b = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}, W = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix} \\
+       & A^T W A = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix}, A^T W b = \begin{bmatrix} 26 \\ 10 \end{bmatrix}                                                                       \\
+       & \text{Solve: } \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} x = \begin{bmatrix} 26 \\ 10 \end{bmatrix}
+    \end{aligned}
+  \]
+
+
+  \underline{Example Problem 2: Weighted Polynomial Fit}:
+  \textbf{Task:} Fit a weighted quadratic polynomial \( y = ax^2 + bx + c \) to the points \((1, 4)\), \((2, 8)\), \((3, 14)\) with weights 0.5, 1, and 2 respectively.
+
+  \textbf{Setup:}
+  \begin{itemize}
+    \item Matrix \( A \) for a quadratic model:
+          \[ A = \begin{bmatrix} 1^2 & 1 & 1 \\ 2^2 & 2 & 1 \\ 3^2 & 3 & 1 \end{bmatrix} = \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix} \]
+    \item Vector \( b \) of observed values:
+          \[ b = \begin{bmatrix} 4 \\ 8 \\ 14 \end{bmatrix} \]
+    \item Weight matrix \( W \):
+          \[ W = \begin{bmatrix} 0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix} \]
+  \end{itemize}
+
+  \textbf{Calculations:}
+  \begin{align*}
+    A^T W A & = \begin{bmatrix} 1 & 4 & 9 \\ 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix} \begin{bmatrix} 1 & 1 & 1 \\ 4 & 2 & 1 \\ 9 & 3 & 1 \end{bmatrix} \\
+            & = \begin{bmatrix} 91.5 & 33.5 & 13.5 \\ 33.5 & 14 & 6 \\ 13.5 & 6 & 4 \end{bmatrix}                                                                                                                       \\
+    A^T W b & = \begin{bmatrix} 1 & 4 & 9 \\ 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix} \begin{bmatrix} 4 \\ 8 \\ 14 \end{bmatrix}                        \\
+            & = \begin{bmatrix} 54 \\ 22 \\ 10 \end{bmatrix}
+  \end{align*}
+
+  \textbf{Solve for the coefficients \( x = [a \; b \; c]^T \):}
+  \[
+    \begin{bmatrix} 91.5 & 33.5 & 13.5 \\ 33.5 & 14 & 6 \\ 13.5 & 6 & 4 \end{bmatrix} x = \begin{bmatrix} 54 \\ 22 \\ 10 \end{bmatrix}
+  \]
+  This system can be solved using numerical methods such as LU decomposition, QR factorization, or direct matrix inversion if appropriate.
+
+  \textbf{Cauchy-Schwarz and Triangle Inequalities}\\
+  \underline{Concepts}:
+  \begin{itemize}
+    \item \textbf{Cauchy-Schwarz Inequality}: States that for all vectors \( \mathbf{u} \) and \( \mathbf{v} \) in an inner product space, the absolute value of the inner product of the vectors is at most the product of their norms
+    \item \textbf{Triangle Inequality}: In any vector space, the length (or norm) of the sum of two vectors is less than or equal to the sum of the lengths (or norms) of these vectors. It underpins the metric structure of normed vector spaces.
+  \end{itemize}
+
+  \underline{General Formulas}:
+  \[
+    \begin{aligned}
+       & \text{Cauchy-Schwarz: } |\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \|\mathbf{v}\| \\
+       & \text{Triangle: } \|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|
+    \end{aligned}
+  \]
+
+  \underline{Example Problem (Cauchy-Schwarz)}:\\
+  Given \( \mathbf{u} = \begin{bmatrix} 1 \\ 3 \end{bmatrix} \) and \( \mathbf{v} = \begin{bmatrix} 4 \\ -2 \end{bmatrix} \):
+  \begin{itemize}
+    \item Compute \(\langle \mathbf{u}, \mathbf{v} \rangle = 1 \cdot 4 + 3 \cdot (-2) = -2\)
+    \item Compute \(\|\mathbf{u}\| = \sqrt{1^2 + 3^2} = \sqrt{10}\), \(\|\mathbf{v}\| = \sqrt{4^2 + (-2)^2} = \sqrt{20}\)
+    \item Verify Inequality:
+          \[
+            |-2| \leq \sqrt{10} \sqrt{20} \implies 2 \leq \sqrt{200} \implies \text{True}
+          \]
+  \end{itemize}
+
+  \underline{Example Problem (Triangle Inequality)}:
+  Given \( \mathbf{u} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} \) and \( \mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix} \):
+  \begin{itemize}
+    \item Compute \(\|\mathbf{u} + \mathbf{v}\| = \left\|\begin{bmatrix} 1+3 \\ 2+4 \end{bmatrix}\right\| = \sqrt{4^2 + 6^2} = \sqrt{52}\)
+    \item Compute \(\|\mathbf{u}\| = \sqrt{1^2 + 2^2} = \sqrt{5}\), \(\|\mathbf{v}\| = \sqrt{3^2 + 4^2} = 5\)
+    \item Verify Inequality:
+          \[
+            \sqrt{52} \leq \sqrt{5} + 5 \implies \sqrt{52} \leq \sqrt{5} + 5 \implies \text{True}
+          \]
+  \end{itemize}
+
+
+  \textbf{Orthogonality and Orthogonal Projection}\\
+  \underline{Concept}: Orthogonality in vector spaces implies that two vectors are perpendicular to each other, which is a fundamental concept in linear algebra, important for simplifying computations and understanding geometrical and functional relationships.
+
+  \underline{Definitions}:
+  \begin{itemize}
+    \item \textbf{Orthogonal Vectors}: Vectors \(\mathbf{u}\) and \(\mathbf{v}\) are orthogonal if their dot product \(\mathbf{u} \cdot \mathbf{v} = 0\).
+    \item \textbf{Orthogonal Projection}: The projection of a vector \(\mathbf{u}\) onto another vector \(\mathbf{v}\) is the vector component of \(\mathbf{u}\) that lies along \(\mathbf{v}\).
+  \end{itemize}
+
+  \underline{General Formulas}:
+  \[
+    \begin{aligned}
+       & \text{Dot Product: } \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \ldots + u_n v_n                                               \\
+       & \text{Projection: } \text{proj}_{\mathbf{v}}(\mathbf{u}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \mathbf{v}
+    \end{aligned}
+  \]
+
+
+  \underline{Step-by-Step Process for Orthogonal Projections}:
+  \begin{enumerate}
+    \item \textbf{Calculate Dot Product}: Compute \(\mathbf{u} \cdot \mathbf{v}\).
+    \item \textbf{Normalize Vector \(\mathbf{v}\)}: Find \(\mathbf{v} \cdot \mathbf{v}\), the norm squared of \(\mathbf{v}\).
+    \item \textbf{Form Projection}: Multiply the scalar \(\frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}}\) with vector \(\mathbf{v}\) to get \(\text{proj}_{\mathbf{v}}(\mathbf{u})\).
+  \end{enumerate}
+
+  \underline{Detailed Example}:
+  Given \( \mathbf{u} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}, \mathbf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \):
+  \[
+    \begin{aligned}
+       & \mathbf{u} \cdot \mathbf{v} = 3, \mathbf{v} \cdot \mathbf{v} = 1                                                               \\
+       & \text{proj}_{\mathbf{v}}(\mathbf{u}) = \frac{3}{1} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
+    \end{aligned}
+  \]
+
+
+  \textbf{Gram-Schmidt Process}
+  \underline{Concept}: The Gram-Schmidt process is a method for orthogonalizing a set of vectors in an inner product space, while maintaining their span. This process is fundamental in linear algebra for constructing orthonormal bases.
+
+  \underline{Definitions}:
+  \begin{itemize}
+    \item \textbf{Orthogonal Vectors}: Two vectors are orthogonal if their dot product is zero.
+    \item \textbf{Orthonormal Vectors}: A set of vectors are orthonormal if they are orthogonal and each vector has unit length.
+  \end{itemize}
+
+  \underline{General Formula}:
+  For a set of vectors \( \{v_1, v_2, \ldots, v_n\} \), the Gram-Schmidt process converts them into an orthonormal set \( \{u_1, u_2, \ldots, u_n\} \) using:
+  \[
+    \begin{aligned}
+       & \mathbf{u}_1 = \frac{\mathbf{v}_1}{\|\mathbf{v}_1\|}                                                                                                                         \\
+       & \mathbf{u}_k = \frac{\mathbf{v}_k - \sum_{j=1}^{k-1} \text{proj}_{\mathbf{u}_j}(\mathbf{v}_k)}{\|\mathbf{v}_k - \sum_{j=1}^{k-1} \text{proj}_{\mathbf{u}_j}(\mathbf{v}_k)\|} \\
+       & \text{where proj}_{\mathbf{u}_j}(\mathbf{v}_k) = \frac{\langle \mathbf{v}_k, \mathbf{u}_j \rangle}{\langle \mathbf{u}_j, \mathbf{u}_j \rangle} \mathbf{u}_j
+    \end{aligned}
+  \]
+
+  \underline{Step-by-Step Process}:
+  \begin{enumerate}
+    \item \textbf{Start with the first vector}: Normalize \( v_1 \) to get \( u_1 \).
+    \item \textbf{Orthogonalize each subsequent vector}: For each \( v_k \), subtract the projection of \( v_k \) onto each of the previously computed \( u_j \) vectors.
+    \item \textbf{Normalize}: After orthogonalization, normalize the vector to turn it into a unit vector.
+  \end{enumerate}
+
+  \underline{Detailed Step-by-Step Guide}:
+  1. \textbf{Compute \( u_1 \)}: \( u_1 = \frac{v_1}{\|v_1\|} \).
+  2. \textbf{For each \( v_k \) (k > 1)}: Calculate \( u_k = \frac{v_k - \sum_{j=1}^{k-1} \text{proj}_{u_j}(v_k)}{\|v_k - \sum_{j=1}^{k-1} \text{proj}_{u_j}(v_k)\|} \).
+  3. \textbf{Iterate through all vectors}: Repeat until all vectors in the set are processed.
+
+  \underline{Practice Problem}:
+  Given \( v_1 = \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}, v_2 = \begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix} \):
+  \begin{itemize}
+    \item \textbf{Compute \( u_1 \)}: \( u_1 = \frac{\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}}{\sqrt{2}} \).
+    \item \textbf{Orthogonalize \( v_2 \)}: \( v_2' = \begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix} - \text{proj}_{u_1}(\begin{bmatrix} -1 \\ 2 \\ 0 \end{bmatrix}) \).
+    \item \textbf{Compute \( u_2 \)}: Normalize \( v_2' \) to find \( u_2 \).
+  \end{itemize}
+
+
+
+  \textbf{Eigenvalues and Eigenvectors}\\
+  \underline{Definitions}:
+  \begin{itemize}
+    \item \textbf{Eigenvalue (\(\lambda\))}: A scalar such that there exists a non-zero vector \( v \) (eigenvector) for which \( Av = \lambda v \), where \( A \) is a square matrix.
+    \item \textbf{Eigenvector (\(v\))}: A non-zero vector that changes by only a scalar factor when a linear transformation is applied.
+  \end{itemize}
+
+  \underline{Process for Finding Eigenvalues and Eigenvectors}:
+  \begin{enumerate}
+    \item \textbf{Matrix Setup}: Subtract \(\lambda\) times the identity matrix from \( A \) to get \( A - \lambda I \).
+    \item \textbf{Find Eigenvalues}: Compute \(\det(A - \lambda I)\) to derive the characteristic polynomial and solve it to find \(\lambda\).
+    \item \textbf{Determine Eigenvectors}: For each \(\lambda\), solve \( (A - \lambda I)v = 0 \).
+  \end{enumerate}
+
+  \underline{Formulas:}
+  \[
+    \begin{aligned}
+       & A \mathbf{v} = \lambda \mathbf{v}                                          \\
+       & \text{Find } \lambda \text{ by solving } \det(A - \lambda I) = 0           \\
+       & \text{Find } \mathbf{v} \text{ by solving } (A - \lambda I) \mathbf{v} = 0
+    \end{aligned}
+  \]
+
+  \underline{Practice Problem}:
+  Given \( A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} \), find the eigenvalues and eigenvectors:
+  \[
+    \begin{aligned}
+       & \text{Characteristic Polynomial: } \lambda^2 - 4\lambda + 3 = 0                                                                                                                 \\
+       & \text{Eigenvalues: } \lambda = 1, 3                                                                                                                                             \\
+       & \text{Eigenvectors: } \lambda = 1 \Rightarrow \mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}, \lambda = 3 \Rightarrow \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+    \end{aligned}
+  \]
+
+  \textbf{Spectral Decomposition}\\
+  \underline{Concept}: Decomposes a matrix into eigenvalues and their corresponding eigenvector projectors, particularly for symmetric matrices.
+
+  \underline{Definitions}:
+  \begin{itemize}
+    \item \textbf{Eigenvalue (\(\lambda\))}: Scalar indicating the scaling effect of the matrix on an eigenvector.
+    \item \textbf{Eigenvector (\(v\))}: Vector that remains parallel to itself after transformation by the matrix.
+    \item \textbf{Projection Matrix (\(P\))}: \(P = v v^T\), for unit eigenvector \(v\).
+  \end{itemize}
+
+  \underline{Formula:}
+  \[ A = \sum_{i=1}^n \lambda_i \mathbf{v}_i \mathbf{v}_i^T \]
+  Where \( \lambda_i \) are eigenvalues and \( \mathbf{v}_i \) are corresponding eigenvectors.
+
+
+  \underline{Process:}
+  \begin{enumerate}
+    \item Find eigenvalues and eigenvectors.
+    \item Normalize eigenvectors.
+    \item Formulate \( A \) as the sum of eigenvalue-eigenvector products.
+  \end{enumerate}
+
+  \underline{Practice Problem}:
+  Given \( A = \begin{bmatrix} 3 & 2 \\ 2 & 6 \end{bmatrix} \):
+  \[
+    \begin{aligned}
+       & \text{Eigenvalues: } \lambda = 2, 7                                                                                                                                         \\
+       & \text{Eigenvectors: } \mathbf{v}_1 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}, \mathbf{v}_2 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}                                             \\
+       & \text{Form: } A = 2 \begin{bmatrix} -1 \\ 1 \end{bmatrix} \begin{bmatrix} -1 & 1 \end{bmatrix} + 7 \begin{bmatrix} 2 \\ 1 \end{bmatrix} \begin{bmatrix} 2 & 1 \end{bmatrix}
+    \end{aligned}
+  \]
+  \textbf{Singular Value Decomposition (SVD)}
+  \underline{Concept}:
+  Singular Value Decomposition (SVD) factors a matrix \( A \) into three matrices \( P \), \( \Sigma \), and \( Q^T \), revealing important properties of \( A \).
+
+  \underline{General Formula}: \( A = P \Sigma Q^T \) \\
+  Where: \( P \) and \( Q \) are orthogonal matrices. \( \Sigma \) is a diagonal matrix of singular values.
+
+  \underline{Step-by-Step Process}:
+  \begin{enumerate}
+    \item \textbf{Compute \( A^T A \)}: Find the eigenvalues \(\lambda_i\) and eigenvectors \( \mathbf{v}_i \) of \( A^T A \). The singular values \(\sigma_i\) are the square roots of the eigenvalues.
+    \item \textbf{Form \( Q \)}: The matrix \( Q \) consists of the normalized eigenvectors \( \mathbf{v}_i \) of \( A^T A \).
+    \item \textbf{Compute \( AV \)}: Calculate \( \mathbf{u}_i = \frac{A \mathbf{v}_i}{\sigma_i} \) to form the columns of \( P \).
+    \item \textbf{Construct \( \Sigma \)}: Place the singular values \(\sigma_i\) on the diagonal of \( \Sigma \).
+  \end{enumerate}
+
+  \underline{What to Look For}:
+  \begin{itemize}
+    \item \textbf{Orthogonality}: Verify that \( P \) and \( Q \) are orthogonal (\( P^T P = I \) and \( Q^T Q = I \)).
+    \item \textbf{Singular Values}: Ensure that the diagonal elements of \( \Sigma \) are non-negative and in descending order.
+    \item \textbf{Dimensionality}: \( \Sigma \) should have the same dimensions as \( A \), with non-zero singular values determining the rank of \( A \).
+  \end{itemize}
+
+
+  \underline{Example:}\\
+  Given \( A = \begin{bmatrix} 1 & 0 \\ 0 & 2 \\ 0 & 0 \end{bmatrix} \), find the SVD.
+  \[
+    \begin{aligned}
+       & A^T A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 2 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 4 \end{bmatrix} \\
+       & \lambda_1 = 1, \quad \lambda_2 = 4 \quad \Rightarrow \quad \sigma_1 = 1, \quad \sigma_2 = 2                                                                       \\
+       & \text{Eigenvectors: } \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}                              \\
+       & \text{Compute } P:                                                                                                                                                \\
+       & \mathbf{u}_1 = \frac{A \mathbf{v}_1}{\sigma_1} = \frac{\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}}{1} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}                  \\
+       & \mathbf{u}_2 = \frac{A \mathbf{v}_2}{\sigma_2} = \frac{\begin{bmatrix} 0 \\ 2 \\ 0 \end{bmatrix}}{2} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}                  \\
+       & \text{Construct } \Sigma:                                                                                                                                         \\
+       & \Sigma = \begin{bmatrix} 1 & 0 \\ 0 & 2 \\ 0 & 0 \end{bmatrix}                                                                                                    \\
+    \end{aligned}
+  \]
+  Thus, \( A = P \Sigma Q^T \) with \( P = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix} \), \( \Sigma = \begin{bmatrix} 1 & 0 \\ 0 & 2 \\ 0 & 0 \end{bmatrix} \), and \( Q = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \).
+
+  \textbf{Determinants}\\
+  \underline{Concept:} The determinant provides important properties about the matrix such as whether it is invertible.
+
+  \underline{Formula:}\\
+  For a 2x2 matrix \( A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \):
+  \[ \det(A) = ad - bc \]
+
+  \underline{Properties:}
+  \begin{itemize}
+    \item \(\det(AB) = \det(A) \det(B)\)
+    \item \(\det(A^{-1}) = \frac{1}{\det(A)}\)
+    \item \(\det(A^T) = \det(A)\)
+  \end{itemize}
+
+  \textbf{Matrix Inverse}\\
+  \underline{Concept:} The inverse of a matrix \( A \) is a matrix \( A^{-1} \) such that \( AA^{-1} = I \).
+
+  \underline{Formula:}\\
+  For a 2x2 matrix \( A = \begin{bmatrix} a & b \\ c & d \end{bmatrix} \):
+  \[ A^{-1} = \frac{1}{\det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix} \]
+
+  \textbf{Rank of a Matrix}\\
+  \underline{Concept:} The rank of a matrix is the dimension of the vector space generated by its rows or columns.
+
+  \underline{Properties:}
+  \begin{itemize}
+    \item \(\text{rank}(A) + \text{nullity}(A) = n\) (Rank-Nullity Theorem)
+    \item \(\text{rank}(A) = \text{rank}(A^T)\)
+  \end{itemize}
+  \textbf{Null Space}\\
+  \underline{Concept:} The null space of a matrix \( A \) is the set of all vectors \( \mathbf{x} \) such that \( A\mathbf{x} = \mathbf{0} \).
+
+  \underline{Process:}
+  \begin{itemize}
+    \item Solve the homogeneous equation \( A\mathbf{x} = \mathbf{0} \).
+    \item The solutions form the basis for the null space.
+  \end{itemize}
+
+\end{multicols*}
+
+
+
+\end{document}
