@@ -375,6 +375,267 @@ We have shown that if \( X \sim N(\mu_1, \sigma_1^2) \) and \( Y \sim N(\mu_2, \
 \[ \text{Var}(X + Y) = \sigma_1^2 + \sigma_2^2 \]
 \[ X + Y \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2) \]
 
+\newpage
+\section*{Definitions, Formulas \& Theorems}
+
+\subsection*{Joint Probability Density Function (PDF)}
+% Explanation
+The joint PDF $f_{XY}(x, y)$ defines the probability density at each point $(x, y)$ for the continuous random variables $X$ and $Y$. It is used to compute the probability that $(X, Y)$ falls within a specific region $A$.
+
+% Formula
+\[
+P((X, Y) \in A) = \int \int_A f_{XY}(x, y) \, dx \, dy.
+\]
+
+\subsection*{Marginal Probability Density Function}
+% Explanation
+The marginal PDF of a random variable $X$, denoted as $f_X(x)$, is obtained by integrating the joint PDF $f_{XY}(x, y)$ over all possible values of the other variable $Y$.
+
+% Formula
+\[
+f_X(x) = \int_{-\infty}^{\infty} f_{XY}(x, y) \, dy.
+\]
+
+\subsection*{Conditional Probability Density Function}
+% Explanation
+The conditional PDF $f_{Y|X}(y|x)$ gives the probability density of $Y$ given that $X$ takes a specific value $x$. It is derived from the joint PDF and the marginal PDF of $X$.
+
+% Formula
+\[
+f_{Y|X}(y|x) = \frac{f_{XY}(x, y)}{f_X(x)}.
+\]
+
+\subsection*{Expected Value and Variance of a Random Variable}
+% Explanation
+The expected value $E(X)$ is the average value of a random variable $X$, and the variance $\text{Var}(X)$ measures the spread of $X$ around its mean.
+
+% Formulas
+\[
+E(X) = \int_{-\infty}^{\infty} x f_X(x) \, dx.
+\]
+\[
+\text{Var}(X) = E((X - E(X))^2) = \int_{-\infty}^{\infty} (x - E(X))^2 f_X(x) \, dx.
+\]
+
+\subsection*{Moment Generating Function (MGF)}
+% Explanation
+The moment generating function $M_X(t)$ of a random variable $X$ is a function that summarizes all the moments of $X$. It is particularly useful for identifying the distribution of $X$ based on its moments.
+
+% Formula
+\[
+M_X(t) = E(e^{tX}) = \int_{-\infty}^{\infty} e^{tx} f_X(x) \, dx.
+\]
+
+\subsection*{Central Limit Theorem (CLT)}
+% Explanation
+The Central Limit Theorem (CLT) states that the average of a large number of independent and identically distributed (i.i.d.) random variables, each with a finite mean and variance, tends toward a normal distribution regardless of the original distribution of the variables.
+
+% Formula
+\[
+\sqrt{n}(\overline{X}_n - \mu) \xrightarrow{d} N(0, \sigma^2),
+\]
+where $\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i$.
+
+\subsection*{Poisson Distribution}
+% Explanation
+The Poisson distribution is used to model the number of events occurring within a fixed interval of time or space, assuming events occur independently at a constant rate $\lambda$.
+
+
+\subsection*{Bayes' Theorem}
+% Explanation
+Bayes' theorem is a fundamental result that describes how to update the probability of a hypothesis based on new evidence.
+
+% Formula
+\[
+P(A | B) = \frac{P(B | A) \times P(A)}{P(B)}
+\]
+
+% Formula
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \text{ for } k = 0, 1, 2, \dots.
+\]
+
+\subsection*{Properties of Normal Distribution}
+% Explanation
+The normal distribution, characterized by its bell-shaped curve, is defined by its mean $\mu$ and variance $\sigma^2$. It is one of the most important distributions in statistics due to its occurrence in many natural phenomena.
+
+% Formula
+\[
+f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+\]
+
+\subsection*{Sum of Independent Normal Variables}
+% Explanation
+When two independent normal variables $X$ and $Y$ are summed, the result is also a normal variable with mean equal to the sum of their means and variance equal to the sum of their variances.
+
+% Formula
+\[
+X + Y \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2).
+\]
+
+\subsection*{Union of Sets}
+% Explanation
+The union of two sets $A$ and $B$, denoted $A \cup B$, is the set of all elements that belong to either $A$, $B$, or both. In probability, $P(A \cup B)$ is the probability that at least one of the events $A$ or $B$ occurs.
+
+% Formula
+\[
+A \cup B = \{x : x \in A \text{ or } x \in B\}.
+\]
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B).
+\]
+
+\subsection*{Intersection of Sets}
+% Explanation
+The intersection of two sets $A$ and $B$, denoted $A \cap B$, is the set of all elements that belong to both $A$ and $B$. In probability, $P(A \cap B)$ is the probability that both events $A$ and $B$ occur simultaneously.
+
+% Formula
+\[
+A \cap B = \{x : x \in A \text{ and } x \in B\}.
+\]
+\[
+P(A \cap B) = \text{If } A \text{ and } B \text{ are independent, } P(A \cap B) = P(A) \times P(B).
+\]
+
+\subsection*{Complement of a Set}
+% Explanation
+The complement of a set $A$, denoted $A^c$, is the set of all elements not in $A$. In probability, $P(A^c)$ is the probability that event $A$ does not occur.
+
+% Formula
+\[
+A^c = \{x : x \notin A\}.
+\]
+\[
+P(A^c) = 1 - P(A).
+\]
+
+\subsection*{Conditional Probability}
+% Explanation
+Conditional probability, denoted $P(A | B)$, is the probability of an event $A$ occurring given that another event $B$ has already occurred.
+
+% Formula
+\[
+P(A | B) = \frac{P(A \cap B)}{P(B)}, \text{ provided } P(B) > 0.
+\]
+
+
+\subsection*{Inclusion-Exclusion Principle}
+% Explanation
+The inclusion-exclusion principle is used to compute the probability of the union of multiple events by correcting for overlaps.
+
+% Formula
+\[
+P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum_{i} P(A_i) - \sum_{i < j} P(A_i \cap A_j) + \sum_{i < j < k} P(A_i \cap A_j \cap A_k) - \cdots + (-1)^{n+1} P(A_1 \cap A_2 \cap \cdots \cap A_n).
+\]
+
+\subsection*{Basic Set Operations}
+% Explanation
+Understand and utilize the fundamental operations in set theory. Here's a breakdown of basic operations and their properties.
+
+% Union
+\[
+A \cup B = \{x : x \in A \text{ or } x \in B\}
+\]
+% Intersection
+\[
+A \cap B = \{x : x \in A \text{ and } x \in B\}
+\]
+% Complement
+\[
+A^c = \{x : x \notin A\}
+\]
+% Difference
+\[
+A - B = \{x : x \in A \text{ and } x \notin B\}
+\]
+
+\subsection*{Properties of Set Operations}
+% Explanation
+Recognize the properties that allow the transformation and simplification of expressions involving sets.
+
+% Commutativity
+\[
+A \cup B = B \cup A, \quad A \cap B = B \cap A
+\]
+% Associativity
+\[
+(A \cup B) \cup C = A \cup (B \cup C), \quad (A \cap B) \cap C = A \cap (B \cap C)
+\]
+% Distributivity
+\[
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C), \quad A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+\]
+% De Morgan's Laws
+\[
+(A \cup B)^c = A^c \cap B^c, \quad (A \cap B)^c = A^c \cup B^c
+\]
+
+\subsection*{Breaking Down Complex Set Expressions}
+% Explanation
+Use algebraic techniques to decompose complex set expressions into simpler, more manageable components.
+
+% Example
+Consider \( A \cap (B \cup C) \). Using distributivity:
+\[
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+\]
+% Another Example
+Consider \( (A \cup B) \cap (A^c \cup C) \). Applying distributivity:
+\[
+(A \cup B) \cap (A^c \cup C) = (A \cap A^c) \cup (A \cap C) \cup (B \cap A^c) \cup (B \cap C)
+\]
+Simplifying \( A \cap A^c = \emptyset \), the expression reduces to:
+\[
+(A \cap C) \cup (B \cap A^c) \cup (B \cap C)
+\]
+
+\subsection*{Basic Probability Concepts}
+% Explanation
+Familiarize yourself with the core concepts of probability theory, which are foundational for analyzing random events.
+
+% Probability of an Event
+\[
+P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}}
+\]
+% Complement of an Event
+\[
+P(A^c) = 1 - P(A)
+\]
+% Probability of the Union of Two Events
+\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]
+
+\subsection*{Conditional Probability and Independence}
+% Explanation
+Understand how the occurrence of one event affects the probability of another and define when two events are independent.
+
+% Conditional Probability
+\[
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+\]
+% Independence
+\[
+\text{Events } A \text{ and } B \text{ are independent if } P(A \cap B) = P(A) \times P(B).
+\]
+
+\subsection*{Breaking Down Complex Probability Expressions}
+% Explanation
+Apply probability rules and algebraic manipulation to decompose and understand complex probability expressions.
+
+% Example with Union and Intersection
+Consider \( P(A \cup B \cup C) \). Using the inclusion-exclusion principle:
+\[
+P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(C \cap A) + P(A \cap B \cap C)
+\]
+% Conditional Complexity
+Consider \( P(A \cap (B \cup C)) \). Distributing the intersection:
+\[
+P(A \cap (B \cup C)) = P((A \cap B) \cup (A \cap C)) = P(A \cap B) + P(A \cap C) - P(A \cap B \cap C)
+\]
+
+
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{images/z-table_1.png}
