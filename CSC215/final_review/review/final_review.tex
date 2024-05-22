@@ -1,0 +1,367 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}   % Set page margins to 1 inch
+\usepackage{fancyhdr}   % Allows customization of headers and footers
+\usepackage{hyperref}   % Create hyperlinks in the document for easier navigation
+\usepackage{datetime}   % For formatting the current date in various styles
+\usepackage{parskip}    % Adds space between paragraphs and removes paragraph indents for better readability
+\usepackage{amsmath}    % Provides advanced mathematical typesetting capabilities
+\usepackage{amssymb}    % Provides additional mathematical symbols
+\usepackage{multicol}   % Supports multi-column formatting in the document
+\usepackage{graphicx}   % Allows inclusion and manipulation of graphics
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    frame=single
+}
+
+
+% Hyperlink settings
+\hypersetup{
+    colorlinks=true, % Colored links instead of boxes
+    urlcolor=blue,   % Blue color for external links
+}
+
+% Custom date format
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
+% Header settings
+\pagestyle{fancy}
+\fancyhf{}    % Clear all header and footer fields
+\lhead{CSC215 \\ 2:00 PM - 3:20 PM}         % Left header with class number and time
+\rhead{Marty Martin \\ \monthyeardate\today}  % Right header with your name and the date
+\renewcommand{\headrulewidth}{0.4pt}          % Header underlining
+\setlength{\headheight}{54pt}                 % Ensure there's enough space for two lines in the header
+
+\begin{document}
+
+\begin{center}
+  \Large \textbf{Practice for the exam}
+\end{center}
+
+\section*{Question A.1}
+How is a programmer different from a coder?
+
+\section*{Solution}
+A \textbf{\textit{programmer}} is a professional who designs, develops, tests, and maintains complex software applications. They are involved in problem-solving, algorithm design, and often work on integrating various systems and technologies. A \textbf{\textit{coder}}, on the other hand, primarily focuses on writing code. Their role is often more specific and less broad, mainly translating algorithms and program designs into executable code without necessarily being involved in the higher-level aspects of software development.
+
+\section*{Question A.2}
+Please list and explain the general components of a Java class that represents lower-division Computer Science students.
+
+\section*{Solution}
+A Java class representing lower-division Computer Science students might include the following components:
+\begin{itemize}
+  \item \textbf{\textit{Attributes}}: Variables within a class such as \textbf{\textit{studentId}} (String), \textbf{\textit{name}} (String), \textbf{\textit{email}} (String), and \textbf{\textit{currentGPA}} (double).
+  \item \textbf{\textit{Methods}}: Functions like \textbf{\textit{enrollInCourse()}}, \textbf{\textit{calculateGPA()}}, and \textbf{\textit{updateEmail()}} that operate on the attributes.
+  \item \textbf{\textit{Constructor}}: Special method used to create instances, initializing attributes like ID, name, and email.
+  \item \textbf{\textit{Access Modifiers}}: Define visibility of components, using `private` for attributes and `public` for methods to ensure encapsulation.
+\end{itemize}
+
+\section*{Question A.3}
+Please list and explain 3 differences between static variables and non-static variables.
+
+\section*{Solution}
+\begin{itemize}
+  \item \textbf{\textit{Scope}}: \textbf{\textit{Static variables}} are shared among all instances of a class, while \textbf{\textit{non-static variables}} (instance variables) are unique to each instance.
+  \item \textbf{\textit{Memory Allocation}}: \textbf{\textit{Static variables}} are allocated once the class is loaded, whereas \textbf{\textit{non-static variables}} are allocated each time an object is instantiated.
+  \item \textbf{\textit{Access}}: \textbf{\textit{Static variables}} can be accessed directly using the class name, unlike \textbf{\textit{non-static variables}} which require an instance.
+\end{itemize}
+
+
+\section*{Question A.4}
+Please explain Inheritance and explain Polymorphism. Explain the connection between these 2 OOP concepts. What are the OOP pillars?
+
+\section*{Solution}
+\begin{itemize}
+  \item \textbf{\textit{Inheritance}} is a mechanism where a new class (subclass) derives properties and behaviors from an existing class (superclass). It allows code reusability and hierarchical classification.
+  \item \textbf{\textit{Polymorphism}} allows using a single interface for entities of different types. It enables a method to perform different tasks based on the object that invokes it.
+  \item \textbf{Connection}: Inheritance provides the hierarchical relationship necessary for polymorphism. A subclass can override or extend the functionality of its superclass, enabling polymorphic behavior.
+  \item \textbf{OOP Pillars}: The four pillars of Object-Oriented Programming (OOP) are \textbf{\textit{Encapsulation}}, \textbf{\textit{Inheritance}}, \textbf{\textit{Polymorphism}}, and \textbf{\textit{Abstraction}}.
+\end{itemize}
+
+\section*{Question A.5}
+Please list and explain 3 differences between Up-casting and Down-casting.
+
+\section*{Solution}
+\begin{itemize}
+  \item \textbf{\textit{Direction}}: \textbf{\textit{Up-casting}} is casting a subclass to its superclass, reducing visibility of methods and properties. \textbf{\textit{Down-casting}} is casting a superclass to its subclass, increasing visibility but requiring explicit casting.
+  \item \textbf{\textit{Safety}}: \textbf{\textit{Up-casting}} is always safe as every subclass is a type of its superclass. \textbf{\textit{Down-casting}} can lead to a \textbf{\textit{ClassCastException}} if not properly handled or if the object is not of the target type.
+  \item \textbf{\textit{Usage Context}}: \textbf{\textit{Up-casting}} is often used to generalize a type for broader method applicability. \textbf{\textit{Down-casting}} is used when specific subclass functionalities need to be accessed after an object has been treated generically.
+\end{itemize}
+
+\section*{Question A.6}
+Please explain how the below operator and methods work. What are the differences among them?
+1. equality operator ==
+2. equals method
+3. compareTo method
+4. Differences
+
+\section*{Solution}
+\begin{itemize}
+  \item \textbf{\textit{Equality Operator (==)}}: This operator checks if two references point to the exact same object in memory. It's about reference equality, not the content of the objects.
+  \item \textbf{\textit{Equals Method}}: This is a method in the \textbf{\textit{Object}} class that can be overridden. By default, it behaves like \textbf{\textit{==}}, but when overridden (like in \textbf{\textit{String}} or \textbf{\textit{List}}), it can compare the contents of two objects.
+  \item \textbf{\textit{CompareTo Method}}: Found in the \textbf{\textit{Comparable}} interface, this method compares two objects for order. It returns a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+  \item \textbf{\textit{Differences}}: The \textbf{\textit{== operator}} compares references, the \textbf{\textit{equals method}} compares object content when properly overridden, and the \textbf{\textit{compareTo method}} provides ordering information about the objects.
+\end{itemize}
+
+\newpage
+
+\section*{Question B.1}
+Please code a complete Java program: VacationAgency.
+\begin{itemize}
+  \item Your program prompts users to enter their favorite Summer vacation destination choice.
+  \item Then the program prints a recommendation on how to get there.
+  \item It is OK to assume that users will enter a valid location as their favorite Summer vacation destination.
+  \item This program must have at least 3 methods (1 of them is the main method).
+  \item A sample run of the program (think Google Maps):
+\end{itemize}
+\texttt{Enter your Summer vacation destination: Phu Quoc Island \\
+  Flight Vietnamese Airlines!}
+
+\section*{Solution}
+Here's a Java program named \texttt{VacationAgency}:
+
+\begin{lstlisting}[language=Java]
+import java.util.Scanner;
+
+public class VacationAgency {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your Summer vacation destination: ");
+        String destination = scanner.nextLine();
+        printTransportRecommendation(destination);
+    }
+    
+    // Method to recommend transport based on the destination
+    public static void printTransportRecommendation(String destination) {
+        if (destination.equalsIgnoreCase("Phu Quoc Island")) {
+            System.out.println("Flight: Vietnamese Airlines!");
+        } else if (destination.equalsIgnoreCase("Paris")) {
+            System.out.println("Flight: Air France!");
+        } else {
+            System.out.println("Train or Local Airlines are recommended.");
+        }
+    }
+    
+    // Additional method for future expansion or specific recommendations
+    public static void additionalRecommendations(String destination) {
+        // This can be used for additional advice like hotels, etc.
+        System.out.println("Don't forget to enjoy the local cuisine at " + destination + "!");
+    }
+}
+\end{lstlisting}
+
+\newpage
+
+\section*{Question B.2}
+Please choose a real-life entity then write a Java class to represent it. The entity must be part of San Francisco State University.
+\begin{itemize}
+  \item What is that entity?
+  \item Why do you think it is suitable to be a Java class?
+  \item Please code the class. Your class should have data fields, constructors, and methods.
+\end{itemize}
+
+\section*{Solution}
+The chosen entity is a \textbf{Student} from San Francisco State University.
+
+\textbf{Reasons for Suitability:}
+A Student is suitable as a Java class because it encapsulates specific attributes and behaviors like student ID, name, email, and GPA operations, which can be modeled computationally.
+
+\begin{lstlisting}[language=Java]
+public class Student {
+    private String studentId;
+    private String name;
+    private String email;
+    private double gpa;
+    private static int count = 0; // To keep track of the number of Student objects created
+    
+    // Constructor
+    public Student(String studentId, String name, String email, double gpa) {
+        this.studentId = studentId;
+        this.name = name;
+        this.email = email;
+        this.gpa = gpa;
+        count++; // Increment count whenever a new student is created
+    }
+    
+    // Methods
+    public void updateEmail(String newEmail) {
+        this.email = newEmail;
+    }
+    
+    public void printDetails() {
+        System.out.println("Student ID: " + studentId + ", Name: " + name + ", Email: " + email + ", GPA: " + gpa);
+    }
+    
+    public static int getStudentCount() {
+        return count;
+    }
+}
+\end{lstlisting}
+
+\newpage
+
+\section*{Question B.3}
+Please write code to add another data field to your class to keep track of the number of objects created.
+\begin{itemize}
+  \item Please explain in detail how the data field should be used. Provide code to demonstrate and support your explanation.
+  \item Then explain in detail why your code should work properly. Provide code to demonstrate and support your explanation.
+\end{itemize}
+
+\section*{Solution}
+The data field \texttt{count} is used to keep track of the number of \texttt{Student} objects created. This is a static field, meaning it is shared among all instances of the class and not specific to any single object.
+
+\textbf{Detailed Explanation with Code:}
+\begin{lstlisting}[language=Java]
+public static void main(String[] args) {
+    Student s1 = new Student("S001", "Alice", "alice@example.com", 3.7);
+    Student s2 = new Student("S002", "Bob", "bob@example.com", 3.5);
+    
+    System.out.println("Total students: " + Student.getStudentCount());
+}
+\end{lstlisting}
+
+This will print "Total students: 2" as two \texttt{Student} objects are created, and each constructor call increases the \texttt{count} by one.
+
+\newpage
+
+\section*{Question B.4}
+Write a no-argument constructor, a two-argument constructor, and a four-argument constructor for your class.
+\begin{itemize}
+  \item Code instructions to create 3 objects using all constructors above.
+\end{itemize}
+
+\section*{Solution}
+Here are the requested constructors for the \texttt{Student} class:
+
+\begin{lstlisting}[language=Java]
+// No-argument constructor
+public Student() {
+    this.studentId = "Unknown";
+    this.name = "Unknown";
+    this.email = "noemail@example.com";
+    this.gpa = 0.0;
+    count++;
+}
+
+// Two-argument constructor
+public Student(String studentId, String name) {
+    this.studentId = studentId;
+    this.name = name;
+    this.email = "noemail@example.com";
+    this.gpa = 0.0;
+    count++;
+}
+
+// Four-argument constructor
+public Student(String studentId, String name, String email, double gpa) {
+    this.studentId = studentId;
+    this.name = name;
+    this.email = email;
+    this.gpa = gpa;
+    count++;
+}
+
+// Creating objects using all constructors
+public static void main(String[] args) {
+    Student s1 = new Student();
+    Student s2 = new Student("S003", "Charlie");
+    Student s3 = new Student("S004", "Diana", "diana@example.com", 3.9);
+}
+\end{lstlisting}
+
+\newpage
+
+\section*{Question B.5}
+Singer and Student are subclasses of Person.
+\begin{itemize}
+  \item Please write the header line of each class. Then please explain in detail what happens when a Singer constructor is called. Please explain both the explicit and implicit code.
+  \item Please write code to demonstrate a subclass reference to reference a subclass object.
+  \item Please write code to demonstrate a superclass reference to reference a subclass object.
+  \item Please write code to demonstrate up-casting.
+  \item Please write code to demonstrate down-casting.
+\end{itemize}
+
+\section*{Solution}
+1. \textbf{Header Line of Each Class:}
+\begin{lstlisting}[language=Java]
+public class Person {
+   // Base class for Singer and Student
+}
+
+public class Singer extends Person {
+   // Singer-specific code here
+}
+
+public class Student extends Person {
+   // Student-specific code here
+}
+\end{lstlisting}
+
+\textbf{Explanation of Singer Constructor:} When a \texttt{Singer} constructor is called, Java first implicitly calls the constructor of the superclass (\texttt{Person}). If an explicit call to \texttt{super()} with parameters isn't provided, Java will call the no-argument constructor of \texttt{Person}. This ensures that the initialization of the parent class (\texttt{Person}) is done before the child class (\texttt{Singer}).
+
+2. \textbf{Subclass Reference to Reference a Subclass Object:}
+\begin{lstlisting}[language=Java]
+Singer singer1 = new Singer();
+\end{lstlisting}
+
+3. \textbf{Superclass Reference to Reference a Subclass Object:}
+\begin{lstlisting}[language=Java]
+Person student1 = new Student();
+\end{lstlisting}
+
+4. \textbf{Up-casting Code:}
+\begin{lstlisting}[language=Java]
+Singer singer1 = new Singer();
+Person person1 = singer1; // Up-casting Singer to Person
+\end{lstlisting}
+
+5. \textbf{Down-casting Code:}
+\begin{lstlisting}[language=Java]
+Person person2 = new Singer();
+Singer singer2 = (Singer) person2; // Down-casting Person to Singer
+\end{lstlisting}
+
+\newpage
+
+
+\section*{Question B.6}
+Please override the method compareTo to compare Phone objects.
+
+\section*{Solution}
+To override the \texttt{compareTo} method for comparing \texttt{Phone} objects, ensure your \texttt{Phone} class implements the \texttt{Comparable} interface. Here's how you can do it:
+
+\begin{lstlisting}[language=Java]
+public class Phone implements Comparable<Phone> {
+    private String model;
+    private double price;
+    
+    // Constructor
+    public Phone(String model, double price) {
+        this.model = model;
+        this.price = price;
+    }
+    
+    // Override compareTo to compare based on price
+    @Override
+    public int compareTo(Phone other) {
+        return Double.compare(this.price, other.price);
+    }
+    
+    // Example usage
+    public static void main(String[] args) {
+        Phone phone1 = new Phone("Model A", 499.99);
+        Phone phone2 = new Phone("Model B", 599.99);
+        
+        System.out.println(phone1.compareTo(phone2)); // Will print a negative value since phone1 is cheaper
+    }
+}
+\end{lstlisting}
+
+
+
+\end{document}
