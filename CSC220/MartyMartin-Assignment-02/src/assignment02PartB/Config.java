@@ -158,7 +158,7 @@ public final class Config {
     //
     // Additional Instance Methods
     //
-    public void setPreferences() {
+    public void setPreferences() throws
         Language.displayAppHeader();
         this.language = Language.setLanguagePreference();
         this.timer = Timer.setTimeZonePreference();
